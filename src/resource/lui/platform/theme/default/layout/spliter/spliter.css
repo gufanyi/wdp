@@ -1,0 +1,159 @@
+.spliter_div 
+{
+}
+
+.spliter_div .spliter_div1 {        
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+.spliter_div .spliter_div2 {       
+    position:absolute;
+}
+
+.spliter_div .spliter_bar_h
+{
+	position:absolute;
+	width:1px;
+	background : #999999;
+}
+
+.spliter_div .spliter_bar_v
+{
+	position:absolute;
+	height:1px;
+	background-color: #999999;
+}
+
+.spliter_div .spliter_bar_h_hide
+{
+	position:absolute;
+	width:1px;
+	background : #999999;
+}
+
+.spliter_div .spliter_bar_v_hide
+{
+	position:absolute;
+	background:transparent;
+	height:1px;
+	background : #999999;
+}
+
+.spliter_div .spliter_bar_onetouch
+{
+	position:absolute;
+	height:1px;
+	background : #999999;
+}
+
+.spliter_div .spliter_dragdiv{
+	position:absolute;
+	left:0px;  
+}
+
+.spliter_div .spliter_flow_div {       
+    position:absolute;
+	width:220px;
+	background:url('images/right_panel_bg.png') repeat;
+}
+
+.spliter_div .spliter_feel_div{
+	position:absolute;
+	top:50%;
+	width:60px;
+	height:45px;
+}
+
+.spliter_div .left_pos {       
+    left:0px;
+}
+
+.spliter_div .right_pos {       
+    right:0px;
+}
+
+.spliter_div .spliter_btn_left_pos{
+	position:absolute;
+	left:15px;
+	top:50%;
+	background:url('images/left_arrow.png') no-repeat center center;
+	width:45px;
+	height:45px;
+	cursor:pointer;
+}
+
+.spliter_div .spliter_btn_right_pos{
+	position:absolute;
+	right:15px;
+	top:50%;
+	background:url('images/right_arrow.png') no-repeat center center;
+	width:45px;
+	height:45px;
+	cursor:pointer;
+}
+
+.left_pos .spliter_shadow_div{
+	position:absolute;
+	top:0px;
+	right:-8px;
+	width:8px;
+	height:100%;
+	background:url('images/left_panel_shadow.png') repeat-y center center;
+}
+
+.right_pos .spliter_shadow_div{
+	position:absolute;
+	top:0px;
+	left:-8px;
+	width:8px;
+	height:100%;
+	background:url('images/right_panel_shadow.png') repeat-y center center;
+}
+
+.left_pos .spliter_btn_div{
+	position:absolute;
+	top:50%;
+	right:0px;
+	width:14px;
+	height:25px;
+	background:url('images/left_close.png') no-repeat center center;
+	cursor:pointer;
+	z-index: 9999999;
+}
+
+.right_pos .spliter_btn_div{
+	position:absolute;
+	top:50%;
+	left:0px;
+	width:14px;
+	height:25px;
+	background:url('images/right_close.png') no-repeat center center;
+	cursor:pointer;
+	z-index: 9999999;
+}
+
+.left_pos .spliter_show_msg_div{
+	position:absolute;
+	bottom:0px;
+	right:25px;
+	width:180px;
+	height:30px;
+	z-index: 9999999;
+}
+
+.right_pos .spliter_show_msg_div{
+	position:absolute;
+	bottom:0px;
+	left:25px;
+	width:180px;
+	height:30px;
+	z-index: 9999999;
+}
+
+.spliter_show_msg_div .spliter_show_msg_text_div{
+	position:absolute;
+	top:10px;
+	left:20px;
+}

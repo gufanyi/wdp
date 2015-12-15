@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="pa_um" isFlow="false">
+	<FlowVLayout id="editorflowv1">
+		<FlowVPanel id="editorflowvp11111" height="55">
+			<ViewPart id="top" />
+		</FlowVPanel>
+		<FlowVPanel id="editorflowvp22222" >
+			<Divid prop="260" id="spliter11" isInverse="false" orientation="h">
+				<DividProp id="sp11">
+					<ViewPart id="project" />
+				</DividProp>
+				<DividCenter id="sp22">
+					<Divid prop="260" id="spliter1" isInverse="true" orientation="h" >
+						<DividCenter id="sp1">
+							<FlowVLayout id="editorflowvp0001">
+								<FlowVPanel id="editorflowvp1">
+									<ViewPart id="editor" />
+								</FlowVPanel>
+								<FlowVPanel id="editorflowvp2" height="30">
+									<ViewPart id="nav" />
+								</FlowVPanel>
+							</FlowVLayout>
+						</DividCenter>
+						<DividProp id="sp2">
+							<FlowVLayout id="navflowv1">
+								<FlowVPanel id="flowv1">
+									<ViewPart id="data" />
+								</FlowVPanel>
+								<FlowVPanel id="flowv2">
+									<ViewPart id="settings" />
+								</FlowVPanel>
+							</FlowVLayout>
+						</DividProp>
+					</Divid>
+				</DividCenter>
+			</Divid>
+		</FlowVPanel>
+	</FlowVLayout>
+</UIPart>

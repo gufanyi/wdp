@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" controller="xap.lui.psn.groupcolumns.GroupColumnsCtrl" id="groupcolumns">
+    <Events>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+    </Events>
+    <Connectors/>
+    <ViewParts>
+        <ViewPart refId="main" canFreeDesign="true" id="main"/>
+    </ViewParts>
+    <UIStates>
+        <UIState id="editstate" name="编辑态">
+            <ViewState viewId="main">
+                <CtrlState id="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="menubar_right_menuitem_new" pid="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="menubar_right_menuitem_edit" pid="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="menubar_right_menuitem_delete" pid="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="grid_left" isVisible="true" enabled="true"/>
+            </ViewState>
+        </UIState>
+        <UIState id="viewstate" name="浏览态">
+            <ViewState viewId="main">
+                <CtrlState id="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="menubar_right_menuitem_new" pid="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="menubar_right_menuitem_edit" pid="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="menubar_right_menuitem_delete" pid="menubar_right" isVisible="true" enabled="true"/>
+                <CtrlState id="grid_left" isVisible="true" enabled="true"/>
+            </ViewState>
+        </UIState>
+    </UIStates>
+</PagePart>

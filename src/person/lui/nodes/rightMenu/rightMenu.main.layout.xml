@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" jquery="0">
+    <FlowVLayout id="flowvlayout6127" widgetId="main">
+        <FlowVPanel cssStyle="background-color:#C8FFDB;" height="40" id="panelv06127" topPadding="10" widgetId="main">
+            <FlowHLayout id="flowhlayout6717" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="panelh06717" leftPadding="59" widgetId="main">
+                    <TextField height="28" id="strTxt_MenuCtrlId" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="main" width="190">
+                    </TextField>
+                </FlowHPanel>
+                <FlowHPanel id="panelh26717" widgetId="main">
+                    <TextField height="28" id="strTxt_MenuCtrlName" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="main" width="190">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel id="panelv16127" widgetId="main">
+            <FlowHLayout id="flowhlayout2929" isAutoFill="false" widgetId="main">
+                <FlowHPanel bottomBorder="2px blue solid" id="panelh02929" rightBorder="1px blue solid" topBorder="1px blue solid" widgetId="main" width="270">
+                    <FlowVLayout id="flowvlayout6677" widgetId="main">
+                        <FlowVPanel height="120" id="panelv06677" widgetId="main">
+                            <Form height="100%" id="frm_RightMenu" label_position="" left="0" position="relative" top="0" widgetId="main" width="100%">
+                            </Form>
+                        </FlowVPanel>
+                        <FlowVPanel id="flowvpanel16223" rightPadding="20" widgetId="main">
+                            <Button align="right" height="24" id="btn_AddMenuItem" left="0" position="relative" top="0" widgetId="main" width="64">
+                            </Button>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </FlowHPanel>
+                <FlowHPanel bottomBorder="1px blue solid" id="panelh22929" topBorder="1px blue solid" widgetId="main">
+                    <Tree height="100%" id="tree_RightMenu" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </Tree>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="50" id="panelv26127" widgetId="main">
+            <FlowHLayout id="flowhlayout5098" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="panelh05098" rightPadding="20" topPadding="20" widgetId="main">
+                    <Button align="right" height="24" id="btn_Save" left="0" position="relative" top="0" widgetId="main" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh25098" topPadding="20" widgetId="main" width="100">
+                    <Button height="24" id="btn_Cancle" left="0" position="relative" top="0" widgetId="main" width="64">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

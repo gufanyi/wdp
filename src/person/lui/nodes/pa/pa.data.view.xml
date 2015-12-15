@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="data" refId="" isDialog="false" srcFolder="" controller="xap.lui.psn.pamgr.PaPalletDsListener">
+	<PipeOuts/>
+	<PipeIns>
+		<PipeIn id="plugin_formdata">
+        </PipeIn>
+	</PipeIns>
+	<DataModels>
+		<Dataset id="ctrlds" isEdit="true" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+				<Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+				<Field id="type2" dataType="String" isRequire="true" isPK="" text="type2" />
+				<Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+				<Field id="imgtype" dataType="String" isRequire="true" isPK="" text="imgtype" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="data">
+							<DatasetRule id="ctrlds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="dataLoadEvent" value="" />
+					</Params>
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="" eventName="onAfterRowSelect" onserver="false">
+					<Params>
+						<Param name="rowSelectEvent" value="" />
+					</Params>
+					<Action><![CDATA[
+					if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+						var masterSelecteRow = rowSelectEvent.currentRow;	
+						//获取触发行
+						if(masterSelecteRow == null)
+							return;
+						var masterDs =  masterSelecteRow.dataset;
+						var event = {};
+						event.componentId = masterSelecteRow.getCellValue(masterDs.nameToIndex("id"));
+						event.type="start";
+						event.text = masterSelecteRow.getCellValue(masterDs.nameToIndex("name"));
+						event.compType = masterSelecteRow.getCellValue(masterDs.nameToIndex("type"));
+						event.compType2 = masterSelecteRow.getCellValue(masterDs.nameToIndex("type2"));
+						//通知Iframe
+						if(!(event.componentId == " " || event.componentId == "  "))
+							document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+					}
+					]]></Action>
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onAfterRowSelect" eventName="onAfterRowSelect" onserver="true">
+					<Params>
+					</Params>
+					<Action></Action>
+				</Event>
+			</Events>
+		</Dataset>
+		<Dataset id="layoutds" isEdit="false" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+				<Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+				<Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="data">
+							<DatasetRule id="layoutds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="dataLoadEvent" value="" />
+					</Params>
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="" eventName="onAfterRowSelect" onserver="false">
+					<Params>
+						<Param name="rowSelectEvent" value="" />
+					</Params>
+					<Action><![CDATA[
+						if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+							var masterSelecteRow = rowSelectEvent.currentRow;	
+						var masterDs =  masterSelecteRow.dataset;
+						//获取触发行
+
+						if(masterSelecteRow == null)
+							return;
+
+						var event = {};
+						event.componentId = masterSelecteRow.getCellValue(masterDs.nameToIndex("id"));
+						event.type="start";
+						event.text = masterSelecteRow.getCellValue(masterDs.nameToIndex("name"));
+						event.compType = masterSelecteRow.getCellValue(masterDs.nameToIndex("type"));
+						//通知IFrame
+						document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+						}
+					]]></Action>
+				</Event>
+			</Events>
+		</Dataset>
+		<Dataset id="entityds" isEdit="true" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="uuid" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+				<Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+				<Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+				<Field id="isdrag" dataType="String" isRequire="true" isPK="" text="isdrag" />
+				<Field id="source" dataType="String" isRequire="true" isPK="" text="source" />
+				<Field id="dsid" dataType="String" isRequire="true" isPK="" text="source" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  controller="xap.lui.psn.pamgr.PaEntityDsListener" method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="data">
+							<DatasetRule id="entityds">ds_all_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="dataLoadEvent" value="" />
+					</Params>
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="" eventName="onAfterRowSelect" onserver="false">
+					<Params>
+						<Param name="rowSelectEvent" value="" />
+					</Params>
+					<Action><![CDATA[if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler) document.getElementById("iframe_tmp").contentWindow.dropEventHandler({type:'release'});]]></Action>
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onEntitydsAfterRowSelect" eventName="onAfterRowSelect" onserver="true">
+					<SubmitRule cardSubmit="false">
+					</SubmitRule>
+					<Params>
+						<Param name="rowSelectEvent" value="" />
+					</Params>
+					<Action></Action>
+				</Event>
+			</Events>
+		</Dataset>
+		<Dataset id="currds" isEdit="false" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+				<Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+				<Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="data">
+							<DatasetRule id="currds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="dataLoadEvent" value="" />
+					</Params>
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="" eventName="onAfterRowSelect" onserver="false">
+					<Params>
+						<Param name="rowSelectEvent" value="" />
+					</Params>
+					<Action><![CDATA[var masterSelecteRow = rowSelectEvent.currentRow;	
+						var masterDs =  masterSelecteRow.dataset;
+						//获取触发行
+
+						if(masterSelecteRow == null)
+							return;
+
+						var event = {};
+						event.componentId = masterSelecteRow.getCellValue(masterDs.nameToIndex("id"));
+						event.type="start";
+						event.text = masterSelecteRow.getCellValue(masterDs.nameToIndex("name"));
+						event.compType = masterSelecteRow.getCellValue(masterDs.nameToIndex("type"));
+						//通知IFrame
+						if(!(event.componentId == " " || event.componentId == "  "))
+							document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+					]]></Action>
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onCurrdsAfterRowSelect" eventName="onAfterRowSelect" onserver="true">
+					<Params>
+					</Params>
+					<Action></Action>
+				</Event>
+			</Events>
+		</Dataset>
+		<Dataset id="winsds" isEdit="false" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+				<Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+				<Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad" controller="xap.lui.psn.pamgr.PaAppDsListener" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="data">
+							<DatasetRule id="winsds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="" eventName="onAfterRowSelect" onserver="false">
+					<Action><![CDATA[if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler) document.getElementById("iframe_tmp").contentWindow.dropEventHandler({type:'release'});]]></Action>
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onWinAfterRowSelect" controller="xap.lui.psn.pamgr.PaAppDsListener" eventName="onAfterRowSelect" onserver="true">
+				</Event>
+			</Events>
+		</Dataset>
+	</DataModels>
+	<Controls>
+		<Tree id="entitytree" isEdit=""  checkboxType="" isDrag="false" enabled="true" text="数据集" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="false">
+			<RecursiveTree id="level1" dataset="entityds"  contextMenu="dsModelMenu" labelFields="name,id" masterField="uuid" recursiveField="uuid" recursiveParentField="pid" />
+		</Tree>
+		<Tree id="ctrltree" isEdit="" checkboxType="" isDrag="false" enabled="true" text="" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="false">
+			<RecursiveTree id="level2" dataset="ctrlds" contextMenu="ctrlTreeContextMenu" labelFields="name,id" masterField="id" recursiveField="id" recursiveParentField="pid" />
+		</Tree>
+		<Tree id="currtree" isEdit="" checkboxType="" isDrag="false" enabled="true" text="" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="true">
+			<RecursiveTree id="level3" dataset="currds" contextMenu="currTreeContextMenu" labelFields="name,id" masterField="id" recursiveField="id" recursiveParentField="pid" />
+		</Tree>
+		<Tree id="layouttree" isEdit="" checkboxType="" isDrag="false" enabled="true" text="" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="true">
+			<RecursiveTree id="level4" dataset="layoutds" labelFields="name" masterField="id" recursiveField="id" recursiveParentField="pid" />
+		</Tree>
+		<Tree id="winstree" isEdit="" checkboxType="" isDrag="false" enabled="true" text="" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="true">
+			<RecursiveTree id="level6" dataset="winsds" contextMenu="winsTreeContextMenu" labelFields="id,name" masterField="id" recursiveField="id" recursiveParentField="pid" />
+		</Tree>
+	</Controls>
+	<Containers />
+	<Menus>
+		<MenuBar id="menu_set">
+			<MenuItem id="menu_step_last" modifiers="2" isVisible="false" imgIcon="platform/theme/${theme}/global/images/icon/16/back.png" tip="后退" >
+				<Events>
+					<Event async="true" method="onclickBack" eventName="onclick" eventType="MouseEvent" onserver="true">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action></Action>
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="menu_step_next" modifiers="2" isVisible="false" imgIcon="platform/theme/${theme}/global/images/icon/16/next.png" tip="前进">
+				<Events>
+					<Event async="true" method="onclickNext" eventName="onclick" eventType="MouseEvent" onserver="true">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action></Action>
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="menu_step_next" modifiers="2" isVisible="false" imgIcon="platform/theme/${theme}/global/images/icon/16/edit.png" tip="释放">
+				<Events>
+					<Event async="true" method="" eventName="onclick" eventType="MouseEvent" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action>
+						<![CDATA[
+							var ifram_tmp_div = document.getElementById("iframe_tmp");
+							if(ifram_tmp_div.contentWindow.dropEventHandler)
+								ifram_tmp_div.contentWindow.dropEventHandler({type:'release'});
+						]]>
+						</Action>
+					</Event>
+				</Events>
+			</MenuItem>
+      
+      
+			<MenuItem id="menu_self_save" modifiers="2" imgIcon="/webtempmldes/pa/imagesve.png" isVisible="false" text="保存">
+				<Events>
+					<Event async="true" method="onclick" eventName="onclick" eventType="MouseEvent" onserver="false">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="ds_struct">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action><![CDATA[triggerSaveEvent();]]></Action>
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="menu_item_switch" modifiers="2" imgIcon="/webtempmldes/pa/imagestting.png" isVisible="false" text="切换VIEW">
+				<Events>
+					<Event async="true" method="onclick" eventName="onclick" eventType="MouseEvent" onserver="false">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="ds_struct">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action><![CDATA[triggerSwitchEvent();]]></Action>
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="menu_item_restore" modifiers="2" imgIcon="/webtempmldes/pa/images/restore.png" isVisible="false" text="还原">
+				<Events>
+					<Event async="true" method="onclick" eventName="onclick" onserver="false" eventType="MouseEvent">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="ds_struct">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action><![CDATA[triggerRevertEvent();]]></Action>
+					</Event>
+				</Events>
+			</MenuItem>
+		</MenuBar>
+		
+		<ContextMenu id="dsModelMenu">
+			<MenuItem id="editModel" modifiers="2" text="编辑">
+				<Events>
+					<Event async="true" method="editModel" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addModel" modifiers="2" text="新建元数据集">
+				<Events>
+					<Event async="true" method="addModelByEdit" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addModel2" modifiers="2" text="新建普通数据集">
+				<Events>
+					<Event async="true" method="addNormalDatasetByEdit" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addCombo" modifiers="2" text="新建枚举">
+				<Events>
+					<Event async="true" method="addCombo" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addRefNode" modifiers="2" text="新建参照">
+				<Events>
+					<Event async="true" method="addRefNode" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addGridRef" modifiers="2" text="新建表格参照模型">
+				<Events>
+					<Event async="true" method="addGridRef" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addTreeRef" modifiers="2" text="新建树参照模型">
+				<Events>
+					<Event async="true" method="addTreeRef" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="addTreeGridRef" modifiers="2" text="新建树表参照模型">
+				<Events>
+					<Event async="true" method="addTreeGridRef" eventName="onclick" eventType="MouseEvent" onserver="true" controller="xap.lui.psn.pamgr.PaModelOperateController" >
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="copyModel" modifiers="2" text="复制" controller="xap.lui.psn.pamgr.PaModelOperateController">
+				<Events>
+					<Event async="true" method="copyModel" eventName="onclick" eventType="MouseEvent" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="deleteModel"  modifiers="2" text="删除">
+				<Events>
+					<Event async="true" method="deleteModel" eventName="onclick" onserver="true" eventType="MouseEvent" controller="xap.lui.psn.pamgr.PaModelOperateController">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" />
+						</Params>
+						<Action />
+					</Event>
+				</Events>
+			</MenuItem>
+		</ContextMenu>
+		<ContextMenu id="ctrlTreeContextMenu">
+		</ContextMenu>
+		<ContextMenu id="currTreeContextMenu">
+		</ContextMenu>
+		<ContextMenu id="winsTreeContextMenu">
+		</ContextMenu>
+	</Menus>
+</ViewPart>

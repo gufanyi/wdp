@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" jquery="0">
+    <FlowVLayout id="flowvlayout2321" widgetId="main">
+        <FlowVPanel height="1" id="panelv02321" widgetId="main">
+        </FlowVPanel>
+        <FlowVPanel id="panelv12321" widgetId="main">
+            <FlowHLayout id="flowhlayout0043" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="panelh00043" widgetId="main" width="260">
+                    <FlowVLayout id="fvlayout000430" widgetId="main">
+                        <FlowVPanel height="35" id="fvpane1000431" widgetId="main">
+                            <TextField height="28" id="search" imgsrc="" left="10" position="relative" top="5" type="StringText" widgetId="main" width="120">
+                            </TextField>
+                        </FlowVPanel>
+                        <FlowVPanel id="fvpane1000432" rightBorder="1px blue solid" topBorder="1px blue solid" widgetId="main">
+                            <Grid height="100%" id="grid_left" left="0" position="relative" top="0" widgetId="main" width="100%">
+                            </Grid>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </FlowHPanel>
+                <FlowHPanel id="panelh10043" widgetId="main" width="80">
+                    <FlowVLayout id="flowvlayout0496" widgetId="main">
+                        <FlowVPanel height="140" id="panelv00496" widgetId="main">
+                        </FlowVPanel>
+                        <FlowVPanel height="50" id="panelv10496" widgetId="main">
+                            <Button height="24" id="addallBtn" left="5" position="relative" top="0" widgetId="main" width="64">
+                            </Button>
+                        </FlowVPanel>
+                        <FlowVPanel height="50" id="flowvpanel10575" widgetId="main">
+                            <Button height="24" id="addoneBtn" left="5" position="relative" top="0" widgetId="main" width="64">
+                            </Button>
+                        </FlowVPanel>
+                        <FlowVPanel height="50" id="flowvpanel18079" widgetId="main">
+                            <Button height="24" id="deloneBtn" left="5" position="relative" top="0" widgetId="main" width="64">
+                            </Button>
+                        </FlowVPanel>
+                        <FlowVPanel height="50" id="flowvpanel14943" widgetId="main">
+                            <Button height="24" id="delallbtn" left="5" position="relative" top="0" widgetId="main" width="64">
+                            </Button>
+                        </FlowVPanel>
+                        <FlowVPanel height="100" id="panelv20496" widgetId="main">
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </FlowHPanel>
+                <FlowHPanel id="panelh20043" widgetId="main">
+                    <FlowVLayout id="fvlayout200430" widgetId="main">
+                        <FlowVPanel height="35" id="fvpane1200431" widgetId="main">
+                            <MenuBar height="100%" id="menubar_right" left="0" position="relative" top="0" widgetId="main" width="100%">
+                            </MenuBar>
+                        </FlowVPanel>
+                        <FlowVPanel id="fvpane1200432" leftBorder="1px blue solid" topBorder="1px blue solid" widgetId="main">
+                            <Tree height="100%" id="tree_right" left="0" position="relative" top="0" widgetId="main" width="100%">
+                            </Tree>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="30" id="panelv22321" widgetId="main">
+            <FlowHLayout id="flowhlayout9157" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="panelh09157" widgetId="main">
+                </FlowHPanel>
+                <FlowHPanel id="panelh19157" widgetId="main" width="84">
+                    <Button height="24" id="okBtn" left="0" position="relative" top="0" widgetId="main" width="74">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh29157" widgetId="main" width="94">
+                    <Button height="24" id="cancelBtn" left="0" position="relative" top="0" widgetId="main" width="74">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

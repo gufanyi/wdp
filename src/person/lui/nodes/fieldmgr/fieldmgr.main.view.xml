@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="main" refId="main" isDialog="false" srcFolder="pa/src/public/" controller="xap.lui.psn.fieldmgr.FieldMgrController">
+  <PipeOuts>
+  	<PipeOut id="plugout_formdata">
+    </PipeOut>
+  </PipeOuts>
+  <PipeIns>
+    <PipeIn id="refOkPlugin">
+      <PipeInItem id="type" type="" />
+      <PipeInItem id="id" type="" />
+      <PipeInItem id="writeFields" type="" />
+    </PipeIn>
+  </PipeIns>
+  <DataModels>
+    <Dataset id="dsleft" isEdit="false" isLazyLoad="false" pageSize="">
+      <Fields>
+        <Field id="uuid" dataType="String" isRequire="true" isPK="" text="id" />
+        <Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+        <Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+        <Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+        <Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+        <Field id="isdrag" dataType="String" isRequire="true" isPK="" text="isdrag" />
+        <Field id="source" dataType="String" isRequire="true" isPK="" text="source" />
+        <Field id="dsid" dataType="String" isRequire="true" isPK="" text="source" />
+      </Fields>
+      <Events>
+        <Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onLeftDsLoad" eventName="onDataLoad" onserver="true">
+          <SubmitRule cardSubmit="false" />
+        </Event>
+      </Events>
+    </Dataset>
+    <Dataset id="dsright" isEdit="true" isLazyLoad="false" pageSize="">
+      <Fields>
+        <Field id="id" dataType="String" isRequire="true" isPK="false" text="id" />
+        <Field id="label" dataType="String" isRequire="true" isPK="false" text="label" />
+        <Field id="pid" dataType="String" isRequire="true" isPK="false" text="pid" />
+        <Field id="field" dataType="String" isRequire="true" isPK="false" text="field" />
+        <Field id="visible" dataType="FBoolean" isRequire="true" isPK="false" text="visible" />
+      </Fields>
+      <Events>
+        <Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onRightDsLoad" eventName="onDataLoad" onserver="true">
+          <SubmitRule cardSubmit="false" />
+        </Event>
+      </Events>
+    </Dataset>
+  </DataModels>
+  <Controls>
+    <StringText editorType="StringText" enabled="true" focus="false" id="search" text="定位" align="left" isVisible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="valueChanged" eventName="valueChanged" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+               <DatasetRule id="dsleft">ds_all_line</DatasetRule>
+               <DatasetRule id="dsright">ds_all_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+        </Event>
+      </Events>
+    </StringText>
+    <Button enabled="true" id="deloneBtn" text="&lt;" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="deloneBtnonclick" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+               <DatasetRule id="dsleft">ds_all_line</DatasetRule>
+              <DatasetRule id="dsright">ds_all_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+        </Event>
+      </Events>
+    </Button>
+    <Button enabled="true" id="delallbtn" text="&lt;&lt;" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="delallBtnonclick" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+               <DatasetRule id="dsleft">ds_all_line</DatasetRule>
+              <DatasetRule id="dsright">ds_all_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+        </Event>
+      </Events>
+    </Button>
+    <Tree id="tree_left" isEdit="false" checkboxType="0" isDrag="false" enabled="true" text="数据集" isExpand="true" isSelectRoot="false" isVisible="true" isShowCheckBox="false" isShowRoot="true">
+      <RecursiveTree id="level1" dataset="dsleft" labelFields="name,id" masterField="uuid" recursiveField="uuid" recursiveParentField="pid" />
+    </Tree>
+    <Button enabled="true" id="addoneBtn" text="&gt;" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="addoneBtnonclick" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+              <DatasetRule id="dsleft">ds_all_line</DatasetRule>
+              <DatasetRule id="dsright">ds_all_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+        </Event>
+      </Events>
+    </Button>
+    <Button enabled="true" id="addallBtn" text="&gt;&gt;" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="addallBtnonclick" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+                <DatasetRule id="dsleft">ds_all_line</DatasetRule>
+                <DatasetRule id="dsright">ds_all_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+        </Event>
+      </Events>
+    </Button>
+    <Grid id="grid_proxy" isFitRowHeight="false" isCopy="" dataset="dsright" isEdit="true" enabled="true" isExpandTree="false" isMultiple="true" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+      <Column id="id" width="100" text="编码" align="left" isFixed="false" isRequire="true" isSort="true" isVisible="true" isFitWidth="true" dataType="String" isEdit="false" editorType="StringText" renderType="DefaultRender" field="id" />
+      <Column id="label" width="100" text="名称" align="left" isFixed="false" isRequire="true" isSort="true" isVisible="true" isFitWidth="true" dataType="String" isEdit="true" editorType="StringText" renderType="DefaultRender" field="label" />
+      <Column id="pid" width="120" text="PID" align="left" isFixed="false" isRequire="true" isSort="true" isVisible="false" isFitWidth="true" dataType="String" isEdit="false" editorType="StringText" renderType="DefaultRender" field="pid" />
+      <Column id="field" width="120" text="FIELD" align="left" isFixed="false" isRequire="true" isSort="true" isVisible="false" isFitWidth="true" dataType="String" isEdit="false" editorType="StringText" renderType="DefaultRender" field="field" />
+      <Column id="visible" width="100" text="是否可见" align="left" isFixed="false" isRequire="true" isSort="true" isVisible="true" isFitWidth="true" dataType="FBoolean" isEdit="true" editorType="CheckBox" renderType="BooleanRender" showCheckBox="false" field="visible" />
+    </Grid>
+    <Tree id="tree_right" isEdit="false" checkboxType="0" isDrag="false" enabled="true" text="已选项" isExpand="true" isSelectRoot="false" isVisible="true" isShowCheckBox="false" isShowRoot="false">
+      <SimpleTreeLevel dataset="dsright" id="level1" labelFields="label" masterKeyField="id" />
+    </Tree>
+    <Button enabled="true" id="okBtn" text="确定" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="okBtnEvent" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+              <DatasetRule id="dsleft">ds_all_line</DatasetRule>
+              <DatasetRule id="dsright">ds_all_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+        </Event>
+      </Events>
+    </Button>
+    <Button enabled="true" id="cancelBtn" text="取消" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="cancelBtnEvent" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false" />
+        </Event>
+      </Events>
+    </Button>
+  </Controls>
+  <Menus>
+    <MenuBar id="gridmenu">
+      <MenuItem id="moveUp" modifiers="2"  imgIcon="platform/theme/${theme}/global/images/icon/16/back.png" text="上移">
+        <Events>
+          <Event async="true" method="moveUp" eventType="MouseEvent" eventName="onclick" onserver="true">
+            <SubmitRule cardSubmit="false">
+              <ViewPartRule id="main">
+                <DatasetRule id="dsright">ds_all_line</DatasetRule>
+              </ViewPartRule>
+            </SubmitRule>
+          </Event>
+        </Events>
+      </MenuItem>
+      <MenuItem id="moveDown" imgIcon="platform/theme/${theme}/global/images/icon/16/next.png"  modifiers="2" text="下移">
+        <Events>
+          <Event async="true" eventType="MouseEvent" method="moveDown" eventName="onclick" onserver="true">
+            <SubmitRule cardSubmit="false">
+              <ViewPartRule id="main">
+                <DatasetRule id="dsright">ds_all_line</DatasetRule>
+              </ViewPartRule>
+            </SubmitRule>
+          </Event>
+        </Events>
+      </MenuItem>
+      <MenuItem id="moveTop" modifiers="2" imgIcon="platform/theme/${theme}/global/images/icon/16/toTop.png"   text="置顶">
+        <Events>
+          <Event async="true" method="moveTop" eventType="MouseEvent" eventName="onclick" onserver="true">
+            <SubmitRule cardSubmit="false">
+              <ViewPartRule id="main">
+                <DatasetRule id="dsright">ds_all_line</DatasetRule>
+              </ViewPartRule>
+            </SubmitRule>
+          </Event>
+        </Events>
+      </MenuItem>
+      <MenuItem id="moveBottom" modifiers="2" imgIcon="platform/theme/${theme}/global/images/icon/16/toBottom.png"  text="置底">
+        <Events>
+          <Event async="true" method="moveBottom" eventType="MouseEvent" eventName="onclick" onserver="true">
+            <SubmitRule cardSubmit="false">
+              <ViewPartRule id="main">
+                <DatasetRule id="dsright">ds_all_line</DatasetRule>
+              </ViewPartRule>
+            </SubmitRule>
+          </Event>
+        </Events>
+      </MenuItem>
+      <MenuItem id="delItem" modifiers="2" imgIcon="platform/theme/${theme}/global/images/icon/16/delete.png"  text="移除">
+        <Events>
+          <Event async="true" method="delItem" eventType="MouseEvent" eventName="onclick" onserver="true">
+            <SubmitRule cardSubmit="false">
+              <ViewPartRule id="main">
+                <DatasetRule id="dsright">ds_all_line</DatasetRule>
+              </ViewPartRule>
+            </SubmitRule>
+          </Event>
+        </Events>
+      </MenuItem>
+    </MenuBar>
+  </Menus>
+</ViewPart>

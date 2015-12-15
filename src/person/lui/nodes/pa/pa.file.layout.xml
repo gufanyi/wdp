@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="nav_um" isFlow="false">
+   <FlowVLayout id="FlowVLayout5693">
+		<FlowVPanel id="panelv09692"> 
+			<TabLayout currentItem="0" id="file_tablayout" itemWidth="100">
+				<TabItem  id="item_ctrl" text="UI元数据">
+					<TextField height="500" id="file_meta" position="" left="3" top="2" type="text" width="800"></TextField>
+				</TabItem>
+				<TabItem id="item_layout" text="布局文件">
+					<TextField height="500" id="file_layout" position="" left="3" top="2" type="text" width="800"></TextField>
+				</TabItem>
+				<TabItem id="item_entity" text="JAVA文件">
+					<TextField height="500" id="file_java" position="" left="3" top="2" type="text" width="800"></TextField>
+				</TabItem>
+				<Events>
+			    	<Event async="true" eventType="TabEvent" method="afterItemInit_init" eventName="afterItemInit" controller="xap.lui.psn.top.TopFileViewController" onserver="true">
+					</Event>
+			    </Events>
+			</TabLayout>
+		</FlowVPanel>
+		<FlowVPanel id="panelvt88692" height = "45"> 
+					<FlowHLayout id="flowllewf"> 
+						<FlowHPanel id="panelh20kkwd">
+						</FlowHPanel>
+						<FlowHPanel id="panelh20kkwd" width="100">
+							<Button height="24" id="btn_ok" left="10" position="" top="15"  width="70">
+							</Button>
+						</FlowHPanel>
+						<FlowHPanel id="panelh66ddee" width="100">
+							<Button height="24" id="btn_cancel" left="10" position="" top="15"  width="70">
+							</Button>
+						</FlowHPanel>
+					</FlowHLayout>
+		</FlowVPanel>
+	</FlowVLayout>	
+</UIPart>

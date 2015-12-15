@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://com.founer.xap/schema/lui"  xmlns="http://com.founer.xap/schema/lui" elementFormDefault="qualified">
+  <xs:element name="ViewPart">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" maxOccurs="1" ref="PipeOuts"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="PipeIns"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="DataModels"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Controls"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Menus"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:all>
+      <xs:attribute name="controller" use="required" type="xs:string" default="控制类"/>
+      <xs:attribute name="id" use="required" type="xs:string" default="main"/>
+      <xs:attribute name="isDialog" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="refId" type="xs:NCName" default="main"/>
+      <xs:attribute name="srcFolder" type="xs:string" default="src/public/"/>
+      <xs:attribute name="isVisible" type="xs:string" default="true"/>
+      <xs:attribute name="enabled" type="xs:string" default="true"/>
+      <xs:attribute name="isCustom" type="xs:string" default="true"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PipeOuts">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="PipeIns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="PipeIn"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PipeIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="PipeInItem"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string" default="refOkPlugin"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PipeInItem">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="carType" default="type">
+        <xs:simpleType name="carType">
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="type"/>
+            <xs:enumeration value="id"/>
+            <xs:enumeration value="writeFields"/>
+            <xs:enumeration value="row"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="type"  type="xs:NCName" default="java.lang.String"/>
+      <xs:attribute name="clazztype"  type="xs:NCName" default="java.lang.String"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataModels">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" ref="DatasetRelations"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="MdDataset"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Dataset"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="RefNodes"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="DataList"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="RefMdDataset"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="DatasetRelations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="DatasetRelation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="DatasetRelation">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="masterDataset" use="required" type="xs:NCName"/>
+      <xs:attribute name="masterKeyField" use="required" type="xs:NCName" />
+      <xs:attribute name="detailDataset" use="required" type="xs:NCName" />
+      <xs:attribute name="detailForeignKey" use="required" type="xs:NCName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MdDataset">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" ref="Fields"/>
+        <xs:element minOccurs="0" ref="Events"/>
+        <xs:element minOccurs="0" ref="FieldRelations"/>
+      </xs:choice>
+      <xs:attribute name="caption" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isLazyLoad" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="pageSize" use="required" type="xs:integer" default="-1"/>
+      <xs:attribute name="focusIndex" type="xs:integer" default="-1"/>
+      <xs:attribute name="voMeta" use="required" type="xs:NCName" default="全类名"/>
+      <xs:attribute name="tableName" type="xs:NCName" />
+      <xs:attribute name="isCleared" type="xs:NCName" />
+      <xs:attribute name="objMeta" type="xs:NCName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Dataset">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" ref="Fields"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+        <xs:element minOccurs="0" ref="FieldRelations"/>
+      </xs:choice>
+      <xs:attribute name="caption" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isLazyLoad" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="pageSize" use="required" type="xs:integer" default="-1"/>
+      <xs:attribute name="focusIndex" type="xs:integer" default="-1"/>
+      <xs:attribute name="voMeta" type="xs:string"/>
+      <xs:attribute name="isCleared" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Field"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Field">
+    <xs:complexType>
+      <xs:attribute name="dataType"  type="xs:NCName" default="String"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isPK" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isRequire" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="文本"/>
+      <xs:attribute name="field" type="xs:NCName" />
+      <xs:attribute name="isLock" type="xs:boolean" default="false"/>
+      <xs:attribute name="ctxChanged" type="xs:boolean" default="false"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="文本"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="文本"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="文本"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefNodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="GenericRefNode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenericRefNode">
+    <xs:complexType>
+      <xs:attribute name="controller" use="required" type="xs:string" default="节点控制类"/>
+      <xs:attribute name="height" use="required" type="nonNegativeInteger" default="500"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isMultiple" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isOnlyLeaf" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isQuickInput" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="readDataset" use="required" type="xs:NCName" default="读取的数据集"/>
+      <xs:attribute name="readFields" use="required" tape="xs:string" default="读数据集的字段"/>
+      <xs:attribute name="refcode" use="required" type="xs:NCName" default="参照的编码"/>
+      <xs:attribute name="title" use="required" type="xs:string" default="参照弹出框的标题"/>
+      <xs:attribute name="isLocate" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isRead" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isFilterNames" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="pageMeta" use="required" type="xs:NCName" default="reference"/>
+      <xs:attribute name="width" use="required" type="xs:nonNegativeInteger" default="600"/>
+      <xs:attribute name="winModel" type="xs:string"/>
+      <xs:attribute name="writeDataset" use="required" type="xs:string"/>
+      <xs:attribute name="writeFields" use="required" type="xs:string"/>
+      <xs:attribute name="filterSql"  type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="DataItem"/>
+      </xs:sequence>
+      <xs:attribute name="caption" type="xs:string"/>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DataItem">
+    <xs:complexType>
+      <xs:attribute name="text" use="required" type="xs:string" default="显示值"/>
+      <xs:attribute name="value" use="required" type="xs:string" default="条目真实值"/>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="RefMdDataset">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" ref="Fields"/>
+        <xs:element minOccurs="0" ref="FieldRelations"/>
+      </xs:choice>
+      <xs:attribute name="caption" type="xs:NCName" />
+      <xs:attribute name="focusIndex" use="required" type="xs:integer" default="-1"/>
+      <xs:attribute name="id" use="required" type="xs:string" />
+      <xs:attribute name="isCleared" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="tableName" use="required" type="xs:string" />
+      <xs:attribute name="isLazyLoad" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="pageSize" use="required" type="xs:integer" default="-1"/>
+      <xs:attribute name="voMeta" use="required" type="xs:NCName" default="全类名"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Controls">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CheckBox"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CheckBoxGroup"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ComboBox"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Text"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="StringText"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="IntegerText"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="DecimalText"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="PwdText"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="TextArea"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Radio"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="RadioGroup"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="DateText"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Reference"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Label"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Link"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Iframe"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Form"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Tree"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Button"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Grid"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ToolBar"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="HtmlContent"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="CheckBox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="checked" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="editorType" use="required" type="xs:NCName" default="CheckBox"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="checkbox旁边显示的文字"/>
+      <xs:attribute name="value" use="required" type="xs:NCName" default="checkbox显示值"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBoxGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="value" use="required" type="xs:String" />
+      <xs:attribute name="readOnly" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="changeLine" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="dataListId" use="required" type="xs:NCName" default="对应的DataList的id"/>
+      <xs:attribute name="id" use="required" type="xs:string" />
+      <xs:attribute name="refData" use="required" type="xs:NCName" />
+      <xs:attribute name="sepWidth" use="required" type="xs:integer" default="1"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" />
+      <xs:attribute name="tabIndex" use="required" type="xs:NCName" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComboBox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="align" use="required" type="xs:NCName" default="left"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isAllowExtendValue" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isOnlySelect" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="refComboData" use="required" type="xs:NCName"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="ComboBox旁边显示的文字"/>
+      <xs:attribute name="textWidth" use="required" type="xs:integer" default="0"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StringText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="readOnly" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="text" use="required" type="xs:string" default="StringText旁边显示的文字"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Text">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="readOnly" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="text" use="required" type="xs:string" default="StringText旁边显示的文字"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="editorType" use="required" type="xs:string" default="StringText"/>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="align" use="required" type="xs:string" default="left"/>
+      <xs:attribute name="textWidth" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="showMark" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isRequired" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isShowlabel" use="required" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="IntegerText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="IntegerText旁边显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="DecimalText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="DecimalText旁边显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PwdText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="PwdText旁边显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TextArea">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="cols" use="required" type="xs:integer" default="400"/>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="rows" use="required" type="xs:integer" default="3"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="TextArea旁边显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Radio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="checked" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="group" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="position" use="required"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="Radio边显示的文字"/>
+      <xs:attribute name="value" use="required" type="xs:NCName" default="真实值"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RadioGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="changeLine" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="dataListId" use="required" type="xs:NCName" default="Datalist的Id"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="refData" use="required" type="xs:NCName" />
+      <xs:attribute name="sepWidth" use="required" type="xs:integer" default="1"/>
+      <xs:attribute name="text" use="required" type="xs:string" default="RadioGroup边显示的文字"/>
+      <xs:attribute name="index" use="required" type="xs:integer" default="-1"/>
+      <xs:attribute name="tabIndex" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="value" use="required" type="xs:string"/>
+      <xs:attribute name="readOnly" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="editorType" use="required" type="xs:NCName" default="StringText"/>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="align" use="required" type="xs:string" default="left"/>
+      <xs:attribute name="textWidth" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="showMark" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isRequired" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowlabel" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isRequired" use="required" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DateText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="align" use="required" type="xs:NCName" default="left"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="focus" use="required" type="xs:boolean"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="DateText边显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="align" use="required" type="xs:NCName" default="left"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="focus" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="refcode" use="required" type="xs:NCName" default="参照的编码"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="Reference边显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Label">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="innerHTML" type="xs:string" />
+      <xs:attribute name="text" use="required"  type="xs:string" default="文本"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Link">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="href" use="required" type="xs:NCName" default="连接路径url"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="target" use="required" type="carType" default="_blank">
+         <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="_blank"/>
+            <xs:enumeration value="_self"/>
+            <xs:enumeration value="_top"/>
+            <xs:enumeration value="_parent"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="link的名称"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="hasImg" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="image" use="required" type="xs:NCName" default="图片路径"/>
+      <xs:attribute name="imageChanged" use="required" type="xs:boolean" default="false"/>
+       <xs:attribute name="realImage" use="required" type="xs:boolean" default="图片真实路径，在context中使用"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Iframe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="border" use="required" type="xs:integer" default="1"/>
+      <xs:attribute name="height" use="required" type="xs:string" default="100%"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="left" use="required" type="xs:integer" default="10"/>
+      <xs:attribute name="position" use="required" type="xs:NCName" default="relative"/>
+      <xs:attribute name="scrolling" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="src" use="required" type="xs:anyURI" default="路径"/>
+      <xs:attribute name="top" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="width" use="required" type="xs:string" default="100%"/>
+      <xs:attribute name="name" use="required" type="xs:NCName" default="名称"/>
+       <xs:attribute name="frameBorder" use="required" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Form">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Element"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:choice>
+      <xs:attribute name="caption" type="xs:NCName" />
+      <xs:attribute name="column" use="required" type="xs:integer" default="2"/>
+      <xs:attribute name="dataset" use="required" type="xs:NCName" />
+      <xs:attribute name="eleWidth" use="required" type="xs:integer" default="120"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isEllipsis" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="labelMinWidth" type="xs:integer" default="0"/>
+      <xs:attribute name="renderType" use="required" type="xs:integer" default="2"/>
+      <xs:attribute name="rowHeight" use="required" type="xs:integer" default="28"/>
+      <xs:attribute name="withForm" type="xs:boolean" default="false"/>
+      <xs:attribute name="readOnly" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Element">
+    <xs:complexType>
+      <xs:attribute name="colSpan" use="required" type="xs:integer" default="1"/>
+       <xs:attribute name="dataType" use="required" type="carType" default="String">
+         <xs:simpleType name="carType">
+           <xs:restriction base="xs:NCName">
+            <xs:enumeration value="String"/>
+            <xs:enumeration value="FBoolean"/>
+            <xs:enumeration value="FDateTime"/>
+            <xs:enumeration value="Integer"/>
+            <xs:enumeration value="Date"/>
+            <xs:enumeration value="FTime"/>
+            <xs:enumeration value="FTIME"/>
+           </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="editorType" use="required" type="carType" default="StringText">
+         <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="CheckBox"/>
+            <xs:enumeration value="StringText"/>
+            <xs:enumeration value="IntegerText"/>
+            <xs:enumeration value="DecimalText"/>
+            <xs:enumeration value="BMPwdText"/>
+            <xs:enumeration value="DateText"/>
+            <xs:enumeration value="AreaText"/>
+            <xs:enumeration value="DateTimeText"/>
+            <xs:enumeration value="FileUpload"/>
+            <xs:enumeration value="RadioGroup"/>
+            <xs:enumeration value="CheckboxGroup"/>
+            <xs:enumeration value="Reference"/>
+            <xs:enumeration value="BMLanguageComboBoxW"/>
+            <xs:enumeration value="ShortDateText"/>
+            <xs:enumeration value="ComboBox"/>
+            <xs:enumeration value="List"/>
+            <xs:enumeration value="RadioComp"/>
+            <xs:enumeration value="TextArea"/>
+            <xs:enumeration value="ImageComp"/>
+            <xs:enumeration value="RichEditor"/>
+            <xs:enumeration value="FileComp"/>
+            <xs:enumeration value="SelfDef"/>
+            <xs:enumeration value="FLiteralDate"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="field" use="required" type="xs:NCName"/>
+       <xs:attribute name="enabled" type="xs:boolean" default="true"/>
+      <xs:attribute name="height" type="xs:string"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isOnlySelect" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isRequire" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="refComboData" type="xs:NCName"/>
+      <xs:attribute name="rowSpan" use="required" type="xs:integer"/>
+      <xs:attribute name="text" use="required" type="xs:string"/>
+      <xs:attribute name="index" use="required" type="xs:integer"/>
+      <xs:attribute name="width" type="xs:string" default="120"/>
+      <xs:attribute name="nextLine" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="toolbarType" use="required" type="xs:string" default="Custom"/>
+      <xs:attribute name="attachNext" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="value" type="xs:NCName"/>
+      <xs:attribute name="showValue" type="xs:NCName"/>
+      <xs:attribute name="description" type="xs:NCName"/>
+      <xs:attribute name="labelColor" type="xs:NCName"/>
+      <xs:attribute name="labelPos" type="xs:NCName"/>
+      <xs:attribute name="refNode" type="xs:NCName"/>
+      <xs:attribute name="relationField" type="xs:NCName"/>      
+      <xs:attribute name="refComboData" type="xs:NCName"/>
+      <xs:attribute name="dataDivHeight" type="xs:NCName"/>
+      <xs:attribute name="defaultValue" type="xs:NCName"/>
+      <xs:attribute name="imageOnly" type="xs:boolean"/>
+      <xs:attribute name="maxLength" type="xs:integer"/>
+      <xs:attribute name="maxValue" type="xs:integer"/>
+      <xs:attribute name="minValue" type="xs:integer"/>
+      <xs:attribute name="precision" type="xs:integer"/>
+      <xs:attribute name="focus" type="xs:boolean"/>
+      <xs:attribute name="tip" type="xs:NCName"/>
+      <xs:attribute name="inputAssistant" type="xs:string"/>
+      <xs:attribute name="i18nName" type="xs:string"/>
+      <xs:attribute name="tipI18nName" type="xs:string"/>
+      <xs:attribute name="langDir" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Tree">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="RecursiveTree"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+      </xs:choice>
+      <xs:attribute name="checkboxType" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string" />
+      <xs:attribute name="isDrag" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isExpand" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isSelectRoot" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowCheckBox" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowRoot" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="树标题"/>
+      <xs:attribute name="openLevel" type="xs:string" default="-1"/>
+      <xs:attribute name="treeNodeTextMaxWidth" type="xs:string" default="-1"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecursiveTree">
+    <xs:complexType>
+      <xs:attribute name="dataset" use="required" type="xs:NCName" />
+      <xs:attribute name="id" use="required" type="xs:string" />
+      <xs:attribute name="labelFields" use="required" type="xs:string" />
+      <xs:attribute name="masterField" use="required" type="xs:string" />
+      <xs:attribute name="recursiveField" use="required" type="xs:NCName"/>
+      <xs:attribute name="recursiveParentField" use="required" type="xs:NCName"/>
+      <xs:attribute name="contextMenu"  type="xs:NCName"/>
+      <xs:attribute name="labelDelims"  type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Button">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1"  ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="显示文本"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="refImgChanged" type="xs:boolean" default="true"/>
+      <xs:attribute name="width" type="xs:integer" default="0"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Grid">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Column"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="RecursiveGrid"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ColumnGroup"/>
+        <xs:element minOccurs="0" maxOccurs="1"  ref="Events"/>
+      </xs:choice>
+      <xs:attribute name="caption" type="xs:NCName"/>
+      <xs:attribute name="dataset" use="required" type="xs:NCName"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isCopy" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isExpandTree" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isFitRowHeight" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isMultiple" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isPageTop" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowColMenu" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowHeader" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isShowNum" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowTip"  type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowToolbar" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowTotalRow" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="rowHeight"  type="xs:integer"/>
+      <xs:attribute name="toolbarRender"  type="xs:string" />
+      <xs:attribute name="isAllowMouseoverChange"  type="xs:boolean" default="true"/>
+      <xs:attribute name="sortable"  type="xs:boolean" default="true"/>
+      <xs:attribute name="showColumns"  type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Column">
+    <xs:complexType>
+      <xs:attribute name="align"  type="xs:NCName"/>
+      <xs:attribute name="dataType" use="required" type="carType" default="String">
+         <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="String"/>
+            <xs:enumeration value="FBoolean"/>
+            <xs:enumeration value="FDateTime"/>
+            <xs:enumeration value="Integer"/>
+            <xs:enumeration value="Date"/>
+            <xs:enumeration value="FTime"/>
+            <xs:enumeration value="FTIME"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="editorType" use="required" type="carType" default="StringText">
+         <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="CheckBox"/>
+            <xs:enumeration value="StringText"/>
+            <xs:enumeration value="IntegerText"/>
+            <xs:enumeration value="DecimalText"/>
+            <xs:enumeration value="BMPwdText"/>
+            <xs:enumeration value="DateText"/>
+            <xs:enumeration value="AreaText"/>
+            <xs:enumeration value="DateTimeText"/>
+            <xs:enumeration value="FileUpload"/>
+            <xs:enumeration value="RadioGroup"/>
+            <xs:enumeration value="CheckboxGroup"/>
+            <xs:enumeration value="Reference"/>
+            <xs:enumeration value="BMLanguageComboBoxW"/>
+            <xs:enumeration value="ShortDateText"/>
+            <xs:enumeration value="ComboBox"/>
+            <xs:enumeration value="List"/>
+            <xs:enumeration value="RadioComp"/>
+            <xs:enumeration value="TextArea"/>
+            <xs:enumeration value="ImageComp"/>
+            <xs:enumeration value="RichEditor"/>
+            <xs:enumeration value="FileComp"/>
+            <xs:enumeration value="SelfDef"/>
+            <xs:enumeration value="FLiteralDate"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="refNode" type="xs:NCName"/>
+      <xs:attribute name="refComboData"  type="xs:string" />
+      <xs:attribute name="field" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isEdit" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isFitWidth" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isFixed" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isRequire" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isSort" type="xs:boolean" default="true"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="renderType" type="carType" default="DefaultRender">
+        <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="BooleanRender"/>
+            <xs:enumeration value="DefaultRender"/>
+            <xs:enumeration value="IntegerRender"/>
+            <xs:enumeration value="DecimalRender"/>
+            <xs:enumeration value="ComboRender"/>
+            <xs:enumeration value="ImageRender"/>
+            <xs:enumeration value="DateRender"/>
+            <xs:enumeration value="DateTimeRender"/>
+          </xs:restriction>
+        </xs:simpleType>         
+      </xs:attribute>
+      <xs:attribute name="sumCol" type="xs:boolean" default="false"/>
+      <xs:attribute name="text" use="required" type="xs:string" default="列名"/>
+      <xs:attribute name="width" type="xs:integer" default="120"/>
+      <xs:attribute name="showCheckBox" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="mergedShown" use="required" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>     
+  <xs:element name="RecursiveGrid">
+    <xs:complexType>
+      <xs:attribute name="dataset" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="labelFields" use="required" type="xs:NCName"/>
+      <xs:attribute name="recursiveField" use="required" type="xs:NCName"/>
+      <xs:attribute name="recursiveParentField" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="ColumnGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Column"/>
+      </xs:sequence>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="text" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ToolBar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Item"/>
+      </xs:sequence>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="text"  type="xs:string" default="文本"/>
+      <xs:attribute name="transparent" use="required" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="HtmlContent">
+    <xs:complexType>
+      <xs:attribute name="contentFetcher" use="required"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="innerHTML" use="required" type="xs:NCName"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="height" use="required" type="xs:string" default="100%"/>
+      <xs:attribute name="width" use="required" type="xs:string" default="100%"/>
+      <xs:attribute name="top" use="required" type="xs:integer" default="0"/>     
+      <xs:attribute name="left" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="position" use="required" type="carType" default="relative">      
+         <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="relative"/>
+            <xs:enumeration value="absolute"/>
+            <xs:enumeration value="static"/>
+          </xs:restriction>
+        </xs:simpleType>
+     </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+       
+  <xs:element name="Item">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="refImg" use="required" type="xs:NCName"/>
+      <xs:attribute name="text" use="required" type="xs:NCName"/>
+      <xs:attribute name="withSep" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="enabled" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="tip" use="required" type="xs:string" />
+      <xs:attribute name="align" use="required" type="xs:NCName" default="left"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Menus">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="MenuBar"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ContextMenu"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuBar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="MenuItem"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible"  type="xs:boolean" default="true"/>
+      <xs:attribute name="enabled"  type="xs:boolean" default="true"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ContextMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="MenuItem"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Events">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Event"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Event">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="SubmitRule"/>
+        <xs:sequence >
+          <xs:element minOccurs="0" ref="Params"/>
+          <xs:element minOccurs="0" ref="Action"/>
+        </xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="eventLang" type="xs:string" />
+      <xs:attribute name="id" type="xs:string" />
+      <xs:attribute name="nmc" type="xs:boolean" default="true"/>
+      <xs:attribute name="async" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="eventName" use="required" type="xs:string" default="MouseEvent"/>        
+      <xs:attribute name="eventType" use="required" type="xs:NCName">
+        <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="AutoformEvent"/>
+            <xs:enumeration value="CardEvent"/>
+            <xs:enumeration value="ContainerEvent"/>
+            <xs:enumeration value="ContextMenuEvent"/>
+            <xs:enumeration value="CtxMenuMouseEvent"/>
+            <xs:enumeration value="DataLoadEvent"/>
+            <xs:enumeration value="DatasetCellEvent"/>
+            <xs:enumeration value="DatasetColSingleEvent"/>
+            <xs:enumeration value="DatasetEvent"/>
+            <xs:enumeration value="DialogEvent"/>
+            <xs:enumeration value="FileUploadEvent"/>
+            <xs:enumeration value="FocusEvent"/>
+            <xs:enumeration value="GridCellEvent"/>
+            <xs:enumeration value="GridEvent"/>
+            <xs:enumeration value="GridRowEvent"/>
+            <xs:enumeration value="KeyEvent"/>
+            <xs:enumeration value="LinkEvent"/>
+            <xs:enumeration value="MouseEvent"/>
+            <xs:enumeration value="OutlookBarEvent"/>
+            <xs:enumeration value="PageEvent"/>            
+            <xs:enumeration value="RefTextEvent"/>            
+            <xs:enumeration value="RowInsertEvent"/>
+            <xs:enumeration value="ScriptEvent"/>
+            <xs:enumeration value="SelfDefEvent"/>
+            <xs:enumeration value="SimpleEvent"/>
+            <xs:enumeration value="TabEvent"/>
+            <xs:enumeration value="TextEvent"/>
+            <xs:enumeration value="TreeCtxMenuEvent"/>
+            <xs:enumeration value="TreeNodeDragEvent"/>
+            <xs:enumeration value="TreeNodeEvent"/>
+            <xs:enumeration value="TreeRowEvent"/>
+            <xs:enumeration value="ViewPartEvent"/>
+          </xs:restriction>
+        </xs:simpleType>  
+      </xs:attribute>
+      <xs:attribute name="method"  use="required" type="xs:NCName"/>
+      <xs:attribute name="onserver" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="controller"   type="xs:NCName"/>
+      <xs:attribute name="eventStatus"  type="xs:integer"/>
+      <xs:attribute name="uistateId"  type="xs:string" default="viewstate"/>
+    </xs:complexType>
+  </xs:element>
+       
+  <xs:element name="SubmitRule">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0"  maxOccurs="1" ref="ViewPartRule"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Params"/>
+      </xs:choice>
+      <xs:attribute name="cardSubmit" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="id"  type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewPartRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0"  maxOccurs="unbounded" ref="DatasetRule"/>
+      </xs:sequence>
+      <xs:attribute name="cardSubmit"  type="xs:boolean" default="false"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DatasetRule" >
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="id" use="required" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Params">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Param"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Param">
+    <xs:complexType>
+      <xs:attribute name="desc" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="value" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action">
+    <xs:complexType>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MenuItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Events"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isVisible" type="xs:boolean" default="true"/>
+      <xs:attribute name="modifiers" use="required" type="xs:integer"/>
+      <xs:attribute name="text" type="xs:NCName"/>
+      <xs:attribute name="enabled" type="xs:boolean" default="true"/>
+      <xs:attribute name="selected" type="xs:boolean" default="true"/>
+      <xs:attribute name="checkBoxGroup" type="xs:boolean" default="false"/>
+      <xs:attribute name="imgIcon" type="xs:NCName" default="new.png"/>
+      <xs:attribute name="imgIconChanged" type="xs:boolean" default="true"/>
+      <xs:attribute name="realImgIcon" type="xs:string"/>
+      <xs:attribute name="imgIconOnChanged" type="xs:boolean" default="true"/>
+      <xs:attribute name="imgIconDisableChanged" type="xs:boolean" default="true"/>
+      <xs:attribute name="sep" type="xs:boolean" default="true"/>
+      <xs:attribute name="stateManager" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FieldRelations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FieldRelation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FieldRelation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="MatchFields"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="WhereField"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="WhereOrder"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="needProcess" use="required" type="xs:boolean"/>
+      <xs:attribute name="refDataset" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="MatchFields">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" type="xs:string">
+          <xs:complexType>
+            <xs:attribute name="readField" type="xs:NCName"/>
+            <xs:attribute name="writeField" type="xs:NCName"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WhereField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" type="xs:string">
+          <xs:complexType>
+            <xs:attribute name="key" type="xs:NCName"/>
+            <xs:attribute name="value" type="xs:NCName"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WhereOrder">
+  </xs:element>
+  
+  
+</xs:schema>

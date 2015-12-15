@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="connector_um" isFlow="false" jquery="0">
+    <FlowVLayout id="flowvlayout0765" widgetId="connector">
+        <FlowVPanel id="panelv14621" widgetId="connector">
+            <TabLayout currentItem="0" id="tag0856" oneTabHide="false" tabType="top" widgetId="connector">
+                <TabItems>
+                    <TabItem active="0" i18nName="" id="UITabItem00856" showCloseIcon="false" text="连接器属性" widgetId="connector">
+                        <Form height="100%" id="form_conn" label_position="" left="0" position="relative" top="0" widgetId="connector" width="100%">
+                        </Form>
+                    </TabItem>
+                </TabItems>
+            </TabLayout>
+        </FlowVPanel>
+        <FlowVPanel id="flowvpanel18576" widgetId="connector">
+            <TabLayout currentItem="0" id="tag5194" oneTabHide="false" tabType="top" widgetId="connector">
+                <TabItems>
+                    <TabItem active="0" i18nName="" id="UITabItem05194" showCloseIcon="false" text="关系映射" widgetId="connector">
+                        <Grid height="100%" id="grid_map" left="0" position="relative" top="0" widgetId="connector" width="100%">
+                        </Grid>
+                    </TabItem>
+                </TabItems>
+                <TabRight id="tabspace17614" widgetId="connector" width="200">
+                    <MenuBar align="right" height="100%" id="connmenu" left="0" position="relative" top="0" widgetId="connector" width="100%">
+                    </MenuBar>
+                </TabRight>
+            </TabLayout>
+        </FlowVPanel>
+        <FlowVPanel height="30" id="flowvpanel14502" widgetId="connector">
+            <FlowHLayout id="flowhlayout9494" isAutoFill="false" widgetId="connector">
+                <FlowHPanel id="panelh09494" rightPadding="5" widgetId="connector">
+                    <Button align="right" height="24" id="btn_confirm" left="0" position="relative" top="0" widgetId="connector" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh19494" leftPadding="5" widgetId="connector">
+                    <Button height="24" id="btn_cancel" left="0" position="relative" top="0" widgetId="connector" width="64">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

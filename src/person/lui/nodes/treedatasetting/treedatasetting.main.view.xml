@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="main" refId="main" isDialog="false" srcFolder="pa/src/public/" controller="xap.lui.psn.treedatasetting.TreedatasettingCtrl">
+	<PipeOuts />
+	<PipeIns>
+		<PipeIn id="refOkPlugin">
+			<PipeInItem id="type" type="" />
+			<PipeInItem id="id" type="" />
+			<PipeInItem id="writeFields" type="" />
+		</PipeIn>
+	</PipeIns>
+	<DataModels>
+		<Dataset caption="ds_form" id="ds_form" isEdit="true" isLazyLoad="false" pageSize="8">
+			<Fields>
+				<Field id="TreeLevelID" text="TreeLevel ID" isRequire="true" field="TreeLevelID" isPK="false"/>
+				<Field id="datasetId" text="数据集" isRequire="true" field="datasetId" isPK="false"/>
+				<Field id="recursiveId" text="递归字段" isRequire="true" field="recursiveId" isPK="false"/>
+				<Field id="recursivePId" text="递归父字段" isRequire="true" field="recursivePId" isPK="false"/>
+				<Field id="primaryId" text="主键" isRequire="true" field="primaryId" isPK="false"/>
+				<Field id="foreignId" text="外键" isRequire="true" field="foreignId" isPK="false"/>
+				<Field id="splitFlag" text="分隔符" isRequire="true" field="splitFlag" isPK="false"/>
+				<Field id="rightMenuId" text="右键菜单" isRequire="true" field="rightMenuId" isPK="false"/>
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" method="onDataLoad_formds" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="main">
+							<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+						</ViewPartRule>
+						<ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="settings">
+								<DatasetRule id="ds_middle">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+					</SubmitRule>
+					<Params>
+						<Param name="dataLoadEvent" value="">
+						</Param>
+					</Params>
+					<Action></Action>
+				</Event>
+				<Event async="true" eventType="DatasetEvent" method="datasetValueChanged" eventName="onAfterDataChange" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="main">
+							<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Dataset>
+		<Dataset caption="ds_grid" id="ds_grid" isEdit="false" isLazyLoad="false" pageSize="-1">
+			<Fields>
+				<Field id="showFields" text="显示字段" isRequire="true" field="showFields" isPK="false"/>
+			</Fields>
+			<Events></Events>
+		</Dataset>
+		<DataList id="datasetList"></DataList>
+		<DataList id="recIdList"></DataList>
+		<DataList id="recPIdList"></DataList>
+		<DataList id="priIdList"></DataList>
+		<DataList id="rightMenuList"></DataList>
+	</DataModels>
+  
+	<Controls>
+		<Form caption="" id="datasetting_form" column="2" dataset="ds_form" eleWidth="120" isEllipsis="false" enabled="true" labelMinWidth="0" renderType="2" rowHeight="28" isVisible="true">
+			<Element colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="TreeLevelID" height="24" id="TreeLevelID" isRequire="false" rowSpan="1" isOnlySelect="true" text="TreeLevel ID" isVisible="true" width=""></Element>
+			<Element colSpan="1" refComboData="datasetList" dataType="String" isEdit="true" editorType="ComboBox" field="datasetId" height="24" id="datasetId" isRequire="false" rowSpan="1" isOnlySelect="true" text="数据集" isVisible="true" width=""></Element>
+			<Element colSpan="1" refComboData="recIdList" dataType="String" isEdit="true" editorType="ComboBox" field="recursiveId" height="24" id="recursiveId" isRequire="false" rowSpan="1" isOnlySelect="true" text="递归字段" isVisible="true" width=""></Element>
+			<Element colSpan="1" refComboData="recPIdList" dataType="String" isEdit="true" editorType="ComboBox" field="recursivePId" height="24" id="recursivePId" isRequire="false" rowSpan="1" isOnlySelect="true" text="递归父字段" isVisible="true" width=""></Element>
+			<Element colSpan="1" refComboData="priIdList" dataType="String" isEdit="true" editorType="ComboBox" field="primaryId" height="24" id="primaryId" isRequire="false" rowSpan="1" isOnlySelect="true" text="主键" isVisible="true" width=""></Element>
+			<Element colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="foreignId" height="24" id="foreignId" isRequire="false" rowSpan="1" isOnlySelect="true" text="外键" isVisible="true" width=""></Element>
+			<Element colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="splitFlag" height="24" id="splitFlag" isRequire="false" rowSpan="1" isOnlySelect="true" text="分隔符" isVisible="true" width=""></Element>
+			<Element colSpan="1" refComboData="rightMenuList" dataType="String" isEdit="true" editorType="ComboBox" field="rightMenuId" height="24" id="rightMenuId" isRequire="true" rowSpan="1" isOnlySelect="true" text="右键菜单" isVisible="true" width=""></Element>
+		</Form>
+		<Label id="label" text="显示字段" isVisible="true"></Label>
+		<Grid id="datasetting_grid" dataset="ds_grid" isAllowMouseoverChange="true" isFitRowHeight="false" isCopy="true" isEdit="false" enabled="true" isExpandTree="false" isMultiple="true" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="false" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column field="showFields" isFixed="false" id="showFields" text="显示字段" isFitWidth="true" dataType="String" editorType="StringText" isRequire="true" renderType="DefaultRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+		</Grid>
+		<Button enabled="true" id="btn_ok" text="确定" isVisible="true">
+			<Events>
+				<Event async="true" eventType="MouseEvent" method="onOkClick" eventName="onclick" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="main">
+							<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+						</ViewPartRule>
+						<ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="settings">
+								<DatasetRule id="ds_event">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button> 
+		<Button enabled="true" id="btn_cancel" text="取消" isVisible="true">
+			<Events>
+				<Event async="true" eventType="MouseEvent" method="onCancelClick" eventName="onclick" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="main">
+							<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button> 
+	</Controls>
+  
+	<Menus>
+	</Menus>
+</ViewPart>

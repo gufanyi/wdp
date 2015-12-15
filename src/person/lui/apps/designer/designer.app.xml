@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Application  TagName="Application" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" caption="LUIDesigner" controllerClazz="xap.lui.psn.designer.DesignerWindowCtrl" defaultWindowId="pa" id="designer">
+    <PageMetas>
+     	<PageMeta  caption="LUIDesigner" id="pa">
+        </PageMeta>
+        <PageMeta  caption="编辑数据集" id="dscfg">
+        </PageMeta>
+        <PageMeta  caption="元数据参照" id="cdref">
+        </PageMeta>
+         <PageMeta  caption="下拉数据集" id="combodatacfg">
+        </PageMeta>
+         <PageMeta  caption="下拉数据集" id="refcfg">
+        </PageMeta>
+        <PageMeta  caption="编辑UI状态" id="uistate">
+        </PageMeta>
+         <PageMeta  caption="编辑右键菜单" id="rightMenu">
+        </PageMeta>
+        <PageMeta  caption="配置向导" id="guided">
+        </PageMeta>
+        <PageMeta  caption="所有节点" id="appwinlist">
+        </PageMeta>
+        <PageMeta  caption="新建app" id="newapp">
+        </PageMeta>
+        <PageMeta  caption="编辑属性" id="fieldmgr">
+        </PageMeta>
+        <PageMeta  caption="新建表格参照模型" id="gridrefmodel">
+        </PageMeta>
+        <PageMeta  caption="新建树表参照模型" id="treegridmodel">
+        </PageMeta>
+    </PageMetas>
+    
+    <Connector id="winlist_newapp" pipeinId="plugin_newapp" pipeoutId="plugout_newapp" sourceWindow="appwinlist" targetWindow="newapp" source="main" target="main">
+    </Connector>
+	<Connector id="fieldmgr_fieldmgr_padata" pipeinId="plugin_formdata" pipeoutId="plugout_formdata" source="main" target="data" sourceWindow="fieldmgr" targetWindow="pa">
+		<Maps>
+			<mapping>
+				<inValue>editForm</inValue>
+				<outValue>editForm</outValue>
+			</mapping>
+		</Maps>
+	</Connector>
+</Application>

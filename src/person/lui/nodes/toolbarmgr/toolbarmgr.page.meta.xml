@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" caption="Toolbarmgr" controller="xap.lui.psn.toolbarmgr.ToolbarMgrController" id="toolbarmgr" srcFolder="">
+  <Processor>xap.lui.core.event.AppRequestProcessor</Processor>
+  <ViewParts>
+    <ViewPart id="main" isCustom="false" refId="main" />
+  </ViewParts>
+  <Events>
+    <Event async="true" eventType="PageEvent" eventName="onClosed" method="sysWindowClosed" onserver="true">
+      <SubmitRule cardSubmit="false" />
+      <Params>
+        <Param name="event" value="" desc="PageEvent" />
+      </Params>
+      <Action />
+    </Event>
+  </Events>
+</PagePart>

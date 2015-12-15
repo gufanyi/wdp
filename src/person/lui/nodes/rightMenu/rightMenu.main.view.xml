@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" isCustom="true" controller="xap.lui.psn.rightMenu.RightMenuConfigController" isVisible="true" enabled="true" id="main">
+	<DataModels>
+		<DatasetRelations/>
+		<Dataset isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="右键菜单数据集" id="ds_RightMenu">
+			<Fields>
+				<Field id="id" text="菜单项ID" isRequire="false" dataType="String" isPK="true" isLock="false" ctxChanged="false"/>
+				<Field id="name" text="菜单项名称" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="imgPath" text="菜单项图片路径" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+			</Fields>
+			<FieldRelations/>
+			<Events>
+				<Event eventName="onDataLoad" method="rightMenuFormOnLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+			</Events>
+		</Dataset>
+		<Dataset isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="右键菜单树的数据集" id="ds_TreeRightMenu">
+			<Fields>
+				<Field id="menuItemId" text="菜单项ID" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="pid" text="菜单项父ID" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="menuItemName" text="菜单项名称" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="menuItemImg" text="菜单项图片路径" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+			</Fields>
+			<FieldRelations/>
+			<Events>
+				<Event eventName="onDataLoad" method="rightMenuTreeOnLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+			</Events>
+		</Dataset>
+		<RefNodes/>
+	</DataModels>
+	<Controls>
+		<Tree isDrag="false" isExpand="true" openLevel="-1" text="右键菜单树" isShowRoot="false" isShowCheckBox="false" checkboxType="0" isEdit="false" isSelectRoot="false" treeNodeTextMaxWidth="-1" isVisible="true" enabled="true" id="tree_RightMenu">
+			<RecursiveTree recursiveField="menuItemId" recursiveParentField="pid" dataset="ds_TreeRightMenu" labelFields="menuItemName" labelDelims="," masterField="menuItemId" id="level1"/>
+		</Tree>
+		<Button width="0" refImgChanged="true" text="取消" isVisible="true" enabled="true" id="btn_Cancle">
+			<Events>
+				<Event eventName="onclick" method="cancelBtnEvent" onsever="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1">
+					
+				</Event>
+			</Events>
+		</Button>
+		<StringText value="" readOnly="false" editorType="StringText" text="菜单控件名称:" focus="false" align="left" textWidth="80" showMark="false" isRequired="true" isShowlabel="true" isVisible="true" enabled="true" id="strTxt_MenuCtrlName"/>
+		<Button width="0" refImgChanged="true" text="添加" isVisible="true" enabled="true" id="btn_AddMenuItem">
+			<Events>
+				<Event eventName="onclick" method="addRightMenuItemToTree" onserver="true" async="true" nmc="true" id="onclick"  eventType="MouseEvent" eventStatus="1">
+					<SubmitRule id="submitRule" cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="ds_RightMenu">ds_current_line</DatasetRule>
+							<DatasetRule id="ds_TreeRightMenu">ds_all_line</DatasetRule>
+						</ViewPartRule>
+						<ParentSubmitRule pageId="" cardSubmit="false">
+							<Params/>
+						</ParentSubmitRule>
+						<Params/>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button>		
+		<Button width="0" refImgChanged="true" text="保存" isVisible="true" enabled="true" id="btn_Save">
+			<Events>
+				<Event eventName="onclick" method="saveMenuTree" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1">
+					<SubmitRule id="submitRule" cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="ds_TreeRightMenu">ds_all_line</DatasetRule>
+						</ViewPartRule>
+						  <ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="ctrlds">ds_all_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+						
+						<Params/>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button>
+
+		<Form column="2" dataset="ds_RightMenu" rowHeight="24" eleWidth="120" labelMinWidth="0" withForm="false" renderType="5" readOnly="false" isEllipsis="false" isVisible="true" enabled="true" id="frm_RightMenu">
+			<Element rowSpan="1" colSpan="1" text="菜单项ID" labelPos="left_l" editorType="StringText" dataType="String" field="id" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="id"/>
+			<Element rowSpan="1" colSpan="1" text="菜单项名称" labelPos="left_l" editorType="StringText" dataType="String" field="name" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="name"/>
+			<Element rowSpan="1" colSpan="1" text="菜单项图片路径" labelPos="left_l" editorType="StringText" dataType="String" field="imgPath" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="imgPath"/>
+		</Form>
+		<StringText value="" readOnly="false" editorType="StringText" text="菜单控件ID:" focus="false" align="left" textWidth="70" showMark="false" isRequired="true" isShowlabel="true" isVisible="true" enabled="true" id="strTxt_MenuCtrlId"/>
+	</Controls>
+	<Menus/>
+	<PipeIns>
+		<PipeIn id="refOkPlugin">
+			<PipeInItem id="type" clazztype="java.lang.String"/>
+			<PipeInItem id="id" clazztype="java.lang.String"/>
+			<PipeInItem id="writeFields" clazztype="java.lang.String"/>
+		</PipeIn>
+	</PipeIns>
+</ViewPart>

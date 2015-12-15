@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="nav" refId="" isDialog="false" srcFolder="" controller="xap.lui.psn.top.TopMainViewController">
+	<DataModels>
+	</DataModels>
+	<Controls>
+		<Iframe  border="1" id="iframe_project" src="/portal/app/mockapp/designer" position="relative" scrolling="true" left="0" top="0" isVisible="true" width="100%" height="100%">
+		</Iframe>
+		<ToolBar enabled="true" id="toptoolbar" text="目录设定" isVisible="true">
+			<Item id="workspace" text="工作空间" refImg="new.png"  withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="workspace" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="edit_online" text="在线编辑" refImg="new.png"  withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="edit_online" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			
+			<Item id="save_file" text="保存文件" refImg="config.png" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="save_file" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="view_file" text="查看文件" refImg="config.png" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="view_file" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="export_file" text="导出文件" refImg="new.png"  withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="export_file" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="recove_file" text="还原文件" refImg="config.png" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="recove_file" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="run_app" text="运行程序" refImg="config.png"  isVisible="true" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="run_app" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="switch_theme" text="主题切换" refImg="config.png"  isVisible="true" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="switch_theme" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+		</ToolBar>
+	</Controls>
+	<Containers />
+	<Menus />
+</ViewPart>

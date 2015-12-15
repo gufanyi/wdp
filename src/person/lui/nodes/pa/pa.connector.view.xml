@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" isCustom="true" controller="xap.lui.psn.setting.PaConnectorViewCtrl" isVisible="true" enabled="true" id="connector">
+    <DataModels>
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="mapds" id="mapds">
+            <Events/>
+            <Fields>
+                <Field id="outValue" text="outValue" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="inValue" text="inValue" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <FieldRelations/>
+        </Dataset>
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="connectords" id="connectords">
+            <Events>
+                <Event eventName="onDataLoad" method="onDataLoad_ds_conn" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+                    <Action>
+					</Action>
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule id="connector"/>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+                <Event eventName="onAfterDataChange" method="datasetValueChanged" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule id="connector">
+                            <DatasetRule id="dsId">ds_current_line</DatasetRule>
+                        </ViewPartRule>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+            </Events>
+            <Fields>
+                <Field id="Id" text="Id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Source" text="Source" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Target" text="Target" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="PipeinId" text="PipeinId" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="PipeoutId" text="PipeoutId" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="ConnType" text="ConnType" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="sourceWindow" text="sourceWindow" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="targetWindow" text="targetWindow" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <FieldRelations/>
+        </Dataset>
+        <DataList id="pipeinList"/>
+        <DataList id="outViewList"/>
+        <DataList id="pipeoutList"/>
+        <DataList id="inViewList"/>
+        <DataList id="outPageList"/>
+        <DataList id="inPageList"/>
+        <RefNodes/>
+    </DataModels>
+    <Controls>
+        <Button refImgChanged="true" text="取消" isVisible="true" enabled="true" id="btn_cancel">
+            <Events>
+                <Event eventName="onclick" method="onclickCancel" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2"/>
+            </Events>
+        </Button>
+        <Label text="连接器属性" isVisible="true" enabled="true" id="label_conn"/>
+        <Label text="关系映射" isVisible="true" enabled="true" id="relation"/>
+        <Grid dataset="mapds" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="outValue,inValue" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true" id="grid_map">
+            <Column field="outValue" text="输出键值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="outValue"/>
+            <Column field="inValue" text="输入键值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="inValue"/>
+        </Grid>
+        <Button refImgChanged="true" text="确定" isVisible="true" enabled="true" id="btn_confirm">
+            <Events>
+                <Event eventName="onclick" method="onclickConfirm" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2">
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule id="connector">
+                            <DatasetRule id="mapds">ds_all_line</DatasetRule>
+                            <DatasetRule id="connectords">ds_all_line</DatasetRule>
+                        </ViewPartRule>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+            </Events>
+        </Button>
+        <Form column="2" dataset="connectords" rowHeight="28" eleWidth="120" labelMinWidth="0" caption="连接器" withForm="false" renderType="2" readOnly="false" isEllipsis="false" isVisible="true" enabled="true" id="form_conn">
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="连接器id" labelPos="left_l" editorType="StringText" dataType="String" field="Id" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="Id"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="连接类型" labelPos="left_l" editorType="StringText" dataType="String" field="ConnType" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="ConnType"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="输出window" labelPos="left_l" editorType="ComboBox" dataType="String" field="sourceWindow" refComboData="outPageList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="sourceWindow"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="输出view" labelPos="left_l" editorType="ComboBox" dataType="String" field="Source" refComboData="outViewList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="Source"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="pipeout" labelPos="left_l" editorType="ComboBox" dataType="String" field="PipeoutId" refComboData="pipeoutList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="PipeoutId"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="接收window" labelPos="left_l" editorType="ComboBox" dataType="String" field="targetWindow" refComboData="inPageList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="targetWindow"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="接收view" labelPos="left_l" editorType="ComboBox" dataType="String" field="Target" refComboData="inViewList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="Target"/>
+            <Element rowSpan="1" colSpan="1" width="" height="24" text="pipein" labelPos="left_l" editorType="ComboBox" dataType="String" field="PipeinId" refComboData="pipeinList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="" isVisible="true" enabled="true" id="PipeinId"/>
+        </Form>
+    </Controls>
+    <Menus>
+        <MenuBar isVisible="true" enabled="true" id="connmenu">
+            <MenuItem text="增加" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="conn_menuitem_new">
+                <Events>
+                    <Event eventName="onclick" method="onclickNew" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2">
+                        <SubmitRule cardSubmit="false">
+                            <ViewPartRule id="connector">
+                                <DatasetRule id="mapds">ds_current_line</DatasetRule>
+                            </ViewPartRule>
+                            <Params/>
+                        </SubmitRule>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem text="删除" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="conn_menuitem_delete">
+                <Events>
+                    <Event eventName="onclick" method="onclickDel" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1"/>
+                </Events>
+            </MenuItem>
+        </MenuBar>
+    </Menus>
+    <PipeIns>
+        <PipeIn id="refOkPlugin">
+            <PipeInItem id="type" clazztype="java.lang.String"/>
+            <PipeInItem id="id" clazztype="java.lang.String"/>
+            <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+        </PipeIn>
+    </PipeIns>
+</ViewPart>

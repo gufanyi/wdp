@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" refId="uistate" id="uistate" controller="xap.lui.psn.uistate.TopUistateCtrl">
+	<DataModels>
+       <Dataset id="stateds" isEdit="false" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="true" isPK="" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="" text="name" />
+				<Field id="type" dataType="String" isRequire="true" isPK="" text="type" />
+				<Field id="pid" dataType="String" isRequire="true" isPK="" text="pid" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="uistate">
+							<DatasetRule id="stateds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onStatedsAfterRowSelect" eventName="onAfterRowSelect" onserver="true">
+					<Action></Action>
+				</Event>
+			</Events>
+		</Dataset>
+		<RefNodes>
+		</RefNodes>
+	</DataModels>
+	<Controls>
+       <Tree id="statetree" isEdit="" checkboxType="" isDrag="false" enabled="true" text="" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="true">
+			<RecursiveTree id="level5" dataset="stateds" contextMenu="stateTreeContextMenu" labelFields="name" masterField="id" recursiveField="id" recursiveParentField="pid" />
+		</Tree>
+	</Controls>
+	<Containers />
+	<Menus>
+       <ContextMenu id="stateTreeContextMenu">
+	   </ContextMenu>
+    </Menus>
+</ViewPart>

@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" refId="setting"   id="setting">
+	<DataModels>
+		<Dataset id="ds_middle" isEdit="true" isLazyLoad="true" pageSize="">
+			<Fields>
+				<Field id="string_ext1" dataType="String" isRequire="true" isPK="" text="string_ext1" />
+				<Field id="string_ext2" dataType="String" isRequire="true" isPK="" text="string_ext2" />
+				<Field id="string_ext3" dataType="String" isRequire="true" isPK="" text="string_ext3" />
+				<Field id="string_ext4" dataType="String" isRequire="true" isPK="" text="string_ext4" />
+				<Field id="string_ext5" dataType="String" isRequire="true" isPK="" text="string_ext5" />
+				<Field id="string_ext6" dataType="String" isRequire="true" isPK="" text="string_ext6" />
+				<Field id="string_ext7" dataType="String" isRequire="true" isPK="" text="string_ext7" />
+				<Field id="string_ext8" dataType="String" isRequire="true" isPK="" text="string_ext8" />
+				<Field id="string_ext9" dataType="String" isRequire="true" isPK="" text="string_ext9" />
+				<Field id="string_ext10" dataType="String" isRequire="true" isPK="" text="string_ext10" />
+				<Field id="integer_ext1" dataType="Integer" isRequire="true" isPK="" text="integer_ext1" />
+				<Field id="integer_ext2" dataType="Integer" isRequire="true" isPK="" text="integer_ext2" />
+				<Field id="integer_ext3" dataType="Integer" isRequire="true" isPK="" text="integer_ext3" />
+				<Field id="integer_ext4" dataType="Integer" isRequire="true" isPK="" text="integer_ext4" />
+				<Field id="integer_ext5" dataType="Integer" isRequire="true" isPK="" text="integer_ext5" />
+				<Field id="integer_ext6" dataType="Integer" isRequire="true" isPK="" text="integer_ext6" />
+				<Field id="integer_ext7" dataType="Integer" isRequire="true" isPK="" text="integer_ext7" />
+				<Field id="integer_ext8" dataType="Integer" isRequire="true" isPK="" text="integer_ext8" />
+				<Field id="integer_ext9" dataType="Integer" isRequire="true" isPK="" text="integer_ext9" />
+				<Field id="integer_ext10" dataType="Integer" isRequire="true" isPK="" text="integer_ext10" />
+				<Field id="combo_ext1" dataType="String" isRequire="true" isPK="" text="combo_ext1" />
+				<Field id="combo_ext2" dataType="String" isRequire="true" isPK="" text="combo_ext2" />
+				<Field id="combo_ext3" dataType="String" isRequire="true" isPK="" text="combo_ext3" />
+				<Field id="combo_ext4" dataType="String" isRequire="true" isPK="" text="combo_ext4" />
+				<Field id="combo_ext5" dataType="String" isRequire="true" isPK="" text="combo_ext5" />
+				<Field id="string_ext11" dataType="String" isRequire="true" isPK="" text="string_ext11" />
+				<Field id="string_ext12" dataType="String" isRequire="true" isPK="" text="string_ext12" />
+				<Field id="string_ext13" dataType="String" isRequire="true" isPK="" text="string_ext13" />
+				<Field id="string_ext14" dataType="String" isRequire="true" isPK="" text="string_ext14" />
+				<Field id="string_ext15" dataType="String" isRequire="true" isPK="" text="string_ext15" />
+				<Field id="string_ext16" dataType="String" isRequire="true" isPK="" text="string_ext16" />
+				<Field id="string_ext17" dataType="String" isRequire="true" isPK="" text="string_ext17" />
+				<Field id="string_ext18" dataType="String" isRequire="true" isPK="" text="string_ext18" />
+				<Field id="string_ext19" dataType="String" isRequire="true" isPK="" text="string_ext19" />
+				<Field id="string_ext20" dataType="String" isRequire="true" isPK="" text="string_ext20" />
+				<Field id="comptype" dataType="String" isRequire="true" isPK="" text="comptype" />
+				<Field id="string_ext21" dataType="String" isRequire="true" isPK="" text="string_ext21" />
+				<Field id="combo_ext6" dataType="String" isRequire="true" isPK="" text="combo_ext6" />
+				<Field id="combo_ext7" dataType="String" isRequire="true" isPK="" text="combo_ext7" />
+				<Field id="combo_ext8" dataType="String" isRequire="true" isPK="" text="combo_ext8" />
+				<Field id="combo_ext9" dataType="String" isRequire="true" isPK="" text="combo_ext9" />
+				<Field id="combo_ext10" dataType="String" isRequire="true" isPK="" text="combo_ext10" />
+				<Field id="combo_ext11" dataType="String" isRequire="true" isPK="" text="combo_ext11" />
+				<Field id="combo_ext12" dataType="String" isRequire="true" isPK="" text="combo_ext12" />
+				<Field id="combo_ext13" dataType="String" isRequire="true" isPK="" text="combo_ext13" />
+				<Field id="combo_ext14" dataType="String" isRequire="true" isPK="" text="combo_ext14" />
+				<Field id="combo_ext15" dataType="String" isRequire="true" isPK="" text="combo_ext15" />
+				<Field id="string_ext22" dataType="String" isRequire="true" isPK="" text="string_ext22" />
+				<Field id="string_ext23" dataType="String" isRequire="true" isPK="" text="string_ext23" />
+				<Field id="string_ext24" dataType="String" isRequire="true" isPK="" text="string_ext24" />
+				<Field id="string_ext25" dataType="String" isRequire="true" isPK="" text="string_ext25" />
+				<Field id="ds_state" dataType="String" isRequire="true" isPK="" text="ds_state" />
+				<Field id="parentid" dataType="String" isRequire="true" isPK="" text="parentid" />
+				<Field id="childid" dataType="String" isRequire="true" isPK="" text="childid" />
+				<Field id="childtype" dataType="String" isRequire="true" isPK="" text="childtype" />
+				<Field id="string_ext26" dataType="String" isRequire="true" isPK="" text="string_ext26" />
+				<Field id="string_ext27" dataType="String" isRequire="true" isPK="" text="string_ext27" />
+				<Field id="string_ext28" dataType="String" isRequire="true" isPK="" text="string_ext28" />
+				<Field id="string_ext29" dataType="String" isRequire="true" isPK="" text="string_ext29" />
+				<Field id="string_ext30" dataType="String" isRequire="true" isPK="" text="string_ext30" />
+				<Field id="string_ext31" dataType="String" isRequire="true" isPK="" text="string_ext31" />
+				<Field id="string_ext32" dataType="String" isRequire="true" isPK="" text="string_ext32" />
+				<Field id="string_ext33" dataType="String" isRequire="true" isPK="" text="string_ext33" />
+				<Field id="string_ext34" dataType="String" isRequire="true" isPK="" text="string_ext34" />
+				<Field id="string_ext35" dataType="String" isRequire="true" isPK="" text="string_ext35" />
+				<Field id="ref_ext1" dataType="String" isRequire="true" isPK="" text="ref_ext1" />
+				<Field id="ref_ext2" dataType="String" isRequire="true" isPK="" text="ref_ext2" />
+				<Field id="ref_ext3" dataType="String" isRequire="true" isPK="" text="ref_ext3" />
+				<Field id="ref_ext4" dataType="String" isRequire="true" isPK="" text="ref_ext4" />
+				<Field id="ref_ext5" dataType="String" isRequire="true" isPK="" text="ref_ext5" />
+				<Field id="ref_ext6" dataType="String" isRequire="true" isPK="" text="ref_ext6" />
+				<Field id="combo_ext16" dataType="String" isRequire="true" isPK="" text="combo_ext16" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  method="onAfterDataChange" controller="xap.lui.psn.setting.PaSettingDsListener" eventName="onAfterDataChange" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="settings">
+							<DatasetRule id="ds_middle">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Dataset>
+		
+		<Dataset caption="ds_chart_option" isEdit="true" pageSize="-1" id="ds_chart_option" isLazyLoad="false">
+			<Fields>
+				<Field dataType="String" id="Id" isRequire="true" isPK="false" text="Id">
+				</Field>
+				<Field dataType="String" id="eleId" isRequire="true" isPK="false" text="eleId">
+				</Field>
+				<Field dataType="String" id="uiId" isRequire="true" isPK="false" text="uiId">
+				</Field>
+				<Field dataType="String" id="subEleId" isRequire="true" isPK="false" text="subEleId">
+				</Field>
+				<Field dataType="String" id="subuiId" isRequire="true" isPK="false" text="subuiId">
+				</Field>
+				<Field dataType="String" id="widgetId" isRequire="true" isPK="false" text="widgetId">
+				</Field>
+				<Field dataType="String" id="type" isRequire="true" isPK="false" text="type">
+				</Field>
+				<Field dataType="String" id="colIndex" isRequire="true" isPK="false" text="colIndex">
+				</Field>
+				<Field dataType="String" id="rowIndex" isRequire="true" isPK="false" text="rowIndex">
+				</Field>
+				<Field dataType="String" id="Pid" isRequire="true" isPK="false" text="Pid">
+				</Field>
+				<Field dataType="String" id="Name" isRequire="true" isPK="false" text="Name">
+				</Field>
+				<Field dataType="String" id="ParamValue" isRequire="true" isPK="false" text="ParamValue">
+				</Field>
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  method="onAfterChartOptionDataChange" controller="xap.lui.psn.setting.PaSettingDsListener" eventName="onAfterDataChange" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="settings">
+							<DatasetRule id="ds_chart_option">ds_all_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="datasetCellEvent" value="" />
+					</Params>
+					<Action />
+				</Event>
+			</Events>
+		</Dataset>
+		
+		<Dataset caption="ds_event" isEdit="true" pageSize="-1" id="ds_event" isLazyLoad="false">
+			<Fields>
+				<Field dataType="String" id="Id" isRequire="true" isPK="false" text="Id">
+				</Field>
+				<Field dataType="String" id="eleId" isRequire="true" isPK="false" text="eleId">
+				</Field>
+				<Field dataType="String" id="uiId" isRequire="true" isPK="false" text="uiId">
+				</Field>
+				<Field dataType="String" id="subEleId" isRequire="true" isPK="false" text="subEleId">
+				</Field>
+				<Field dataType="String" id="subuiId" isRequire="true" isPK="false" text="subuiId">
+				</Field>
+				<Field dataType="String" id="widgetId" isRequire="true" isPK="false" text="widgetId">
+				</Field>
+				<Field dataType="String" id="type" isRequire="true" isPK="false" text="type">
+				</Field>
+				<Field dataType="String" id="colIndex" isRequire="true" isPK="false" text="colIndex">
+				</Field>
+				<Field dataType="String" id="rowIndex" isRequire="true" isPK="false" text="rowIndex">
+				</Field>
+				<Field dataType="String" id="Pid" isRequire="true" isPK="false" text="Pid">
+				</Field>
+				<Field dataType="String" id="Name" isRequire="true" isPK="false" text="Name">
+				</Field>
+				<Field dataType="String" id="ParamValue" isRequire="true" isPK="false" text="ParamValue">
+				</Field>
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  method="onAfterEventDataChange" controller="xap.lui.psn.setting.PaSettingDsListener" eventName="onAfterDataChange" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="settings">
+							<DatasetRule id="ds_event">ds_all_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="datasetCellEvent" value="" />
+					</Params>
+					<Action />
+				</Event>
+			</Events>
+		</Dataset>
+		
+		<Dataset isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="ds_pipein" id="ds_pipein">
+            <Fields>
+                <Field id="Id" text="Id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Pid" text="Pid" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Name" text="Name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Value" text="Value" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <Events>
+            </Events>
+        </Dataset>	
+		<Dataset isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="ds_pipeout" id="ds_pipeout">
+            <Fields>
+                <Field id="Id" text="Id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Pid" text="Pid" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Name" text="Name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Value" text="Value" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+             <Events/>
+        </Dataset>	
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="ds_connector" id="ds_connector">
+            <Fields>
+                <Field id="Id" text="Id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Pid" text="Pid" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Name" text="Name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Value" text="Value" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+             <Events/>
+        </Dataset>
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_param" id="ds_param">
+            <Fields>
+                <Field id="Name" text="Name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Value" text="Value" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <Events>
+			</Events>
+        </Dataset>
+			
+		<DataList id="align">
+			<DataItem text="left" value="left" />
+			<DataItem text="center" value="center" />
+			<DataItem text="right" value="right" />
+		</DataList>
+		<DataList id="combo_ext16" />
+		<DataList id="combo_ext10" />
+		<DataList id="combo_ext9" />
+		<DataList id="combo_ext15" />
+		<DataList id="combo_ext8" />
+		<DataList id="positions">
+			<DataItem text="relative" value="relative" />
+			<DataItem text="positive" value="positive" />
+		</DataList>
+		<DataList id="combo_ext11" />
+		<DataList id="combo_ext12" />
+		<DataList id="combo_ext13" />
+		<DataList id="combo_ext14" />
+		<DataList id="combo_ext1" />
+		<DataList id="combo_ext3" />
+		<DataList id="combo_ext2" />
+		<DataList id="combo_ext5" />
+		<DataList id="combo_ext4" />
+		<DataList id="combo_ext7" />
+		<DataList id="combo_ext6" />
+		<DataList id="booleanValue">
+			<DataItem  text="true" value="true">
+			</DataItem>
+			<DataItem  text="false" value="false">
+			</DataItem>                
+		</DataList>
+		<DataList id="model">
+			 <DataItem  text="LuiAddRowCmd" value="LuiAddRowCmd"></DataItem>
+			 <DataItem  text="LuiAddViewCmd" value="LuiAddViewCmd"></DataItem>    
+             <DataItem  text="LuiAddCardLayoutCmd" value="LuiAddCardLayoutCmd"></DataItem> 
+             <DataItem  text="LuiEditRowCmd" value="LuiEditRowCmd"></DataItem>
+			 <DataItem  text="LuiEditViewCmd" value="LuiEditViewCmd"></DataItem> 
+             <DataItem  text="LuiEditCardLayoutCmd" value="LuiEditCardLayoutCmd"></DataItem> 
+             <DataItem  text="LuiDelAggDOCmd" value="LuiDelAggDOCmd"></DataItem> 
+             <DataItem  text="LuiDelTreeCmd" value="LuiDelTreeCmd"></DataItem>  
+			 <DataItem  text="LuiDelBaseDOCmd" value="LuiDelBaseDOCmd"></DataItem>     
+		     <DataItem  text="LuiSaveCmd" value="LuiSaveCmd"></DataItem>  
+		     <DataItem  text="LuiSavePopUpCmd" value="LuiSavePopUpCmd"></DataItem>  
+			 <DataItem  text="LuiSaveAggCmd" value="LuiSaveAggCmd"></DataItem> 
+			 <DataItem  text="LuiCardSaveDOCmd" value="LuiCardSaveDOCmd"></DataItem> 
+			 <DataItem  text="LuiCardSaveCmdForAgg" value="LuiCardSaveCmdForAgg"></DataItem> 
+			 <DataItem  text="LuiCancelCmd" value="LuiCancelCmd"></DataItem>
+			 <DataItem  text="LuiCancelCardLayoutCmd" value="LuiCancelCardLayoutCmd"></DataItem> 
+			 <DataItem  text="LuiDatasetLoadCmd" value="LuiDatasetLoadCmd"></DataItem>  
+			 <DataItem  text="LuiFormLoadCmd" value="LuiFormLoadCmd"></DataItem>            
+			 <DataItem  text="LuiDatasetAfterSelectCmd" value="LuiDatasetAfterSelectCmd"></DataItem>
+			 <DataItem  text="LuiRemoveRowCmd" value="LuiRemoveRowCmd"></DataItem>
+			 <DataItem  text="LuiOkClickCmd" value="LuiOkClickCmd"></DataItem>
+			 <DataItem  text="LuiOpenViewCmd" value="LuiOpenViewCmd"></DataItem>  
+			 <DataItem  text="LuiCloseViewCmd" value="LuiCloseViewCmd"></DataItem>  
+			 <DataItem  text="LuiOpenWindowCmd" value="LuiOpenWindowCmd"></DataItem>  
+			 <DataItem  text="LuiWindowDestroyCmd" value="LuiWindowDestroyCmd"></DataItem>    
+		</DataList>
+		<DataList id="stateList">
+		</DataList>
+		<DataList id="eventlangList">
+			<DataItem  text="Java语言" value="Java语言">
+			</DataItem>
+			<DataItem  text="mvel脚本" value="mvel脚本">
+			</DataItem>       
+		</DataList>
+		<DataList id="dftwincombo">
+		</DataList>
+	
+		<RefNodes>
+			<SelfRefNode id="ref_ext1" dialog="true" height="" i18nName="" isDialog="true" isRefresh="true" langDir="" path="" refresh="true" text="" width="" />
+			<SelfRefNode id="ref_ext2" dialog="true" height="" i18nName="" isDialog="true" isRefresh="true" langDir="" path="" refresh="true" text="" width="" />
+			<SelfRefNode id="ref_ext3" dialog="true" height="" i18nName="" isDialog="true" isRefresh="true" langDir="" path="" refresh="true" text="" width="" />
+			<SelfRefNode id="ref_ext4" dialog="true" height="" i18nName="" isDialog="true" isRefresh="true" langDir="" path="" refresh="true" text="" width="" />
+			<SelfRefNode id="ref_ext5" dialog="true" height="" i18nName="" isDialog="true" isRefresh="true" langDir="" path="" refresh="true" text="" width="" />
+			<SelfRefNode id="ref_ext6" dialog="true" height="" i18nName="" isDialog="true" isRefresh="true" langDir="" path="" refresh="true" text="" width="" />
+			
+			<SelfRefNode height="560" width="540" id="refnode_rule" path="/portal/app/mockapp/commitrule" title="提交规则"></SelfRefNode>
+			<SelfRefNode height="650" width="1000" id="refnode_mvel" path="/portal/app/mockapp/formula?model=xap.lui.psn.formula.DesignerFormulaPageModel&amp;ctrl=xap.lui.psn.formula.DesignerFormulaController&amp;wherefrom=designer" title="mvel脚本"></SelfRefNode>
+		</RefNodes>
+	</DataModels>
+	<Controls>
+		<Form id="adhintform" caption="" column="1" dataset="ds_middle" eleWidth="80" isEllipsis="" enabled="true" labelMinWidth="0" renderType="2" rowHeight="26" isVisible="true">
+			<Element id="string_ext1" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext1" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext1" isVisible="false" width="" />
+			<Element id="string_ext2" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext2" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext2" isVisible="false" width="" />
+			<Element id="string_ext3" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext3" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext3" isVisible="false" width="" />
+			<Element id="ref_ext1" refNode="ref_ext1" colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="ref_ext1" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="" isVisible="false" width="" />
+			<Element id="ref_ext2" refNode="ref_ext2" colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="ref_ext2" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="" isVisible="false" width="" />
+			<Element id="string_ext4" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext4" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext4" isVisible="false" width="" />
+			<Element id="string_ext5" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext5" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext5" isVisible="false" width="" />
+			<Element id="string_ext6" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext6" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext6" isVisible="false" width="" />
+			<Element id="string_ext7" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext7" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext7" isVisible="false" width="" />
+			<Element id="string_ext8" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext8" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext8" isVisible="false" width="" />
+			<Element id="string_ext9" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext9" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext9" isVisible="false" width="" />
+			<Element id="string_ext10" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext10" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext10" isVisible="false" width="" />
+			<Element id="string_ext11" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext11" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext11" isVisible="false" width="" />
+			<Element id="string_ext12" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext12" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext12" isVisible="false" width="" />
+			<Element id="string_ext13" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext13" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext13" isVisible="false" width="" />
+			<Element id="string_ext14" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext14" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext14" isVisible="false" width="" />
+			<Element id="string_ext15" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext15" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext15" isVisible="false" width="" />
+			<Element id="integer_ext1" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext1" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext1" isVisible="false" width="" />
+			<Element id="integer_ext2" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext2" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext2" isVisible="false" width="" />
+			<Element id="integer_ext3" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext3" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext3" isVisible="false" width="" />
+			<Element id="integer_ext4" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext4" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext4" isVisible="false" width="" />
+			<Element id="integer_ext5" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext5" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext5" isVisible="false" width="" />
+			<Element id="integer_ext6" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext6" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext6" isVisible="false" width="" />
+			<Element id="integer_ext7" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext7" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext7" isVisible="false" width="" />
+			<Element id="integer_ext8" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext8" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext8" isVisible="false" width="" />
+			<Element id="integer_ext9" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext9" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext9" isVisible="false" width="" />
+			<Element id="integer_ext10" colSpan="1" dataType="" isEdit="true" editorType="IntegerText" field="integer_ext10" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="integer_ext10" isVisible="false" width="" />
+			<Element id="combo_ext1" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext1" field="combo_ext1" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext1" isVisible="false" width="" />
+			<Element id="combo_ext2" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext2" field="combo_ext2" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext2" isVisible="false" width="" />
+			<Element id="combo_ext3" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext3" field="combo_ext3" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext3" isVisible="false" width="" />
+			<Element id="combo_ext4" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext4" field="combo_ext4" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext4" isVisible="false" width="" />
+			<Element id="combo_ext5" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext5" field="combo_ext5" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext5" isVisible="false" width="" />
+			<Element id="combo_ext6" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext6" field="combo_ext6" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext6" isVisible="false" width="" />
+			<Element id="combo_ext7" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext7" field="combo_ext7" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext7" isVisible="false" width="" />
+			<Element id="combo_ext8" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext8" field="combo_ext8" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext8" isVisible="false" width="" />
+			<Element id="combo_ext9" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext9" field="combo_ext9" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext9" isVisible="false" width="" />
+			<Element id="combo_ext10" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext10" field="combo_ext10" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext10" isVisible="false" width="" />
+			<Element id="combo_ext11" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext11" field="combo_ext11" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext11" isVisible="false" width="" />
+			<Element id="combo_ext12" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext12" field="combo_ext12" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext12" isVisible="false" width="" />
+			<Element id="combo_ext13" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext13" field="combo_ext13" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext13" isVisible="false" width="" />
+			<Element id="combo_ext14" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext14" field="combo_ext14" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext14" isVisible="false" width="" />
+			<Element id="combo_ext15" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext15" field="combo_ext15" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext15" isVisible="false" width="" />
+			<Element id="string_ext16" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext16" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext16" isVisible="false" width="" />
+			<Element id="string_ext17" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext17" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext17" isVisible="false" width="" />
+			<Element id="string_ext18" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext18" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext18" isVisible="false" width="" />
+			<Element id="string_ext19" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext19" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext19" isVisible="false" width="" />
+			<Element id="string_ext20" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext20" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext20" isVisible="false" width="" />
+			<Element id="string_ext21" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext21" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext21" isVisible="false" width="" />
+			<Element id="comptype" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="comptype" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="comptype" isVisible="false" width="" />
+			<Element id="string_ext22" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext22" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext22" isVisible="false" width="" />
+			<Element id="string_ext23" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext23" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext23" isVisible="false" width="" />
+			<Element id="string_ext24" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext24" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext24" isVisible="false" width="" />
+			<Element id="string_ext25" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext25" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext25" isVisible="false" width="" />
+			<Element id="ds_state" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="ds_state" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="ds_state" isVisible="false" width="" />
+			<Element id="parentid" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="parentid" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="parentid" isVisible="false" width="" />
+			<Element id="childid" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="childid" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="childid" isVisible="false" width="" />
+			<Element id="childtype" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="childtype" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="childtype" isVisible="false" width="" />
+			<Element id="string_ext26" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext26" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext26" isVisible="false" width="" />
+			<Element id="string_ext27" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext27" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext27" isVisible="false" width="" />
+			<Element id="string_ext28" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext28" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext28" isVisible="false" width="" />
+			<Element id="string_ext29" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext29" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext29" isVisible="false" width="" />
+			<Element id="string_ext30" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext30" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext30" isVisible="false" width="" />
+			<Element id="string_ext31" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext31" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext31" isVisible="false" width="" />
+			<Element id="string_ext32" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext32" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext32" isVisible="false" width="" />
+			<Element id="string_ext33" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext33" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext33" isVisible="false" width="" />
+			<Element id="string_ext34" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext34" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext34" isVisible="false" width="" />
+			<Element id="string_ext35" colSpan="1" dataType="" isEdit="true" editorType="StringText" field="string_ext35" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="string_ext35" isVisible="false" width="" />
+			<Element id="ref_ext3" refNode="ref_ext3" colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="ref_ext3" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="" isVisible="false" width="" />
+			<Element id="ref_ext4" refNode="ref_ext4" colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="ref_ext4" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="" isVisible="false" width="" />
+			<Element id="ref_ext5" refNode="ref_ext5" colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="ref_ext5" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="" isVisible="false" width="" />
+			<Element id="ref_ext6" refNode="ref_ext6"  colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="ref_ext6" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="" isVisible="false" width="" />
+			<Element id="combo_ext16" colSpan="1" dataType="" isEdit="true" editorType="ComboBox" refComboData="combo_ext16" field="combo_ext16" height="22" isRequire="true" rowSpan="1" isOnlySelect="true" text="combo_ext16" isVisible="false" width="" />
+		</Form>
+		<Grid isFitRowHeight="false" isAllowMouseoverChange="true" isShowTip="false" isCopy="true" dataset="ds_chart_option" isEdit="true" enabled="true" isExpandTree="false" id="grid_chart_option" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="true" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column isFitWidth="true" dataType="String" isEdit="false" editorType="StringText" field="Name" isFixed="false" id="Name" isRequire="true" renderType="DefaultRender" isSort="true" text="名称" align="left" isVisible="true">
+			</Column>
+			<Column isFitWidth="true" dataType="String" isEdit="true" editorType="StringText" field="ParamValue" isFixed="false" id="ParamValue" isRequire="true" renderType="DefaultRender" isSort="true" text="参数值" align="left" isVisible="true">
+			</Column>
+			<RecursiveGrid dataset="ds_chart_option" id="level1" labelFields="Name" recursiveField="Id" recursiveParentField="Pid">
+			</RecursiveGrid>
+		</Grid>
+		<Grid isFitRowHeight="false" isAllowMouseoverChange="true" isShowTip="false" isCopy="true" dataset="ds_event" isEdit="true" enabled="true" isExpandTree="false" id="grid_event" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="true" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column isFitWidth="true" dataType="String" isEdit="false" editorType="StringText" field="Name" isFixed="false" id="Name" isRequire="true" renderType="DefaultRender" isSort="true" text="名称" align="left" isVisible="true">
+			</Column>
+			<Column isFitWidth="true" dataType="String" isEdit="true" editorType="StringText,ComboBox,ComboBox,Reference,ComboBox,ComboBox,Reference" field="ParamValue" isFixed="false" id="ParamValue" isRequire="true" renderType="DefaultRender" isSort="true" text="参数值" align="left" isVisible="true">
+			</Column>
+			<RecursiveGrid dataset="ds_event" id="level1" labelFields="Name" recursiveField="Id" recursiveParentField="Pid">
+			</RecursiveGrid>
+		</Grid>
+		<Grid dataset="ds_pipein" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="Id,Pid,Clazztype" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true" id="grid_pipein">
+            <Column id="Name" field="Name" text="名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="false" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+            <Column id="Value" field="Value" text="值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+        	<RecursiveGrid dataset="ds_pipein" id="level1" labelFields="Name" recursiveField="Id" recursiveParentField="Pid">
+			</RecursiveGrid>
+        </Grid>
+        <Grid id="grid_pipeout" dataset="ds_pipeout" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true">
+            <Column id="Name" field="Name" text="名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="false" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+            <Column id="Value" field="Value" text="值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+        	<RecursiveGrid dataset="ds_pipeout" id="level1" labelFields="Name" recursiveField="Id" recursiveParentField="Pid">
+			</RecursiveGrid>
+        </Grid>
+        <Grid id="grid_connector" dataset="ds_connector" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true">
+            <Column id="Name" field="Name" text="名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="false" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+            <Column id="Value" field="Value" text="值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+        	<RecursiveGrid dataset="ds_connector" id="level1" labelFields="Name" recursiveField="Id" recursiveParentField="Pid">
+			</RecursiveGrid>
+        </Grid>
+        <Grid id="grid_param" dataset="ds_param" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true">
+            <Column id="Name" field="Name" text="键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+            <Column id="Value" field="Value" text="值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+        </Grid>
+		<ComboBox id="dftwin" refComboData="dftwincombo" isVisible="true" enabled="true" readOnly="false" editorType="ComboBox" text="默认窗口" focus="false" align="left" textWidth="0" showMark="false" isRequired="false" isShowlabel="true" imageOnly="false" isOnlySelect="true" isAllowExtendValue="false" visibleOptionsNum="10" multiple="false" multiSplitChar=",">
+			<Events>
+				<Event eventName="valueChanged" method="comboValueChanged" controller="xap.lui.psn.pamgr.PaAppDsListener" onserver="true" async="true" nmc="true" eventType="TextEvent" eventStatus="1">
+				</Event>
+			</Events>
+		</ComboBox>
+	</Controls>
+	<Containers />
+	<Menus>
+        <MenuBar isVisible="true" enabled="true" id="menubar_pipe">
+            <MenuItem text="" tip="新增" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_pipe_menuitem_new">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickAddPipeSetting" eventName="onclick" controller="xap.lui.psn.setting.PaSettingDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="settings">
+							    <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="" tip="修改" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="edit.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/edit.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_pipe_menuitem_edit">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickEditPipeSetting" eventName="onclick" controller="xap.lui.psn.setting.PaSettingDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="settings">
+							    <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="" tip="删除" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_pipe_menuitem_delete">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickDelPipeSetting" eventName="onclick" controller="xap.lui.psn.setting.PaSettingDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="settings">
+							    <DatasetRule id="ds_pipein">ds_all_line</DatasetRule> 
+							    <DatasetRule id="ds_pipeout">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="" >
+							</Param>
+						</Params>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+            </MenuItem>
+        </MenuBar>
+        
+        <MenuBar isVisible="true" enabled="true" id="menubar_param">
+            <MenuItem text="" tip="新增" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_param_new">
+            	<Events>
+            		<Event async="true" eventType="MouseEvent" method="onclickAddParam" eventName="onclick" controller="xap.lui.psn.setting.PaParamDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="settings">
+							    <DatasetRule id="ds_param">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params/>
+						<Action/>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="" tip="修改" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="edit.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/edit.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_conn_menuitem_edit">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickEditParam" eventName="onclick" controller="xap.lui.psn.setting.PaParamDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="settings">
+							    <DatasetRule id="ds_param">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params/>
+						<Action/>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="" tip="删除" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_param_delete">
+            	<Events>
+            		<Event async="true" eventType="MouseEvent" method="onclickDelParam" eventName="onclick" controller="xap.lui.psn.setting.PaParamDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="settings">
+							    <DatasetRule id="ds_param">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params/>
+						<Action/>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="保存" tip="保存" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="save.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/save.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_param_save">
+            	<Events>
+					<Event eventName="onclick" method="onClickSave" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" controller="xap.lui.psn.setting.PaParamDsListener" eventStatus="1" uistateId="editstate">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="settings">
+								<DatasetRule id="ds_param">ds_all_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+					</Event>
+				</Events>
+            </MenuItem>
+        </MenuBar>
+    </Menus>
+</ViewPart>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="pipeout_um" isFlow="false" jquery="0">
+    <FlowVLayout id="flowvlayout4621" widgetId="pipeout">
+        <FlowVPanel height="40" id="panelv04621" topPadding="20" widgetId="pipeout">
+            <FlowHLayout id="flowhlayout5972" isAutoFill="false" widgetId="pipeout">
+                <FlowHPanel id="panelh05972" widgetId="pipeout" width="80">
+                    <Label align="left" cssStyle="" family="" height="28" id="pipeout_label" left="10" position="relative" size="12" style="" textAlign="left" top="0" widgetId="pipeout" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh15972" widgetId="pipeout">
+                    <TextField height="28" id="pipeout_strtext" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="pipeout" width="120">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="flowvpanel14068" widgetId="pipeout">
+            <FlowHLayout id="flowhlayout3674" isAutoFill="false" widgetId="pipeout">
+                <FlowHPanel id="panelh03674" topPadding="5" widgetId="pipeout">
+                    <Label align="left" cssStyle="" family="" height="28" id="label_outitem" left="0" position="relative" size="12" style="" textAlign="left" top="0" widgetId="pipeout" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh13674" widgetId="pipeout">
+                </FlowHPanel>
+                <FlowHPanel id="panelh23674" topBorder="10" topPadding="5" widgetId="pipeout">
+                    <MenuBar height="100%" id="menubar_outitem" left="0" position="relative" top="0" widgetId="pipeout" width="100%">
+                    </MenuBar>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel id="flowvpanel17592" widgetId="pipeout">
+            <Grid height="100%" id="grid_outitem" left="0" position="relative" top="0" widgetId="pipeout" width="100%">
+            </Grid>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="flowvpanel13610" widgetId="pipeout">
+            <FlowHLayout id="flowhlayout5192" isAutoFill="false" widgetId="pipeout">
+                <FlowHPanel id="panelh05192" topPadding="5" widgetId="pipeout">
+                    <Label cssStyle="" family="" height="28" id="label_trigger" left="0" position="relative" size="12" style="" textAlign="left" top="0" widgetId="pipeout" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh15192" widgetId="pipeout">
+                </FlowHPanel>
+                <FlowHPanel id="panelh25192" topPadding="5" widgetId="pipeout">
+                    <MenuBar height="100%" id="menubar_trigger" left="0" position="relative" top="0" widgetId="pipeout" width="100%">
+                    </MenuBar>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel id="panelv14621" widgetId="pipeout">
+            <Grid height="100%" id="grid_trigger" left="0" position="relative" top="0" widgetId="pipeout" width="100%">
+            </Grid>
+        </FlowVPanel>
+        <FlowVPanel height="30" id="flowvpanel14502" widgetId="pipeout">
+            <FlowHLayout id="flowhlayout9494" isAutoFill="false" widgetId="pipeout">
+                <FlowHPanel id="panelh09494" rightPadding="5" widgetId="pipeout">
+                    <Button align="right" height="24" id="outbtn_confirm" left="0" position="relative" top="0" widgetId="pipeout" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh19494" leftPadding="5" widgetId="pipeout">
+                    <Button height="24" id="outbtn_cancel" left="0" position="relative" top="0" widgetId="pipeout" width="64">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

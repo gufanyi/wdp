@@ -1,0 +1,616 @@
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+	<HEAD>
+		<TITLE>CSS样式编辑器</TITLE>
+		<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+		<META content=IE=7 http-equiv=X-UA-Compatible>
+		<LINK rel=stylesheet type=text/css href="/portal/lui/nodes/pa/pa.csseditor.css">
+		<META name=GENERATOR content="MSHTML 8.00.6001.19154">
+	</HEAD>
+<BODY>
+<SCRIPT type=text/javascript src="/portal/lui/nodes/pa/pa.csseditor.js"></SCRIPT>
+<script>
+
+</script>
+<TABLE class=QrCSSDesignerPad border=0 cellSpacing=1 cellPadding=1 summary="" align="left">
+  <tr>
+  <td width="50%" valign="top">
+    <table>
+	<TBODY>
+        <TR>
+          <TD width=20></TD>
+          <TD class=QrCSSDesignerPadLeft>字体颜色：</TD>
+          <TD>
+            <SCRIPT language=javascript type=text/javascript>
+            <!--//
+                var cp = new QrColorPicker("字体颜色");
+                cp.render();
+                connectCSS(cp,"color");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>背景颜色：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+            	var cp = new QrColorPicker("背景颜色");
+             	cp.render();
+             	connectCSS(cp,"background-color");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR>
+          <TD colSpan=3 align=middle>
+            <HR color=#a5bac6 SIZE=1 width="100%">
+          </TD>
+        </TR>        
+        <TR>
+          <TD><IMG id=border-width#switch onclick="collapseSwitch('border-width');" src="images/arrowclose.gif" alt=""></TD>
+          <TD class=QrCSSDesignerPadLeft>边框宽度：</TD>
+          <TD>
+          <SPAN id=border-width>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initBWValue = "边框宽度";
+				if(initBWValue.indexOf("px")>0){
+					initBWValue = initBWValue.substring(0,initBWValue.length-2);
+				}
+                var pl = new QrSpinner(initBWValue);
+                pl.render();
+                var override = new Array;
+                override["border-top-width"]   = "";
+                override["border-left-width"]   = "";
+                override["border-right-width"]   = "";
+                override["border-bottom-width"]   = "";
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"border-width",override);
+            -->
+            </SCRIPT>
+            </SPAN>
+            </TD>
+          </TR>
+        <TR style="DISPLAY: none" id=border-top-width>
+          <TD></TD>
+          <TD class=QrimagesPadLeft>上边宽度：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initBTWValue = "上边宽度";
+				if(initBTWValue.indexOf("px")>0){
+					initBTWValue = initBTWValue.substring(0,initBTWValue.length-2);
+				}
+                var pl = new QrSpinner(initBTWValue);
+                pl.render();
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"border-top-width");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-left-width>
+          <TD></TD>
+          <TD class=QrimagesPadLeft>左边宽度：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initBLWValue = "左边宽度";
+				if(initBLWValue.indexOf("px")>0){
+					initBLWValue = initBLWValue.substring(0,initBLWValue.length-2);
+				}
+                var pl = new QrSpinner(initBLWValue);
+                pl.render();
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"border-left-width");
+            -->
+            </SCRIPT>
+          </TD></TR>
+        <TR style="DISPLAY: none" id=border-right-width>
+          <TD></TD>
+          <TD class=QrimagesPadLeft>右边宽度：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initBRWValue = "右边宽度";
+				if(initBRWValue.indexOf("px")>0){
+					initBRWValue = initBRWValue.substring(0,initBRWValue.length-2);
+				}
+                var pl = new QrSpinner(initBRWValue);
+                pl.render();
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"border-right-width");
+            -->
+            </SCRIPT>
+          </TD></TR>
+        <TR style="DISPLAY: none" id=border-bottom-width>
+          <TD></TD>
+          <TD class=QrimagesPadLeft>底边宽度：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initBTWValue = "底边宽度";
+				if(initBTWValue.indexOf("px")>0){
+					initBTWValue = initBTWValue.substring(0,initBTWValue.length-2);
+				}
+                var pl = new QrSpinner(initBTWValue);
+                pl.render();
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"border-bottom-width");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR>
+          <TD><IMG id=border-color#switch onclick="collapseSwitch('border-color');" src="images/arrowclose.gif" alt=""></TD>
+          <TD class=QrimagesPadLeft>边框颜色：</TD>
+          <TD>
+            <SPAN id=border-color>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var cp = new QrColorPicker("边框颜色");
+                cp.render();
+                var override = new Array;
+                override["border-top-color"]   = "";
+                override["border-left-color"]   = "";
+                override["border-right-color"]   = "";
+                override["border-bottom-color"]   = "";
+                connectCSS(cp,"border-color",override);
+            -->
+            </SCRIPT>
+            </SPAN>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-top-color>
+          <TD></TD>
+          <TD class=QrimagesPadLeft>上边颜色：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript><!--
+                                var cp = new QrColorPicker("边框颜色");
+                                cp.render();
+                                connectCSS(cp,"border-top-color");
+                                --></SCRIPT>
+          </TD></TR>
+        <TR style="DISPLAY: none" id=border-left-color>
+          <TD></TD>
+          <TD class=QrimagesPadLeft>左边颜色：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var cp = new QrColorPicker("左边颜色");
+                cp.render();
+                connectCSS(cp,"border-left-color");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-right-color>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>右边颜色：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var cp = new QrColorPicker("右边颜色");
+                cp.render();
+                connectCSS(cp,"border-right-color");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-bottom-color>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>底边颜色：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var cp = new QrColorPicker("底边颜色");
+                cp.render();
+                connectCSS(cp,"border-bottom-color");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR>
+          <TD><IMG id=border-style#switch onclick="collapseSwitch('border-style');" src="images/arrowclose.gif" alt=""></TD>
+          <TD class=QrCSSDesignerPadLeft>边框样式：</TD>
+          <TD>
+            <SPAN id=border-style>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var pl = new QrPulldown("边框样式");
+                pl.render();
+                function addStyle(style){
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:10px;height:10px;border-width:3px;border-style:"+style+";border-color:red' align='middle'/> "+style,style);
+                }
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:16px;height:16px;border-width:3px;border-style:none;border-color:red;' align='middle'/> none","none");
+                addStyle("solid");
+                addStyle("double");
+                addStyle("groove");
+                addStyle("ridge");
+                addStyle("inset");
+                addStyle("outset");
+                addStyle("dashed");
+                addStyle("dotted");
+                var override = new Array;
+                override["border-top-style"]   = "";
+                override["border-left-style"]   = "";
+                override["border-right-style"]   = "";
+                override["border-bottom-style"]   = "";
+                connectCSS(pl,"border-style", override);
+            -->
+            </SCRIPT>
+            </SPAN>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-top-style>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>上边样式：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var pl = new QrPulldown("上边样式");
+                pl.render();
+                function addStyle(style){
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:10px;height:10px;border-width:3px;border-style:"+style+";border-color:red' align='middle'/> "+style,style);
+                }
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:16px;height:16px;border-width:3px;border-style:none;border-color:red;' align='middle'/> none","none");
+                addStyle("solid");
+                addStyle("double");
+                addStyle("groove");
+                addStyle("ridge");
+                addStyle("inset");
+                addStyle("outset");
+                addStyle("dashed");
+                addStyle("dotted");
+                connectCSS(pl,"border-top-style");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-left-style>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>左边样式：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var pl = new QrPulldown("左边样式");
+                pl.render();
+                function addStyle(style){
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:10px;height:10px;border-width:3px;border-style:"+style+";border-color:red' align='middle'/> "+style,style);
+                }
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:16px;height:16px;border-width:3px;border-style:none;border-color:red;' align='middle'/> none","none");
+                addStyle("solid");
+                addStyle("double");
+                addStyle("groove");
+                addStyle("ridge");
+                addStyle("inset");
+                addStyle("outset");
+                addStyle("dashed");
+                addStyle("dotted");
+                connectCSS(pl,"border-left-style");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-right-style>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>右边样式：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var pl = new QrPulldown("右边样式");
+                pl.render();
+                function addStyle(style){
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:10px;height:10px;border-width:3px;border-style:"+style+";border-color:red' align='middle'/> "+style,style);
+                }
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:16px;height:16px;border-width:3px;border-style:none;border-color:red;' align='middle'/> none","none");
+                addStyle("solid");
+                addStyle("double");
+                addStyle("groove");
+                addStyle("ridge");
+                addStyle("inset");
+                addStyle("outset");
+                addStyle("dashed");
+                addStyle("dotted");
+                connectCSS(pl,"border-right-style");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=border-bottom-style>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>底边样式：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var pl = new QrPulldown("底边样式");
+                pl.render();
+                function addStyle(style){
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:10px;height:10px;border-width:3px;border-style:"+style+";border-color:red' align='middle'/> "+style,style);
+                }
+                    pl.addItem("<img src='images/transparentpixel.gif' style='width:16px;height:16px;border-width:3px;border-style:none;border-color:red;' align='middle'/> none","none");
+                addStyle("solid");
+                addStyle("double");
+                addStyle("groove");
+                addStyle("ridge");
+                addStyle("inset");
+                addStyle("outset");
+                addStyle("dashed");
+                addStyle("dotted");
+                connectCSS(pl,"border-bottom-style");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR>
+          <TD><IMG id=padding#switch onclick="collapseSwitch('padding');" src="images/arrowclose.gif"></TD>
+          <TD class=QrCSSDesignerPadLeft>内侧边距：</TD>
+          <TD>
+          <SPAN id=padding>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initPaddingValue = "内侧边距";
+				if(initPaddingValue.indexOf("px")>0){
+					initPaddingValue = initPaddingValue.substring(0,initPaddingValue.length-2);
+				}
+                var pl = new QrSpinner(initPaddingValue);
+                pl.render();
+                var override = new Array;
+                override["padding-top"]   = "";
+                override["padding-left"]   = "";
+                override["padding-right"]   = "";
+                override["padding-bottom"]   = "";
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+	            var tan = createTaniComponent();
+	            connectCSS2(pl,tan,"padding",override);
+            -->
+            </SCRIPT>
+          </SPAN>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=padding-top>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>上内边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initPaddingTValue = "上内边距";
+				if(initPaddingTValue.indexOf("px")>0){
+					initPaddingTValue = initPaddingTValue.substring(0,initPaddingTValue.length-2);
+				}
+                var pl = new QrSpinner(initPaddingTValue);
+	            pl.render();
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"padding-top");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=padding-left>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>左内边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initPaddingLValue = "左内边距";
+				if(initPaddingLValue.indexOf("px")>0){
+					initPaddingLValue = initPaddingLValue.substring(0,initPaddingLValue.length-2);
+				}
+                var pl = new QrSpinner(initPaddingLValue);
+                pl.render();
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+	            var tan = createTaniComponent();
+	            connectCSS2(pl,tan,"padding-left");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=padding-right>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>右内边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initPaddingRValue = "右内边距";
+				if(initPaddingRValue.indexOf("px")>0){
+					initPaddingRValue = initPaddingRValue.substring(0,initPaddingRValue.length-2);
+				}
+                var pl = new QrSpinner(initPaddingRValue);
+                pl.render();
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"padding-right");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=padding-bottom>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>底内边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initPaddingBValue = "底内边距";
+				if(initPaddingBValue.indexOf("px")>0){
+					initPaddingBValue = initPaddingBValue.substring(0,initPaddingBValue.length-2);
+				}
+                var pl = new QrSpinner(initPaddingBValue);
+                pl.render();
+            --></SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"padding-bottom");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR>
+          <TD><IMG id=margin#switch onclick="collapseSwitch('margin');" src="images/arrowclose.gif"></TD>
+          <TD class=QrCSSDesignerPadLeft>外侧边距：</TD>
+          <TD>
+            <SPAN id=margin>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initMValue = "外侧边距";
+				if(initMValue.indexOf("px")>0){
+					initMValue = initMValue.substring(0,initMValue.length-2);
+				}
+                var pl = new QrSpinner(initMValue);
+                pl.render();
+                var override = new Array;
+                override["margin-top"]   = "";
+                override["margin-left"]   = "";
+                override["margin-right"]   = "";
+                override["margin-bottom"]   = "";
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"margin",override);
+            -->
+            </SCRIPT>
+            </SPAN>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=margin-top>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>上外边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initMTValue = "上外边距";
+				if(initMTValue.indexOf("px")>0){
+					initMTValue = initMTValue.substring(0,initMTValue.length-2);
+				}
+                var pl = new QrSpinner(initMTValue);
+	            pl.render();
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+	            var tan = createTaniComponent();
+	            connectCSS2(pl,tan,"margin-top");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=margin-left>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>左外边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initMLValue = "左外边距";
+				if(initMLValue.indexOf("px")>0){
+					initMLValue = initMLValue.substring(0,initMLValue.length-2);
+				}
+                var pl = new QrSpinner(initMLValue);
+                pl.render();
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+	            var tan = createTaniComponent();
+	            connectCSS2(pl,tan,"margin-left");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=margin-right>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>右外边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initMRValue = "右外边距";
+				if(initMRValue.indexOf("px")>0){
+					initMRValue = initMRValue.substring(0,initMRValue.length-2);
+				}
+                var pl = new QrSpinner(initMRValue);
+	            pl.render();
+            -->
+            </SCRIPT>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"margin-right");
+             -->
+             </SCRIPT>
+          </TD>
+        </TR>
+        <TR style="DISPLAY: none" id=margin-bottom>
+          <TD></TD>
+          <TD class=QrCSSDesignerPadLeft>底外边距：</TD>
+          <TD>
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+				var initMBValue = "底外边距";
+				if(initMBValue.indexOf("px")>0){
+					initMBValue = initMBValue.substring(0,initMBValue.length-2);
+				}
+                var pl = new QrSpinner(initMBValue);
+                pl.render();
+            -->
+            </SCRIPT>
+
+            <SCRIPT language=JavaScript type=text/javascript>
+            <!--
+                var tan = createTaniComponent();
+                connectCSS2(pl,tan,"margin-bottom");
+            -->
+            </SCRIPT>
+          </TD>
+        </TR>
+	</TBODY>
+    </table>
+    <td>
+    <td valign="top">
+   	  <textarea id="areaOutPut" valign="top" style="width:280px;height:280px"></textarea>
+    </td>
+    </tr>
+</TABLE>
+</BODY>
+</HTML>

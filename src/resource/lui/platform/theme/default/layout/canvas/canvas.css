@@ -1,0 +1,84 @@
+.fullcanvas{
+	width:100%;
+	height:30px;
+}
+
+.fullcanvas .leftborder
+{
+	height:30px;
+	width:8px;
+	background:url('images/bg_center.png') repeat-x;
+}
+
+.fullcanvas .rightborder{
+	height:30px;
+	width:8px;
+	background:url('images/bg_center.png') repeat-x;
+}
+
+.fullcanvas .centercontent{
+	height:30px;
+	background:url('images/bg_center.png')  repeat-x;
+}
+
+.fullcanvas .canvas_title{
+	padding-left:10px;
+}
+
+.leftcanvas{
+	width:100%;
+	height:30px;
+}
+
+.leftcanvas .leftborder{
+	height:30px;
+	width:8px;
+	background:url('images/bg_center.png') repeat-x;
+}
+
+.leftcanvas .centercontent{
+	height:30px;
+	background:url('images/bg_center.png') repeat-x;
+}
+
+.leftcanvas .canvas_title{
+	padding-left:10px;
+}
+
+.rightcanvas{
+	width:100%;
+	height:30px;
+}
+
+.rightcanvas .rightborder{
+	height:30px;
+	width:8px;
+	background:url('images/bg_center.png') repeat-x;
+}
+
+.rightcanvas .centercontent{
+	height:30px;
+	padding-top:0px;
+	background:url('images/bg_center.png')  repeat-x;
+}
+
+.rightcanvas .canvas_title{
+ padding-left:10px;
+}
+
+.centercanvas{
+	width:100%;
+	height:30px;
+}
+
+.centercanvas .centercontent{
+	height:30px;
+	background:url('images/bg_center.png')  repeat-x;
+}
+
+.centercanvas .canvas_title{
+	padding-left:10px;
+}
+
+.nonecanvas{
+}

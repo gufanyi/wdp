@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" controller="xap.lui.psn.rightMenu.rightMenuConfigController" id="rightMenu">
+    <Events>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+        <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+    </Events>
+    <Connectors/>
+    <ViewParts>
+        <ViewPart refId="main" canFreeDesign="true" id="main"/>
+    </ViewParts>
+    <UIStates>
+        <UIState id="editstate" name="编辑态">
+            <ViewState viewId="main">
+                <CtrlState id="strTxt_MenuCtrlId" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuCtrlName" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuItemId" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuItemName" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuItemImgPath" isVisible="true" enabled="true"/>
+                <CtrlState id="chk_MenuItemSplit" isVisible="true" enabled="true"/>
+                <CtrlState id="btn_AddMenuItem" isVisible="true" enabled="true"/>
+                <CtrlState id="btn_Save" isVisible="true" enabled="true"/>
+                <CtrlState id="btn_Cancle" isVisible="true" enabled="true"/>
+                <CtrlState id="frm_RightMenu" isVisible="true" enabled="true"/>
+                <CtrlState id="tree_RightMenu" isVisible="true" enabled="true"/>
+            </ViewState>
+        </UIState>
+        <UIState id="viewstate" name="浏览态">
+            <ViewState viewId="main">
+                <CtrlState id="strTxt_MenuCtrlId" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuCtrlName" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuItemId" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuItemName" isVisible="true" enabled="true"/>
+                <CtrlState id="strTxt_MenuItemImgPath" isVisible="true" enabled="true"/>
+                <CtrlState id="chk_MenuItemSplit" isVisible="true" enabled="true"/>
+                <CtrlState id="btn_AddMenuItem" isVisible="true" enabled="true"/>
+                <CtrlState id="btn_Save" isVisible="true" enabled="true"/>
+                <CtrlState id="btn_Cancle" isVisible="true" enabled="true"/>
+                <CtrlState id="frm_RightMenu" isVisible="true" enabled="true"/>
+                <CtrlState id="tree_RightMenu" isVisible="true" enabled="true"/>
+            </ViewState>
+        </UIState>
+    </UIStates>
+</PagePart>

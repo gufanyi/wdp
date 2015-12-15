@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart id="editor_um" jquery="0" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd">
+<FlowVLayout id="Flowssqqut7287" widgetId="editor">
+  <FlowVPanel id="pane224557" widgetId="editor" border="2px gray solid">
+    <FlowVLayout id="Flowsssyout7287" widgetId="editor">
+        <FlowVPanel id="pane222287" widgetId="editor">
+            <FlowVLayout id="FlowVLayout7287" widgetId="editor">
+                <FlowVPanel height="230" id="panelv07287" widgetId="editor">
+                    <FlowHLayout id="FlowHLayout4129" isAutoFill="false" widgetId="editor">
+                        <FlowHPanel id="panelh04129" widgetId="editor">
+                            <TextField height="230" id="edit_textarea" imgsrc="" left="2" position="relative" top="5" type="text" widgetId="editor" width="580">
+                            </TextField>
+                        </FlowHPanel>
+                        <FlowHPanel id="flowhpanel19025" widgetId="editor" width="100">
+                            <FlowVLayout id="flowvlayout8068" widgetId="editor">
+                                <FlowVPanel id="panelv08067" widgetId="editor">
+                                </FlowVPanel>
+                                <FlowVPanel id="panelv18067" widgetId="editor">
+                                    <Button height="24" id="allselect_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                    </Button>
+                                </FlowVPanel>
+                                <FlowVPanel id="flowvpanel10114" widgetId="editor">
+                                    <Button height="24" id="clear_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                    </Button>
+                                </FlowVPanel>
+                                <FlowVPanel id="panelv28067" widgetId="editor">
+                                </FlowVPanel>
+                            </FlowVLayout>
+                        </FlowHPanel>
+                        <FlowHPanel id="panelh14129" widgetId="editor" width="300">
+                            <FlowVLayout id="FlowVLayout7085" widgetId="editor">
+                            	<FlowVPanel height="15" id="patrtv07085" widgetId="editor">
+                            	</FlowVPanel>
+                                <FlowVPanel height="100" id="panelv07085" widgetId="editor">
+                                    <GridLayout border="0" borderColor="#000000" borderStyle="solid" cellBorder="0" cellBorderColor="#000000" cellBorderStyle="solid" colcount="4" id="gridlayout3809" rowcount="3" widgetId="editor">
+                                        <GridRowPanel id="row03809Panel" widgetId="editor">
+                                            <GridRow colcount="4" id="row03809" widgetId="editor">
+                                                <GridPanel colIndex="0" id="cell003809" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no7_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="1" colWidth="120" id="cell013809" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no8_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="2" colWidth="120" id="cell023809" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no9_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="3" colWidth="120" id="cell033809" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no0_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                            </GridRow>
+                                        </GridRowPanel>
+                                        <GridRowPanel id="row13809Panel" widgetId="editor">
+                                            <GridRow colcount="4" id="row13809" widgetId="editor">
+                                                <GridPanel colHeight="30" colIndex="0" colWidth="120" id="cell103809" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no4_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="1" colWidth="120" id="cell113809" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no5_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="2" colWidth="120" id="cell123809" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no6_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="3" colWidth="120" id="cell133809" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no_dot_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                            </GridRow>
+                                        </GridRowPanel>
+                                        <GridRowPanel id="row23809Panel" widgetId="editor">
+                                            <GridRow colcount="4" id="row23809" widgetId="editor">
+                                                <GridPanel colHeight="30" colIndex="0" colWidth="120" id="cell203809" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no1_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="1" colWidth="120" id="cell213809" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no2_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="2" colWidth="120" id="cell223809" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no3_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="3" colWidth="120" id="cell233809" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no00_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                            </GridRow>
+                                        </GridRowPanel>
+                                    </GridLayout>
+                                </FlowVPanel>
+                                <FlowVPanel height="100" id="panelv17085" widgetId="editor">
+                                    <GridLayout border="0" borderColor="#000000" borderStyle="solid" cellBorder="0" cellBorderColor="#000000" cellBorderStyle="solid" colcount="4" id="gridlayout3574" rowcount="3" widgetId="editor">
+                                        <GridRowPanel id="row03574Panel" widgetId="editor">
+                                            <GridRow colcount="4" id="row03574" widgetId="editor">
+                                                <GridPanel colIndex="0" id="cell003574" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no_add_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="1" colWidth="120" id="cell013574" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no_minus_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="2" colWidth="120" id="cell023574" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no_multi_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="3" colWidth="120" id="cell033574" rowIndex="0" widgetId="editor">
+                                                    <Button height="24" id="no_divid_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                            </GridRow>
+                                        </GridRowPanel>
+                                        <GridRowPanel id="row13574Panel" widgetId="editor">
+                                            <GridRow colcount="4" id="row13574" widgetId="editor">
+                                                <GridPanel colHeight="30" colIndex="0" colWidth="120" id="cell103574" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no_right_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="1" colWidth="120" id="cell113574" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no_equals_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="2" colWidth="120" id="cell123574" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no_left_quot_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="3" colWidth="120" id="cell133574" rowIndex="1" widgetId="editor">
+                                                    <Button height="24" id="no_right_quot_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                            </GridRow>
+                                        </GridRowPanel>
+                                        <GridRowPanel id="row23574Panel" widgetId="editor">
+                                            <GridRow colcount="4" id="row23574" widgetId="editor">
+                                                <GridPanel colHeight="30" colIndex="0" colWidth="120" id="cell203574" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no_lt_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="1" colWidth="120" id="cell213574" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no_gt_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="2" colWidth="120" id="cell223574" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no_le_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                                <GridPanel colHeight="30" colIndex="3" colWidth="120" id="cell233574" rowIndex="2" widgetId="editor">
+                                                    <Button height="24" id="no_ge_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                                                    </Button>
+                                                </GridPanel>
+                                            </GridRow>
+                                        </GridRowPanel>
+                                    </GridLayout>
+                                </FlowVPanel>
+                            </FlowVLayout>
+                        </FlowHPanel>
+                    </FlowHLayout>
+                </FlowVPanel>
+                <FlowVPanel id="panelv17287" widgetId="editor">
+                    <FlowVLayout id="FlowVLayout5706" widgetId="editor">
+                        <FlowVPanel height="285" id="panelv05706" widgetId="editor">
+                            <FlowHLayout id="FlowHLayout4862" isAutoFill="false" widgetId="editor">
+                                <FlowHPanel id="panelh04862" rightBorder="1px gray solid" widgetId="editor" width="400">
+                                    <TabLayout currentItem="0" height="" id="tag1984" itemWidth="60" oneTabHide="false" tabType="top" widgetId="editor" width="">
+                                        <TabItems>
+                                            <TabItem active="0" i18nName="w_formula-000004" id="UITabItem31984" showCloseIcon="false" text="服务调用" widgetId="editor">
+                                                <Grid height="100%" id="servicegrid" left="0" position="relative" top="0" widgetId="editor" width="100%">
+                                                </Grid>
+                                            </TabItem>
+                                        </TabItems>
+                                    </TabLayout>
+                                </FlowHPanel>
+                                <FlowHPanel id="panelh14862" widgetId="editor">
+                                    <TabLayout currentItem="0" height="" id="tag8157" itemWidth="" oneTabHide="false" tabType="top" widgetId="editor" width="">
+                                        <TabItems>
+                                        </TabItems>
+                                    </TabLayout>
+                                </FlowHPanel>
+                            </FlowHLayout>
+                        </FlowVPanel>
+                        <FlowVPanel height="64" id="panelv15706" widgetId="editor">
+                            <TextField height="56" id="status_textarea" imgsrc="" left="5" position="relative" top="5" type="text" widgetId="editor" width="990">
+                            </TextField>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </FlowVPanel>
+            </FlowVLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="p22222287" widgetId="editor">
+            <FlowHLayout id="flowhlayout9475" isAutoFill="false" widgetId="editor">
+                <FlowHPanel id="panelh09475" topPadding="8" widgetId="editor">
+                    <Button align="right" height="24" id="ok_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="flowhpanel18612" widgetId="editor" width="10">
+                </FlowHPanel>
+                <FlowHPanel id="panelh29475" topPadding="8" widgetId="editor" width="100">
+                    <Button height="24" id="cancel_btn" left="0" position="relative" top="0" widgetId="editor" width="64">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+    </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

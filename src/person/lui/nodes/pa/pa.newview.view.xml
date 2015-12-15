@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewPart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="newview" isVisible="true" enabled="true" isDialog="false" isCustom="true" controller="xap.lui.psn.newview.NewViewCtrl">
+   <Events>
+      <Event eventName="beforeShow" method="onBeforeShow" onserver="true" async="true" nmc="true" eventType="DialogEvent" eventStatus="1">
+         <Action><![CDATA[]]></Action>
+         <SubmitRule cardSubmit="false">
+            <ViewPartRule id="newview"/>
+         </SubmitRule>
+      </Event>
+   </Events>
+   <DataModels>
+      <DataList id="classtype">
+         <DataItem text="默认" value="default"/>
+         <DataItem text="自定义" value="selfdefine"/>
+      </DataList>
+      <RefNodes/>
+   </DataModels>
+   <Controls>
+      <Label id="str_type" isVisible="true" enabled="true" text="控制器类型："/>
+      <ComboBox id="type_combo" isVisible="true" enabled="true" value="default" readOnly="false" editorType="ComboBox" focus="false" align="left" textWidth="0" showMark="false" isRequired="false" isShowlabel="true" refComboData="classtype" imageOnly="false" isOnlySelect="true" isAllowExtendValue="false" visibleOptionsNum="10" multiple="false" multiSplitChar=",">
+         <Events>
+            <Event eventName="valueChanged" method="typeComboValueChanged" onserver="true" async="true" nmc="true" eventType="TextEvent" eventStatus="1">
+               <Action><![CDATA[
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="newview"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </ComboBox>
+      <StringText id="packpath_text" isVisible="false" enabled="true" value="" readOnly="false" editorType="StringText" focus="false" align="left" textWidth="0" showMark="false" isRequired="false" isShowlabel="true"/>
+      <Button id="btn_cancel" isVisible="true" enabled="true" width="0" refImgChanged="true" text="取消">
+         <Events>
+            <Event eventName="onclick" method="onCancelClick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.newview.NewViewCtrl" eventType="MouseEvent" eventStatus="1" eventLang="Java语言"/>
+         </Events>
+      </Button>
+      <Label id="classname_label" isVisible="true" enabled="true" text="控制器类名："/>
+      <StringText id="id_text" isVisible="true" enabled="true" value="" readOnly="false" editorType="StringText" focus="false" align="left" textWidth="0" showMark="false" isRequired="false" isShowlabel="true"/>
+      <Label id="label_path" isVisible="false" enabled="true" text="代码路径："/>
+      <StringText id="classname_text" isVisible="true" enabled="true" value="" readOnly="false" editorType="StringText" focus="false" align="left" textWidth="0" showMark="false" isRequired="false" isShowlabel="true"/>
+      <Label id="viewId_label" isVisible="true" enabled="true" text="视图ID："/>
+      <Button id="btn_confirm" isVisible="true" enabled="true" width="0" refImgChanged="true" text="确定">
+         <Events>
+            <Event eventName="onclick" method="onOkClick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.newview.NewViewCtrl" eventType="MouseEvent" eventStatus="1" eventLang="Java语言"/>
+         </Events>
+      </Button>
+   </Controls>
+   <Menus/>
+   <PipeIns>
+      <PipeIn id="refOkPlugin">
+         <PipeInItem id="type" clazztype="java.lang.String"/>
+         <PipeInItem id="id" clazztype="java.lang.String"/>
+         <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+      </PipeIn>
+   </PipeIns>
+</ViewPart>

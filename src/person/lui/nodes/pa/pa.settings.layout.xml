@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="settings_um" isFlow="false">
+	<FlowVLayout id="flowv1">
+		<FlowVPanel id="ffvp2">
+			<TabLayout currentItem="0" id="tab2" oneTabHide="false" itemWidth="55" fontSize="12">
+				<TabItem i18nName="w_pa-000017" langDir="pa_nodes" id="item_set" text="属性">
+					 <CardLayout currentItem="0" id="cardlayout7773">
+	                   <CardPanel id="cardpanel07773" >
+	                      <Form id="adhintform" left="0" top="0" width="" height="" position="" />
+	                   </CardPanel>
+	                   <CardPanel id="cardpanel17773">
+	                      <Grid id="grid_chart_option" left="0" top="0" width="100%" height="100%" position="" />
+	                   </CardPanel>
+	                   <CardPanel id="cardpanel17774">
+	                      <TextField height="24" id="dftwin" imgsrc="" left="0" position="relative" top="15" type="text" widgetId="settings" width="200">
+                          </TextField>
+	                   </CardPanel>
+	                  </CardLayout>
+				</TabItem>
+				<TabItem i18nName="w_pa-000018" langDir="pa_nodes" id="item_event" text="事件">
+					<Grid id="grid_event" left="0" top="0" width="100%" height="100%" position="" />
+				</TabItem>
+				<TabItem i18nName="w_pa-000019" langDir="pa_nodes" id="item_pipe" text="管道">
+					<TabLayout currentItem="0" id="pipetag" oneTabHide="false" tabType="top" itemWidth="45" fontSize="12">
+						<TabItems>
+							<TabItem active="0" i18nName="" id="tabitem_pipein_setting" showCloseIcon="false" text="输入">
+								<Grid height="100%" id="grid_pipein" left="0" position="relative" top="0" width="100%">
+								</Grid>
+							</TabItem>
+							<TabItem active="0" i18nName="" id="tabitem_pipeout_setting" showCloseIcon="false" text="输出">
+								<Grid height="100%" id="grid_pipeout" left="0" position="relative" top="0" width="100%">
+								</Grid>
+							</TabItem>
+							<TabItem i18nName="w_pa-000dd8" langDir="pa_nodes" id="item_connector" text="连接器">
+								<Grid height="100%" id="grid_connector" left="0" position="relative" top="0" width="100%" widgetId="settings">
+								</Grid>
+							</TabItem>
+						</TabItems>
+						<TabRight id="tabright_pipe_tool" width="100">
+							<MenuBar height="100%" id="menubar_pipe" left="0" position="relative" top="0" width="100%" widgetId="settings">
+							</MenuBar>
+						</TabRight>
+					</TabLayout>
+				</TabItem>
+				<TabItem i18nName="w_pa-0ss0dk8" langDir="pa_nodes" id="item_propset" text="参数">
+					<FlowVLayout id="flowvlayjjut4621" widgetId="settings">
+						<FlowVPanel height="25" id="phlv04621" widgetId="settings">
+							<MenuBar height="100%" id="menubar_param" left="0" position="relative" top="0" widgetId="settings" width="100%">
+            				</MenuBar>
+						</FlowVPanel>
+						<FlowVPanel id="panelvsssdd1" widgetId="settings">
+        					<Grid height="100%" id="grid_param" left="0" position="relative" top="0" width="100%" widgetId="settings">
+							</Grid>
+						</FlowVPanel>
+					</FlowVLayout>
+				</TabItem>
+			    <Events>
+			    	<Event async="true" eventType="TabEvent" method="afterItemInit_initAppWin" eventName="afterItemInit" controller="xap.lui.psn.pamgr.PaAppDsListener" onserver="true">
+					</Event>
+			    </Events>
+			</TabLayout>
+		</FlowVPanel>
+	</FlowVLayout>
+</UIPart>

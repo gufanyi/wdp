@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart id="main_um" jquery="0" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd">
+    <FlowVLayout id="flowvlayout8636" widgetId="main">
+        <FlowVPanel cssStyle="background-color:#cfedf7;" height="150" id="panelv08636" widgetId="main">
+            <FlowHLayout id="flowhlayout9131" isAutoFill="false" widgetId="main">
+                <FlowHPanel bottomPadding="10" id="panelh09131" leftPadding="20" rightPadding="5" topPadding="10" widgetId="main" width="220">
+                    <Image align="left" height="100%" id="img_sigTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </Image>
+                </FlowHPanel>
+                <FlowHPanel bottomPadding="10" id="panelh19131" leftPadding="5" rightPadding="5" topPadding="10" widgetId="main" width="220">
+                    <Image height="100%" id="img_parChiTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </Image>
+                </FlowHPanel>
+                <FlowHPanel bottomPadding="10" id="panelh29131" leftPadding="5" rightPadding="5" topPadding="10" widgetId="main" width="220">
+                    <Image height="100%" id="img_treeTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </Image>
+                </FlowHPanel>
+                <FlowHPanel bottomPadding="10" id="flowhpanel13680" leftPadding="5" rightPadding="10" topPadding="10" widgetId="main" width="220">
+                    <Image height="100%" id="img_treeTabTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                    </Image>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="37" id="panelv18636" widgetId="main">
+            <FlowHLayout id="flowhlayout4739" isAutoFill="false" widgetId="main">
+                <FlowHPanel bottomPadding="7" id="panelh04739" topPadding="7" leftPadding="20" widgetId="main" width="200">
+                    <FormElement eleWidth="120" form_id="form_page" height="24" id="txtPageId" left="0" position="relative" top="0" widgetId="main" width="200">
+                    </FormElement>
+                </FlowHPanel>
+                <FlowHPanel bottomPadding="7" id="panelh92723" topPadding="7" widgetId="main" width="300">
+                    <FormElement eleWidth="120" form_id="form_page" height="24" id="isSimpQuery" left="0" position="relative" top="0" widgetId="main" width="200">
+                    </FormElement>
+                </FlowHPanel>
+                <FlowHPanel bottomPadding="7" id="panelh62841" topPadding="7" widgetId="main">
+                    <FormElement eleWidth="120" form_id="form_page" height="24" id="simpQueryNodeCode" left="0" position="relative" top="0" widgetId="main" width="200">
+                    </FormElement>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel id="panelv28636" widgetId="main">
+            <CardLayout currentItem="0" id="card_TabCat" widgetId="main">
+                <CardPanel id="cardpanel09107" widgetId="main">
+                    <FlowVLayout id="flowvlayout3367" widgetId="main">
+                    	<FlowVPanel  id="panelv82739" rightPadding="50" widgetId="main">
+                    	  <TabLayout currentItem="0" height="" id="tag1637" itemWidth="" oneTabHide="false" tabType="top" widgetId="main" width="">
+                                <TabItems>
+                                    <TabItem active="1" i18nName="" id="UITabItem9382" showCloseIcon="false" text="元数据设置" widgetId="main">
+                                        <FlowVLayout id="flowvlayout9924" widgetId="main">
+	                                        <FlowVPanel height="15" id="flowvpanel19385" widgetId="main">
+					                        </FlowVPanel>
+					                        <FlowVPanel id="panelv03366" widgetId="main">
+					                            <FlowHLayout id="flowhlayout9015" isAutoFill="false" widgetId="main">
+					                                <FlowHPanel id="panelh09015" widgetId="main" width="20">
+					                                </FlowHPanel>
+					                                <FlowHPanel id="panelh19015" widgetId="main" width="250">
+					                                    <FormElement eleWidth="120" form_id="form_sigTab" height="24" id="sigTabRef" left="0" position="relative" top="0" widgetId="main" width="200">
+					                                    </FormElement>
+					                                </FlowHPanel>
+					                                <FlowHPanel id="panelh29015" widgetId="main" width="250">
+					                                    <FormElement eleWidth="120" form_id="form_sigTab" height="24" id="dsid" left="0" position="relative" top="0" widgetId="main" width="200">
+					                                    </FormElement>
+					                                </FlowHPanel>
+					                                <FlowHPanel id="flowhpanel14097" widgetId="main">
+					                                    <FormElement eleWidth="120" form_id="form_sigTab" height="24" id="editType" left="0" position="relative" top="0" widgetId="main" width="200">
+					                                    </FormElement>
+					                                </FlowHPanel>
+					                            </FlowHLayout>
+					                        </FlowVPanel>
+                                        </FlowVLayout>
+                                    </TabItem>
+                                </TabItems>
+                            </TabLayout>
+                    	</FlowVPanel>
+                        <FlowVPanel cssStyle="background-color:#ECF4FF;" height="50" id="panelv93828" rightPadding="50" widgetId="main">
+                            <FlowVLayout id="flowvlayout7477" widgetId="main">
+                                <FlowVPanel id="panelv07477" topPadding="15" widgetId="main">
+                                    <Button align="right" height="24" id="btn_sigTab_Save" left="0" position="relative" top="0" widgetId="main" width="64">
+                                    </Button>
+                                </FlowVPanel>
+                            </FlowVLayout>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </CardPanel>
+                <CardPanel id="cardpanel19107" widgetId="main">
+                    <FlowVLayout id="flowvlayout6283" widgetId="main">
+                        <FlowVPanel id="panelv92832" widgetId="main">
+                            <TabLayout currentItem="0" height="" id="tag2637" itemWidth="" oneTabHide="false" tabType="top" widgetId="main" width="">
+                                <TabItems>
+                                    <TabItem active="1" i18nName="" id="UITabItem01635" showCloseIcon="false" text="元数据设置" widgetId="main">
+                                        <FlowVLayout id="flowvlayout9184" widgetId="main">
+                                            <FlowVPanel id="panelv19184" widgetId="main">
+                                                <FlowHLayout id="flowhlayout2674" isAutoFill="false" widgetId="main">
+                                                    <FlowHPanel id="panelh02674" widgetId="main" width="20">
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh12674" widgetId="main">
+                                                        <FlowVLayout id="flowvlayout3624" widgetId="main">
+                                                            <FlowVPanel height="15" id="panelv03624" widgetId="main">
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="50" id="panelv13624" widgetId="main">
+                                                                <FlowHLayout id="flowhlayout9403" isAutoFill="false" widgetId="main">
+                                                                    <FlowHPanel id="panelh09403" widgetId="main" width="220">
+                                                                        <FormElement eleWidth="120" form_id="form_parChiTab" height="24" id="pTabRef" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                    <FlowHPanel id="panelh19403" widgetId="main" width="260">
+                                                                        <FormElement eleWidth="120" form_id="form_parChiTab" height="24" id="pTabDsid" left="0" position="relative" top="0" widgetId="main" width="220">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                    <FlowHPanel id="panelh29403" widgetId="main" width="230">
+                                                                        <FormElement eleWidth="120" form_id="form_parChiTab" height="24" id="pTabEditType" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                    <FlowHPanel id="panelh29403" widgetId="main">
+                                                                        <FormElement eleWidth="120" form_id="form_parChiTab" height="24" id="pTabAggDo" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                </FlowHLayout>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel cssStyle="background-color:#cfedf7;" height="30" id="flowvpanel15603" leftBorder="2px #0099e5 solid" rightBorder="2px #0099e5 solid" topBorder="2px #0099e5 solid" widgetId="main">
+                                                                <MenuBar align="left" height="100%" id="menu_parChiTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                                                </MenuBar>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel bottomBorder="2px #0099e5 solid" id="panelv23624" leftBorder="2px #0099e5 solid" rightBorder="2px #0099e5 solid" widgetId="main">
+                                                                <Grid height="100%" id="tab_parChiTab_chi" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                                                </Grid>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="15" id="panelv03624" widgetId="main">
+                                                            </FlowVPanel>
+                                                        </FlowVLayout>
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh0234574" widgetId="main" width="20">
+                                                    </FlowHPanel>
+                                                </FlowHLayout>
+                                            </FlowVPanel>
+                                        </FlowVLayout>
+                                    </TabItem>
+                                    <TabItem active="0" i18nName="" id="UITabItem01637" showCloseIcon="false" text="数据集关联" widgetId="main">
+                                        <Grid height="100%" id="relationsgrid" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                        </Grid>
+                                    </TabItem>
+                                </TabItems>
+                                <TabRight id="null" widgetId="main">
+                                    <FlowHLayout id="flowhlayout17528" isAutoFill="false">
+                                        <FlowHPanel id="flowh0001" width="130">
+                                            <MenuBar height="100%" id="func_menu_2" left="0" position="relative" top="0" widgetId="main" width="100%"></MenuBar>
+                                        </FlowHPanel>
+                                    </FlowHLayout>
+                                </TabRight>
+                            </TabLayout>
+                        </FlowVPanel>
+                        <FlowVPanel cssStyle="background-color:#ECF4FF;" height="50" id="panelv29184" rightPadding="50" widgetId="main">
+                            <FlowVLayout id="flowvlayout2872" widgetId="main">
+                                <FlowVPanel id="panelv02872" topPadding="15" widgetId="main">
+                                    <Button align="right" height="24" id="btn_parChiTab" left="0" position="relative" top="0" widgetId="main" width="64">
+                                    </Button>
+                                </FlowVPanel>
+                            </FlowVLayout>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </CardPanel>
+                <CardPanel id="cardpanel29107" widgetId="main">
+                    <FlowVLayout id="flowvlayout7381" widgetId="main">
+                        <FlowVPanel id="flowvpanel17370" widgetId="main">
+                            <TabLayout currentItem="0" height="" id="tag3637" itemWidth="" oneTabHide="false" tabType="top" widgetId="main" width="">
+                                <TabItems>
+                                    <TabItem active="1" i18nName="" id="UITabItem58423" showCloseIcon="false" text="元数据设置" widgetId="main">
+                                        <FlowVLayout id="flowvlayout4949" widgetId="main">
+                                            <FlowVPanel height="15" id="flowvpanel17370" widgetId="main">
+                                            </FlowVPanel>
+                                            <FlowVPanel id="panelv04949" widgetId="main">
+                                                <FlowHLayout id="flowhlayout3236" isAutoFill="false" widgetId="main">
+                                                    <FlowHPanel id="panelh03236" widgetId="main" width="20">
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh13236" widgetId="main" width="300">
+                                                        <FlowVLayout id="flowvlayout6297" widgetId="main">
+                                                            <FlowVPanel height="50" id="panelv06297" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTab_tree" height="24" id="treeRef" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="50" id="panelv16297" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTab_tree" height="24" id="treeDsId" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="50" id="panelv26297" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTab_tree" height="24" id="treeEditType" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel id="panelv72972" widgetId="main">
+                                                                <FormElement eleWidth="20" form_id="form_treeTab_tree" height="24" id="treeIsEditTree" left="0" position="relative" top="0" widgetId="main" width="120">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                        </FlowVLayout>
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh23236" widgetId="main">
+                                                        <FlowVLayout id="flowvlayout3598" widgetId="main">
+                                                            <FlowVPanel height="50" id="panelv03598" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTab_tab" height="24" id="treeTabRef" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="50" id="panelv13598" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTab_tab" height="24" id="tabDsId" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel id="panelv23598" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTab_tab" height="24" id="tabEditType" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                        </FlowVLayout>
+                                                    </FlowHPanel>
+                                                </FlowHLayout>
+                                            </FlowVPanel>
+                                        </FlowVLayout>
+                                    </TabItem>
+                                    <TabItem active="0" i18nName="" id="UITabItem67823" showCloseIcon="false" text="数据集关联" widgetId="main">
+                                        <Grid height="100%" id="relationsTreegrid" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                        </Grid>
+                                    </TabItem>
+                                </TabItems>
+                                <TabRight id="null" widgetId="main">
+                                    <FlowHLayout id="flowhlayout17528" isAutoFill="false">
+                                        <FlowHPanel id="flowh0001" width="130">
+                                            <MenuBar height="100%" id="func_menu_3" left="0" position="relative" top="0" widgetId="main" width="100%"></MenuBar>
+                                        </FlowHPanel>
+                                    </FlowHLayout>
+                                </TabRight>
+                            </TabLayout>
+                        </FlowVPanel>
+                        <FlowVPanel cssStyle="background-color:#ECF4FF;" height="50" id="panelv24949" rightPadding="50" widgetId="main">
+                            <FlowVLayout id="flowvlayout8721" widgetId="main">
+                                <FlowVPanel id="panelv08721" topPadding="15" widgetId="main">
+                                    <Button align="right" height="24" id="btn_treeTab_Save" left="0" position="relative" top="0" widgetId="main" width="64">
+                                    </Button>
+                                </FlowVPanel>
+                            </FlowVLayout>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </CardPanel>
+                <CardPanel id="cardpanel39107" widgetId="main">
+                    <FlowVLayout id="flowvlayout6382" widgetId="main">
+                        <FlowVPanel id="flowvpanel830143" widgetId="main">
+                            <TabLayout currentItem="0" height="" id="tag4637" itemWidth="" oneTabHide="false" tabType="top" widgetId="main" width="">
+                                <TabItems>
+                                    <TabItem active="1" i18nName="" id="UITabItem81733" showCloseIcon="false" text="元数据设置" widgetId="main">
+                                        <FlowVLayout id="flowvlayout9065" widgetId="main">
+                                            <FlowVPanel height="15" id="flowvpanel13662" widgetId="main">
+                                            </FlowVPanel>
+                                            <FlowVPanel id="panelv09065" widgetId="main">
+                                                <FlowHLayout id="flowhlayout8668" isAutoFill="false" widgetId="main">
+                                                    <FlowHPanel id="flowhpanel12653" widgetId="main" width="20">
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh08668" rightBorder="2px #0099e5 solid" widgetId="main" width="220">
+                                                        <FlowVLayout id="flowvlayout9691" widgetId="main">
+                                                            <FlowVPanel height="40" id="panelv09691" topBorder="40" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTabTab_tree" height="24" id="treeRef_ttt" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="40" id="panelv19691" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTabTab_tree" height="24" id="treedsId_ttt" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="40" id="panelv29691" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTabTab_tree" height="24" id="treeEditType_ttt" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="40" id="panelv39691" widgetId="main">
+                                                                <FormElement eleWidth="120" form_id="form_treeTabTab_pTab" height="24" id="teePTabAggDo" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel id="panelv72972" widgetId="main">
+                                                                <FormElement eleWidth="20" form_id="form_treeTabTab_tree" height="24" id="treeIsEditTree_ttt" left="0" position="relative" top="0" widgetId="main" width="120">
+                                                                </FormElement>
+                                                            </FlowVPanel>
+                                                        </FlowVLayout>
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh8es8" widgetId="main" width="10">
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh28668" widgetId="main">
+                                                        <FlowVLayout id="flowvlayout2616" widgetId="main">
+                                                            <FlowVPanel height="40" id="panelv02616" widgetId="main">
+                                                                <FlowHLayout id="flowhlayout1320" isAutoFill="false" widgetId="main">
+                                                                    <FlowHPanel id="panelh01319" widgetId="main" width="230">
+                                                                        <FormElement eleWidth="120" form_id="form_treeTabTab_pTab" height="24" id="pTabRef_ttt" left="0" position="relative" top="0" widgetId="main" width="220">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                    <FlowHPanel id="panelh11319" widgetId="main" width="200">
+                                                                        <FormElement eleWidth="120" form_id="form_treeTabTab_pTab" height="24" id="pTabDsId_ttt" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                    <FlowHPanel id="panelh21319" widgetId="main">
+                                                                        <FormElement eleWidth="120" form_id="form_treeTabTab_pTab" height="24" id="pTabEditType_ttt" left="0" position="relative" top="0" widgetId="main" width="200">
+                                                                        </FormElement>
+                                                                    </FlowHPanel>
+                                                                </FlowHLayout>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel cssStyle="background-color:#cfedf7" height="30" id="panelv12616" leftBorder="2px #0099e5 solid" rightBorder="2px #0099e5 solid" topBorder="2px #0099e5 solid" widgetId="main">
+                                                                <MenuBar height="100%" id="menu_treeTabTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                                                </MenuBar>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel id="panelv22616" leftBorder="2px #0099e5 solid" rightBorder="2px #0099e5 solid" topBorder="2px #0099e5 solid" widgetId="main">
+                                                                <Grid height="100%" id="tab_treeTabTab" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                                                </Grid>
+                                                            </FlowVPanel>
+                                                            <FlowVPanel height="10" id="flowvpanel14293" topBorder="2px #0099e5 solid" widgetId="main">
+                                                            </FlowVPanel>
+                                                        </FlowVLayout>
+                                                    </FlowHPanel>
+                                                    <FlowHPanel id="panelh83728" widgetId="main" width="10">
+                                                    </FlowHPanel>
+                                                </FlowHLayout>
+                                            </FlowVPanel>
+                                        </FlowVLayout>
+                                    </TabItem>
+                                    <TabItem active="0" i18nName="" id="UITabItem8372" showCloseIcon="false" text="表数据关联" widgetId="main">
+                                        <Grid height="100%" id="relationsTabgrid" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem active="0" i18nName="" id="UITabItem92702" showCloseIcon="false" text="树数据关联" widgetId="main">
+                                        <Grid height="100%" id="relationsTreeTabgrid" left="0" position="relative" top="0" widgetId="main" width="100%">
+                                        </Grid>
+                                    </TabItem>
+                                </TabItems>
+                                <TabRight id="null" widgetId="main">
+                                    <FlowHLayout id="flowhlayout8261" isAutoFill="false">
+                                        <FlowHPanel id="flowh9281" width="130">
+                                            <MenuBar height="100%" id="func_menu_4" left="0" position="relative" top="0" widgetId="main" width="100%"></MenuBar>
+                                        </FlowHPanel>
+                                    </FlowHLayout>
+                                </TabRight>
+                            </TabLayout>
+                        </FlowVPanel>
+                        <FlowVPanel cssStyle="background-color:#ECF4FF;" height="50" id="panelv29065" rightPadding="50" widgetId="main">
+                            <FlowVLayout id="flowvlayout0490" widgetId="main">
+                                <FlowVPanel id="panelv00490" topPadding="15" widgetId="main">
+                                    <Button align="right" height="24" id="btn_treeTabTab_Save" left="0" position="relative" top="0" widgetId="main" width="64">
+                                    </Button>
+                                </FlowVPanel>
+                            </FlowVLayout>
+                        </FlowVPanel>
+                    </FlowVLayout>
+                </CardPanel>
+            </CardLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

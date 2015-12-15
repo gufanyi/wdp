@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" caption="参照配置" controller="xap.lui.psn.refence.RefConfigController" id="refcfg" srcFolder="">
+  <Processor>xap.lui.core.event.AppRequestProcessor</Processor>
+  <ViewParts>
+    <ViewPart id="main" refId="main" />
+  </ViewParts>
+  <Attributes>
+    <Attribute key="$MODIFY_TS" value="-1" desc="" />
+  </Attributes>
+  <Events>
+    <Event async="true" eventType="PageEvent" eventName="onClosed" method="sysWindowClosed" onserver="true">
+      <SubmitRule cardSubmit="false" />
+      <Params>
+        <Param name="event" value="" desc="com.haiyou.wfw.common.event.PageEvent" />
+      </Params>
+      <Action />
+    </Event>
+    <Event async="true" eventType="PageEvent" eventName="onClosed" method="onPageClosed" onserver="true">
+      <Action />
+    </Event>
+  </Events>
+</PagePart>

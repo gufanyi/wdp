@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="nav" refId="" isDialog="false" srcFolder="" controller="xap.lui.psn.top.TopFileViewController">
+	<DataModels>
+	</DataModels>
+	<Controls>
+		<TextArea id="file_meta" rows="25" cols="110" text="描述" focus="true" isVisible="true">
+		</TextArea>
+		<TextArea id="file_layout" rows="25" cols="110" text="描述" focus="true" isVisible="true">
+		</TextArea>
+		<TextArea id="file_java" rows="25" cols="110"  text="描述" focus="true" isVisible="true">
+		</TextArea>
+		<Button enabled="true" id="btn_ok" text="确定" isVisible="true">
+         	<Events>
+                <Event async="true" eventType="MouseEvent" method="onOkClick" eventName="onclick" onserver="true">
+                    <SubmitRule cardSubmit="false">
+                    </SubmitRule>
+                </Event>
+            </Events>
+        </Button>
+        <Button enabled="true" id="btn_cancel" text="取消" isVisible="true">
+         	<Events>
+                <Event async="true" eventType="MouseEvent" method="onCancelClick" eventName="onclick" onserver="true">
+                    <SubmitRule cardSubmit="false">
+                    </SubmitRule>
+                </Event>
+            </Events>
+        </Button>
+	</Controls>
+	<Containers />
+	<Menus />
+	<Events>
+		<Event async="true" eventType="DialogEvent" method="beforeShow" eventName="beforeShow" onserver="true">
+			<SubmitRule cardSubmit="false" />
+			<Action />
+		</Event>
+	</Events>
+</ViewPart>

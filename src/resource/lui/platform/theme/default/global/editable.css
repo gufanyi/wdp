@@ -1,0 +1,74 @@
+.editable{
+	background:
+	url("images/v_dotta.png") repeat-y   right top,
+	url("images/h_dotta.png") repeat-x   right bottom;
+	margin:0px;
+	padding:0px;
+	*border:1px dashed #AAAAAA;
+	*position:static;
+}
+
+.editable_vPanel{
+	margin:0px;
+	padding:0px;
+}
+
+.editable_hPanel{
+	margin:0px;
+	padding:0px;
+}
+
+.editable_parent{
+	background:url("images/h_dotta.png") repeat-x   left top ,
+	url("images/v_dotta.png") repeat-y   left bottom,
+	url("images/v_dotta.png") repeat-y   right top,
+	url("images/h_dotta.png") repeat-x   right bottom;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+
+
+.edit_component{
+	border: 0 none;
+}
+
+.edit_component_selected{
+	background-color:#DDF6F6;
+	opacity: 0.5;
+	margin:0px;
+	padding:0px;
+	/*line-height: 26px;*/
+}
+
+.edit_selected{
+	margin:0px;
+	padding:0px;
+	background-color:#DDF6F6;
+}
+
+.edit_menubar_menuitem{
+}
+
+.edit_gridLayout_cell{
+	border:1px dashed #AAAAAA;
+	border-top : 0px;
+	border-left : 0px;
+}
+
+.edit_gridLayout{
+	background:url("images/h_dotta.png") repeat-x   left top ,
+	url("mages/v_dotta.png") repeat-y   left bottom,
+	url("images/v_dotta.png") repeat-y   right top,
+	url("images/h_dotta.png") repeat-x   right bottom;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+
+.edit_gridLayout_selected{
+	position:relative;
+	margin:0px;
+	padding:0px;
+	background-color:#eee;
+}

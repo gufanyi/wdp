@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" jquery="0">
+    <FlowVLayout id="flowvlayout9953" widgetId="main">
+        <FlowVPanel height="40" id="panelv09953" topPadding="12" widgetId="main">
+        	<FlowHLayout id="flowhlayout4914" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="flowhpanel11587" leftPadding="20" widgetId="main" width="150">
+                    <TextField height="28" id="str_id" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="main" width="120">
+                    </TextField>
+                </FlowHPanel>
+                <FlowHPanel id="flowhpanel11029" widgetId="main">
+                    <TextField height="28" id="str_caption" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="main" width="120">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="30" id="flowvpanel12877" widgetId="main">
+            <MenuBar height="100%" id="gridmenu" left="0" position="relative" top="0" widgetId="main" width="100%">
+            </MenuBar>
+        </FlowVPanel>
+        <FlowVPanel id="panelv19953" widgetId="main">
+            <Grid align="N" height="100%" id="cfggrid" left="0" position="relative" top="0" widgetId="main" width="100%">
+            </Grid>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="panelv29953" widgetId="main">
+            <FlowHLayout id="flowhlayout6201" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="panelh06201" rightPadding="5" topPadding="5" widgetId="main">
+                    <Button align="right" height="24" id="btn_confirm" left="0" position="relative" top="0" widgetId="main" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh26201" leftPadding="5" topPadding="5" widgetId="main">
+                    <Button height="24" id="btn_cancel" left="0" position="relative" top="0" widgetId="main" width="64">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

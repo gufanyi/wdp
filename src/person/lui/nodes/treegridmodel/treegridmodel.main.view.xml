@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewPart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="main" isVisible="true" enabled="true" isDialog="false" isCustom="true" controller="xap.lui.psn.treegridmodel.TreeGridModelCtrl">
+   <DataModels>
+      <DatasetRelations/>
+      <Dataset id="ds_form" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="左树模型">
+         <Events>
+            <Event eventName="onDataLoad" method="ds_form_onDataLoad" onserver="true" async="true" nmc="true" id="onDataLoad" eventType="DatasetEvent" eventStatus="2" eventLang="Java语言"/>
+         </Events>
+         <Fields>
+            <Field id="id" text="ID" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classTableName" text="主表名" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classPKField" text="主键" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classNameField" text="名称字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classCodeField" text="编码字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classJoinField" text="关联字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="childField" text="递归字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="fatherField" text="递归父字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classWherePart" text="where子句" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="classOrderPart" text="orderby子句" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_form2" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="右表模型">
+         <Events>
+            <Event eventName="onDataLoad" method="ds_form2_onDataLoad" onserver="true" async="true" nmc="true" id="onDataLoad" eventType="DatasetEvent" eventStatus="1" eventLang="Java语言"/>
+         </Events>
+         <Fields>
+            <Field id="tableName" text="子表名" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="showFields" text="显示字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="showFieldNames" text="显示中文名" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="hiddenFields" text="隐藏字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="blurFields" text="定位过滤字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="docJoinField" text="关联字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="wherePart" text="where子句" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="orderPart" text="orderby子句" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="groupPart" text="groupby子句" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="pkField" text="主键字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="nameField" text="名称字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="codeField" text="编码字段" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <DataList id="envlist" caption="环境变量列表">
+         <DataItem text="当前集团" value="currgoup"/>
+         <DataItem text="当前组织" value="currorg"/>
+         <DataItem text="当前用户" value="curruser"/>
+      </DataList>
+      <RefNodes/>
+      <RefModels/>
+      <ChartModels/>
+   </DataModels>
+   <Controls>
+      <Label id="label1" isVisible="true" enabled="true" innerHTML="&lt;Strong>回写信息&lt;/Strong>"/>
+      <Button id="btn_cancel" isVisible="true" enabled="true" width="0" refImgChanged="true" text="取消">
+         <Events>
+            <Event eventName="onclick" method="onCancelClick" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1" eventLang="Java语言"/>
+         </Events>
+      </Button>
+      <Button id="btn_ok" isVisible="true" enabled="true" width="0" refImgChanged="true" text="确定">
+         <Events>
+            <Event eventName="onclick" method="onOkClick" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1" eventLang="Java语言">
+               <SubmitRule id="submitRule" cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="ds_form">ds_current_line</DatasetRule>
+                     <DatasetRule id="ds_form2">ds_current_line</DatasetRule>
+                  </ViewPartRule>
+                  <ParentSubmitRule pageId="pa" cardSubmit="false">
+                     <ViewPartRule id="data">
+                        <DatasetRule id="pa">ds_current_page</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </ParentSubmitRule>
+                  <Params/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Form id="form_tree" isVisible="true" enabled="true" column="2" dataset="ds_form" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="id" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="ID" labelPos="right" editorType="StringText" dataType="String" field="id" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="classTableName" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表名" labelPos="right" editorType="StringText" dataType="String" field="classTableName" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="classPKField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主键" labelPos="right" editorType="StringText" dataType="String" field="classPKField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="classNameField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="名称字段" labelPos="right" editorType="StringText" dataType="String" field="classNameField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="classCodeField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="编码字段" labelPos="right" editorType="StringText" dataType="String" field="classCodeField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="classJoinField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="关联字段" labelPos="right" editorType="StringText" dataType="String" field="classJoinField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="childField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="递归字段" labelPos="right" editorType="StringText" dataType="String" field="childField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="fatherField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="递归父字段" labelPos="right" editorType="StringText" dataType="String" field="fatherField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="classWherePart" isVisible="true" enabled="true" rowSpan="1" colSpan="8" text="where子句" labelPos="right" editorType="TextArea" dataType="String" field="classWherePart" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="classOrderPart" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="orderby子句" labelPos="right" editorType="StringText" dataType="String" field="classOrderPart" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Form id="form_grid" isVisible="true" enabled="true" column="2" dataset="ds_form2" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="tableName" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="子表名" labelPos="right" editorType="StringText" dataType="String" field="tableName" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="showFields" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="显示字段" labelPos="right" editorType="StringText" dataType="String" field="showFields" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="showFieldNames" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="显示中文名" labelPos="right" editorType="StringText" dataType="String" field="showFieldNames" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="hiddenFields" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="隐藏字段" labelPos="right" editorType="StringText" dataType="String" field="hiddenFields" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="docJoinField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="关联字段" labelPos="right" editorType="StringText" dataType="String" field="docJoinField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="blurFields" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="定位过滤字段" labelPos="right" editorType="StringText" dataType="String" field="blurFields" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="wherePart" isVisible="true" enabled="true" rowSpan="1" colSpan="8" text="where子句" labelPos="right" editorType="TextArea" dataType="String" field="wherePart" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="orderPart" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="orderby子句" labelPos="right" editorType="StringText" dataType="String" field="orderPart" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="groupPart" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="groupby子句" labelPos="right" editorType="StringText" dataType="String" field="groupPart" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+         <Element id="pkField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主键字段" labelPos="right" editorType="StringText" dataType="String" field="pkField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="nameField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="名称字段" labelPos="right" editorType="StringText" dataType="String" field="nameField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="codeField" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="编码字段" labelPos="right" editorType="StringText" dataType="String" field="codeField" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+      </Form>
+   </Controls>
+   <Menus/>
+   <PipeIns>
+      <PipeIn id="refOkPlugin">
+         <PipeInItem id="type" clazztype="java.lang.String"/>
+         <PipeInItem id="id" clazztype="java.lang.String"/>
+         <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+      </PipeIn>
+   </PipeIns>
+</ViewPart>

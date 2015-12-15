@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" isFlow="false">
+  <FlowVLayout id="flowvlayout2633">
+  	   <FlowVPanel id="panelv3ss92" height="20">
+	   </FlowVPanel>
+	   <FlowVPanel id="panelv33692" height="160">
+			<Form height="100%" id="datasetting_form" label_position="" left="0" position="relative" top="" width="100%">
+            </Form>
+	   </FlowVPanel>
+	   <FlowVPanel id="panelv32292">
+	      <FlowHLayout id="flowhlayout2633">
+	      	<FlowHPanel id="glowhpanelqq" width="130">
+	      		<Label id="label" label_height="" top="" label_width="" left="20" textAlign="right"></Label>
+	      	</FlowHPanel>
+	      	<FlowHPanel id="glowhpanelqq">
+           	 	<Grid height="100%" id="datasetting_grid" left="0" position="relative" top="0" width="100%">
+				</Grid>
+			</FlowHPanel>
+			<FlowHPanel id="glowhpaewwqq" width="100">
+	      	</FlowHPanel>
+		  </FlowHLayout>
+	   </FlowVPanel>
+	   <FlowVPanel id="pafelvs9ss" height="10">
+	   </FlowVPanel>
+	   <FlowVPanel id="pafelvs9ss" height="40">
+	      <FlowHLayout id="fldwhlayout2633">
+	    	  <FlowHPanel id="glowhpanddslqq" width="200">
+	      	  </FlowHPanel>
+	      	  <FlowHPanel id="glowhpanddslqq" width="130">
+	      	   	 <Button height="24" id="btn_ok" left="10" position="" top="10" widgetId="main" width="70">
+				 </Button>
+	      	  </FlowHPanel>
+			  <FlowHPanel id="glowgewwqq" width="100">
+			 	 <Button height="24" id="btn_cancel" left="10" position="" top="10" widgetId="main" width="70">
+				 </Button>
+	      	  </FlowHPanel>
+		  </FlowHLayout>
+	   </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

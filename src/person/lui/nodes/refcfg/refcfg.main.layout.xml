@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" isFlow="false">
+  <FlowVLayout id="flowvlayout5169">
+    <FlowVPanel id="panelv05169" height="30" />
+    <FlowVPanel id="panelv15169">
+      <FlowHLayout id="flowhlayout1436">
+        <FlowHPanel id="panelh01436" width="40" />
+        <FlowHPanel id="panelh11436" >
+          <Form id="refcfgform" left="0" top="0" width="100%" height="100%" position="relative" />
+        </FlowHPanel>
+        <FlowHPanel id="panelh21436" width="40" />
+      </FlowHLayout>
+    </FlowVPanel>
+    <FlowVPanel id="panelv25169" height="30">
+      <FlowHLayout id="flowhlayout3486">
+        <FlowHPanel id="panelh03486" width="450" />
+        <FlowHPanel id="panelh13486" width="70">
+          <Button  id="okBtn" left="0" position="relative" width="70" className="blue_button_div" />
+        </FlowHPanel>
+        <FlowHPanel id="panelh23486" width="60">
+          <Button id="cancelBtn" left="10" position="relative" width="70" />
+        </FlowHPanel>
+      </FlowHLayout>
+    </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

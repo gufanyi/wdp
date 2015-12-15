@@ -1,0 +1,144 @@
+* {
+	font-family: 'Microsoft YaHei';
+}
+img{
+	border:0;
+}
+
+a{
+	text-decoration:none;
+}
+
+a:visited{
+	color:#808080;
+	text-decoration:none;
+}
+
+a:active{
+	color:#0086b2;
+	text-decoration:none;
+}
+
+a:link{
+	color:#0086b2;
+	text-decoration:none;
+}
+
+a:hover{
+	color:#0086b2;
+	text-decoration:none;
+}
+
+/* body中去掉此样式，解决流式布局下，gird数据量大时，body无滚动条，下面数据看不全问题
+overflow-y:hidden;
+*/
+body 
+{
+	margin:0px;
+	padding:0px;
+	scrollbar-arrow-color: #f4ae21;  /*图6,三角箭头的颜色*/
+	scrollbar-face-color: #808080 ;  /*图5,立体滚动条的颜色*/
+	scrollbar-3dlight-color: #E1E1E1;  /*图1,立体滚动条亮边的颜色*/
+	scrollbar-highlight-color: #E1E1E1;  /*图2,滚动条空白部分的颜色*/
+	scrollbar-shadow-color:#E1E1E1;  /*图3,立体滚动条阴影的颜色*/
+	scrollbar-darkshadow-color: #E1E1E1;  /*图4,立体滚动条强阴影的颜色*/
+	scrollbar-track-color: #E1E1E1;  /*图7,立体滚动条背景颜色*/
+	scrollbar-base-color:#E1E1E1;  /*滚动条的基本颜色*/
+	font-family:宋体,sans-serif;
+	font-size:12px;
+	color:#666666;
+	overflow-y: auto\9;
+}
+
+textarea{
+	font-family:微软雅黑;
+	font-size:12px;
+	color:#666666;
+}
+
+input{
+	font-family:微软雅黑;
+	font-size:12px;
+	color:#666666;
+	outline:none;/*去掉chrome浏览器输入框黄色边框*/
+}
+
+div{
+	outline:none;/*去掉chrome浏览器Div获取焦点黄色边框*/
+}
+
+@media screen and (-webkit-min-device-pixcel-ratio:0){
+	height:100%;
+	overflow-y:auto;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: hidden\9; 
+}
+html,body {
+	height:100%;
+}
+
+
+.unselectable{
+	-moz-user-select:none;
+	user-select:none;
+	gn:expression(this.onselectstart=function(){return false;});
+}
+
+.roundcorner{
+	border: 1px solid #d1e2d8;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	/*box-shadow: #E6E6E6 0px 2px 3px;*/
+	-webkit-box-shadow:0px 2px 3px #E6E6E6;
+	-moz-box-shadow:0px 2px 3px #E6E6E6;
+	behavior:url("PIE.htc")\9;
+}
+
+.gridLayout{
+	border : 0px;
+}
+
+.gridLayout td{
+	border : 0px;
+}
+
+.title_font {
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+}
+
+.table_red{
+	border:1px solid red;
+}
+
+.table_red td{
+	border:1px solid red;
+}
+
+.left_side_style{
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	border-radius:8px;
+	behavior:url("PIE.htc")\9;
+	background-color:#f8f9fb;	
+}
+h1 {
+	margin: 0px;
+	padding: 10px;
+}
+
+.absolute-selected-area {
+    background-color: rgba(51,153,255,0.4);
+    /*opacity: 0.7;*/
+    border: 1px solid rgb(51,153,255);
+    position: absolute;
+}
+
+.item-selected {
+	outline:1px solid red;
+}

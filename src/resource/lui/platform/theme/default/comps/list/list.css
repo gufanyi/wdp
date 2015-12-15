@@ -1,0 +1,43 @@
+.list_div {
+	width: 100%;
+	height: 100%;
+}
+.list_div .optionWrapper {
+	width: 100%;
+	height: 24px;
+	cursor: pointer;
+}
+.list_div .optionWrapper ul {
+	padding: 1px;
+	padding-left: 8px;
+	margin: 0px;
+	list-style-type: none;
+	height: 100%
+}
+.list_div .optionWrapper ul li {
+	float: left;
+	height: 100%;
+}
+.list_div .optionIcon {
+	width: 24px;
+}
+.list_div .optionText {
+	line-height: 24px;
+}
+.list_div .optionIcon .optionIconDiv {
+	margin-left: 4px;
+	margin-top: 4px;
+	width: 16px;
+	height: 16px
+}
+.list_div .optionWrapper ul.optionSelected,
+.list_div .optionWrapper ul.optionOver{
+	border: 1px solid #007DC4;
+	padding: 0px;
+	padding-left: 7px;
+	background: #00B7EE;
+	filter:alpha(opacity=50);  
+	-moz-opacity:0.5;  
+	-khtml-opacity: 0.5;  
+	opacity: 0.5;  
+}

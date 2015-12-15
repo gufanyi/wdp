@@ -1,0 +1,79 @@
+.dividlayout_div 
+{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.dividlayout_div .prop_div_h {
+	height: 100%;
+	position: relative;
+	float: left;
+}
+.dividlayout_div .prop_div_h_inverse {
+	height: 100%;
+	position: relative;
+	float: right;
+}
+.dividlayout_div .prop_div_v {
+	width: 100%;
+	position: relative;
+}
+.dividlayout_div .spliter_h {
+	height: 100%;
+	position: relative;
+	float: left;
+	border-left : 2px solid #0099E5;
+	width: 9px;
+}
+.dividlayout_div .spliter_h_inverse {
+	height: 100%;
+	position: relative;
+	float: right;
+	border-right : 2px solid #0099E5;
+	width: 9px;
+}
+.dividlayout_div .spliter_v {
+	width: 100%;
+	height: 5px;
+	position: relative;
+}
+.dividlayout_div .center_div_h {
+	height: 100%;
+	position: relative;
+	float: left;
+}
+.dividlayout_div .center_div_h_inverse {
+	height: 100%;
+	position: relative;
+	float: right;
+}
+.dividlayout_div .center_div_v {
+	width: 100%;
+	position: relative;
+}
+.dividlayout_div .spliter_h .spliter_btn_h{
+	width: 7px;
+	height: 48px;
+	top:50%;
+	margin-top: -24px;
+	left: 0px;
+	position:absolute;
+	background: url("images/spliter_btn.png");
+	cursor: pointer;
+}
+.dividlayout_div .spliter_h_inverse .spliter_btn_h_inverse{
+	width: 7px;
+	height: 48px;
+	top:50%;
+	margin-top: -24px;
+	right: 0px;
+	position:absolute;
+	background: url("images/spliter_btn_inverse.png");
+	cursor: pointer;
+}
+.dividlayout_div .spliter_v .spliter_btn_v{
+	width: 5px;
+	height: 5px;
+	cursor: pointer;
+	margin: 0 auto;
+}

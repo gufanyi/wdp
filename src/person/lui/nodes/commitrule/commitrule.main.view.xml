@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="main" refId="main" isDialog="false" srcFolder="pa/src/public/" controller="xap.lui.psn.commitrule.CommitRuleCtrl">
+  <PipeOuts />
+  <PipeIns>
+    <PipeIn id="refOkPlugin">
+      <PipeInItem id="type" type="" />
+      <PipeInItem id="id" type="" />
+      <PipeInItem id="writeFields" type="" />
+    </PipeIn>
+  </PipeIns>
+  <DataModels>
+ 	 <Dataset caption="ds_grid1" id="ds_grid1" isEdit="true" isLazyLoad="false" pageSize="8">
+		<Fields>
+			<Field id="viewId" text="视图窗口" isRequire="true" field="viewId" isPK="false"/>
+			<Field id="datasetId" text="数据集" isRequire="true" field="datasetId" isPK="false"/>
+			<Field id="submitRule" text="提交规则" isRequire="true" field="submitRule" isPK="false"/>
+		</Fields>
+		<Events>
+			<Event async="true" eventType="DatasetEvent" method="onDataLoad_grid" eventName="onDataLoad" onserver="true">
+				<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="main">
+                      	 <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+                        </ViewPartRule>
+					    <ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="settings">
+								<DatasetRule id="ds_event">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+				</SubmitRule>
+				<Params>
+					<Param name="dataLoadEvent" value="">
+					</Param>
+				</Params>
+				<Action>
+				</Action>
+			</Event>
+			<Event async="true" eventType="DatasetEvent" method="datasetValueChanged" eventName="onAfterDataChange" onserver="true">
+                <SubmitRule cardSubmit="false">
+                    <ViewPartRule cardSubmit="false" id="main">
+                      	 <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+                    </ViewPartRule>
+                </SubmitRule>
+                <Params>
+				      <Param name="datasetCellEvent" value="" />
+				</Params>
+             </Event>
+		</Events>
+     </Dataset>
+     <Dataset caption="ds_grid2" id="ds_grid2" isEdit="true" isLazyLoad="false" pageSize="8">
+		<Fields>
+			<Field id="viewId" text="视图窗口" isRequire="true" field="viewId" isPK="false"/>
+			<Field id="datasetId" text="数据集" isRequire="true" field="datasetId" isPK="false"/>
+			<Field id="submitRule" text="提交规则" isRequire="true" field="submitRule" isPK="false"/>
+		</Fields>
+		<Events>
+			<Event async="true" eventType="DatasetEvent" method="onDataLoad_grid2" eventName="onDataLoad" onserver="true">
+				<SubmitRule cardSubmit="false">
+					<ViewPartRule cardSubmit="false" id="main">
+                      	 <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+                    </ViewPartRule>
+					<ParentSubmitRule cardSubmit="false">
+						<ViewPartRule id="settings">
+							<DatasetRule id="ds_event">ds_current_page</DatasetRule>
+						</ViewPartRule>
+					</ParentSubmitRule>
+				</SubmitRule>
+				<Params>
+					<Param name="dataLoadEvent" value="">
+					</Param>
+				</Params>
+				<Action>
+				</Action>
+			</Event>
+			<Event async="true" eventType="DatasetEvent" method="pDatasetValueChanged" eventName="onAfterDataChange" onserver="true">
+                <SubmitRule cardSubmit="false">
+                    <ViewPartRule cardSubmit="false" id="main">
+                      	 <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+                    </ViewPartRule>
+                </SubmitRule>
+                <Params>
+				      <Param name="datasetCellEvent" value="" />
+				</Params>
+             </Event>
+		</Events>
+     </Dataset>
+     <DataList id="viewList">
+     </DataList>
+     <DataList id="viewList2">
+     </DataList>
+     <DataList id="allPageList">
+     </DataList>
+     <DataList id="submitRuleList">
+     	<DataItem value="ds_current_line" text="当前行"></DataItem>
+     	<DataItem value="ds_current_page" text="当前页"></DataItem>
+     	<DataItem value="ds_current_key" text="当前页更新行"></DataItem>
+     	<DataItem value="ds_all_line" text="所有行"></DataItem>
+     </DataList>
+     
+     <RefNodes>
+     	<SelfRefNode height="300" width="200" id="ref_dataset" path="/portal/app/mockapp/cdref?model=xap.lui.psn.commitrule.DatasetlistRefPageModel&amp;ctrl=xap.lui.psn.commitrule.DatasetlistRefController&amp;writeDs=ds_grid1&amp;writeField=datasetId" title="选择数据集">
+		</SelfRefNode>
+		<SelfRefNode height="300" width="200" id="ref_dataset2" path="/portal/app/mockapp/cdref?model=xap.lui.psn.commitrule.DatasetlistRefPageModel&amp;ctrl=xap.lui.psn.commitrule.DatasetlistRefController&amp;writeDs=ds_grid2&amp;writeField=datasetId" title="选择数据集">
+		</SelfRefNode>
+     </RefNodes>
+     
+  </DataModels>
+  
+  <Controls>
+	   <Grid id="subRule_grid1" dataset="ds_grid1" isAllowMouseoverChange="true" isFitRowHeight="false" isCopy="true" isEdit="false" enabled="true" isExpandTree="false" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column field="viewId" isFixed="false" id="viewId" text="视图窗口" refComboData="viewList" isFitWidth="true" dataType="String" editorType="ComboBox" isRequire="true" renderType="ComboRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+			<Column field="datasetId" isFixed="false" id="datasetId" text="数据集" refNode="ref_dataset" isFitWidth="true" dataType="String" editorType="Reference" isRequire="true" renderType="DefaultRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+			<Column field="submitRule" isFixed="false" id="submitRule" text="提交规则" refComboData="submitRuleList" isFitWidth="true" dataType="String" editorType="ComboBox" isRequire="true" renderType="ComboRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+	   </Grid>
+	   <Grid id="subRule_grid2" dataset="ds_grid2" isAllowMouseoverChange="true" isFitRowHeight="false" isCopy="true" isEdit="false" enabled="true" isExpandTree="false" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column field="viewId" isFixed="false" id="viewId" text="视图窗口" refComboData="viewList2" isFitWidth="true" dataType="String" editorType="ComboBox" isRequire="true" renderType="ComboRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+			<Column field="datasetId" isFixed="false" id="datasetId" text="数据集" refNode="ref_dataset2" isFitWidth="true" dataType="String" editorType="Reference" isRequire="true" renderType="DefaultRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+			<Column field="submitRule" isFixed="false" id="submitRule" text="提交规则" refComboData="submitRuleList" isFitWidth="true" dataType="String" editorType="ComboBox" isRequire="true" renderType="ComboRender" isSort="true" align="left" isVisible="true" width="">
+			</Column>
+	   </Grid>
+	   <Label id="fLabel" text="父提交规则" isVisible="true"></Label>
+	   <ComboBox isAllowExtendValue="false" enabled="true" focus="false" id="fCombo" refComboData="allPageList" isOnlySelect="true" align="left" textWidth="0" isVisible="true">
+            <Events>
+            	<Event async="true" eventType="TextEvent" method="comboValueChanged" eventName="valueChanged" onserver="true">
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule cardSubmit="false" id="main">
+                             <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+                        </ViewPartRule>
+                        <ParentSubmitRule cardSubmit="false">
+						<ViewPartRule id="settings">
+							<DatasetRule id="ds_event">ds_current_page</DatasetRule>
+						</ViewPartRule>
+					</ParentSubmitRule>
+                    </SubmitRule>
+                    <Params>
+                        <Param name="textEvent" value="" desc="xap.lui.core.event.TextEvent">
+                        </Param>
+                    </Params>
+                    <Action>
+                    </Action>
+                </Event>
+            </Events>
+       </ComboBox>
+	   <Button enabled="true" id="btn_ok" text="确定" isVisible="true">
+         	<Events>
+                <Event async="true" eventType="MouseEvent" method="onOkClick" eventName="onclick" onserver="true">
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule cardSubmit="false" id="main">
+                             <DatasetRule id="ds_grid1">ds_all_line</DatasetRule> 
+                             <DatasetRule id="ds_grid2">ds_all_line</DatasetRule> 
+                        </ViewPartRule>
+                        <ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="settings">
+								<DatasetRule id="ds_event">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+                    </SubmitRule>
+                </Event>
+            </Events>
+        </Button> 
+        <Button enabled="true" id="btn_cancel" text="取消" isVisible="true">
+         	<Events>
+                <Event async="true" eventType="MouseEvent" method="onCancelClick" eventName="onclick" onserver="true">
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule cardSubmit="false" id="main">
+                             <DatasetRule id="dsId">ds_current_line</DatasetRule> 
+                        </ViewPartRule>
+                    </SubmitRule>
+                </Event>
+            </Events>
+        </Button>
+  </Controls>
+  <Menus>
+  	  <MenuBar id="menubar1">
+        	<MenuItem id="add1" modifiers="2" text="增加" imgIcon="new.png">
+        		<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickAdd" eventName="onclick" onserver="true">
+						<Params>
+							<Param name="mouseEvent" value="">
+							</Param>
+						</Params>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem id="modify1" modifiers="2" text="修改" imgIcon="edit.png">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickEdit" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+							    <DatasetRule id="dsId">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="">
+							</Param>
+						</Params>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem id="del1" modifiers="2" text="删除" imgIcon="delete.png">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickDel" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="">
+							</Param>
+						</Params>
+					</Event>
+				</Events>
+            </MenuItem>
+      </MenuBar>
+      <MenuBar id="menubar2">
+        	<MenuItem id="add2" modifiers="2" text="增加" imgIcon="new.png">
+        		<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickAdd2" eventName="onclick" onserver="true">
+						<Params>
+							<Param name="mouseEvent" value="">
+							</Param>
+						</Params>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem id="modify2" modifiers="2" text="修改" imgIcon="edit.png">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickEdit2" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="main">
+							    <DatasetRule id="dsId">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="">
+							</Param>
+						</Params>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem id="del2" modifiers="2" text="删除" imgIcon="delete.png">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickDel2" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Params>
+							<Param name="mouseEvent" value="">
+							</Param>
+						</Params>
+					</Event>
+				</Events>
+            </MenuItem>
+      </MenuBar>
+  </Menus>
+</ViewPart>

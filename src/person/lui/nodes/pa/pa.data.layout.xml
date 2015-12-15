@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="data_um" isFlow="false">
+	<FlowVLayout id="flvlo01">
+		<FlowVPanel id="ffvp02">
+			<TabLayout currentItem="0" id="outlookbar1" itemWidth="55" fontSize="12">
+				<TabItem id="item_ctrl" text="控件">
+					<Tree id="ctrltree" widgetId="data" />
+				</TabItem>
+				<TabItem  id="item_entity" text="模型">
+					<Tree id="entitytree" widgetId="data" />
+				</TabItem>
+				<TabItem id="item_curr" text="视图">
+					<Tree id="currtree" widgetId="data"  width="190"/>
+				</TabItem>
+				<TabItem  id="item_wins" text="窗口">
+					<Tree id="winstree" widgetId="data"  width="190"/>
+				</TabItem>
+			</TabLayout>
+		</FlowVPanel>
+	</FlowVLayout>
+</UIPart>

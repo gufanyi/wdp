@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" isFlow="false">
+  <FlowVLayout id="flowvlayout2633">
+    <FlowVPanel id="panelv02633" height="30">
+	  <Border id="bordtoolbarmgr1" isShowBottom="true" isShowLeft="false" isShowRight="false" isShowTop="false" widgetId="main" width="1" cssStyle="background:#fafafa;"> 
+		<BorderPanel id="borderpaneltoolbarmgr1"> 
+			<MenuBar height="100%" id="toolbar_proxy" left="0" position="relative" top="0" widgetId="main" width="100%" />
+		</BorderPanel>
+	  </Border>
+    </FlowVPanel>
+    <FlowVPanel id="panelv22633">
+      <Grid id="grid_proxy" left="0" top="0" width="100%" height="100%" position="relative" />
+    </FlowVPanel>
+    <FlowVPanel id="flowvpanel14520" height="35">
+      <FlowHLayout id="flowhlayout1503">
+        <FlowHPanel id="panelh01503"/>
+        <FlowHPanel id="flowhpanel13768" width="84">
+          <Button className="blue_button_div" height="24" id="okBtn" left="0" position="relative" top="0" width="74" />
+        </FlowHPanel>
+        <FlowHPanel id="panelh21503" width="94">
+          <Button height="24" id="cancelBtn" left="0" position="relative" top="0" width="74" />
+        </FlowHPanel>
+      </FlowHLayout>
+    </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

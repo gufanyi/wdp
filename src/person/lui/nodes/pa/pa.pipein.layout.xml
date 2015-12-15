@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="pipein_um" isFlow="false" jquery="0">
+    <FlowVLayout id="flowvlayout4621" widgetId="pipein">
+        <FlowVPanel height="40" id="panelv04621" topPadding="20" widgetId="pipein">
+            <FlowHLayout id="flowhlayout5972" isAutoFill="false" widgetId="pipein">
+                <FlowHPanel id="panelh05972" widgetId="pipein" width="80">
+                    <Label align="left" cssStyle="" family="" height="28" id="pipein_label" left="10" position="relative" size="12" style="" textAlign="left" top="0" widgetId="pipein" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh15972" widgetId="pipein">
+                    <TextField height="28" id="pipein_strtext" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="pipein" width="120">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="flowvpanel14068" widgetId="pipein">
+            <MenuBar align="right" height="100%" id="pipeinmenu" left="0" position="relative" top="0" widgetId="pipein" width="100%">
+            </MenuBar>
+        </FlowVPanel>
+        <FlowVPanel id="panelv14621" widgetId="pipein">
+            <Grid height="100%" id="pipeingrid" left="0" position="relative" top="0" widgetId="pipein" width="100%">
+            </Grid>
+        </FlowVPanel>
+        <FlowVPanel height="30" id="flowvpanel14502" widgetId="pipein">
+            <FlowHLayout id="flowhlayout9494" isAutoFill="false" widgetId="pipein">
+                <FlowHPanel id="panelh09494" rightPadding="5" widgetId="pipein">
+                    <Button align="right" height="24" id="inbtn_confirm" left="0" position="relative" top="0" widgetId="pipein" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh19494" leftPadding="5" widgetId="pipein">
+                    <Button height="24" id="inbtn_cancel" left="0" position="relative" top="0" widgetId="pipein" width="64">
+                    </Button>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

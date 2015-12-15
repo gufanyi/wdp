@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" refId="main" isCustom="true" controller="xap.lui.psn.uistate.UistateCtrl" isVisible="true" enabled="true" id="main" srcFolder="pa/src/public/">
+    <DataModels>
+        <Dataset isLazyLoad="false" pageSize="0" isEdit="false" isCleared="false" focusIndex="-1" id="viewds">
+            <Events>
+                <Event eventName="onDataLoad" method="onDataLoad_view" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+                    <Action></Action>
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule id="main">
+                            <DatasetRule id="viewds">ds_all_line</DatasetRule>
+                        </ViewPartRule>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+                <Event eventName="onAfterRowSelect" method="onTreeAfterRowSelect" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+                    <Action></Action>
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule id="main"/>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+                <Event eventName="onBeforeRowSelect" method="onTreeBeforeRowSelect" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+                    <Action></Action>
+                    <SubmitRule cardSubmit="false">
+                    	<ViewPartRule id="main">
+                            <DatasetRule id="viewds">ds_all_line</DatasetRule>
+                            <DatasetRule id="ctrlds">ds_all_line</DatasetRule>
+                        </ViewPartRule>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+            </Events>
+            <Fields>
+                <Field id="viewId" text="viewId" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <FieldRelations/>
+        </Dataset>
+        <Dataset isLazyLoad="false" pageSize="0" isEdit="true" isCleared="false" focusIndex="-1" id="ctrlds">
+            <Events/>
+            <Fields>
+                <Field id="id" text="id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="pid" text="pid" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="visible" text="visible" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="enabled" text="enabled" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <FieldRelations/>
+            <Events>
+            </Events>
+        </Dataset>
+        <RefNodes/>
+    </DataModels>
+    <Controls>
+        <Button refImgChanged="true" text="取消" isVisible="true" enabled="true" id="btn_cancel">
+        	<Events>
+                <Event eventName="onclick" method="onCancelClick" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2"/>
+            </Events>
+        </Button>
+        <Tree isDrag="false" isExpand="true" openLevel="-1" text="视图列表" isShowRoot="true" isShowCheckBox="false" checkboxType="0" isEdit="false" isSelectRoot="false" treeNodeTextMaxWidth="-1" isVisible="true" enabled="true" id="view_tree">
+            <RecursiveTree recursiveField="viewId" recursiveParentField="viewId" dataset="viewds" labelFields="viewId" masterField="viewId" id="level1"/>
+        </Tree>
+        <Label innerHTML="&lt;Strong&gt;控件状态设置&lt;/Strong>" isVisible="true" enabled="true" id="label_ctrl"/>
+        <Grid dataset="ctrlds" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" showColumns="id,name,visible,enabled" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true" id="ctrl_grid">
+            <Column field="id" text="控件id" width="120" dataType="String" isSort="true" isVisible="true" isEdit="false" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="false" mergedShown="false" id="id"/>
+            <Column field="visible" text="是否可见" width="120" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="false" mergedShown="false" id="visible"/>
+            <Column field="enabled" text="是否可用" width="120" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="false" mergedShown="false" id="enabled"/>
+            <RecursiveGrid dataset="ctrlds" id="level1" labelFields="id" recursiveField="id" recursiveParentField="pid">
+			</RecursiveGrid>
+        </Grid>
+        <Button refImgChanged="true" text="确定" isVisible="true" enabled="true" id="btn_confirm">
+            <Events>
+                <Event eventName="onclick" method="onclickConfirm" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2">
+                    <SubmitRule cardSubmit="false">
+                        <ViewPartRule id="main">
+                            <DatasetRule id="ctrlds">ds_all_line</DatasetRule>
+                        </ViewPartRule>
+                        <Params/>
+                    </SubmitRule>
+                </Event>
+            </Events>
+        </Button>
+    </Controls>
+    <Menus/>
+    <PipeIns>
+        <PipeIn id="refOkPlugin">
+            <PipeInItem id="type" clazztype="java.lang.String"/>
+            <PipeInItem id="id" clazztype="java.lang.String"/>
+            <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+        </PipeIn>
+    </PipeIns>
+</ViewPart>

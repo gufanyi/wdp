@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" isFlow="false">
+  <FlowVLayout id="flowvlayout2718">
+    <FlowVPanel id="panelv02718" height="10" />
+    <FlowVPanel id="panelv12718">
+      <FlowHLayout id="flowhlayout3118">
+        <FlowHPanel id="panelh03118" width="10" />
+        <FlowHPanel id="panelh13118">
+          <FlowVLayout id="flowvlayout0201">
+            <FlowVPanel id="flowvlayout00201"  height="100">
+              <Form id="dscfgform" left="0" top="0" width="100%" height="100%" position="relative" />
+            </FlowVPanel>
+            <FlowVPanel id="flowvlayout10201">
+              <TabLayout currentItem="0" id="tag1637" oneTabHide="false" tabType="top">
+                <TabItems>
+                  <TabItem active="true"  id="UITabItem01635" showCloseIcon="false" text="元数据属性">
+                    <Grid id="classgrid" left="0" top="0" width="100%" height="100%" position="relative" />
+                  </TabItem>
+                  <TabItem active="true"  id="UITabItem01636" showCloseIcon="false" text="自定义属性">
+                    <Grid id="fieldgrid" left="0" top="0" width="100%" height="100%" position="relative" />
+                  </TabItem>
+                  <TabItem active="false"  id="UITabItem01637" showCloseIcon="false" text="数据集关联">
+                    <Grid id="relationsgrid" left="0" top="0" width="100%" height="100%" position="relative" />
+                  </TabItem>
+                  <!--
+                  <TabItem active="false"  id="UITabItem01638" showCloseIcon="false" text="扩展属性">
+                    <Grid id="dsattrgrid" left="0" top="0" width="100%" height="100%" position="relative" />
+                  </TabItem>
+                  -->
+                </TabItems>
+                <TabRight>
+                  <FlowHLayout id="flowhlayout17528">
+                    <FlowHPanel id="flowh0001" width="200">
+                      <MenuBar id="func_menu" left="0" position="" top="0" widgetId="main" width="100%" />
+                    </FlowHPanel>
+                  </FlowHLayout>
+                </TabRight>
+              </TabLayout>
+            </FlowVPanel>
+          </FlowVLayout>
+        </FlowHPanel>
+        <FlowHPanel id="panelh23118" width="10" />
+      </FlowHLayout>
+    </FlowVPanel>
+    <FlowVPanel id="panelv22718" height="50">
+      <FlowHLayout id="flowhlayout0735">
+        <FlowHPanel id="panelh40735"/>
+        <FlowHPanel id="panelh20735" width="70">
+          <Button id="okBtn" left="0"  position="relative" top="15" width="70" className="blue_button_div" />
+        </FlowHPanel>
+        <FlowHPanel id="panelh30735" width="100">
+          <Button  id="cacelBtn" left="10"  position="relative" top="15" width="70" />
+        </FlowHPanel>
+      </FlowHLayout>
+    </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

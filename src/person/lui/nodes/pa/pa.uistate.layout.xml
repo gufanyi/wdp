@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="uistate_um" isFlow="false">
+	<FlowVLayout id="flowvlayjjut4621" widgetId="param">
+		<FlowVPanel id="phlv04621" widgetId="uistate">
+			<Tree id="statetree" widgetId="data"  width="190"/>
+		</FlowVPanel>
+	</FlowVLayout>
+</UIPart>

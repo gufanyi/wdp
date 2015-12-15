@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" caption="LUIDesigner" controller="" id="pa" srcFolder="">
+	<Processor>xap.lui.core.event.AppRequestProcessor</Processor>
+	<ViewParts>
+		<ViewPart id="editor" refId="editor" />
+		<ViewPart id="settings" refId="settings" />
+		<ViewPart id="data" refId="data" />
+		<ViewPart id="nav" refId="nav" />
+		<ViewPart id="top" refId="top" />
+		<ViewPart id="file" refId="file" />
+		<ViewPart id="project" refId="project" />
+		<ViewPart id="pipein" refId="pipein" />
+		<ViewPart id="pipeout" refId="pipeout" />
+		<ViewPart id="connector" refId="connector" />
+		<ViewPart id="newview" refId="newview" />
+		<ViewPart id="param" refId="param" />
+		<ViewPart id="uistate" refId="uistate" />
+	</ViewParts>
+</PagePart>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" caption="下拉控件数据配置" controller="xap.lui.psn.pamgr.ComboDataConfigController" id="combodatacfg" srcFolder="">
+  <Processor>xap.lui.core.event.AppRequestProcessor</Processor>
+  <ViewParts>
+    <ViewPart id="main" refId="main" />
+  </ViewParts>
+  <Attributes>
+    <Attribute key="$MODIFY_TS" value="1341365239635" desc="" />
+  </Attributes>
+  <Events>
+    <Event async="true" eventType="PageEvent" eventName="onClosed" method="sysWindowClosed" onserver="true">
+      <SubmitRule cardSubmit="false" />
+    </Event>
+    <Event async="false" eventType="PageEvent" eventName="onClosed" method="onPageClosed" onserver="true">
+    </Event>
+  </Events>
+</PagePart>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="main" refId="main" isDialog="false" srcFolder="pa/src/public/" controller="xap.lui.psn.refence.RefConfigController">
+  <PipeOuts />
+  <PipeIns>
+    <PipeIn id="refOkPlugin">
+      <PipeInItem id="type" type="" />
+      <PipeInItem id="id" type="" />
+      <PipeInItem id="writeFields" type="" />
+    </PipeIn>
+  </PipeIns>
+  <DataModels>
+    <Dataset id="refcfgds" isEdit="true" isLazyLoad="false" pageSize="">
+      <Fields>
+        <Field id="refNodeId" dataType="String" isRequire="true" isPK="false" text="refNodeId" />
+        <Field id="refNodeCode" dataType="String" isRequire="true" isPK="false" text="refNodeCode" />
+        <Field id="isdialog" dataType="FBoolean" isRequire="true" isPK="false" text="isdialog" />
+        <Field id="dialogHeight" dataType="String" isRequire="true" isPK="false" text="dialogHeight" />
+        <Field id="dialogWidth" dataType="String" isRequire="true" isPK="false" text="dialogWidth" />
+        <Field id="refType" dataType="String" isRequire="true" isPK="false" text="refType" />
+        <Field id="writeDs" dataType="String" isRequire="true" isPK="false" text="writeDs" />
+        <Field id="writeFields" dataType="String" isRequire="true" isPK="false" text="writeFields" />
+        <Field id="dataListener" dataType="String" isRequire="true" isPK="false" text="dataListener" />
+        <Field id="title" dataType="String" isRequire="true" isPK="false" text="title" />
+        <Field id="readDs" dataType="String" isRequire="true" isPK="false" text="readDs" />
+        <Field id="readFields" dataType="String" isRequire="true" isPK="false" text="readFields" />
+        <Field id="pageModel" dataType="String" isRequire="true" isPK="false" text="pageModel" />
+        <Field id="pagePath" dataType="String" isRequire="true" isPK="false" text="pagePath" />
+        <Field id="orgs" dataType="FBoolean" isRequire="true" isPK="false" text="orgs" />
+        <Field id="filterRefNodeNames" dataType="FBoolean" isRequire="true" isPK="false" text="filterRefNodeNames" />
+      </Fields>
+      <Events>
+        <Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad_refcfgds" eventName="onDataLoad" onserver="true">
+          <SubmitRule cardSubmit="false" />
+          <Params>
+            <Param name="dataLoadEvent" value="" desc="com.haiyou.wfw.common.event.DataLoadEvent" />
+          </Params>
+          <Action />
+        </Event>
+      </Events>
+    </Dataset>
+    <DataList id="combo_reftype">
+      <DataItem text="通用参照" value="ncrefnode" />
+      <DataItem text="自定义参照" value="selfrefnode" />
+    </DataList>
+    <RefNodes>
+      <SelfRefNode height="" id="ref_selfref" langDir="" path="app/mockapp/cdref?model=xap.lui.psn.refence.MockRefPageModel&amp;ctrl= xap.lui.psn.refence.MockBaseRefDataRefController" text="" width="" writeDs="" writeFields="" />
+    </RefNodes>
+  </DataModels>
+  <Controls>
+    <Button enabled="true" id="okBtn" text="确定" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="okBtnEvent" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+              <DatasetRule id="dsId">ds_current_line</DatasetRule>
+              <Dataset id="refcfgds" isEdit="" isLazyLoad="" pageSize="" />
+            </ViewPartRule>
+          </SubmitRule>
+          <Params>
+            <Param name="mouseEvent" value="" desc="com.haiyou.wfw.common.event.MouseEvent" />
+          </Params>
+          <Action />
+        </Event>
+      </Events>
+    </Button>
+    <Form id="refcfgform" caption="" column="2" dataset="refcfgds" eleWidth="120" isEllipsis="" enabled="true" labelMinWidth="0" renderType="2" rowHeight="22" isVisible="true">
+      <Element id="refNodeId" colSpan="1" dataType="String" isEdit="false" editorType="StringText" field="refNodeId" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="参照ID" isVisible="true" width="" />
+      <Element id="refNodeCode" colSpan="1" dataType="" isEdit="true" editorType="Reference" field="refNodeCode" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="参照编码" isVisible="true" width="" />
+      <Element id="isdialog" colSpan="1" dataType="FBoolean" isEdit="true" editorType="CheckBox" field="isdialog" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="是否弹出框" isVisible="true" width="" />
+      <Element id="dialogHeight" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="dialogHeight" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="参照对话框高" isVisible="true" width="" />
+      <Element id="dialogWidth" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="dialogWidth" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="参照对话框宽" isVisible="true" width="" />
+      <Element id="refType" colSpan="1" dataType="String" isEdit="true" editorType="ComboBox" field="refType"  refComboData="combo_reftype" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="参照类型" isVisible="true" width="" />
+      <Element id="orgs" colSpan="1" dataType="FBoolean" isEdit="true" editorType="CheckBox" field="orgs" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="是否多组织" isVisible="true" width="" />
+      <Element id="filterRefNodeNames" colSpan="1" dataType="FBoolean" isEdit="true" editorType="CheckBox" field="filterRefNodeNames" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="显示组织参照" isVisible="true" width="" />
+      <Element id="writeDs" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="writeDs" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="写入数据集" isVisible="true" width="" />
+      <Element id="writeFields" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="writeFields" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="写入字段" isVisible="true" width="" />
+      <Element id="dataListener" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="dataListener" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="数据加载类" isVisible="true" width="" />
+      <Element id="title" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="title" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="显示标题" isVisible="true" width="" />
+      <Element id="readDs" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="readDs" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="读入数据集" isVisible="true" width="" />
+      <Element id="readFields" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="readFields" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="读入字段" isVisible="true" width="" />
+      <Element id="pageModel" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="pageModel" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="页面控制类" isVisible="true" width="" />
+      <Element id="pagePath" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="pagePath" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="页面路径" isVisible="true" width="" />
+    </Form>
+    <Button enabled="true" id="cancelBtn" text="取消" visible="true">
+      <Events>
+        <Event async="true" eventType="MouseEvent" method="cancelBtnEvent" eventName="onclick" onserver="true">
+          <SubmitRule cardSubmit="false">
+            <ViewPartRule id="main">
+              <DatasetRule id="dsId">ds_current_line</DatasetRule>
+            </ViewPartRule>
+          </SubmitRule>
+          <Params>
+            <Param name="mouseEvent" value="" desc="com.haiyou.wfw.common.event.MouseEvent" />
+          </Params>
+          <Action />
+        </Event>
+      </Events>
+    </Button>
+  </Controls>
+  <Menus />
+</ViewPart>

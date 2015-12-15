@@ -1,0 +1,150 @@
+.panel_div
+{
+	overflow-y:hidden;
+}
+
+.panel_div .title_div
+{
+	width:100%;
+	height:30px;
+	position:relative;
+	background-color:#00b7ee;
+}
+
+.panel_div .title_div_off
+{
+	width:100%;
+	height:30px;
+	position:relative;
+	background-color:#9b9b9b;
+}
+
+.panel_div .content_div
+{
+	width:100%;
+}
+
+.panel_div .img_left_div_col
+{
+	background:url('images/arrow_down.png') no-repeat;
+	width:16px;
+	height:16px;
+	margin-left:8px;
+	margin-right:10px;
+	margin-top:0px;
+	position:absolute;
+	right:5px;
+	top:7px;
+}
+
+.panel_div .img_left_div_expand
+{
+	background:url('images/arrow_up.png') no-repeat;
+	width:16px;
+	height:16px;
+	float:left;
+	margin-left:8px;
+	margin-right:10px;
+	margin-top:0px;
+	position:absolute;
+	right:5px;
+	top:7px;
+}
+
+.panel_div .panel_transparent_title_left_div
+{
+	float:left;
+	color:#fff;
+	/*font-weight:bold;*/
+	font-size:14px;
+	margin-left:18px;
+	max-width:120px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	line-height:30px;
+}
+
+.panel_div .title_div .panel_custom_right_div
+{
+	float:right;
+	color:#007dc4;
+	font-weight:normal;
+	font-size:12px;
+	position:absolute;
+	right:0px;
+	top:0px;
+}
+
+.panel_div .panel_dotta
+{
+	position:relative;
+	width:100%;
+	height:1px;
+	background:url('images/dotta.png') repeat-x;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+/*small panel css*/
+.small_panel_div
+{
+	overflow-y:auto;
+}
+
+.small_panel_div .title_div
+{
+	position:relative;
+	float:left;
+	width:100%;
+	height:16px;
+}
+
+.small_panel_div .content_div
+{
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+.small_panel_div .img_left_div_col
+{
+	background:url('images/down_arrow.png') no-repeat;
+	width:9px;
+	height:9px;
+	float:left;
+	margin-left:8px;
+	margin-right:7px;
+	margin-top:3px;
+}
+
+.small_panel_div .img_left_div_expand
+{
+	background:url('images/up_arrow.png') no-repeat;
+	width:9px;
+	height:9px;
+	float:left;
+	margin-left:8px;
+	margin-right:7px;
+	margin-top:3px;
+}
+
+.small_panel_div .panel_transparent_title_left_div
+{
+	float:left;
+	color:#007dc4;
+	font-weight:bold;
+	font-size:14px;
+}
+
+.small_panel_div .panel_dotta
+{
+	position:relative;
+	float:left;
+	width:100%;
+	height:2px;
+	border-top:1px solid #e5e5e5;
+	margin-top:8px;
+	margin-bottom:15px;
+	background-color:#87D4FE;
+}

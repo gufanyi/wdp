@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://com.founer.xap/schema/lui"  xmlns="http://com.founer.xap/schema/lui" elementFormDefault="qualified">
+  <xs:element name="UIPart">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="Splitter"/>
+        <xs:element maxOccurs="unbounded" ref="FlowVLayout"/>
+        <xs:element maxOccurs="unbounded" ref="FlowHLayout"/>
+        <xs:element ref="ViewPart"/>
+      </xs:choice>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isFlow"  type="xs:boolean" default="false"/>
+      <xs:attribute name="jquery" type="xs:string" default="0"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Splitter">
+    <xs:complexType>
+      <xs:sequence>        
+        <xs:element ref="SplitterOne"/>
+        <xs:element ref="SplitterTwo"/>
+      </xs:sequence>
+      <xs:attribute name="boundMode" use="required" type="xs:integer" default="1"/>
+      <xs:attribute name="divideSize" use="required" type="xs:integer" default="210"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isInverse" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isInverseFlowPanel" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isOneTouch" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="orientation" use="required" type="xs:NCName" default="h"/>
+      <xs:attribute name="spliterWidth" use="required" type="xs:integer" default="4"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SplitterTwo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ShutterLayout"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShutterLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ShutterItems"/>
+      </xs:sequence>
+      <xs:attribute name="currentItem" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" default="main"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShutterItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ShutterItem"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShutterItem">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="显示的文字"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SplitterOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TabLayout"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TabLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TabItems"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="TabRight"/>
+      </xs:sequence>
+      <xs:attribute name="currentItem" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="oneTabHide"  type="xs:boolean" default="false"/>
+      <xs:attribute name="isOneTabHide"  type="xs:boolean" default="false"/>
+      <xs:attribute name="OuterTab" type="xs:boolean" default="true"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" default="main"/>
+      <xs:attribute name="height" type="xs:string" />
+      <xs:attribute name="width" type="xs:string" />
+      <xs:attribute name="tabType" type="xs:string" default="top"/>
+      <xs:attribute name="itemWidth" type="xs:string" />
+      <xs:attribute name="itemHeight" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TabItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="TabItem"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TabItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="persongroup"/>
+      </xs:sequence>
+      <xs:attribute name="active" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="i18nName" type="xs:string"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="showCloseIcon" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="text" use="required" type="xs:NCName" default="页签"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" default="main"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TabRight">
+    <xs:complexType>
+      <xs:choice>     
+        <xs:group ref="persongroup"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowVLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowHLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CanvasLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Border"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CardLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="TabLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ShutterLayout"/>
+      </xs:choice>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" defalut="main"/>
+      <xs:attribute name="width" use="required" type="xs:integer" default="200"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlowVLayout">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowVPanel"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowHPanel"/>
+      </xs:choice>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" type="xs:string" default="main"/>
+      <xs:attribute name="isAutoFill"  type="xs:string" default="false"/>
+      <xs:attribute name="autoFill"  type="xs:string" default="0"/>
+      
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlowVPanel">
+    <xs:complexType>
+      <xs:choice>
+        <xs:group ref="persongroup"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowVLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowHLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CanvasLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Border"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CardLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="TabLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ShutterLayout"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ViewPart"/>
+      </xs:choice>
+      <xs:attribute name="height" type="xs:string" />
+      <xs:attribute name="topBorder" type="xs:string" />
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" type="xs:NCName" default="main"/>
+      <xs:attribute name="rightBorder"  type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlowHLayout">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element maxOccurs="unbounded" ref="FlowHPanel"/>
+        <xs:element maxOccurs="unbounded" ref="FlowVPanel"/>
+      </xs:choice>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" type="xs:string" default="main"/>
+      <xs:attribute name="isAutoFill"  type="xs:string" default="false"/>
+      <xs:attribute name="autoFill"  type="xs:string" default="0"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlowHPanel">
+    <xs:complexType>  
+      <xs:choice>
+        <xs:group ref="persongroup"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowVLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="FlowHLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CanvasLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Border"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CardLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="TabLayout"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ShutterLayout"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ViewPart"/>
+      </xs:choice>  
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="width"  type="xs:string"/>
+      <xs:attribute name="widgetId"  type="xs:string" default="main"/>
+      <xs:attribute name="rightBorder"  type="xs:string" default="1px #a3a3a5 solid"/>
+      <xs:attribute name="className"  type="xs:string" default="lefthpanel"/>
+      <xs:attribute name="leftBorder"  type="xs:string" default="1px solid #D1DFE4"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Border">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="BorderPanel"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="isShowBottom" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowLeft" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="isShowRight" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="isShowTop" use="required" type="xs:boolean" default="false"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" default="main"/>
+      <xs:attribute name="width" use="required" type="xs:string" default="1"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BorderPanel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="persongroup"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanvasLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CanvasPanel"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="styleClassName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanvasPanel">
+    <xs:complexType>
+       <xs:sequence>
+        <xs:group ref="persongroup"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardLayout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="CardPanel"/>
+      </xs:sequence>
+      <xs:attribute name="currentItem" use="required" type="xs:integer" default="0"/>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" default="main"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CardPanel">
+    <xs:complexType>
+       <xs:sequence>
+        <xs:group ref="persongroup"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="widgetId" use="required" type="xs:NCName" default="main"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="persongroup">
+    <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="1" ref="CheckBox"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="CheckBoxGroup"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ComboBox"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="TextField"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="IntegerText"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="DecimalText"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="PwdText"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="TextArea"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Radio"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="RadioGroup"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="DateText"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Reference"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Label"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Link"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Iframe"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Form"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Tree"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Button"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Grid"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="MenuBar"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ToolBar"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="HtmlContent"/>
+    </xs:choice>
+  </xs:group>
+  <xs:element name="CheckBox">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBoxGroup">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="ComboBox">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TextField">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+      <xs:attribute name="imgsrc"  type="xs:string" />
+      <xs:attribute name="type"  type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegerText">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecimalText">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PwdText">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>  
+  <xs:element name="TextArea">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Radio">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RadioGroup">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DateText">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reference">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Label">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Link">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Iframe">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Form">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+      <xs:attribute name="label_position"  type="xs:string" default=""/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Tree">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Button">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+      <xs:attribute name="className"  type="xs:string" default="blue_button_div"/>
+      <xs:attribute name="styleClassName"  type="xs:string" default="blue_button_div"/>
+    </xs:complexType>
+    
+  </xs:element>
+  <xs:element name="Grid">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>    
+  </xs:element>
+  <xs:element name="MenuBar">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>    
+  </xs:element>
+   <xs:element name="ToolBar">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HtmlContent">
+    <xs:complexType>
+      <xs:attributeGroup ref="personattrgroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="personattrgroup">
+    <xs:attribute name="height" type="xs:string" default="100%"/>
+    <xs:attribute name="id" use="required" type="xs:string" />
+    <xs:attribute name="left" use="required" type="xs:integer" default="0"/>
+    <xs:attribute name="position" use="required" type="carType" default="relative">
+      <xs:simpleType name="carType">
+          <xs:restriction base="xs:NCName">
+            <xs:enumeration value="relative"/>
+            <xs:enumeration value="absolute"/>
+            <xs:enumeration value="static"/>
+          </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="top" use="required" type="xs:integer" default="0"/>
+    <xs:attribute name="widgetId" use="required" type="xs:NCName" />
+    <xs:attribute name="width" use="required" type="xs:string" default="100%"/>
+  </xs:attributeGroup>
+  
+  <xs:element name="ViewPart">
+    <xs:complexType>
+      <xs:attribute name="id" use="required"   type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

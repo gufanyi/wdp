@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="main" refId="main" isDialog="false" srcFolder="pa/src/public/" controller="xap.lui.psn.dsmgr.DatasetConfigController">
+	<Events>
+      <Event eventName="beforeShow" method="onBeforeShow" onserver="true" async="true" nmc="true" eventType="DialogEvent" eventStatus="1">
+         <Action><![CDATA[]]></Action>
+         <SubmitRule cardSubmit="false">
+            <ViewPartRule id="editor"/>
+         </SubmitRule>
+      </Event>
+   </Events>
+	<DataModels>
+		<DataList id="dscombodata">
+		</DataList>
+		<DataList id="masterfield">
+		</DataList>   
+		<DataList id="datatypefield">
+		</DataList>   
+		<DataList id="otherfield">
+           
+		</DataList>   
+		<Dataset id="fieldds" isEdit="true" isLazyLoad="false" pageSize="8">
+			<Fields>
+				<Field id="Isnullable" text="是否空" isRequire="true" field="Isnullable" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="IsPKey" text="是否主键" isRequire="true" field="IsPKey" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Name" text="名称" isRequire="true" field="Name" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Displayname" text="显示名称" isRequire="true" field="Displayname" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Datatype_name" text="数据类型_name" isRequire="true" field="Datatype_name" isPK="false" isLock="false" ctxChanged="false"/>
+			</Fields>
+			<FieldRelations>
+				<FieldRelation id="datatype" refDataset="REF_DM_CLASS1" needProcess="true">
+					<MatchFields>
+						<Field readField="Name" writeField="Datatype_name"/>
+					</MatchFields>
+					<WhereField>
+						<Field key="Id" value="Datatype"/>
+					</WhereField>
+					<WhereOrder/>
+				</FieldRelation>
+			</FieldRelations>
+		</Dataset>
+    
+		<Dataset id="classds" isEdit="true" isLazyLoad="false" pageSize="8">
+			<Fields>
+				<Field id="Classid" text="所属实体类" isRequire="true" field="Classid" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Classid_name" text="所属实体类_name" isRequire="true" field="Classid_name" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Ishide" text="是否隐藏" isRequire="true" field="Ishide" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isnullable" text="是否空" isRequire="true" field="Isnullable" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isreadonly" text="是否只读" isRequire="true" field="Isreadonly" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Defaultvalue" text="缺省值" isRequire="true" field="Defaultvalue" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Attrmaxvalue" text="最大值" isRequire="true" field="Attrmaxvalue" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Attrminvalue" text="最小值" isRequire="true" field="Attrminvalue" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Attrlength" text="长度" isRequire="true" field="Attrlength" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Precision" text="精度" isRequire="true" field="Precision" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isfiexedlen" text="是否定长" isRequire="true" field="Isfiexedlen" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Iscalculation" text="是否计算属性" isRequire="true" field="Iscalculation" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isactive" text="是否启用" isRequire="true" field="Isactive" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Id" text="属性主键" isRequire="true" field="Id" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Seqno" text="序号" isRequire="true" field="Seqno" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Name" text="名称" isRequire="true" field="Name" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Displayname" text="显示名称" isRequire="true" field="Displayname" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Datatypestyle" text="类型样式" isRequire="true" field="Datatypestyle" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Datatype" text="数据类型" isRequire="true" field="Datatype" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Datatype_name" text="数据类型_name" isRequire="true" field="Datatype_name" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Refmodelname" text="参照名称" isRequire="true" field="Refmodelname" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Description" text="描述" isRequire="true" field="Description" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isauthen" text="是否授权" isRequire="true" field="Isauthen" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isnotserialize" text="不可序列化" isRequire="true" field="Isnotserialize" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Exttag" text="扩展标签" isRequire="true" field="Exttag" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Iscustomattr" text="是否自定义属性" isRequire="true" field="Iscustomattr" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isdynamic" text="是否动态属性" isRequire="true" field="Isdynamic" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Isaccesspower" text="是否使用权" isRequire="true" field="Isaccesspower" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Accessgroup" text="使用权组" isRequire="true" field="Accessgroup" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Accessorclassname" text="访问策略" isRequire="true" field="Accessorclassname" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Visibility" text="可视类型" isRequire="true" field="Visibility" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Industry" text="所属行业" isRequire="true" field="Industry" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Resid" text="资源id" isRequire="true" field="Resid" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Versiontype" text="版本类型" isRequire="true" field="Versiontype" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Createdby" text="创建人" isRequire="true" field="Createdby" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Createdtime" text="创建时间" isRequire="true" field="Createdtime" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Modifiedby" text="修改人" isRequire="true" field="Modifiedby" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Modifiedtime" text="修改时间" isRequire="true" field="Modifiedtime" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Extendtable" text="扩展表" isRequire="true" field="Extendtable" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Refrelfldsdata" text="关联字段信息" isRequire="true" field="Refrelfldsdata" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Proptype" text="属性类型" isRequire="true" field="Proptype" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Editformula" text="编辑公式" isRequire="true" field="Editformula" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="Valiformula" text="验证公式" isRequire="true" field="Valiformula" isPK="false" isLock="false" ctxChanged="false"/>
+			</Fields>
+			<FieldRelations>
+				<FieldRelation id="datatype" refDataset="REF_DM_CLASS" needProcess="true">
+					<MatchFields>
+						<Field readField="Name" writeField="Datatype_name"/>
+					</MatchFields>
+					<WhereField>
+						<Field key="Id" value="Datatype"/>
+					</WhereField>
+					<WhereOrder/>
+				</FieldRelation>
+			</FieldRelations>
+			<Events>
+				
+			</Events>
+		</Dataset>
+    
+    
+		<Dataset id="relationsds" isEdit="true" isLazyLoad="false" pageSize="8">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="false" isPK="true" text="id" />
+				<Field id="masterds" dataType="String" isRequire="false" isPK="false" text="masterds" />
+				<Field id="masterkey" dataType="String" isRequire="false" isPK="false" text="masterkey" />
+				<Field id="detailds" dataType="String" isRequire="false" isPK="false" text="detailds" />
+				<Field id="detailkey" dataType="String" isRequire="false" isPK="false" text="detailkey" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  method="onAfterRowSelect" eventName="onAfterRowSelect" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="relationsds">ds_current_line</DatasetRule>
+							<DatasetRule id="fieldds">ds_current_line</DatasetRule>
+							<DatasetRule id="classds">ds_current_line</DatasetRule>
+							<DatasetRule id="dscfgds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+				<Event async="true" eventType="DatasetEvent"  method="onAfterDataChange" eventName="onAfterDataChange" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="relationsds">ds_current_line</DatasetRule>
+							<DatasetRule id="fieldds">ds_current_line</DatasetRule>
+							<DatasetRule id="classds">ds_current_line</DatasetRule>
+							<DatasetRule id="dscfgds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="datasetCellEvent" value="" />
+					</Params>
+				</Event>
+			</Events>
+		</Dataset>
+    
+    
+		<Dataset id="dscfgds" isEdit="true" isLazyLoad="false" pageSize="8">
+			<Fields>
+				<Field id="id" dataType="String" isRequire="true" isPK="true" text="id" />
+				<Field id="name" dataType="String" isRequire="true" isPK="false" text="name" />
+				<Field id="lazyLoad" dataType="FBoolean" isRequire="false" isPK="false" text="lazyLoad" />
+				<Field id="voMeta" dataType="String" isRequire="true" isPK="false" text="voMeta" />
+				<Field id="objMeta" dataType="String" isRequire="true" isPK="false" text="objMeta" />
+				<Field id="displayname" dataType="String" isRequire="false" isPK="false" text="displayname" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="relationsds">ds_current_line</DatasetRule>
+							<DatasetRule id="fieldds">ds_current_line</DatasetRule>
+							<DatasetRule id="classds">ds_current_line</DatasetRule>
+							<DatasetRule id="dscfgds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+						<ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="data">
+								<DatasetRule id="entityds">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Dataset>
+   
+		<Dataset id="dsattrds" isEdit="true" isLazyLoad="false" pageSize="8">
+			<Fields>
+				<Field id="id"   dataType="String" isRequire="false" isPK="true" text="id" />
+				<Field id="desc" dataType="String" isRequire="true"  isPK="false" text="name" />
+				<Field id="val"  dataType="String" isRequire="false" isPK="false" text="name" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  method="onAttrLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+             
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Dataset>
+    
+		<RefMdDataset isLazyLoad="false" pageSize="-1" voMeta="xap.dp.dmengine.d.ClassDO" tableName="dm_class" isEdit="false" isCleared="false" focusIndex="-1" id="REF_DM_CLASS">
+		</RefMdDataset>
+		<RefNodes>
+			<GenericRefNode isMultiple="false"  readDataset="masterDs" writeDataset="classds" readFields="Id,Displayname" writeFields="Datatype,Datatype_name" refcode="REF_DM_CLASS" isQuickInput="false"  isFilterNames="false" isOnlyLeaf="false" pageMeta="reference" title="元数据主实体" isLocate="true" width="500" height="400" isRead="false" id="REF_DM_CLASS">
+			</GenericRefNode>
+			<GenericRefNode isMultiple="false"  readDataset="masterDs" writeDataset="fieldds" readFields="Id,Displayname" writeFields="Datatype,Datatype_name" refcode="REF_DM_CLASS" isQuickInput="false" isFilterNames="false" isOnlyLeaf="false" pageMeta="reference" title="元数据主实体" isLocate="true" width="500" height="400" isRead="true" id="REF_DM_CLASS1">
+			</GenericRefNode>
+			<SelfRefNode height="400" width="700" id="refnode_metadataset"  path="/portal/app/mockapp/cdref?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=dscfgds&amp;writeField=voMeta,objMeta" title="引用元数据"/>
+			<SelfRefNode height="400" width="200" id="refnode_fields" path="/portal/app/mockapp/cdref?model=xap.lui.psn.dsmgr.MockFieldRefPageModel&amp;ctrl=xap.lui.psn.dsmgr.MockFieldRefController&amp;writeDs=relationsds&amp;writeField=detailds,detailkey" title="选择字段">
+			</SelfRefNode>
+		</RefNodes>
+	</DataModels>
+  
+	<Controls>
+		<Button enabled="true" id="okBtn" langDir="pa_nodes" text="确定" tip="点击确认保存" visible="true">
+			<Events>
+				<Event async="true" eventType="MouseEvent" method="onOkBtnClick" eventName="onclick" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="relationsds">ds_all_line</DatasetRule>
+							<DatasetRule id="fieldds">ds_all_line</DatasetRule>
+							<DatasetRule id="classds">ds_all_line</DatasetRule>
+							<DatasetRule id="dscfgds">ds_all_line</DatasetRule>
+						</ViewPartRule>
+						<ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="datapa">
+								<DatasetRule id="pa">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button>
+		<Button enabled="true" id="cacelBtn" langDir="pa_nodes" text="取消" tip="取消" visible="true">
+			<Events>
+				<Event async="true" eventType="MouseEvent" method="onCancelClick" eventName="onclick" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="relationsds">ds_current_line</DatasetRule>
+							<DatasetRule id="fieldds">ds_current_line</DatasetRule>
+							<DatasetRule id="classds">ds_current_line</DatasetRule>
+							<DatasetRule id="dscfgds">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button>
+		<Grid id="relationsgrid" isFitRowHeight="false" isCopy="true" dataset="relationsds" isEdit="true" enabled="true" isExpandTree="false" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column id="id" width="120" text="id" align="left" isFixed="false" isRequire="false" isSort="true" isVisible="false" isFitWidth="true" dataType="String" isEdit="true" editorType="StringText" renderType="DefaultRender" field="id" />
+			<Column id="masterds" width="120" text="主数据集" align="center" isFixed="false" isRequire="false" isSort="true" isVisible="true" isFitWidth="true" dataType="String" isEdit="true" editorType="StringText" renderType="DefaultRender" field="masterds" />
+			<Column id="masterkey" width="120" text="主数据集主键" align="center" isFixed="false" isRequire="false" isSort="true" isVisible="true" isFitWidth="true" dataType="String" isEdit="true"  editorType="ComboBox" renderType="ComboRender" refComboData="masterfield" field="masterkey" />
+			<Column id="detailds" width="120" text="子数据集" align="center"  isFixed="false" isRequire="false" isSort="true" isVisible="true" isFitWidth="true" dataType="String" isEdit="true" editorType="ComboBox" renderType="ComboRender" refComboData="dscombodata"  field="detailds" />
+			<Column id="detailkey" width="120" text="子数据集外键" align="center" isFixed="false" isRequire="false" isSort="true" isVisible="true" isFitWidth="true" dataType="String" isEdit="true" editorType="Reference" refNode="refnode_fields"  renderType="DefaultRender"    field="detailkey"/>
+		</Grid>
+    
+		<Grid id="classgrid" isFitRowHeight="false" isCopy="true" dataset="classds" isEdit="true" enabled="true" isExpandTree="false" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">       
+			<Column field="Seqno" text="序号" width="40" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Seqno">
+			</Column>
+			<Column field="Name" text="名称" width="100" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Name">
+			</Column>
+			<Column field="Displayname" text="显示名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Displayname">
+			</Column>
+			<Column field="Datatypestyle" text="类型样式" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Datatypestyle">
+			</Column>
+			<Column field="Datatype_name" text="数据类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="REF_DM_CLASS" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Datatype_name">
+			</Column>
+			<Column field="Datatype" text="数据类型" width="120" dataType="String" isSort="true" isVisible="false" isEdit="true" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="REF_DM_CLASS" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Datatype">
+			</Column>
+			<Column field="Ishide" text="是否隐藏" width="80" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Ishide">
+			</Column>
+			<Column field="Isnullable" text="是否空" width="80" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Isnullable">
+			</Column>
+			<Column field="Isreadonly" text="是否只读" width="80" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Isreadonly">
+			</Column>
+			<Column field="Editformula" text="编辑公式" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Datatypestyle">
+			</Column>
+			<Column field="Valiformula" text="验证公式" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Datatypestyle">
+			</Column>
+		</Grid>
+    
+		<Grid id="fieldgrid" isFitRowHeight="false" isCopy="true" dataset="fieldds" isEdit="true" enabled="true" isExpandTree="false" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column field="Name" text="名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Name">
+			</Column>
+			<Column field="Displayname" text="显示名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Displayname">
+			</Column>
+			<Column field="Datatype_name" text="数据类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox"  renderType="ComboRender" refComboData="datatypefield"  isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Datatype_name">
+			</Column>
+			<Column field="IsPKey" text="是主键" width="120" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="IsPKey">
+			</Column>
+			<Column field="Isnullable" text="是否空" width="120" dataType="FBoolean" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="CheckBox" renderType="BooleanRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="false" mergedShown="false" id="Isnullable">
+			</Column>
+			
+			</Grid>
+     
+		<Grid id="dsattrgrid" isFitRowHeight="false" isCopy="true" dataset="dsattrds" isEdit="true" enabled="true" isExpandTree="false" isMultiple="false" isPageTop="false" toolbarRender="" isShowColMenu="false" isShowHeader="true" isShowToolbar="false" isShowNum="false" isShowTotalRow="false" isVisible="true">
+			<Column id="id" width="120" text="键" align="left" isFixed="false" isRequire="false" isSort="true" isVisible="true" isFitWidth="false" dataType="String" isEdit="true" editorType="StringText" renderType="DefaultRender" field="id" />
+			<Column id="masterds" width="120" text="值" align="center" isFixed="false" isRequire="false" isSort="true" isVisible="true" isFitWidth="false" dataType="String" isEdit="true" editorType="StringText" renderType="DefaultRender" field="val" />
+			<Column id="masterkey" width="120" text="注释" align="center" isFixed="false" isRequire="true" isSort="true" isVisible="true" isFitWidth="false" dataType="String" isEdit="true" editorType="StringText" renderType="DefaultRender" field="desc" />
+		</Grid>
+		<Form id="dscfgform" caption="" column="2" dataset="dscfgds" eleWidth="280" isEllipsis="" enabled="true" labelMinWidth="0" renderType="2" rowHeight="22" isVisible="true">
+			<Element id="id" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="id" height="" isRequire="false" rowSpan="1" isOnlySelect="true" text="数据集ID" isVisible="true" width="" />
+			<Element id="name" colSpan="1" dataType="String" isEdit="true" editorType="StringText" field="name" height="" isRequire="false" rowSpan="1" isOnlySelect="true" text="数据集名称" isVisible="true" width="" />
+			<Element id="lazyLoad" colSpan="1" dataType="FBoolean" isEdit="true" editorType="CheckBox" field="lazyLoad" height="" isRequire="false" rowSpan="1" isOnlySelect="true" text="是否缓加载" isVisible="true" width="" />
+			<Element id="displayname" colSpan="1" dataType="String" isEdit="false" editorType="StringText" field="displayname" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="元数据名称" isVisible="false" width="" />
+			<Element id="objMeta" refNode="refnode_metadataset" colSpan="1" dataType="String" isEdit="true" editorType="Reference" field="objMeta" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="引用元数据" isVisible="true" width="" />
+			<Element id="voMeta" colSpan="1" dataType="String" isEdit="false" editorType="StringText" field="voMeta" height="" isRequire="true" rowSpan="1" isOnlySelect="true" text="元数据实体类" isVisible="true" width="" />
+      
+		</Form>
+	</Controls>
+  
+	<Menus>
+		<MenuBar id="func_menu">
+			<MenuItem id="add" modifiers="3" stateManager="" text="增加" imgIcon="platform/theme/${theme}/global/images/icon/16/new.png">
+				<Events>
+					<Event async="true" method="onAddRelation" eventType="MouseEvent" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="main">
+								<DatasetRule id="relationsds">ds_current_line</DatasetRule>
+								<DatasetRule id="fieldds">ds_current_line</DatasetRule>
+								<DatasetRule id="classds">ds_current_line</DatasetRule>
+								<DatasetRule id="dscfgds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+					</Event>
+				</Events>
+			</MenuItem>
+			<MenuItem id="delete" modifiers="3" stateManager="" text="删除" imgIcon="platform/theme/${theme}/global/images/icon/16/delete.png">
+				<Events>
+					<Event async="true" method="onDelRelation" eventType="MouseEvent" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="main">
+								<DatasetRule id="relationsds">ds_current_line</DatasetRule>
+								<DatasetRule id="fieldds">ds_current_line</DatasetRule>
+								<DatasetRule id="classds">ds_current_line</DatasetRule>
+								<DatasetRule id="dscfgds">ds_current_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+					</Event>
+				</Events>
+			</MenuItem>
+		</MenuBar>
+	</Menus>
+</ViewPart>

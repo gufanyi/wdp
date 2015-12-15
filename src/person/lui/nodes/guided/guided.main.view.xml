@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewPart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="main" isVisible="true" enabled="true" isDialog="false" isCustom="true" controller="xap.lui.psn.guided.GuidedCfgController">
+   <DataModels>
+      <DatasetRelations/>
+      <Dataset id="ds_treeTab_tree" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_treeTab_tree">
+         <Events>
+            <Event eventName="onDataLoad" method="ds_treeTabTab_tree_onDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="dsid" text="树数据集ID" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="树引用数据集" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="树编辑类型" isRequire="true" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="isEditTree" text="是否编辑树" isRequire="false" dataType="Boolean" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_parChiTab_Chi" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="ds_parChiTab_Chi">
+         <Fields>
+            <Field id="dsid" text="子表数据集ID" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="子表引用数据集" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="子表编辑类型" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="fieldds" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1">
+         <Fields>
+            <Field id="Isnullable" text="是否空" isRequire="true" field="Isnullable" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="IsPKey" text="是否主键" isRequire="true" field="IsPKey" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="Name" text="名称" isRequire="true" field="Name" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="Displayname" text="显示名称" isRequire="true" field="Displayname" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="Datatype_name" text="数据类型_name" isRequire="true" field="Datatype_name" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations>
+            <FieldRelation id="datatype" refDataset="REF_DM_CLASS1" needProcess="true">
+               <MatchFields>
+                  <Field readField="Name" writeField="Datatype_name"/>
+               </MatchFields>
+               <WhereField>
+                  <Field key="Id" value="Datatype"/>
+               </WhereField>
+               <WhereOrder/>
+            </FieldRelation>
+         </FieldRelations>
+      </Dataset>
+      <Dataset id="ds_treeTab_tab" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_treeTab">
+         <Events>
+            <Event eventName="onDataLoad" method="form_SigTab_OnDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="dsid" text="表数据集ID" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="树引用数据集" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="表编辑类型" isRequire="true" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_parChiTab" isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_parChiTab">
+         <Events>
+            <Event eventName="onDataLoad" method="form_SigTab_OnDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="dsid" text="主表数据集ID" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="主表引用数据集" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="主表编辑类型" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="aggDo" text="AggDo实体" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_sigTab" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1">
+         <Events>
+            <Event eventName="onDataLoad" method="form_SigTab_OnDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="dsid" text="数据集ID" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="sigTabRef" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="编辑类型" isRequire="true" field="editType" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="relationsds" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1">
+         <Events>
+            <Event eventName="onAfterDataChange" method="onAfterDataChange" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="relationsds">ds_current_line</DatasetRule>
+                  </ViewPartRule>
+                  <Params/>
+               </SubmitRule>
+            </Event>
+         </Events>
+         <Fields>
+            <Field id="id" text="id" isRequire="false" dataType="String" isPK="true" isLock="false" ctxChanged="false"/>
+            <Field id="masterds" text="masterds" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="masterkey" text="masterkey" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="detailds" text="detailds" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="detailkey" text="detailkey" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_treeTabTab_tree" isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_treeTabTab">
+         <Events>
+            <Event eventName="onDataLoad" method="ds_treeTabTab_tree_onDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="dsid" text="树数据集ID" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="树编辑类型" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="树引用数据集" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="isEditTree" text="是否编辑树" isRequire="false" dataType="Boolean" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_Page" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1">
+         <Events>
+            <Event eventName="onDataLoad" method="ds_page_OnDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="txtPageId" text="节点ID" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="isSimpQuery" text="是否生成查询模版" isRequire="false" dataType="Boolean" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="simpQueryNodeCode" text="查询模版NodeCode" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="relationsTreeDs" isLazyLoad="false" pageSize="8" isEdit="true" isCleared="false" focusIndex="-1">
+         <Events>
+            <Event eventName="onAfterDataChange" method="onAfterDataChange" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1">
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="relationsTreeDs">ds_current_line</DatasetRule>
+                  </ViewPartRule>
+                  <Params/>
+               </SubmitRule>
+            </Event>
+         </Events>
+         <Fields>
+            <Field id="id" text="id" isRequire="false" dataType="String" isPK="true" isLock="false" ctxChanged="false"/>
+            <Field id="masterds" text="masterds" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="masterkey" text="masterkey" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="detailds" text="detailds" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="detailkey" text="detailkey" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_treeTabTab_ChiTab" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="ds_treeTabTab_ChiTab">
+         <Fields>
+            <Field id="dsid" text="子表数据集ID" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="子表编辑类型" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="子表引用数据集" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="ds_treeTabTab_pTab" isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_treeTabTab">
+         <Events>
+            <Event eventName="onDataLoad" method="form_SigTab_OnDataLoad" onserver="true" async="true" nmc="true" eventType="DatasetEvent" eventStatus="1"/>
+         </Events>
+         <Fields>
+            <Field id="dsid" text="主表数据集ID" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="editType" text="主表编辑类型" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="ref" text="主表引用数据集" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="name" text="name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="aggDo" text="AggDo实体" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <DataList id="editTypeList">
+         <DataItem text="全表编辑" value="fullTab"/>
+         <DataItem text="卡片编辑" value="cardTab"/>
+         <DataItem text="弹出窗口" value="popUpWin"/>
+      </DataList>
+      <DataList id="dscombodata"/>
+      <DataList id="masterfield"/>
+      <RefNodes>
+         <SelfRefNode id="refnode_treeTab" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref0?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_treeTab_tab&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_treeTabTab_Tree" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref1?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_treeTabTab_tree&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_treeTabTab_PTab" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref2?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_treeTabTab_pTab&amp;writeDs_ChiTab=ds_treeTabTab_ChiTab&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_fields" title="选择字段" isLocate="true" width="200" height="400" isRead="false" path="/portal/app/mockapp/cdref?model=xap.lui.psn.dsmgr.MockFieldRefPageModel&amp;ctrl=xap.lui.psn.dsmgr.MockFieldRefController&amp;writeField=detailds,detailkey" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_tree" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref4?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_treeTab_tree&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_parChiTab_Chi" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref5?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_parChiTab_Chi&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_sigTab" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref3?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_sigTab&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_treeTabTab_ChiTab" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref6?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_treeTabTab_ChiTab&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+         <SelfRefNode id="refnode_parChiTab" title="引用元数据" isLocate="true" width="700" height="400" isRead="false" path="/portal/app/mockapp/cdref7?model=xap.lui.psn.refence.MockTreeGridDsConfigRefPageModel&amp;ctrl=xap.lui.psn.refence.MockTreeGridDsConfigRefController&amp;writeDs=ds_parChiTab&amp;writeDs_ChiTab=ds_parChiTab_Chi&amp;pageId=guided&amp;viewId=main&amp;voMeta=ref&amp;name=name" isShowLine="true" multiSel="true"/>
+      </RefNodes>
+      <ChartModels/>
+   </DataModels>
+   <Controls>
+      <Grid id="tab_treeTabTab" isVisible="true" enabled="true" dataset="ds_treeTabTab_ChiTab" isEdit="false" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="cTabdsId,cTabRef,cTabEdiitType" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="cTabdsId" field="dsid" text="子表数据集ID" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="cTabRef" field="ref" text="子表引用数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="refnode_treeTabTab_ChiTab" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="cTabEdiitType" field="editType" text="子表编辑类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" refComboData="editTypeList" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <Grid id="relationsTabgrid" isVisible="true" enabled="true" dataset="relationsds" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" toolbarRender="" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="false" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterds" field="masterds" text="主数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterkey" field="masterkey" text="主数据集主键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="masterfield" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailds" field="detailds" text="子数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="dscombodata" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailkey" field="detailkey" text="子数据集外键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="refnode_fields" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <ImageComp id="img_parChiTab" isVisible="true" enabled="true" alt="" image1="guidedImg_ParChiTab.jpg" image2="guidedImg_ParChiTab.jpg" image1Changed="false" realImage1="/portal/lui/nodes/guided/images/guidedImg_ParChiTab.jpg" image2Changed="false" realImage2="/portal/lui/nodes/guided/images/guidedImg_ParChiTab.jpg" floatRight="false" floatLeft="false" maxShow="false">
+         <Events>
+            <Event eventName="onclick" method="switchCard" onserver="true" async="true" nmc="true" id="1" eventType="MouseEvent" eventStatus="1"/>
+         </Events>
+      </ImageComp>
+      <Form id="form_treeTab_tab" isVisible="true" enabled="true" column="2" dataset="ds_treeTab_tab" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="tabDsId" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="表数据集ID" labelPos="left_l" editorType="StringText" dataType="String" field="dsid" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeTabRef" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="表引用数据集" labelPos="left_l" editorType="Reference" refNode="refnode_treeTab" dataType="String" field="ref" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="tabEditType" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="表编辑类型" labelPos="left_l" editorType="ComboBox" field="editType" refComboData="editTypeList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Button id="btn_treeTabTab_Save" isVisible="true" enabled="true" width="0" refImgChanged="true" text="保存">
+         <Events>
+            <Event eventName="onclick" method="btn_treeTabTab_Save_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1">
+               <SubmitRule id="submitRule" cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="relationsds">ds_all_line</DatasetRule>
+                     <DatasetRule id="ds_treeTabTab_tree">ds_current_line</DatasetRule>
+                     <DatasetRule id="relationsTreeDs">ds_current_line</DatasetRule>
+                     <DatasetRule id="ds_treeTabTab_ChiTab">ds_all_line</DatasetRule>
+                     <DatasetRule id="ds_treeTabTab_pTab">ds_current_line</DatasetRule>
+                  </ViewPartRule>
+                  <ParentSubmitRule pageId="" cardSubmit="false"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Form id="form_treeTabTab_pTab" isVisible="true" enabled="true" column="2" dataset="ds_treeTabTab_pTab" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="pTabEditType_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表编辑类型" labelPos="left_l" editorType="ComboBox" dataType="String" field="editType" refComboData="editTypeList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="pTabRef_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表引用数据集" labelPos="left_l" editorType="Reference" refNode="refnode_treeTabTab_PTab" dataType="String" field="ref" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="pTabDsId_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表数据集ID" labelPos="left_l" editorType="StringText" dataType="String" field="dsid" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="teePTabAggDo" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="AggDo实体" labelPos="left_l" editorType="StringText" dataType="String" field="aggDo" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Form id="form_treeTab_tree" isVisible="true" enabled="true" column="2" dataset="ds_treeTab_tree" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="treeDsId" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="树数据集ID" labelPos="left_l" editorType="StringText" dataType="String" field="dsid" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeRef" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="树引用数据集" labelPos="left_l" editorType="Reference" refNode="refnode_tree" dataType="String" field="ref" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeEditType" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="树编辑类型" labelPos="left_l" editorType="ComboBox" field="editType" refComboData="editTypeList" index="0" isEdit="false" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeIsEditTree" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="是否编辑树" labelPos="right" editorType="CheckBox" dataType="Boolean" field="isEditTree" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Form id="form_page" isVisible="true" enabled="true" column="2" dataset="ds_Page" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="txtPageId" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="节点D" labelPos="left_l" editorType="StringText" dataType="String" field="txtPageId" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="isSimpQuery" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="是否配置查询模版" labelPos="right" editorType="CheckBox" dataType="Boolean" field="isSimpQuery" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant="">
+            <Events>
+               <Event eventName="valueChanged" method="isSimpQuery_valueChanged" onserver="true" async="true" nmc="true" id="valueChanged" controller="xap.lui.psn.guided.GuidedCfgController" eventType="TextEvent" eventStatus="1" eventLang="Java语言"/>
+            </Events>
+         </Element>
+         <Element id="simpQueryNodeCode" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="NodeCode" labelPos="left_l" editorType="StringText" dataType="String" field="simpQueryNodeCode" index="0" isEdit="false" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+      </Form>
+      <ImageComp id="img_treeTabTab" isVisible="true" enabled="true" alt="" image1="guidedImg_TreeTabTab.jpg" image2="guidedImg_TreeTabTab.jpg" image1Changed="false" realImage1="/portal/lui/nodes/guided/images/guidedImg_TreeTabTab.jpg" image2Changed="false" realImage2="/portal/lui/nodes/guided/images/guidedImg_TreeTabTab.jpg" floatRight="false" floatLeft="false" maxShow="false">
+         <Events>
+            <Event eventName="onclick" method="switchCard" onserver="true" async="true" nmc="true" id="3" eventType="MouseEvent" eventStatus="1"/>
+         </Events>
+      </ImageComp>
+      <Grid id="relationsgrid" isVisible="true" enabled="true" dataset="relationsds" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" toolbarRender="" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="false" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterds" field="masterds" text="主数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterkey" field="masterkey" text="主数据集主键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="masterfield" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailds" field="detailds" text="子数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="dscombodata" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailkey" field="detailkey" text="子数据集外键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="refnode_fields" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <Button id="btn_sigTab_Save" isVisible="true" enabled="true" width="0" refImgChanged="true" text="保存">
+         <Events>
+            <Event eventName="onclick" method="btn_sigTab_Save_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1">
+               <SubmitRule id="submitRule" cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="ds_sigTab">ds_current_page</DatasetRule>
+                  </ViewPartRule>
+                  <ParentSubmitRule cardSubmit="false">
+                     <ViewPartRule id="project">
+                        <DatasetRule id="projViewTreeDs">ds_all_page</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </ParentSubmitRule>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Grid id="relationsTreeTabgrid" isVisible="true" enabled="true" dataset="relationsTreeDs" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" toolbarRender="" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="false" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterds" field="masterds" text="主数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterkey" field="masterkey" text="主数据集主键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="masterfield" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailds" field="detailds" text="子数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="dscombodata" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailkey" field="detailkey" text="子数据集外键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="refnode_fields" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <ImageComp id="img_treeTab" isVisible="true" enabled="true" alt="" image1="guidedImg_TreeTab.jpg" image2="guidedImg_TreeTab.jpg" image1Changed="false" realImage1="/portal/lui/nodes/guided/images/guidedImg_TreeTab.jpg" image2Changed="false" realImage2="/portal/lui/nodes/guided/images/guidedImg_TreeTab.jpg" floatRight="false" floatLeft="false" maxShow="false">
+         <Events>
+            <Event eventName="onclick" method="switchCard" onserver="true" async="true" nmc="true" id="2" eventType="MouseEvent" eventStatus="1"/>
+         </Events>
+      </ImageComp>
+      <Button id="btn_parChiTab" isVisible="true" enabled="true" width="0" refImgChanged="true" text="保存">
+         <Events>
+            <Event eventName="onclick" method="btn_parChiTab_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1">
+               <SubmitRule id="submitRule" cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="ds_parChiTab_Chi">ds_all_line</DatasetRule>
+                     <DatasetRule id="ds_parChiTab">ds_current_line</DatasetRule>
+                     <DatasetRule id="relationsds">ds_all_line</DatasetRule>
+                  </ViewPartRule>
+                  <ParentSubmitRule pageId="" cardSubmit="false">
+                     <Params/>
+                  </ParentSubmitRule>
+                  <Params/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Form id="form_parChiTab" isVisible="true" enabled="true" column="2" dataset="ds_parChiTab" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="pTabDsid" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表数据集ID" labelPos="left_l" editorType="StringText" dataType="String" field="dsid" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="pTabEditType" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表编辑类型" labelPos="left_l" editorType="ComboBox" dataType="String" field="editType" refComboData="editTypeList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="pTabRef" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="主表数据集" labelPos="left_l" editorType="Reference" refNode="refnode_parChiTab" dataType="String" field="ref" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="pTabAggDo" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="AggDo实体" labelPos="left_l" editorType="StringText" dataType="String" field="aggDo" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Form id="form_treeTabTab_tree" isVisible="true" enabled="true" column="2" dataset="ds_treeTabTab_tree" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="treedsId_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="树数据集ID" labelPos="left_l" editorType="StringText" dataType="String" field="dsid" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeEditType_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="树编辑类型" labelPos="left_l" editorType="ComboBox" dataType="String" field="editType" refComboData="editTypeList" index="0" isEdit="false" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeRef_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="树引用数据集" labelPos="left_l" editorType="Reference" refNode="refnode_treeTabTab_Tree" dataType="String" field="ref" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="treeIsEditTree_ttt" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="是否编辑树" labelPos="right" editorType="CheckBox" dataType="Boolean" field="isEditTree" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="false" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Grid id="relationsTreegrid" isVisible="true" enabled="true" dataset="relationsTreeDs" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" toolbarRender="" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="false" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterds" field="masterds" text="主数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="masterkey" field="masterkey" text="主数据集主键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="masterfield" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailds" field="detailds" text="子数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="ComboBox" renderType="ComboRender" refComboData="dscombodata" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="detailkey" field="detailkey" text="子数据集外键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="center" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="refnode_fields" isRequire="false" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <Form id="form_sigTab" isVisible="true" enabled="true" column="2" dataset="ds_sigTab" rowHeight="24" eleWidth="0" labelMinWidth="0" withForm="false" renderType="2" readOnly="false" isEllipsis="false">
+         <Element id="dsid" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="数据集ID" labelPos="left_l" editorType="StringText" dataType="String" field="dsid" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="sigTabRef" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="数据集引用" labelPos="left_l" editorType="Reference" refNode="refnode_sigTab" dataType="String" field="ref" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+         <Element id="editType" isVisible="true" enabled="true" rowSpan="1" colSpan="1" text="编辑类型" labelPos="left_l" editorType="ComboBox" dataType="String" field="editType" refComboData="editTypeList" index="0" isEdit="true" imageOnly="false" isOnlySelect="true" nextLine="false" toolbarType="Custom" focus="false" isRequire="true" attachNext="false" inputAssistant=""/>
+      </Form>
+      <Button id="btn_treeTab_Save" isVisible="true" enabled="true" width="0" refImgChanged="true" text="保存">
+         <Events>
+            <Event eventName="onclick" method="btn_treeTab_Save_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1">
+               <SubmitRule id="submitRule" cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="ds_treeTab_tree">ds_current_line</DatasetRule>
+                     <DatasetRule id="ds_treeTab_tab">ds_current_line</DatasetRule>
+                     <DatasetRule id="relationsTreeDs">ds_current_line</DatasetRule>
+                  </ViewPartRule>
+                  <ParentSubmitRule pageId="" cardSubmit="false">
+                     <Params/>
+                  </ParentSubmitRule>
+                  <Params/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <ImageComp id="img_sigTab" isVisible="true" enabled="true" alt="" image1="guidedImg_SigTab.jpg" image2="guidedImg_SigTab.jpg" image1Changed="false" realImage1="/portal/lui/nodes/guided/images/guidedImg_SigTab.jpg" image2Changed="false" realImage2="/portal/lui/nodes/guided/images/guidedImg_SigTab.jpg" floatRight="false" floatLeft="false" maxShow="false">
+         <Events>
+            <Event eventName="onclick" method="switchCard" onserver="true" async="true" nmc="true" id="0" eventType="MouseEvent" eventStatus="1"/>
+         </Events>
+      </ImageComp>
+      <Grid id="tab_parChiTab_chi" isVisible="true" enabled="true" dataset="ds_parChiTab_Chi" isEdit="false" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="dsid,ref,editType" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="cTabDsid" field="dsid" text="子表数据集ID" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="cTabRef" field="ref" text="子表引用数据集" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="Reference" renderType="DefaultRender" refNode="refnode_parChiTab_Chi" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="cTabEditType" field="editType" text="子表编辑类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" refComboData="editTypeList" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+   </Controls>
+   <Menus>
+      <MenuBar id="menu_treeTabTab" isVisible="true" enabled="true">
+         <MenuItem id="menu_treeTabTab_menuitem_new" isVisible="true" enabled="true" text="添加行" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="menu_treeTabTab_menuitem_new_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1"/>
+            </Events>
+         </MenuItem>
+         <MenuItem id="menu_treeTabTab_menuitem_delete" isVisible="true" enabled="true" text="编辑行" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="menu_treeTabTab_menuitem_edit_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1"/>
+            </Events>
+         </MenuItem>
+         <MenuItem id="menu_treeTabTab_menuitem_delete" isVisible="true" enabled="true" text="删除行" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="menu_treeTabTab_menuitem_delete_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.guided.GuidedCfgController" eventType="MouseEvent" eventStatus="1"/>
+            </Events>
+         </MenuItem>
+      </MenuBar>
+      <MenuBar id="menu_parChiTab" isVisible="true" enabled="true">
+         <MenuItem id="menu_parChiTab_menuitem_new" isVisible="true" enabled="true" text="添加行" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="menu_parChiTab_menuitem_new_onclick" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2"/>
+            </Events>
+         </MenuItem>
+         <MenuItem id="menu_parChiTab_menuitem_new" isVisible="true" enabled="true" text="编辑行" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="menu_parChiTab_menuitem_edit_onclick" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2"/>
+            </Events>
+         </MenuItem>
+         <MenuItem id="menu_parChiTab_menuitem_delete" isVisible="true" enabled="true" text="删除行" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="menu_parChiTab_menuitem_delete_onclick" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1"/>
+            </Events>
+         </MenuItem>
+      </MenuBar>
+      <MenuBar id="func_menu_3" isVisible="true" enabled="true">
+         <MenuItem id="add" isVisible="true" enabled="true" text="增加" selected="false" checkBoxGroup="false" modifiers="3" imgIcon="platform/theme/${theme}/global/images/icon/16/new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="onAddRelation" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+                  <SubmitRule cardSubmit="false">
+                     <ViewPartRule id="main">
+                        <DatasetRule id="relationsTreeds">ds_current_line</DatasetRule>
+                        <DatasetRule id="ds_parChiTab_Chi">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_parChiTab">ds_current_line</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </SubmitRule>
+               </Event>
+            </Events>
+         </MenuItem>
+         <MenuItem id="delete" isVisible="true" enabled="true" text="删除" selected="false" checkBoxGroup="false" modifiers="3" imgIcon="platform/theme/${theme}/global/images/icon/16/delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="onDelRelation" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+                  <SubmitRule cardSubmit="false">
+                     <ViewPartRule id="main">
+                        <DatasetRule id="ds_parChiTab_Chi">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_parChiTab">ds_current_line</DatasetRule>
+                        <DatasetRule id="relationsds">ds_current_line</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </SubmitRule>
+               </Event>
+            </Events>
+         </MenuItem>
+      </MenuBar>
+      <MenuBar id="func_menu_4" isVisible="true" enabled="true">
+         <MenuItem id="add" isVisible="true" enabled="true" text="增加" selected="false" checkBoxGroup="false" modifiers="3" imgIcon="platform/theme/${theme}/global/images/icon/16/new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="onAddRelation" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+                  <SubmitRule cardSubmit="false">
+                     <ViewPartRule id="main">
+                        <DatasetRule id="relationsTreeds">ds_current_line</DatasetRule>
+                        <DatasetRule id="relationsds">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_treeTabTab_tree">ds_current_line</DatasetRule>
+                        <DatasetRule id="ds_treeTabTab_ChiTab">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_treeTabTab_pTab">ds_current_line</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </SubmitRule>
+               </Event>
+            </Events>
+         </MenuItem>
+         <MenuItem id="delete" isVisible="true" enabled="true" text="删除" selected="false" checkBoxGroup="false" modifiers="3" imgIcon="platform/theme/${theme}/global/images/icon/16/delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="onDelRelation" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+                  <SubmitRule cardSubmit="false">
+                     <ViewPartRule id="main">
+                        <DatasetRule id="ds_parChiTab_Chi">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_parChiTab">ds_current_line</DatasetRule>
+                        <DatasetRule id="relationsds">ds_current_line</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </SubmitRule>
+               </Event>
+            </Events>
+         </MenuItem>
+      </MenuBar>
+      <MenuBar id="func_menu_2" isVisible="true" enabled="true">
+         <MenuItem id="add" isVisible="true" enabled="true" text="增加" selected="false" checkBoxGroup="false" modifiers="3" imgIcon="platform/theme/${theme}/global/images/icon/16/new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="onAddRelation" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+                  <SubmitRule cardSubmit="false">
+                     <ViewPartRule id="main">
+                        <DatasetRule id="ds_parChiTab_Chi">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_parChiTab">ds_current_line</DatasetRule>
+                        <DatasetRule id="relationsds">ds_current_line</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </SubmitRule>
+               </Event>
+            </Events>
+         </MenuItem>
+         <MenuItem id="delete" isVisible="true" enabled="true" text="删除" selected="false" checkBoxGroup="false" modifiers="3" imgIcon="platform/theme/${theme}/global/images/icon/16/delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="">
+            <Events>
+               <Event eventName="onclick" method="onDelRelation" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+                  <SubmitRule cardSubmit="false">
+                     <ViewPartRule id="main">
+                        <DatasetRule id="ds_parChiTab_Chi">ds_all_line</DatasetRule>
+                        <DatasetRule id="ds_parChiTab">ds_current_line</DatasetRule>
+                        <DatasetRule id="relationsds">ds_current_line</DatasetRule>
+                     </ViewPartRule>
+                     <Params/>
+                  </SubmitRule>
+               </Event>
+            </Events>
+         </MenuItem>
+      </MenuBar>
+   </Menus>
+   <PipeIns>
+      <PipeIn id="refOkPlugin">
+         <PipeInItem id="type" clazztype="java.lang.String"/>
+         <PipeInItem id="id" clazztype="java.lang.String"/>
+         <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+      </PipeIn>
+   </PipeIns>
+</ViewPart>

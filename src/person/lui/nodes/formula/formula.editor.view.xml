@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewPart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="editor" srcFolder="pa/src/public/" isVisible="true" enabled="true" isDialog="false" refId="editor" isCustom="true" >
+   <Events>
+      <Event eventName="beforeShow" method="onBeforeShow" onserver="true" async="true" nmc="true" eventType="DialogEvent" eventStatus="1">
+         <Action><![CDATA[]]></Action>
+         <SubmitRule cardSubmit="false">
+            <ViewPartRule id="editor"/>
+         </SubmitRule>
+      </Event>
+   </Events>
+   <DataModels>
+      <Dataset id="commonds" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="commonds">
+         <Fields>
+            <Field id="id" text="id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="description" text="description" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <Dataset id="serviceds" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="serviceds">
+         <Fields>
+            <Field id="id" text="id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="description" text="description" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <RefNodes/>
+   </DataModels>
+   <Controls>
+      <Button id="no9_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="9">
+         <Events>
+            <Event eventName="onclick" method="onNo9Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_dot_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text=".">
+         <Events>
+            <Event eventName="onclick" method="onNodotClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no00_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="00">
+         <Events>
+            <Event eventName="onclick" method="onNo00Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_le_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="&lt;=">
+         <Events>
+            <Event eventName="onclick" method="onNoleClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_lt_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="&lt;">
+         <Events>
+            <Event eventName="onclick" method="onNoltClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Grid id="servicegrid" isVisible="true" enabled="true" dataset="serviceds" isEdit="false" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" toolbarRender="" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="id,description" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="description" field="description" text="description" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <Button id="no_right_quot_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text=")">
+         <Events>
+            <Event eventName="onclick" method="onNoquotClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <TextArea id="edit_textarea" isVisible="true" enabled="true" value="" readOnly="false" editorType="TextArea" focus="false" align="left" textWidth="0" showMark="false" isRequired="true" isShowlabel="true" rows="11" cols="76"/>
+      <Button id="no_gt_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text=">">
+         <Events>
+            <Event eventName="onclick" method="onNogtClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no0_btn" isVisible="true" enabled="true" width="0" refImgChanged="true">
+         <Events>
+            <Event eventName="onclick" method="onNo0Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_add_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="+">
+         <Events>
+            <Event eventName="onclick" method="onNoaddClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_minus_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="-">
+         <Events>
+            <Event eventName="onclick" method="onNominusClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_multi_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="*">
+         <Events>
+            <Event eventName="onclick" method="onNomultiClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no7_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="7">
+         <Events>
+            <Event eventName="onclick" method="onNo7Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="validate_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" langDir="bd_nodes" text="验证">
+         <Events>
+            <Event eventName="onclick" method="onValidateBtnClick" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                      
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_equals_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="==">
+         <Events>
+            <Event eventName="onclick" method="onNoequalsClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no5_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="5">
+         <Events>
+            <Event eventName="onclick" method="onNo5Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no8_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="8">
+         <Events>
+            <Event eventName="onclick" method="onNo8Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no6_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="6">
+         <Events>
+            <Event eventName="onclick" method="onNo6Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="ok_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="确定">
+         <Events>
+            <Event eventName="onclick" method="onOkEvent" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1" eventLang="Java语言">
+            	<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="editor">
+                        </ViewPartRule>
+					    <ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="settings">
+								<DatasetRule id="ds_event">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+				</SubmitRule>
+				<Action>
+				</Action>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_divid_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="/">
+         <Events>
+            <Event eventName="onclick" method="onNodividClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[           onValueBtnClick(e);   
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no3_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="3">
+         <Events>
+            <Event eventName="onclick" method="onNo3Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no1_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="1">
+         <Events>
+            <Event eventName="onclick" method="onNo1Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_ge_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text=">=">
+         <Events>
+            <Event eventName="onclick" method="onNogeClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no4_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="4">
+         <Events>
+            <Event eventName="onclick" method="onNo4Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="returntype_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" langDir="bd_nodes" text="返回类型">
+         <Events>
+            <Event eventName="onclick" method="onReturntypeBtnClick" onserver="true" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_left_quot_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="(">
+         <Events>
+            <Event eventName="onclick" method="onNoleftquotClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <TextArea id="status_textarea" isVisible="true" enabled="true" value="" readOnly="false" editorType="StringText" focus="false" align="left" textWidth="0" showMark="false" isRequired="true" isShowlabel="true" rows="2" cols="137"/>
+      <Button id="cancel_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="取消">
+         <Events>
+            <Event eventName="onclick" method="onCancelEvent" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="1" eventLang="Java语言"/>
+         </Events>
+      </Button>
+      <Button id="allselect_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" langDir="bd_nodes" text="全选">
+         <Events>
+            <Event eventName="onclick" method="onAllselectBtnClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        allSelectEditArea();
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no_right_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="->">
+         <Events>
+            <Event eventName="onclick" method="onNorightClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Grid id="commongrid" isVisible="true" enabled="true" dataset="commonds" isEdit="false" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" toolbarRender="" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Events>
+            <Event eventName="onRowSelected" method="onCommonGridSelect" onserver="false" async="true" nmc="true" eventType="GridRowEvent" eventStatus="1">
+               <Action><![CDATA[                        setDescription(rowSelectedEvent);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+            <Event eventName="onRowDbClick" method="onCommonGridDbClick" onserver="false" async="true" nmc="true" eventType="GridRowEvent" eventStatus="1">
+               <Action><![CDATA[                        onFormulaDbClick(rowEvent);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+         <Column id="description" field="description" text="description" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" align="left" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+      <Button id="clear_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" langDir="bd_nodes" text="清空">
+         <Events>
+            <Event eventName="onclick" method="onClearBtnClick" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        var widget = pageUI.getViewPart("editor");
+var edit_area = widget.getComponent("edit_textarea");
+edit_area.setValue("");
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Button id="no2_btn" isVisible="true" enabled="true" width="0" refImgChanged="true" text="2">
+         <Events>
+            <Event eventName="onclick" method="onNo2Click" onserver="false" async="true" nmc="true" eventType="MouseEvent" eventStatus="1">
+               <Action><![CDATA[                        onValueBtnClick(e);
+                    ]]></Action>
+               <SubmitRule cardSubmit="false">
+                  <ViewPartRule id="editor"/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+   </Controls>
+   <Menus/>
+   <PipeIns>
+      <PipeIn id="refOkPlugin">
+         <PipeInItem id="type" clazztype="java.lang.String"/>
+         <PipeInItem id="id" clazztype="java.lang.String"/>
+         <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+      </PipeIn>
+   </PipeIns>
+   <PipeOuts/>
+</ViewPart>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewPart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="main" isVisible="true" enabled="true" isDialog="false" isCustom="true" controller="xap.lui.psn.appwinlist.AppWinListCtrl">
+   <DataModels>
+      <DatasetRelations/>
+      <Dataset id="winlist_ds" isLazyLoad="false" pageSize="-1" isEdit="false" isCleared="false" focusIndex="-1" caption="winlist_ds">
+         <Events>
+            <Event eventName="onDataLoad" method="ds_onDataLoad" onserver="true" async="true" nmc="true" id="onDataLoad" controller="xap.lui.psn.appwinlist.AppWinListCtrl" eventType="DatasetEvent" eventStatus="2" eventLang="Java语言"/>
+         </Events>
+         <Fields>
+            <Field id="id" text="id" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            <Field id="caption" text="名称" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+         </Fields>
+         <FieldRelations/>
+      </Dataset>
+      <RefNodes/>
+   </DataModels>
+   <Controls>
+      <Button id="btn_cancel" isVisible="true" enabled="true" width="0" refImgChanged="true" text="取消">
+         <Events>
+            <Event eventName="onclick" method="cancel_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.appwinlist.AppWinListCtrl" eventType="MouseEvent" eventStatus="1" eventLang="Java语言"/>
+         </Events>
+      </Button>
+      <Button id="btn_ok" isVisible="true" enabled="true" width="0" refImgChanged="true" text="确定">
+         <Events>
+            <Event eventName="onclick" method="ok_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.appwinlist.AppWinListCtrl" eventType="MouseEvent" eventStatus="1" eventLang="Java语言">
+               <SubmitRule id="submitRule" cardSubmit="false">
+                  <ViewPartRule id="main">
+                     <DatasetRule id="winlist_ds">ds_all_line</DatasetRule>
+                  </ViewPartRule>
+                  <ParentSubmitRule pageId="pa" cardSubmit="false">
+                     <ViewPartRule id="data">
+                     	<DatasetRule id="winsds">ds_current_page</DatasetRule>
+                 	 </ViewPartRule>
+                 	 <ViewPartRule id="settings">
+                 	 </ViewPartRule>
+                  </ParentSubmitRule>
+                  <Params/>
+               </SubmitRule>
+            </Event>
+         </Events>
+      </Button>
+      <Grid id="winlist_grid" isVisible="true" enabled="true" dataset="winlist_ds" isEdit="false" isAllowMouseoverChange="false" isMultiple="true" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="id,caption" isFitRowHeight="false" isPageTop="false" isShowColMenu="false">
+         <Column id="id" field="id" text="id" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+         <Column id="caption" field="caption" text="名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+      </Grid>
+   </Controls>
+   <Menus/>
+   <PipeOuts>
+   		<PipeOut id="plugout_newapp">
+        </PipeOut>
+   </PipeOuts>
+   <PipeIns>
+      <PipeIn id="refOkPlugin">
+         <PipeInItem id="type" clazztype="java.lang.String"/>
+         <PipeInItem id="id" clazztype="java.lang.String"/>
+         <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+      </PipeIn>
+   </PipeIns>
+</ViewPart>

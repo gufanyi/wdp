@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://com.founer.xap/schema/lui"  xmlns="http://com.founer.xap/schema/lui" elementFormDefault="qualified">
+  <xs:element name="PagePart">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" ref="Processor"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="ViewParts"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="PipeIns"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Attributes"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="PlugoutDescs"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Events"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Connectors"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="UIStates"/>
+      </xs:choice>
+      <xs:attribute name="caption"  type="xs:NCName"/>
+      <xs:attribute name="controller" use="required"/>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="srcFolder" />
+      <xs:attribute name="windowType"  type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Processor" type="xs:string"/>
+  <xs:element name="ViewParts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ViewPart"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewPart">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="refId" use="required" type="xs:string"/>
+      <xs:attribute name="canFreeDesign" type="xs:string" default="true"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PipeIns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="PipeIn"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PipeIn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="PipeInItem"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PipeInItem">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="carType" default="type">
+        <xs:simpleType name="carType">
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="type"/>
+            <xs:enumeration value="id"/>
+            <xs:enumeration value="writeFields"/>
+            <xs:enumeration value="row"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="type"  type="xs:NCName" default="java.lang.String"/>
+      <xs:attribute name="clazztype"  type="xs:NCName" default="java.lang.String"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attributes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Attribute"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Attribute">
+    <xs:complexType>
+      <xs:attribute name="desc" use="required" type="xs:string" default=""/>
+      <xs:attribute name="key" use="required" type="xs:string" default="$QueryTemplate"/>
+      <xs:attribute name="value" use="required" type="xs:string" default=""/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlugoutDescs">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Events">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Event"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Event">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" ref="SubmitRule"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Params"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="Action"/>
+      </xs:choice>
+      <xs:attribute name="async" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="eventName" use="required" type="xs:NCName" default="onClosed"/>
+      <xs:attribute name="eventType" use="required" type="xs:NCName" default="PageEvent"/>
+      <xs:attribute name="method" use="required" type="xs:NCName" default="sysWindowClosed"/>
+      <xs:attribute name="onserver" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="nmc"  type="xs:boolean" default="false"/>
+      <xs:attribute name="controller" type="xs:string" />
+      <xs:attribute name="eventStatus" type="xs:integer" default="1"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitRule">
+    <xs:complexType>
+      <xs:attribute name="cardSubmit" use="required" type="xs:boolean" default="false"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Params">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Param"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Param">
+    <xs:complexType>
+      <xs:attribute name="desc" use="required" type="xs:NCName" default="xap.lui.core.event.PageEvent"/>
+      <xs:attribute name="name" use="required" type="xs:NCName" default="event"/>
+      <xs:attribute name="value" use="required" type="xs:string" default=""/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Action">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Connectors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Connector"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Connector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Maps"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="pipeinId" use="required" type="xs:NCName"/>
+      <xs:attribute name="pipeoutId" use="required" type="xs:NCName"/>
+      <xs:attribute name="source" use="required" type="xs:NCName"/>
+      <xs:attribute name="target" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Maps">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="mapping"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="inValue"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="inValue" type="xs:NCName" default="row"/>
+    <xs:element name="UIStates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="UIState"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ViewState"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="CtrlState"/>
+      </xs:sequence>
+      <xs:attribute name="viewId" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CtrlState">
+    <xs:complexType>
+      <xs:attribute name="enabled" use="required" type="xs:boolean"/>
+      <xs:attribute name="id" use="required" type="xs:NCName"/>
+      <xs:attribute name="isVisible" use="required" type="xs:boolean" default="true"/>
+      <xs:attribute name="pid" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

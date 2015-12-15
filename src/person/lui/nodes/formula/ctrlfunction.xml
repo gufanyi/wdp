@@ -1,0 +1,517 @@
+<ctrlfunc>
+	<ctrltype id="StringTextComp" name="StringTextComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+StringTextComp ${eleId}_comp = (StringTextComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+StringTextComp ${eleId}_comp = (StringTextComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="IntegerTextComp" name="IntegerTextComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+IntegerTextComp ${eleId}_comp = (IntegerTextComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+IntegerTextComp ${eleId}_comp = (IntegerTextComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="DecimalTextComp" name="DecimalTextComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+DecimalTextComp ${eleId}_comp = (DecimalTextComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+DecimalTextComp ${eleId}_comp = (DecimalTextComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="PwdTextComp" name="PwdTextComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+PwdTextComp ${eleId}_comp = (PwdTextComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+PwdTextComp ${eleId}_comp = (PwdTextComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="DateTextComp" name="DateTextComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+DateTextComp ${eleId}_comp = (DateTextComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+DateTextComp ${eleId}_comp = (DateTextComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="CheckBoxComp" name="CheckBoxComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+CheckBoxComp ${eleId}_comp = (CheckBoxComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+CheckBoxComp ${eleId}_comp = (CheckBoxComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="CheckboxGroupComp" name="CheckboxGroupComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+CheckboxGroupComp ${eleId}_comp = (CheckboxGroupComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+CheckboxGroupComp ${eleId}_comp = (CheckboxGroupComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="RadioComp" name="RadioComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+RadioComp ${eleId}_comp = (RadioComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+RadioComp ${eleId}_comp = (RadioComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="RadioGroupComp" name="RadioGroupComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+RadioGroupComp ${eleId}_comp = (RadioGroupComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+RadioGroupComp ${eleId}_comp = (RadioGroupComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ReferenceComp" name="ReferenceComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+ReferenceComp ${eleId}_comp = (ReferenceComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+ReferenceComp ${eleId}_comp = (ReferenceComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="TextAreaComp" name="TextAreaComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+TextAreaComp ${eleId}_comp = (TextAreaComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+TextAreaComp ${eleId}_comp = (TextAreaComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ComboBoxComp" name="ComboBoxComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+ComboBoxComp ${eleId}_comp = (ComboBoxComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+ComboBoxComp ${eleId}_comp = (ComboBoxComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+		<func id="getComboData" name="获得控件枚举列表" desc="获取下拉框绑定的枚举列表">
+			<demo>
+				<![CDATA[
+ComboBoxComp ${eleId}_comp = (ComboBoxComp)LuiAppUtil.getControl("${eleId}");
+DataList ${eleId}_dl = (DataList) ${eleId}_comp.getComboData();
+DataItem[] ${eleId}_dl_items = ${eleId}_dl.getAllDataItems();
+			  		]]>
+			</demo>
+		</func>
+		<func id="addItem" name="添加枚举项" desc="向控件的枚举列表中添加一项">
+			<demo>
+				<![CDATA[
+ComboBoxComp ${eleId}_comp = (ComboBoxComp)LuiAppUtil.getControl("${eleId}");
+DataList ${eleId}_dl = (DataList) ${eleId}_comp.getComboData();
+DataItem newItem = new DataItem();
+newItem.setValue("");//真实值
+newItem.setText("");//显示值
+${eleId}_dl.addDataItem(newItem);
+			  		]]>
+			</demo>
+		</func>
+		<func id="addItem" name="移除枚举项" desc="在控件的枚举列表中移除一项">
+			<demo>
+				<![CDATA[
+ComboBoxComp ${eleId}_comp = (ComboBoxComp)LuiAppUtil.getControl("${eleId}");
+DataList ${eleId}_dl = (DataList) ${eleId}_comp.getComboData();
+${eleId}_dl.removeDataItem(DataItem/DataItemId);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ImageComp" name="ImageComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+ImageComp ${eleId}_comp = (ImageComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得控件值" desc="双击即可生成获取控件的代码块">
+			<demo>
+				<![CDATA[
+ImageComp ${eleId}_comp = (ImageComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_value = ${eleId}_comp.getValue();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ButtonComp" name="ButtonComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+ButtonComp ${eleId}_comp = (ButtonComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="setEnabled" name="设置启用状态" desc="获取控件设置启用状态的代码块">
+			<demo>
+				<![CDATA[
+ButtonComp ${eleId}_comp = (ButtonComp)LuiAppUtil.getControl("${eleId}");
+${eleId}_comp.setEnabled(true);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="LabelComp" name="LabelComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+LabelComp ${eleId}_comp = (LabelComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="LinkComp" name="LinkComp">
+		<func id="getCtrl" name="获得控件" desc="获取控件的代码块">
+			<demo>
+				<![CDATA[
+LinkComp ${eleId}_comp = (LinkComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	
+	<ctrltype id="FormComp" name="FormComp">
+		<func id="getCtrl" name="获得控件" desc="获取表单代码块">
+			<demo>
+				<![CDATA[
+FormComp ${eleId}_comp = (FormComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getDataset" name="获得数据集" desc="获取表单关联的数据集">
+			<demo>
+				<![CDATA[
+FormComp ${eleId}_comp = (FormComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_dsId = ${eleId}_comp.getDataset();
+Dataset ${eleId}_ds = LuiAppUtil.getDataset(${eleId}_dsId);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="FormElement" name="FormElement">
+		<func id="getEle" name="获得元素" desc="双击即可生成获取该元素的代码块">
+			<demo>
+				<![CDATA[
+FormComp ${pEleId}_form = (FormComp)LuiAppUtil.getControl("${pEleId}");
+FormElement ${eleId}_formele = ${pEleId}_form.getElementById("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得元素值" desc="双击即可生成获取该元素值的代码块">
+			<demo>
+				<![CDATA[
+FormComp ${pEleId}_form = (FormComp)LuiAppUtil.getControl("${pEleId}");
+FormElement ${eleId}_formele = ${pEleId}_form.getElementById("${eleId}");
+String ${pEleId}_dsId = ${pEleId}_form.getDataset();
+Dataset ${pEleId}_ds = LuiAppUtil.getDataset(${pEleId}_dsId);
+Row ${pEleId}_ds_selRow = ${pEleId}_ds.getSelectedRow();
+if(${pEleId}_ds_selRow == null)
+	return "";
+String value = ${pEleId}_ds_selRow.getString(${pEleId}_ds.nameToIndex(${eleId}_formele.getField()));
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="GridComp" name="GridComp">
+		<func id="getCtrl" name="获得控件" desc="获取表单代码块">
+			<demo>
+				<![CDATA[
+GridComp ${eleId}_comp = (GridComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getDataset" name="获得数据集" desc="获取表单关联的数据集">
+			<demo>
+				<![CDATA[
+GridComp ${eleId}_comp = (GridComp)LuiAppUtil.getControl("${eleId}");
+String ${eleId}_dsId = ${eleId}_comp.getDataset();
+Dataset ${eleId}_ds = LuiAppUtil.getDataset(${eleId}_dsId);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="GridColumn" name="GridColumn">
+		<func id="getCol" name="获得元素" desc="双击即可生成获取该元素的代码块">
+			<demo>
+				<![CDATA[
+GridComp ${pEleId}_grid = (GridComp)LuiAppUtil.getControl("${pEleId}");
+GridColumn ${eleId}_col = ${pEleId}_grid.getElementById("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getValue" name="获得选中行某列值" desc="双击即可生成选中行某列值的代码块">
+			<demo>
+				<![CDATA[
+GridComp ${pEleId}_grid = (GridComp)LuiAppUtil.getControl("${pEleId}");
+GridColumn ${eleId}_col = ${pEleId}_grid.getElementById("${eleId}");
+String ${pEleId}_dsId = ${pEleId}_grid.getDataset();
+Dataset ${pEleId}_ds = LuiAppUtil.getDataset(${pEleId}_dsId);
+Row ${pEleId}_ds_selRow = ${pEleId}_ds.getSelectedRow();
+if(${pEleId}_ds_selRow == null)
+   	return "";
+String value =  ${pEleId}_ds_selRow.getString(${pEleId}_ds.nameToIndex(${eleId}_col.getField()));
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ToolBarComp" name="ToolBarComp">
+		<func id="getCtrl" name="获得控件" desc="获取表单代码块">
+			<demo>
+				<![CDATA[
+ToolBarComp ${eleId}_comp = (ToolBarComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getItems" name="获得toolbar所有项" desc="双击生成获得toolbar的所有子项">
+			<demo>
+				<![CDATA[
+ToolBarComp ${eleId}_comp = (ToolBarComp)LuiAppUtil.getControl("${eleId}");
+List<ToolBarItem> ${eleId}_items =  ${eleId}_comp.getElementList();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ToolBarItem" name="ToolBarItem">
+		<func id="getItem" name="获得toolbar的子项" desc="获得toolbar子项代码块">
+			<demo>
+				<![CDATA[
+ToolBarComp ${pEleId}_tb = (ToolBarComp)LuiAppUtil.getControl("${pEleId}");
+ToolBarItem ${pEleId}_tb_item = ${pEleId}_tb.getElementById("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="setEnabled" name="设置启用状态" desc="设置该子项启用状态的代码块">
+			<demo>
+				<![CDATA[
+ToolBarComp ${pEleId}_tb = (ToolBarComp)LuiAppUtil.getControl("${pEleId}");
+ToolBarItem ${pEleId}_tb_item = ${pEleId}_tb.getElementById("${eleId}");
+${pEleId}_tb_item.setEnabled(true);
+			  		]]>
+			</demo>
+		</func>
+		<func id="setVisible" name="设置是否可见" desc="设置该子项是否可见的代码块">
+			<demo>
+				<![CDATA[
+ToolBarComp ${pEleId}_tb = (ToolBarComp)LuiAppUtil.getControl("${pEleId}");
+ToolBarItem ${pEleId}_tb_item = ${pEleId}_tb.getElementById("${eleId}");
+${pEleId}_tb_item.setVisible(true);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="TreeViewComp" name="TreeViewComp">
+		<func id="getCtrl" name="获得控件" desc="获取表单代码块">
+			<demo>
+				<![CDATA[
+TreeViewComp ${eleId}_comp = (TreeViewComp)LuiAppUtil.getControl("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="MenubarComp" name="MenubarComp">
+		<func id="getMenu" name="获得菜单" desc="获取菜单代码块">
+			<demo>
+				<![CDATA[
+MenubarComp ${eleId}_menu = LuiAppUtil.getMenuBar("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getMenuItemList" name="获得菜单子项列表" desc="获取菜单子项列表代码块">
+			<demo>
+				<![CDATA[
+MenubarComp ${eleId}_menu = LuiAppUtil.getMenuBar("${eleId}");
+List<MenuItem> ${eleId}_items = ${eleId}_menu.getMenuList();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="MenuItem" name="MenuItem">
+		<func id="getMenuItem" name="获得菜单子项" desc="获取菜单子项代码块">
+			<demo>
+				<![CDATA[
+MenubarComp ${pEleId}_mb = LuiAppUtil.getMenuBar("${pEleId}");
+MenuItem ${pEleId}_mb_item = ${pEleId}_mb.getItem("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="setEnabled" name="设置启用状态" desc="设置该子项启用状态的代码块">
+			<demo>
+				<![CDATA[
+MenubarComp ${pEleId}_mb = LuiAppUtil.getMenuBar("${pEleId}");
+MenuItem ${pEleId}_mb_item = ${pEleId}_mb.getItem("${eleId}");
+${pEleId}_mb_item.setEnabled(true);
+			  		]]>
+			</demo>
+		</func>
+		<func id="setVisible" name="设置是否可见" desc="设置该子项是否可见的代码块">
+			<demo>
+				<![CDATA[
+MenubarComp ${pEleId}_mb = LuiAppUtil.getMenuBar("${pEleId}");
+MenuItem ${pEleId}_mb_item = ${pEleId}_mb.getItem("${eleId}");
+${pEleId}_mb_item.setVisible(true);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="ContextMenuComp" name="ContextMenuComp">
+		<func id="getCtxMenu" name="获得菜单" desc="获取菜单代码块">
+			<demo>
+				<![CDATA[
+ContextMenuComp ${eleId}_ctxmenu = LuiAppUtil.getContextMenu("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="getCtxItemList" name="获得菜单子项列表" desc="获取菜单子项列表代码块">
+			<demo>
+				<![CDATA[
+ContextMenuComp ${eleId}_ctxmenu = LuiAppUtil.getContextMenu("${eleId}");
+List<MenuItem> ${eleId}_items = ${eleId}_ctxmenu.getItemList();
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+	<ctrltype id="MenuItem_ctx" name="MenuItem_ctx">
+		<func id="getMenuItem" name="获得菜单子项" desc="获取菜单子项代码块">
+			<demo>
+				<![CDATA[
+ContextMenuComp ${pEleId}_ctxmenu = LuiAppUtil.getContextMenu("${pEleId}");
+MenuItem ${pEleId}_ctxmenu_item = ${pEleId}_ctxmenu.getItem("${eleId}");
+			  		]]>
+			</demo>
+		</func>
+		<func id="setEnabled" name="设置启用状态" desc="设置该子项启用状态的代码块">
+			<demo>
+				<![CDATA[
+ContextMenuComp ${pEleId}_ctxmenu = LuiAppUtil.getContextMenu("${pEleId}");
+MenuItem ${pEleId}_ctxmenu_item = ${pEleId}_ctxmenu.getItem("${eleId}");
+${pEleId}_ctxmenu_item.setEnabled(true);
+			  		]]>
+			</demo>
+		</func>
+		<func id="setVisible" name="设置是否可见" desc="设置该子项是否可见的代码块">
+			<demo>
+				<![CDATA[
+ContextMenuComp ${pEleId}_ctxmenu = LuiAppUtil.getContextMenu("${pEleId}");
+MenuItem ${pEleId}_ctxmenu_item = ${pEleId}_ctxmenu.getItem("${eleId}");
+${pEleId}_ctxmenu_item.setVisible(true);
+			  		]]>
+			</demo>
+		</func>
+	</ctrltype>
+</ctrlfunc>

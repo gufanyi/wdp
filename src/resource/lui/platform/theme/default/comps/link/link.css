@@ -1,0 +1,29 @@
+.link_div{
+	color:#0086b2;
+	font-size:12px;
+}
+
+.link_div .link_normal {
+	text-decoration:underline;
+}
+
+.link_div .link_over {        
+}
+
+.link_data_div{
+	color:#0086b2;
+	font-size:12px;
+}
+
+.link_data_div .link_normal {
+	
+}
+
+.link_data_div .link_over {        
+}
+
+.link_div .link_disable {
+    color: #C5CED5;
+    text-decoration: none;
+    cursor: default;
+}

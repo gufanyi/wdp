@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PagePart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="formula" caption="web公式编辑器" windowType="win">
+   <Events>
+      <Event eventName="onClosed" method="sysWindowClosed" onserver="true" async="true" nmc="true" eventType="PageEvent" eventStatus="1">
+         <Action><![CDATA[]]></Action>
+         <SubmitRule cardSubmit="false">
+            <Params/>
+         </SubmitRule>
+      </Event>
+      <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+   </Events>
+   <Processor>xap.lui.core.event.AppRequestProcessor</Processor>
+   <Connectors/>
+   <ViewParts>
+      <ViewPart id="editor" refId="editor" canFreeDesign="true"/>
+   </ViewParts>
+</PagePart>

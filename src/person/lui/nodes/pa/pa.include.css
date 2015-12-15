@@ -1,0 +1,103 @@
+#\$d_spliter2_spliter_bar {background: url(/wfw/frame/device_pc/themes/webclassic/ui/basic/images/editorborder_left.png) repeat-y}
+#\$d_nav_flowvlayout7801panelv07801{background: url(/wfw/frame/device_pc/themes/webclassic/ui/basic/images/editorborder_up.png) repeat-x}
+#\$d_spliter1_spliter_bar {background: url(/wfw/frame/device_pc/themes/webclassic/ui/basic/images/editorborder_left.png) repeat-y}
+.tree_div .treenode_left_on ,  .tree_div .treenode_right_on{background:none}
+.tree_div .treenode_on {background: #d6e9ff;border:1px solid #84acdd;border-radius:8px;-moz-border-radius:4px}
+.tree_div .treenode_text {color:#000;}
+.tab_div .tab_item_centerborder_on {color:#000;font-family: 宋体; font-weight: normal;  font-size: 12px;}
+.outlookbar_div .itembardiv .outlooktreeitem_div_showcontent {background: url
+
+("/wfw/frame/device_pc/themes/webclassic/ui/container/shutter/images/outlook_bg.png") repeat scroll 0 0 transparent;}
+.outlookbar_div .itembardiv .outlooktreeitem_div_showcontent .itemtitle ,.outlookbar_div .itembardiv 
+
+.outlooktreeitem_div .itemtitle {
+    color: #000000;
+    float: left;
+    font-size: 13px;
+    font-weight: normal;
+    height: 16px;
+    margin-left: 8px;
+    margin-top: 9px;
+    width: auto;
+}
+
+.overflowStyle{
+   overflow-y:hidden;
+}
+.overflowStyle div{
+   overflow-y:hidden;
+}
+
+ .tab_div .tab_item_rightborder_off_2 {
+    height: 100%;
+    width: 0px;
+}
+.tab_div .tab_item_leftborder_off_1 {
+    height: 30px;
+    width: 0px;
+}
+
+.tab_div .tab_item_leftborder_on_0 {
+    background-image: url("/wfw/frame/device_pc/themes/webclassic/ui/container/tab/images/tab_slide_left.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 0px;
+}
+.tab_div .tab_item_rightborder_on_1 {
+    background-image: url("/wfw/frame/device_pc/themes/webclassic/ui/container/tab/images/tab_slide_right.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 0px;
+}
+.tab_div .tab_item_leftborder_on_1 {
+    background-image: url("/wfw/frame/device_pc/themes/webclassic/ui/container/tab/images/tab_slide_left.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 0px;
+}
+.tab_div .tab_item_rightborder_on_0 {
+    background-image: url("/wfw/frame/device_pc/themes/webclassic/ui/container/tab/images/tab_slide_right.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 0px;
+}
+.tab_div .tab_item_rightborder_off_1 {
+    height: 100%;
+    width: 0px;
+}
+
+.tab_div .tab_item_leftborder_off_0 {
+    height: 30px;
+    width: 0px;
+}
+
+.tab_div .tab_item_leftborder_off_2 {
+    height: 30px;
+    width: 0px;
+}
+.nav_ele{
+	cursor: pointer;
+	color:#000;
+	line-height:26px;
+	font-size: 12px;
+}
+#\$d_nav_flowvlayout7801panelv17801{
+	background: url(/wfw/frame/device_pc/themes/webclassic/ui/basic/images/nav_panel_bg.png) repeat-x;
+	
+}
+.nav_panel{
+	height:29px;
+	overflow-x: auto;
+    padding-left: 8px;
+}
+
+.tab_div .tab_item_centerborder_on {
+    background-image: url(/wfw/frame/device_pc/themes/webclassic/ui/basic/images/transparent.gif);
+    background-color: #CAE1FF;
+    border: 1px solid #a3a3a3;
+    border-bottom: none;
+}

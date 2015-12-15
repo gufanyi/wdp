@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" refId="param" id="param" controller="xap.lui.psn.setting.PaParamDsListener">
+	<DataModels>
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="ds_param" id="ds_param">
+            <Fields>
+                <Field id="Name" text="Name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Value" text="Value" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" method="onDataLoad_ds" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+					</SubmitRule>
+					<Action>
+					</Action>
+				</Event>
+			</Events>
+        </Dataset>
+		<RefNodes>
+		</RefNodes>
+	</DataModels>
+	<Controls>
+        <Grid id="grid_param" dataset="ds_param" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true">
+            <Column id="Name" field="Name" text="键" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false"/>
+            <Column id="Value" field="Value" text="值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false"/>
+        </Grid>
+	</Controls>
+	<Containers />
+	<Menus>
+        <MenuBar isVisible="true" enabled="true" id="menubar_param">
+            <MenuItem text="" tip="新增" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_param_new">
+            	<Events>
+            		<Event async="true" eventType="MouseEvent" method="onclickAddParam" eventName="onclick" controller="xap.lui.psn.setting.PaParamDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="param">
+							    <DatasetRule id="ds_param">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params/>
+						<Action/>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="" tip="修改" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="edit.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/edit.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_conn_menuitem_edit">
+            	<Events>
+					<Event async="true" eventType="MouseEvent" method="onclickEditParam" eventName="onclick" controller="xap.lui.psn.setting.PaParamDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="param">
+							    <DatasetRule id="ds_param">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params/>
+						<Action/>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="" tip="删除" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_param_delete">
+            	<Events>
+            		<Event async="true" eventType="MouseEvent" method="onclickDelParam" eventName="onclick" controller="xap.lui.psn.setting.PaParamDsListener" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="param">
+							    <DatasetRule id="ds_param">ds_all_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Params/>
+						<Action/>
+					</Event>
+				</Events>
+            </MenuItem>
+            <MenuItem text="保存" tip="保存" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="save.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/save.png" imgIconOnChanged="true" imgIconDisableChanged="true" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_param_save">
+            	<Events>
+					<Event eventName="onclick" method="onClickSave" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" controller="xap.lui.psn.setting.PaParamDsListener" eventStatus="1" uistateId="editstate">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="param">
+								<DatasetRule id="ds_param">ds_all_line</DatasetRule>
+							</ViewPartRule>
+						</SubmitRule>
+					</Event>
+				</Events>
+            </MenuItem>
+        </MenuBar>
+    </Menus>
+</ViewPart>

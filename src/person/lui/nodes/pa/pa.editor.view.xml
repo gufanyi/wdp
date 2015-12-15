@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="" refId="" isDialog="false" srcFolder="" controller="">
+  <DataModels />
+  <Controls>
+    <Iframe enabled="true" height="100%" id="iframe_tmp" left="0" position="relative" scrolling="" top="0" isVisible="true" width="100%" />
+  </Controls>
+  <Containers />
+  <Menus />
+</ViewPart>

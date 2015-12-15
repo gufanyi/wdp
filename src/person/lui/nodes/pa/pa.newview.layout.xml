@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart id="newview_um" jquery="0" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd">
+    <FlowVLayout id="flowvlayout0532" widgetId="newview">
+        <FlowVPanel height="20" id="flowvpanel16525" widgetId="newview">
+        </FlowVPanel>
+        <FlowVPanel height="40" id="panelv00532" leftPadding="40" widgetId="newview">
+            <FlowHLayout id="flowhlayout3452" isAutoFill="false" widgetId="newview">
+                <FlowHPanel id="panelh03452" widgetId="newview" width="80">
+                    <Label cssStyle="" family="" height="28" id="viewId_label" left="0" position="relative" size="12" style="" textAlign="left" top="0" widgetId="newview" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh13452" widgetId="newview">
+                    <TextField height="28" id="id_text" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="newview" width="120">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="panelv10532" leftPadding="40" widgetId="newview">
+            <FlowHLayout id="flowhlayout0498" isAutoFill="false" widgetId="newview">
+                <FlowHPanel id="panelh00498" widgetId="newview" width="80">
+                    <Label cssStyle="" family="" height="28" id="str_type" left="0" position="relative" size="12" style="" textAlign="left" top="0" widgetId="newview" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh10498" widgetId="newview">
+                    <TextField height="28" id="type_combo" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="newview" width="120">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="flowvpanel12896" leftPadding="40" widgetId="newview">
+            <FlowHLayout id="flowhlayout2664" isAutoFill="false" widgetId="newview">
+                <FlowHPanel id="panelh02664" widgetId="newview" width="80">
+                    <Label cssStyle="" family="" height="28" id="classname_label" left="0" position="relative" size="12" style="" textAlign="left" top="0" widgetId="newview" width="100">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh12664" widgetId="newview">
+                    <TextField height="28" id="classname_text" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="newview" width="240">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="flowvpanel13742" leftPadding="40" widgetId="newview">
+            <FlowHLayout id="flowhlayout1761" isAutoFill="false" widgetId="newview">
+                <FlowHPanel id="panelh01761" widgetId="newview" width="80">
+                    <Label cssStyle="" family="" height="28" id="label_path" left="0" position="relative" size="12" style="" textAlign="left" top="0" widgetId="newview" width="100%">
+                    </Label>
+                </FlowHPanel>
+                <FlowHPanel id="panelh11761" widgetId="newview">
+                    <TextField height="28" id="packpath_text" imgsrc="" left="0" position="relative" top="0" type="text" widgetId="newview" width="240">
+                    </TextField>
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+        <FlowVPanel height="60" id="panelv20532" topPadding="10" widgetId="newview">
+            <FlowHLayout id="flowhlayout0845" isAutoFill="false" widgetId="newview">
+                <FlowHPanel id="panelh00845" widgetId="newview">
+                </FlowHPanel>
+                <FlowHPanel id="panelh10845" leftPadding="5" topPadding="14" widgetId="newview">
+                    <Button height="24" id="btn_confirm" left="0" position="relative" top="0" widgetId="newview" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="flowhpanel13251" topPadding="14" widgetId="newview">
+                    <Button height="24" id="btn_cancel" left="0" position="relative" top="0" widgetId="newview" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh20845" widgetId="newview">
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

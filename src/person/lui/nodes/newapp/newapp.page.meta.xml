@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PagePart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="newapp" controller="xap.lui.psn.newapp.NewAppCtrl">
+   <Events>
+      <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+   </Events>
+   <Connectors/>
+   <ViewParts>
+      <ViewPart id="main" refId="main" canFreeDesign="true"/>
+   </ViewParts>
+   <UIStates>
+      <UIState id="editstate" name="编辑态">
+         <ViewState viewId="main">
+            <CtrlState id="id_label" isVisible="true" enabled="true"/>
+            <CtrlState id="name_label" isVisible="true" enabled="true"/>
+            <CtrlState id="id_dftwin" isVisible="true" enabled="true"/>
+            <CtrlState id="str_id" isVisible="true" enabled="true"/>
+            <CtrlState id="str_name" isVisible="true" enabled="true"/>
+            <CtrlState id="ref_dftwin" isVisible="true" enabled="true"/>
+         </ViewState>
+      </UIState>
+      <UIState id="viewstate" name="浏览态">
+         <ViewState viewId="main">
+            <CtrlState id="id_label" isVisible="true" enabled="true"/>
+            <CtrlState id="name_label" isVisible="true" enabled="true"/>
+            <CtrlState id="id_dftwin" isVisible="true" enabled="true"/>
+            <CtrlState id="str_id" isVisible="true" enabled="true"/>
+            <CtrlState id="str_name" isVisible="true" enabled="true"/>
+            <CtrlState id="ref_dftwin" isVisible="true" enabled="true"/>
+         </ViewState>
+      </UIState>
+   </UIStates>
+</PagePart>

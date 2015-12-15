@@ -1,0 +1,396 @@
+.text_form_div {
+   	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#A0B3C6;
+	height:18px;
+	background-color: #FFFFFF;
+}
+
+/********************定义JS所需静态常量   start *********************/
+.text_form_div_COMPHEIGHT
+{
+	height:24px;
+}
+
+/********************定义JS所需静态常量   end ***********************/
+
+.text_form_div .text_area {
+	border:1px solid #A0B3C6;
+	overflow:auto;
+	height:18px;
+}
+
+.text_form_div .text_div_inactive {
+   	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#D4D4D4;
+	height:18px;
+}
+
+.text_form_div .text_button {
+	position:absolute;
+	top:0px;
+	width:16px;
+	height:17px;
+	padding-top:1px;
+}
+
+.text_form_div .text_input
+{
+	/*position:absolute*/;
+	position:relative;
+	border:0px;
+	height:18px;
+	left:0px;
+	background-color: #FFFFFF;
+	/** 禁用ios上的阴影 **/
+	-webkit-appearance:none;
+}
+
+
+.text_form_div .text_input_inactive{
+	position:relative;
+	border:0px;
+	height:18px;
+	left:0px;
+	font-size: 12px;
+	color:#003;
+	background-color: #FFFFFF;
+	/** 禁用ios上的阴影 **/
+	-webkit-appearance:none;
+}
+
+.text_form_div_inactive_bgcolor{
+	background-color: #FFFFFF;
+	border-bottom-width:1px;
+	border-bottom-style:solid;
+	border-bottom-color:#D4D4D4;
+}
+
+.text_form_div .input_highlight_center_bg{
+	height:22px;
+	width: 1px;
+ 	background:url('../text/images/input_highlight__center.png') repeat-x;
+ 	float:left;
+}
+
+.text_form_div .input_highlight_left_bg{
+	height:22px;
+	width: 3px;
+ 	background:url('../text/images/input_highlight__left.png') no-repeat;
+ 	float:left;
+}
+
+.text_form_div .input_highlight_right_bg{
+	height:22px;
+	width: 3px;
+ 	background:url('../text/images/input_highlight__right.png') no-repeat;
+ 	float:left;
+}
+
+.text_form_div .input_normal_center_bg{
+	height:22px;
+	width: 1px;
+ 	background:url('../text/images/input_normal__center.png') repeat-x;
+ 	float:left;
+}
+
+.text_form_div .input_normal_left_bg{
+	height:22px;
+	width: 3px;
+ 	background:url('../text/images/input_normal__left.png') no-repeat;
+ 	float:left;
+}
+
+.text_form_div .input_normal_right_bg{
+	height:22px;
+	width: 3px;
+ 	background:url('../text/images/input_normal__right.png') no-repeat;
+ 	float:left;
+}
+
+.text_form_div_focus_bgcolor{
+	margin-left: 0px;
+	margin-top: 0px;
+	border:2px solid #76C4DF;
+}
+
+.text_form_div_error_bgcolor{
+	margin-left: 0px;
+	margin-top: 0px;
+	border:2px solid red;
+}
+
+.text_form_div .text_alpha {
+    font-size:8pt;
+    color:black;
+    text-align:left;
+}
+
+.text_form_div .text_integer {
+    font-size:8pt;
+    color:black;
+    text-align:center;
+}
+
+.text_form_div .text_num {
+	font-size:8pt;
+    color:black;
+    text-align:center;
+}
+
+.text_form_div .text_date {
+    font-size:8pt;
+    color:black;
+    text-align:center;
+}
+
+.text_form_div .label_normal {        
+    font-size: 9pt;
+    color: black;
+    text-align: left;
+    font-weight: normal;       
+}
+
+.text_form_div .label_inactive{
+	color:#BBBBBB;
+}
+
+.form_error_whole_msg_div{
+	position:absolute;
+	z-index:10000;
+	top:5px;
+	left:15px;
+	margin-right:15px;
+}
+
+.form_error_whole_msg_div .whole_msg_div{
+	position:relative;
+	float:left;
+}
+/****************箭头向下******************/
+.form_error_whole_msg_div .down_bg_left_top{
+	position:absolute;
+	background:url(images/left_top_1.png) no-repeat;
+	width:19px;
+	height:5px;
+	left:0px;
+	top:0px;
+}
+
+.form_error_whole_msg_div .down_bg_top_middle{
+	position:absolute;
+	background:url(images/top_middle_1.png) repeat-x;
+	height:5px;
+	left:19px;
+	right:4px;
+	top:0px;
+}
+
+.form_error_whole_msg_div .down_bg_right_top{
+	position:absolute;
+	background:url(images/right_top_1.png) no-repeat;
+	width:4px;
+	height:5px;
+	right:0px;
+	top:0px;
+}
+
+.form_error_whole_msg_div .down_bg_right_middle{
+	position:absolute;
+	background:url(images/right_middle.png) repeat-y;
+	width:4px;
+	right:0px;
+	top:5px;
+	bottom:10px;
+}
+
+.form_error_whole_msg_div .down_bg_right_bottom{
+	position:absolute;
+	background:url(images/right_bottom_1.png) no-repeat;
+	width:4px;
+	height:10px;
+	right:0px;
+	bottom:0px;
+}
+
+.form_error_whole_msg_div .down_bg_bottom_middle{
+	position:absolute;
+	background:url(images/bottom_middle_1.png) repeat-x;
+	height:10px;
+	left:19px;
+	right:4px;
+	bottom:0px;
+}
+
+.form_error_whole_msg_div .down_bg_left_bottom{
+	position:absolute;
+	background:url(images/left_bottom_1.png) no-repeat;
+	width:19px;
+	height:10px;
+	left:0px;
+	bottom:0px;
+}
+
+.form_error_whole_msg_div .down_bg_left_middle{
+	position:absolute;
+	background:url(images/left_middle.png) repeat-y;
+	width:19px;
+	left:0px;
+	top:5px;
+	bottom:10px;
+}
+
+.form_error_whole_msg_div .down_error_center_div{
+	line-height:20px;
+	position:relative;
+	margin:5px 4px 10px 19px;
+	background-color:#f7e3db;
+}
+
+.form_error_whole_msg_div .down_warning{
+	width:17px;
+	height:17px;
+	position:absolute;
+	left:5px;
+	top:6px;
+	background:url(images/warning.png);
+}
+
+.form_error_whole_msg_div .down_close_normal{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:6px;
+	background:url(images/close_normal.png);
+}
+
+.form_error_whole_msg_div .down_close_press{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:6px;
+	background:url(images/close_press.png);
+}
+
+/****************箭头向上******************/
+.form_error_whole_msg_div .up_bg_left_top{
+	position:absolute;
+	background:url(images/left_top.png) no-repeat;
+	width:19px;
+	height:10px;
+	left:0px;
+	top:0px;
+}
+
+.form_error_whole_msg_div .up_bg_top_middle{
+	position:absolute;
+	background:url(images/top_middle.png) repeat-x;
+	height:10px;
+	left:19px;
+	right:4px;
+	top:0px;
+}
+
+.form_error_whole_msg_div .up_bg_right_top{
+	position:absolute;
+	background:url(images/right_top.png) no-repeat;
+	width:4px;
+	height:10px;
+	right:0px;
+	top:0px;
+}
+
+.form_error_whole_msg_div .up_bg_right_middle{
+	position:absolute;
+	background:url(images/right_middle.png) repeat-y;
+	width:4px;
+	right:0px;
+	top:10px;
+	bottom:5px;
+}
+
+.form_error_whole_msg_div .up_bg_right_bottom{
+	position:absolute;
+	background:url(images/right_bottom.png) no-repeat;
+	width:4px;
+	height:5px;
+	right:0px;
+	bottom:0px;
+}
+
+.form_error_whole_msg_div .up_bg_bottom_middle{
+	position:absolute;
+	background:url(images/bottom_middle.png) repeat-x;
+	height:5px;
+	left:19px;
+	right:4px;
+	bottom:0px;
+}
+
+.form_error_whole_msg_div .up_bg_left_bottom{
+	position:absolute;
+	background:url(images/left_bottom.png) no-repeat;
+	width:19px;
+	height:5px;
+	left:0px;
+	bottom:0px;
+}
+
+.form_error_whole_msg_div .up_bg_left_middle{
+	position:absolute;
+	background:url(images/left_middle.png) repeat-y;
+	width:19px;
+	left:0px;
+	top:10px;
+	bottom:5px;
+}
+
+.form_error_whole_msg_div .up_error_center_div{
+	line-height:20px;
+	position:relative;
+	margin:10px 4px 5px 19px;
+	background-color:#f7e3db;
+}
+
+.form_error_whole_msg_div .up_warning{
+	width:17px;
+	height:17px;
+	position:absolute;
+	left:5px;
+	top:10px;
+	background:url(images/warning.png);
+}
+
+.form_error_whole_msg_div .up_close_normal{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:10px;
+	background:url(images/close_normal.png);
+}
+
+.form_error_whole_msg_div .up_close_press{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:10px;
+	background:url(images/close_press.png);
+}
+
+.form_error_whole_msg_div .errorMsg{
+	font-size:12px;
+	color:#c45d30;
+	margin-left:10px;
+	margin-right:25px;
+}
+
+.div_label_ellipsis{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}

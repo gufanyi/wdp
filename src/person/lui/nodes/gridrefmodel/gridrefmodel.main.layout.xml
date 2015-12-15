@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UIPart id="main_um" jquery="0" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd">
+    <FlowVLayout id="flowvlayout2250" widgetId="main">
+        <FlowVPanel id="panelv02250" widgetId="main">
+            <TabLayout currentItem="0" height="" id="tag3504" itemWidth="" oneTabHide="false" tabType="top" widgetId="main" width="">
+                <TabItems>
+                    <TabItem active="0" i18nName="" id="UITabItem03504" showCloseIcon="false" text="显示模型" topPadding="10" widgetId="main">
+                        <GridLayout border="0" borderColor="#000000" borderStyle="solid" cellBorder="0" cellBorderColor="#000000" cellBorderStyle="solid" colcount="2" id="gridlayout6064" rowcount="7" widgetId="main">
+                            <GridRowPanel id="row06064Panel" widgetId="main">
+                                <GridRow colcount="2" id="row06064" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colWidth="240" id="cell006064" rowIndex="0" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="id" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                    <GridPanel colHeight="34" colIndex="1" colWidth="240" id="cell016064" rowIndex="0" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="tableName" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            <GridRowPanel id="row16064Panel" widgetId="main">
+                                <GridRow colcount="2" id="row16064" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colWidth="200" id="cell106064" rowIndex="1" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="30" id="showFields" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                    <GridPanel colHeight="34" colIndex="1" colWidth="120" id="cell116064" rowIndex="1" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="showFieldNames" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            
+                            <GridRowPanel id="row16262Panel" widgetId="main">
+                                <GridRow colcount="2" id="row162364" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colWidth="200" id="cell109964" rowIndex="1" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="30" id="childField" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                    <GridPanel colHeight="34" colIndex="1" colWidth="120" id="cell116000" rowIndex="1" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="fatherField" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            
+                            
+                            <GridRowPanel id="row26064Panel" widgetId="main">
+                                <GridRow colcount="2" id="row26064" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colWidth="120" id="cell206064" rowIndex="2" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="30" id="hiddenFields" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                    <GridPanel colHeight="34" colIndex="1" colWidth="120" id="cell216064" rowIndex="2" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="blurFields" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            <GridRowPanel id="row36064Panel" widgetId="main">
+                                <GridRow colcount="2" id="row36064" widgetId="main">
+                                    <GridPanel colHeight="70" colIndex="0" colSpan="2" colWidth="120" id="cell306064" rowIndex="3" widgetId="main">
+                                        <FormElement eleWidth="397" form_id="showmodel_form" height="64" id="wherePart" left="0" position="relative" top="0" widgetId="main" width="475">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            <GridRowPanel id="row46064Panel" widgetId="main">
+                                <GridRow colcount="2" id="row46064" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colWidth="120" id="cell406064" rowIndex="4" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="groupPart" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                    <GridPanel colHeight="34" colIndex="1" colWidth="120" id="cell416064" rowIndex="4" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="24" id="orderPart" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            <GridRowPanel id="row56064Panel" widgetId="main">
+                                <GridRow colcount="2" id="row56064" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colSpan="2" colWidth="120" id="cell506064" rowIndex="5" widgetId="main">
+                                        <FormElement eleWidth="160" form_id="showmodel_form" height="30" id="pageSize" left="0" position="relative" top="0" widgetId="main" width="240">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                            <GridRowPanel id="rowa157Panel_temp" widgetId="main">
+                                <GridRow colcount="2" id="rowa157_temp" widgetId="main">
+                                    <GridPanel colHeight="34" colIndex="0" colSpan="2" colWidth="120" id="celld70c_temp" rowIndex="6" widgetId="main">
+                                        <FormElement eleWidth="320" form_id="showmodel_form" height="30" id="enviranmentPart" left="0" position="relative" top="0" widgetId="main" width="420">
+                                        </FormElement>
+                                    </GridPanel>
+                                </GridRow>
+                            </GridRowPanel>
+                        </GridLayout>
+                    </TabItem>
+                </TabItems>
+            </TabLayout>
+        </FlowVPanel>
+        <FlowVPanel height="130" id="panelv12250" widgetId="main">
+            <TabLayout currentItem="0" height="" id="tag3002" itemWidth="" oneTabHide="false" tabType="top" widgetId="main" width="">
+                <TabItems>
+                    <TabItem active="0" i18nName="" id="UITabItem03002" showCloseIcon="false" text="回写信息" widgetId="main">
+                        <Form height="100%" id="writeback_form" label_position="" left="0" position="relative" top="0" widgetId="main" width="100%">
+                        </Form>
+                    </TabItem>
+                </TabItems>
+            </TabLayout>
+        </FlowVPanel>
+        <FlowVPanel height="40" id="panelv22250" widgetId="main">
+            <FlowHLayout id="flowhlayout0125" isAutoFill="false" widgetId="main">
+                <FlowHPanel id="panelh00125" widgetId="main">
+                </FlowHPanel>
+                <FlowHPanel id="panelh10125" topPadding="5" widgetId="main">
+                    <Button align="right" height="24" id="btn_ok" left="0" position="relative" top="0" widgetId="main" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="flowhpanel12488" leftPadding="5" topPadding="5" widgetId="main">
+                    <Button height="24" id="btn_cancel" left="0" position="relative" top="0" widgetId="main" width="64">
+                    </Button>
+                </FlowHPanel>
+                <FlowHPanel id="panelh20125" widgetId="main">
+                </FlowHPanel>
+            </FlowHLayout>
+        </FlowVPanel>
+    </FlowVLayout>
+</UIPart>

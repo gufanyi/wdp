@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="nav_um" isFlow="false">
+  <FlowVLayout id="flowvlayout7801">
+    <FlowVPanel id="panelv07801" height="4" />
+    <FlowVPanel id="panelv17801">
+      <HtmlContent height="100%" id="navcontent" left="0" position="relative" top="0" width="100%" />
+    </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

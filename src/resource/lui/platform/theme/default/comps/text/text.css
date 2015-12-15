@@ -1,0 +1,532 @@
+.text_div {
+   	border-width:0px;
+	border-style:solid;
+	border-color:#A0B3C6;
+}
+/**textarea 激活**/
+.text_area {
+	border-width:1px;
+	border-style:solid;
+	border-color:#A0B3C6;
+	background-color: #ffffff;
+        font-size:14px;
+        color:black;
+}
+/**textarea 非激活**/
+.inactivate .text_area {
+	border-width:1px;
+	border-style:solid;
+	border-color:#CCCCCC;
+	background-color:#ffffff;
+}
+/**textarea 高亮**/
+.highlight .text_area {
+	border-width:1px;
+	border-style:solid;
+	border-color:#26adf5;
+	background-color: #ffffff;
+}
+/**textarea 只读**/
+.readonly .text_area {
+	border-width:1px;
+	border-style:solid;
+	border-color:#A0B3C6;
+	background-color: #E1E1E1;
+        font-size:14px;
+        color:black;
+}
+/**checkbox 控件**/
+.checkbox_div {
+
+}
+/**checkbox 激活**/
+.checkbox_box {
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+/**checkbox 非激活**/
+.inactivate .checkbox_box {
+	position:absolute;
+	left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+/**checkbox 只读**/
+.readonly .checkbox_box {
+	position:absolute;
+	left:0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.text_div .text_div_inactive {
+   	border-width:1px;
+	border-style:solid;
+	border-color:#A0B3C6;
+}
+
+/** 只读样式 **/
+.text_div_readonly {
+   	border-width:0px;
+	border-style:solid;
+	border-color:#A0B3C6;
+}
+
+.text_div .text_button {
+	position:absolute;
+}
+
+.text_div .text_input
+{
+	position:relative;
+	border:none;
+	height:100%;
+	width:106px;
+	left:0px;
+	background-color: #FFFFFF;
+    font-size:14px;
+
+	margin-left:0px;
+}
+
+.text_input_readonly
+{
+	color:#777777;
+}
+
+.text_div .text_input_inactive{
+	position:relative;
+	border:0px;
+	height:100%;
+	width:106px;
+	left:0px;
+        font-size:14px;
+        color:black;
+	background-color: #FFFFFF;
+	margin-left:0px;
+}
+
+/*各种输入控件禁用时的背景色*/
+.text_div_inactive_bgcolor {
+       background-color: #E1E1E1;
+}
+
+.text_div .text_alpha {
+    font-size:8pt;
+    font-family:Arial;
+    color:black;
+    text-align:left;
+}
+
+.text_div .text_integer {
+    font-size:8pt;
+    font-family:Arial;
+    color:black;
+    text-align:center;
+}
+
+.text_div .text_num {
+	font-size:8pt;
+    font-family:Arial;
+    color:black;
+    text-align:center;
+}
+
+.text_div .text_date {
+    font-size:8pt;
+    font-family:Arial;
+    color:black;
+    text-align:center;
+}
+
+.date_text_arrow_nm {
+	background: url('images/date_nm.png');
+}
+.date_text_arrow_on {
+	background: url('images/date_on.png');
+}
+.date_text_arrow_disable {
+	background: url('images/date_nm.png');
+}
+
+
+/******************高亮文本框**********************/
+.text_div .input_highlight_center_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/input_highlight__center.png') repeat-x;
+ 	float:left;
+}
+
+.text_div .input_highlight_center_div_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/input_highlight__center.png') repeat-x;
+ 	float:left;
+ 	position:relative;
+}
+
+.text_div .input_highlight_left_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/input_highlight__left.png') no-repeat;
+ 	float:left;
+}
+
+.text_div .input_highlight_right_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/input_highlight__right.png') no-repeat;
+ 	float:left;
+}
+
+/******************正常文本框**********************/
+.text_div .input_normal_center_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/input_normal__center.png') repeat-x;
+ 	float:left;
+}
+
+.text_div .input_normal_center_div_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/input_normal__center.png') repeat-x;
+ 	float:left;
+ 	position:relative;
+}
+
+.text_div .input_normal_left_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/input_normal__left.png') no-repeat;
+ 	float:left;
+}
+
+.text_div .input_normal_right_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/input_normal__right.png') no-repeat;
+ 	float:left;
+}
+
+/******************只读文本框**********************/
+.text_div_readonly .input_normal_center_bg{
+	height:24px;
+	width: 1px;
+ 	background:none;
+ 	float:left;
+}
+
+.text_div_readonly .input_normal_center_div_bg{
+	height:24px;
+	width: 1px;
+ 	background:none;
+ 	float:left;
+ 	position:relative;
+}
+
+.text_div_readonly .input_normal_left_bg{
+	height:24px;
+	width: 3px;
+ 	background:none;
+ 	float:left;
+}
+
+.text_div_readonly .input_normal_right_bg{
+	height:24px;
+	width: 3px;
+ 	background:none;
+ 	float:left;
+}
+
+/******************Combo激活状态文本框**********************/
+.text_div .combo_active_center_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/combo_active_center.png') repeat-x;
+ 	float:left;
+}
+
+.text_div .combo_active_center_div_bg{
+	height:24px;
+	width: 1px;
+	color: #fff;
+ 	background:url('images/combo_active_center.png') repeat-x;
+ 	float:left;
+ 	position:relative;
+}
+
+.text_div .combo_active_left_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/combo_active_left.png') no-repeat;
+ 	float:left;
+}
+
+.text_div .combo_active_right_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/combo_active_right.png') no-repeat;
+ 	float:left;
+}
+
+/******************错误文本框**********************/
+.text_div_error .input_normal_center_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/error/input_error_center.png') repeat-x;
+ 	float:left;
+}
+
+.text_div_error .input_normal_center_div_bg{
+	height:24px;
+	width: 1px;
+ 	background:url('images/error/input_error_center.png') repeat-x;
+ 	float:left;
+ 	position:relative;
+}
+
+.text_div_error .input_normal_left_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/error/input_error_left.png') no-repeat;
+ 	float:left;
+}
+
+.text_div_error .input_normal_right_bg{
+	height:24px;
+	width: 3px;
+ 	background:url('images/error/input_error_right.png') no-repeat;
+ 	float:left;
+}
+
+/*不符合校验规则的字段边框样式*/
+.checkedborder {
+	border-width:2px;
+	border-style:dotted;
+	border-color:red;
+}
+
+/*radio按钮label的css*/
+.text_div .label_normal {        
+    font-size: 9pt;
+    font-family: Arial;
+    color: black;
+    text-align: left;
+    font-weight: normal;       
+}
+
+.text_div .label_inactive{
+	color:#BBBBBB;
+}
+
+.combobox_data_div {
+}
+
+.reference_data_div {
+	background-color: #ffffff;
+	border-width:1px;
+	border-style:solid;
+	border-color:#A0B3C6;
+}
+
+.reference_arrow_nm {
+	background: url('images/ref_nm.png');
+}
+.reference_arrow_on {
+	background: url('images/ref_on.png');
+}
+.reference_arrow_disable {
+	background: url('images/ref_nm.png');
+}
+
+/*下拉框样式*/
+
+.combo_div{
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+.combo_div .combo_left_top_div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:11px;
+	height:11px;
+	background:url('images/drop_left_top.png') no-repeat;
+}
+
+.combo_div .combo_center_top_div{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	height:1px;
+	background-color:#6d6d6d;
+	/*background:url('images/drop_top_center.png') repeat-x;*/
+}
+
+.combo_div .combo_right_top_div{
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:11px;
+	height:11px;
+	background:url('images/drop_right_top.png') no-repeat;
+}
+
+.combo_div .combo_left_center_div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	bottom:0px;
+	width:1px;
+	background-color:#6d6d6d;
+	/*background:url('images/drop_left_center.png') repeat-y;*/
+}
+
+.combo_div .combo_center_div{
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	border : 1px solid #c3c3c3;
+	background-color:#fff;
+	/*background:url('images/drop_center.png') repeat;*/
+	
+}
+
+.combo_div .combo_right_center_div{
+	position:absolute;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	width:1px;
+	background-color:#6d6d6d;
+	/*background:url('images/drop_right_center.png') repeat-y;*/
+}
+
+.combo_div .combo_left_bottom_div{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:11px;
+	height:11px;
+	background:url('images/drop_left_bottom.png') no-repeat;
+}
+
+.combo_div .combo_center_bottom_div{
+	position:absolute;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	height:1px;
+	background-color:#6d6d6d;
+	/*background:url('images/drop_bottom_center.png') repeat-x;*/
+}
+
+.combo_div .combo_right_bottom_div{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	width:11px;
+	height:11px;
+	background:url('images/drop_right_bottom.png') no-repeat;
+}
+
+.combo_div .option_unsel{
+	color:#4c4c4d;
+	cursor:pointer;
+}
+
+.combo_div .option_sel{
+	background-color:#00b7ee;
+	color:#fff;
+	cursor:pointer;
+}
+
+.combo_div .language_option_unsel {
+	color:#0086b2;
+	cursor:default;
+	background:"";
+}
+
+.combo_div .language_option_sel {
+	color:#000000;
+	cursor:default;
+ 	background:url('images/option_over_center.png') repeat-x;
+}
+
+.combo_arrow_nm {
+	background:url('images/combo_nm.png');
+}
+.combo_arrow_on {
+	background:url('images/combo_on.png');
+}
+.combo_arrow_disable {
+	background:url('images/combo_disable.png');
+}
+
+.error_msg_div{
+	position:absolute;
+	z-index:1000;
+	left:24px;
+	top:0px;
+}
+
+.error_msg_div .error_left_div{
+	width:19px;
+	height:31px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:url('images/error/tip_bg_left.png') no-repeat;
+}
+
+.error_msg_div .error_center_div{
+	height:31px;
+	position:absolute;
+	left:19px;
+	right:5px;
+	background:url('images/error/tip_bg_center.png') repeat-x;
+}
+
+.error_msg_div .error_right_div{
+	width:5px;
+	height:31px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	background:url('images/error/tip_bg_right.png') no-repeat;
+}
+
+.error_msg_div .error_content_div{
+	height:31px;
+	position:relative;
+	margin-left:10px;
+	margin-right:10px;
+	white-space:nowrap;
+	line-height:27px;
+}
+
+.warn_icon{
+	width:17px;
+	height:17px;
+	position:absolute;
+	right:10px;
+	top:3px;
+	background:url('images/error/warning.png') no-repeat;
+	z-index:1000;
+}
+

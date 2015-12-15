@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="projview" refId="" isDialog="false" srcFolder="" controller="xap.lui.psn.designer.DesignerMainViewController">
+	<DataModels>
+		<Dataset id="projViewTreeDs" isEdit="false" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="id" dataType="String" text="id" />
+				<Field id="pid" dataType="String" text="pid" />
+				<Field id="name" dataType="String" text="name" />
+				<Field id="type" dataType="String" text="type" />
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent"  method="onDataLoad" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="projTreeDs">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params />
+					<Action />
+				</Event>
+				<Event async="true" eventType="DatasetEvent" method="onAfterRowSelect" eventName="onAfterRowSelect" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="projTreeDs">ds_current_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+					<Params/>
+					<Action />
+				</Event>
+			</Events>
+		</Dataset>
+	</DataModels>
+	<Controls>
+		<Tree id="projview_tree" isEdit="" checkboxType="" isDrag="false" enabled="true" text="" isExpand="true" isSelectRoot="" isVisible="true" isShowCheckBox="false" isShowRoot="false">
+			<RecursiveTree id="level1" contextMenu="projViewTreeDsCtxMenu" dataset="projViewTreeDs" labelFields="type,name" masterField="id" recursiveField="id" recursiveParentField="pid" />
+			<Events>
+				<Event async="true" eventType="TreeNodeEvent"  method="ondbclick_project" eventName="ondbclick" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="projTreeDs">ds_current_line</DatasetRule>
+						</ViewPartRule>
+						<ParentSubmitRule cardSubmit="false" pageId="top">
+							<ViewPartRule id="main">
+								<DatasetRule id="dsId">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+					</SubmitRule>
+					<Params/>
+				</Event>
+			</Events>
+		</Tree>
+		<Iframe src="" border="1" id="iframe_designer" position="relative" scrolling="true" left="0" top="0" isVisible="true" width="100%" height="100%">
+		</Iframe>
+	</Controls>
+	<Containers />
+	<Menus>
+		<ContextMenu id="projViewTreeDsCtxMenu">
+		</ContextMenu>
+	</Menus>
+</ViewPart>

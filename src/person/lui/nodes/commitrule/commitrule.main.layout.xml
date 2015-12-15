@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" isFlow="false">
+  <FlowVLayout id="flowvlayoxt2633">
+  	   <FlowVPanel id="panelv3ssq2" height="200">
+  	       <FlowVLayout id="flowvlayoudd33">
+  	       	   <FlowVPanel id="panelvlls92" height="30">
+					<MenuBar height="100%" id="menubar1" left="0" position="relative" top="0" width="100%"></MenuBar>
+  	       	   </FlowVPanel>
+  	       	   <FlowVPanel id="lnsv3ws92">
+  	       	   		<Grid height="100%" id="subRule_grid1" left="0" position="relative" top="0" width="100%">
+					</Grid>
+  	       	   </FlowVPanel>
+  	       </FlowVLayout>
+	   </FlowVPanel>
+	   
+	   <FlowVPanel id="pawelvl692">
+			<FlowVLayout id="fuwvlakjoudd33">
+			   <FlowVPanel id="pakelv3wk92" height="40">
+			   		<FlowHLayout id="flowhdjfl">
+			   			<FlowHPanel id="flowganelww" width="82">
+			   				<Label id="fLabel" width="80" top="15" left="2" textAlign=""></Label>
+			   			</FlowHPanel>
+			   			<FlowHPanel id="flowhffelww">
+			   				<TextField height="24" id="fCombo" position="relative" top="15" left="0" type="text" width="140">
+						    </TextField>
+			   			</FlowHPanel>
+			   			<FlowHPanel id="flowganelww" width="300">
+			   			</FlowHPanel>
+			   		</FlowHLayout>
+			   </FlowVPanel>
+  	       	   <FlowVPanel id="pakelkkws92" height="30">
+					<MenuBar height="100%" id="menubar2" left="0" position="relative" top="4" width="100%"></MenuBar>
+  	       	   </FlowVPanel>
+  	       	   <FlowVPanel id="pancc3ws92">
+  	       	   		<Grid height="100%" id="subRule_grid2" left="0" position="relative" top="0" width="100%">
+					</Grid>
+  	       	   </FlowVPanel>
+  	       </FlowVLayout>
+	   </FlowVPanel>
+	   
+	   <FlowVPanel id="pawesdk692" height="45">
+	   		<FlowHLayout id="flokgjfl">
+			   	<FlowHPanel id="kkjjhhelww">
+			   		<Button height="24" id="btn_ok" left="180" position="" top="15" width="70">
+					</Button>
+			   	</FlowHPanel>
+			   	<FlowHPanel id="flolpafffelww">
+			   		<Button height="24" id="btn_cancel" left="0" position="" top="15" width="70">
+					</Button>
+			   	</FlowHPanel>
+			</FlowHLayout>
+	   </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

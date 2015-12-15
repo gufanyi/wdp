@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<Theme id="default" name="Classic主题" i18nName="">
+	<Element id="LUI_BORDER_COLOR" value="#898989"/>
+	<Element id="LUI_BACKGROUND_COLOR" value="#FFFFFF"/>
+	<Element id="LUI_COMP_BACKGROUND_COLOR" value="#7A8A99"/>
+	<Element id="LUI_SPLITER_BORDER_COLOR" value="#A2A9BD"/>
+</Theme>

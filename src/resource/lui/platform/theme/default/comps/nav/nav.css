@@ -1,0 +1,88 @@
+.portal_nav {
+	width: 100%;
+	position: absolute;
+}
+.portal_nav .nav_content {
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid #6accf6;
+	background: #e9fcfe;
+}
+.portal_nav .back_toplevel_bar {
+	position: absolute;
+	right: 0px;
+	top : 0px;
+	height: 32px;
+	background: #b0eeff;
+}
+.portal_nav .nav_switch {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 16px;
+	height: 16px;
+	background: url(images/nav_dropdown.png);
+	cursor: pointer;
+}
+.portal_nav .nav_switch_on {
+	background: url(images/nav_dropdown_on.png);
+}
+.portal_nav .nav_content .nav_level {
+	float: left;
+	width: 180px;
+	border-right: 1px solid #6accf6;
+}
+.portal_nav .nav_content .nav_level .nav_toplevel {
+	height: 32px;
+	background: #b0eeff;
+	width: 100%;
+	font-size: 16px;
+	color: #4d4d4e;
+	text-align: center;
+	line-height: 32px;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.portal_nav .nav_content .nav_level .nav_toplevel_on {
+	background: #6accf6;
+	color: #ffffff;
+}
+.portal_nav .nav_content .nav_level .nav_sublevel {
+	height: 32px;
+	background: #e9fcfe;
+	width: 100%;
+	font-size: 14px;
+	color: #4d4d4e;
+	line-height: 32px;
+}
+.portal_nav .nav_content .nav_level .nav_sublevel .sublevel_div {
+	padding-left: 8px;
+	padding-right: 8px;
+	white-space:nowrap;
+	overflow: hidden;
+}
+.portal_nav .nav_content .nav_level .nav_sublevel .sublevel_div:hover {
+	border: 2px solid #009ae5;
+	cursor: pointer;
+	line-height: 28px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.nav_dropdown {
+	position: absolute;
+	border: 1px solid #6accf6;
+	width: 120px;
+}
+.nav_dropdown .dropdown_item {
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	padding-left: 8px;
+	padding-right: 8px;
+	background: #e9fcfe;
+}
+.nav_dropdown .dropdown_item_on {
+	cursor: pointer;
+	background: #b0eeff;
+	
+}

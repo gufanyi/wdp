@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PagePart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" controller="xap.lui.psn.dsmgr.DatasetConfigController" id="dscfg" srcFolder="">
+  <Processor>xap.lui.core.event.AppRequestProcessor</Processor>
+  <ViewParts>
+    <ViewPart id="main" refId="main" />
+  </ViewParts>
+  <Events>
+    <Event async="true" eventType="PageEvent" eventName="onClosed" method="sysWindowClosed" onserver="true">
+      <SubmitRule cardSubmit="false" />
+      <Action />
+    </Event>
+  </Events>
+</PagePart>

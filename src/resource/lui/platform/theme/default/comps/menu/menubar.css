@@ -1,0 +1,562 @@
+.menubar_div
+{	
+	height:22px;
+}
+
+.menubar_div .div_left
+{	
+	height:30x;
+	width:10px;
+	/*background:url('images/menubar_bg_left.png') no-repeat;*/
+}
+
+.menubar_div .div_center
+{	
+	height:30px;
+	/*background:url('images/menubar_bg.png') repeat-x;*/
+}
+
+.menubar_div .div_right
+{	
+	height:30px;
+	width:10px;
+	/*background:url('images/menubar_bg_right.png') no-repeat;*/
+}
+
+/* 和menubar_div同样大小,且是menubar_div的子div */
+.menubar_div .center_div
+{
+	width: 100%;
+	overflow: auto;
+}
+
+/* 分隔条 */
+.menubar_div .menuitem_seperator
+{
+	position:relative;
+	float:left;
+	width:4px;
+	height:22px;
+	/*background:url("images/btn_cut.png") no-repeat;*/
+}
+
+.menubar_div .menuitem_seperator_left_on
+{
+	position:relative;
+	float:left;
+	width:3px;
+	height:30px;
+	background:url("images/btn_cut_press_left.png");
+}
+
+.menubar_div .menuitem_seperator_right_on
+{
+	position:relative;
+	float:left;
+	width:3px;
+	height:30px;
+	background:url("images/btn_cut_press_right.png");
+}
+
+.menubar_div .divSep{
+	width:8px;
+	height:22px;
+	float:left;
+}
+
+/* menubar中的menu的css */
+.menubar_div .menu_div
+{
+	border-width:0px;
+	position:relative;
+	float:left;
+}
+
+.menubar_div .menu_div .right_div
+{
+	position: relative;
+	float: left;
+	height:30px;
+	/*line-height:28px;*/
+	margin-left:5px;
+}
+
+.menubar_div .menu_div .right_div_on
+{
+	position: relative;
+	float: left;
+	height:30px;
+	/*line-height:28px;*/
+	margin-left:5px;
+}
+
+.menubar_div .menu_div .contextmenu_item_div
+{
+	border-width:0px;
+	position:relative;
+	float:left;   
+	background-color:transparent;
+}
+
+.menubar_div .menu_div .contextmenu_item_div_off
+{
+	border-width:0px;
+	position:relative;
+	float:left;
+}
+
+
+/* 鼠标不处在menu上时的外观 */
+.menubar_div .menu_div .contextmenu_item_caption_off 
+{
+	background-color:transparent;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+/* 鼠标处在menu上时的外观 */
+.menubar_div .menu_div .contextmenu_item_caption_on 
+{
+	cursor: pointer;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+/* menu禁用时的css */
+.menubar_div .menu_div .contextmenu_item_caption_banned
+{
+	color: gray;
+	background-color:transparent;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+.menubar_div .menu_div .contextmenu_item_left_div_on
+{
+}
+
+.menubar_div .menu_div .contextmenu_item_left_div_off
+{
+}
+
+.menubar_div .menu_div .divLeft_off{
+	background: url('images/btn_normal_left.png') no-repeat;
+	width:3px;
+	height:22px;
+	float:left;
+}
+
+.menubar_div .menu_div .divCenter_off{
+	background: url('images/btn_normal_center.png') repeat-x;
+	height:22px;
+	float:left;
+	line-height:22px;
+	padding-left:20px;
+	padding-right:14px;
+	color:#555555;
+}
+
+.menubar_div .menu_div .divRight_off{
+	background: url('images/btn_normal_right.png') no-repeat;
+	width:3px;
+	height:22px;
+	float:left;
+}
+.menubar_div .menu_div .divLeft_on{
+	background: url('images/btn_press_left.png') no-repeat;
+	width:3px;
+	height:22px;
+	float:left;
+}
+.menubar_div .menu_div .divCenter_on{
+	background: url('images/btn_press_center.png') repeat-x;
+	height:22px;
+	float:left;
+	line-height:22px;
+	padding-left:20px;
+	padding-right:14px;
+	color:#ffffff;
+}
+.menubar_div .menu_div .divRight_on{
+	background: url('images/btn_press_right.png') no-repeat;
+	width:3px;
+	height:22px;
+	float:left;
+}
+
+.menubar_div .menu_div .captionTextDiv{
+	float:left;
+    overflow: hidden;
+    *overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/****************************************white menu css2****************************************/
+.white_menubar_div2
+{	
+	height:25px;
+}
+
+.white_menubar_div2 .div_left
+{	
+	height:25px;
+	width:0px;
+}
+
+.white_menubar_div2 .div_center
+{	
+	height:25px;
+}
+
+.white_menubar_div2 .div_right
+{	
+	height:25px;
+	width:0px;
+}
+
+/* 和white_menubar_div2同样大小,且是white_menubar_div2的子div */
+.white_menubar_div2 .center_div
+{
+	width: 100%;
+	overflow: auto;
+}
+
+/* 分隔条 */
+.white_menubar_div2 .menuitem_seperator
+{
+	margin-left:6px;
+	background: black;
+	position:relative;
+	float:left;
+	width:1px;
+	height:25px;
+	
+}
+
+.white_menubar_div2 .menuitem_seperator_left_on
+{
+	position:relative;
+	float:left;
+	width:0px;
+	height:25px;
+}
+
+.white_menubar_div2 .menuitem_seperator_right_on
+{
+	position:relative;
+	float:left;
+	width:0px;
+	height:25px;
+}
+
+.white_menubar_div2 .divSep{
+	width:0px;
+	height:25px;
+	float:left;
+}
+
+/* menubar中的menu的css */
+.white_menubar_div2 .white_menu_div2
+{
+	border-width:0px;
+	position:relative;
+	float:left;
+	cursor: pointer;
+	padding-left: 5px;
+	line-height: 25px;
+}
+.white_menu_div2_on
+{
+	color: #00B7EE;
+}
+
+.white_menu_div2_on2
+{
+	color: #EDF4FA;
+	background: #0167B1;
+}
+
+.white_menubar_div2 .white_menu_div2 .right_div
+{
+	position: relative;
+	float: left;
+	height:25px;
+	margin-left:0px;
+}
+
+.white_menubar_div2 .white_menu_div2 .right_div_on
+{
+	position: relative;
+	float: left;
+	height:25px;
+	margin-left:0px;
+}
+
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_div
+{
+	border-width:0px;
+	position:relative;
+	float:left;   
+	background-color:transparent;
+}
+
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_div_off
+{
+	border-width:0px;
+	position:relative;
+	float:left;
+	background-color:transparent;
+}
+
+
+/* 鼠标不处在menu上时的外观 */
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_caption_off 
+{
+	background-color:transparent;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+/* 鼠标处在menu上时的外观 */
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_caption_on 
+{
+	background-color:transparent;
+	cursor: pointer;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+/* menu禁用时的css */
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_caption_banned
+{
+	color: gray;
+	background-color:transparent;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_left_div_on
+{
+}
+
+.white_menubar_div2 .white_menu_div2 .contextmenu_item_left_div_off
+{
+}
+
+.white_menubar_div2 .white_menu_div2 .divLeft_off{
+	
+	width:0px;
+	height:25px;
+	float:left;
+}
+
+.white_menubar_div2 .white_menu_div2 .divCenter_off{
+	height:25px;
+	float:left;
+	line-height:25px;
+	padding-left:10px;
+	padding-right:10px;
+	color:#555555;
+}
+
+.white_menubar_div2 .white_menu_div2 .divRight_off{
+	width:0px;
+	height:25px;
+	float:left;
+}
+.white_menubar_div2 .white_menu_div2 .divLeft_on{
+	width:0px;
+	height:25px;
+	float:left;
+}
+.white_menubar_div2 .white_menu_div2 .divCenter_on{
+	height:25px;
+	float:left;
+	line-height:25px;
+	padding-left:10px;
+	padding-right:10px;
+	color:#59BDEF;
+}
+.white_menubar_div2 .white_menu_div2 .divRight_on{
+	width:0px;
+	height:25px;
+	float:left;
+}
+
+.white_menubar_div2 .white_menu_div2 .captionTextDiv{
+	float:left;
+	max-width: 70px;
+    overflow: hidden;
+    *overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/************************************************white menu css******************************************/
+.white_menubar_div
+{	
+	height:30px;
+}
+
+.white_menubar_div .div_left
+{	
+	height:30px;
+	width:10px;
+	/*background:url('images/menubar_bg_left.png') no-repeat;*/
+}
+
+.white_menubar_div .div_center
+{	
+	height:30px;
+	/*background:url('images/menubar_bg.png') repeat-x;*/
+}
+
+.white_menubar_div .div_right
+{	
+	height:30px;
+	width:10px;
+	/*background:url('images/menubar_bg_right.png') no-repeat;*/
+}
+
+/* 和menubar_div同样大小,且是menubar_div的子div */
+.white_menubar_div .center_div
+{
+	width: 100%;
+	overflow: auto;
+}
+
+.white_menubar_div .white_menu_div
+{
+	border-width:0px;
+	position:relative;
+	float:left;
+}
+
+.white_menubar_div .white_menu_div .right_div
+{
+	position: relative;
+	float: left;
+	height:30px;
+	/*line-height:28px;*/
+	margin-left:5px;
+}
+
+.white_menubar_div .white_menu_div .right_div_on
+{
+	position: relative;
+	float: left;
+	height:30px;
+	/*line-height:28px;*/
+	margin-left:5px;
+}
+
+.white_menubar_div .white_menu_div .contextmenu_item_div
+{
+	border-width:0px;
+	position:relative;
+	float:left;   
+	background-color:transparent;
+}
+
+.white_menubar_div .white_menu_div .contextmenu_item_div_off
+{
+	border-width:0px;
+	position:relative;
+	float:left;
+}
+
+/* 鼠标不处在menu上时的外观 */
+.white_menubar_div .white_menu_div .contextmenu_item_caption_off 
+{
+	background-color:transparent;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+/* 鼠标处在menu上时的外观 */
+.white_menubar_div .white_menu_div .contextmenu_item_caption_on 
+{
+	cursor: pointer;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+/* menu禁用时的css */
+.white_menubar_div .white_menu_div .contextmenu_item_caption_banned
+{
+	color: gray;
+	background-color:transparent;
+	position: relative;
+	float: left;
+	width: auto;
+}
+
+.white_menubar_div .white_menu_div .contextmenu_item_left_div_on
+{
+}
+
+.white_menubar_div .white_menu_div .contextmenu_item_left_div_off
+{
+}
+
+.white_menubar_div .white_menu_div .captionTextDiv{
+	float:left;
+	max-width: 70px;
+    overflow: hidden;
+    *overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.white_menubar_div .white_menu_div .round_top{
+	border: 1px solid #c9c9c9;
+	-webkit-border-radius:13px 0px 0px 0px;
+	-moz-border-radius:13px 0px 0px 0px;
+	border-radius:13px 0px 0px 0px;
+	behavior:url("../../basic/PIE.htc");
+	height:25px;
+	background:url("images/white_btn.png") repeat-x;
+	background-position:center center;
+}
+
+.white_menubar_div .white_menu_div .round_bottom{
+	border: 1px solid #c9c9c9;
+	-webkit-border-radius:0px 0px 13px 0px;
+	-moz-border-radius:0px 0px 13px 0px;
+	border-radius:0px 0px 13px 0px;
+	behavior:url("../../basic/PIE.htc");
+	border-left:none;
+	height:25px;
+	background:url("images/white_btn.png") repeat-x;
+	background-position:center center;
+}
+
+.white_menubar_div .white_menu_div .round_top_bottom{
+	border: 1px solid #c9c9c9;
+	-webkit-border-radius:13px 0px 13px 0px;
+	-moz-border-radius:13px 0px 13px 0px;
+	border-radius:13px 0px 13px 0px;
+	behavior:url("../../basic/PIE.htc");
+	height:25px;
+	background:url("images/white_btn.png") repeat-x;
+	background-position:center center;
+}
+
+.white_menubar_div .white_menu_div .round_normal{
+	border: 1px solid #c9c9c9;
+	border-left:none;
+	behavior:url("../../basic/PIE.htc");
+	height:25px;
+	background:url("images/white_btn.png") repeat-x;
+	background-position:center center;
+}
+

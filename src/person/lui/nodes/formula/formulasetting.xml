@@ -1,0 +1,657 @@
+<formulaxml>
+	<category id="controlprocess" name="控制流程">
+		<item id="ifelse" name="选择" desc="根据判定的结果（真或假）决定执行给出的两种操作之一,返回值为true或false">
+				<demo>
+					<![CDATA[
+if (var > 0) {
+	System.out.println("Greater than zero!");}
+else (var == -1) { 
+	System.out.println("Minus one!");}
+					]]>
+				</demo>
+		</item>
+		<item id="foreach" name="foreach循环" desc="foreach 语句用于循环访问集合以获取所需信息。foreach语句的一般语法格式如下：foreach（数据类型 标识符 in 表达式）{循环体}。">
+			  <demo><![CDATA[
+int count = 0;
+//people是集合或数组，name是people中每个对象的元素
+foreach (name : people) {
+	count++;
+	System.out.println("Person #" + count + ":" + name);
+}
+System.out.println("Total people:" + count);
+			  		]]>
+			   </demo>
+		</item>
+		<item id="dowhile" name="Do While" desc="若条件满足，则继续循环执行">
+			<demo>
+				<![CDATA[
+do { x = something();} while (x != null);
+				]]>
+			</demo>
+		</item>
+		<item id="dountil" name="Do Until" desc="循环执行到until条件为真结束">
+			  <demo>
+			  	<![CDATA[
+do { x = something();} until (x == null);
+			  	]]>
+			  </demo>
+		</item>
+		<item id="while" name="while" desc="当满足条件时执行">
+			<demo>
+			  	<![CDATA[
+while (isTrue()) { doSomething();}
+			  	]]>
+			</demo>
+		</item>
+		<item id="until" name="until" desc="直到满足条件才执行">
+			<demo>
+			  	<![CDATA[
+until (isFalse()) {doSomething();}
+			  	]]>
+			</demo>
+		</item>
+	</category>
+	<category id="operator" name="操作符">
+		<item id="UnaryOperators" name="一元操作符">
+			<item id="new" name="创建实例" desc="创建实例" >
+				<demo>
+				  	<![CDATA[
+new String(‘foo’)
+				  	]]>
+				</demo>
+			</item>
+			<item id="with" name="with块操作" desc="with块操作, 对某个实例进行多个操作的简写形式" >
+				<demo>
+				  	<![CDATA[
+with (value) { name = 'Foo', age = 18, sex = Sex.FEMALE }
+				  	]]>
+				</demo>
+			</item>
+			<item id="assert" name="断言" desc="断言结果正确或失败" >
+				<demo>
+				  	<![CDATA[
+assert foo != null
+				  	]]>
+				</demo>
+			</item>
+			<item id="isdef" name="是否定义" desc="检查变量是否已声明或定义,未定义返回false">
+				<demo>
+				  	<![CDATA[
+isdef variableName
+				  	]]>
+				</demo>
+			</item>
+			<item id="!" name="取反" desc="取反" >
+				<demo>
+				  	<![CDATA[
+!true == false
+				  	]]>
+				</demo>
+			</item>
+		</item>
+		<item id="ComparisonOperators" name="比较操作符">
+			<item id="==" name="相等" desc="相等,字符串内容相同时也返回true,与java的'=='是比较字符串的内存地址不同，'foo' == 'foo'返回 true " >
+				<demo>
+				  	<![CDATA[
+'foo' == 'foo'
+				  	]]>
+				</demo>
+			</item>
+			<item id="!=" name="不相等" desc="不相等。'foo' != 'bar' 返回 true " >
+				<demo>
+				  	<![CDATA[
+'foo' != 'bar'
+				  	]]>
+				</demo>
+			</item>
+			<item id=">" name="大于" desc="2 > 1 返回 true" >
+				<demo>
+				  	<![CDATA[
+2 > 1
+				  	]]>
+				</demo>
+			</item>
+			<item id="&lt;" name="小于" desc="1 &lt; 2 返回 true" >
+				<demo>
+				  	<![CDATA[
+1 < 2
+				  	]]>
+				</demo>
+			</item>
+			<item id=">=" name="大于等于" desc="大于等于,1 >= 1 返回 true" >
+				<demo>
+				  	<![CDATA[
+1 >= 1
+				  	]]>
+				</demo>
+			</item>
+			<item id="&lt;=" name="小于等于" desc="小于等于,2 &lt;= 2 返回 true" >
+				<demo>
+				  	<![CDATA[
+2 <= 2
+				  	]]>
+				</demo>
+			</item>
+			<item id="contains" name="包含" desc="包含,如果左边包含右边的字符串内容,返回true,否则返回false" >
+				<demo>
+				  	<![CDATA[
+var = 'my Foobar';  var contains 'Foo';
+				  	]]>
+				</demo>
+			</item>
+			<item id="instanceof" name="实例检查" desc="实例类型检查,如果实例 类型是右边的类型,返回 true,否则返回false" >
+				<demo>
+				  	<![CDATA[
+var = new Integer(); var instanceof Integer;
+				  	]]>
+				</demo>
+			</item>
+			<item id="is" name="实例检查" desc="同instanceof" >
+				<demo>
+				  	<![CDATA[
+var = new Integer(); var is Integer;
+				  	]]>
+				</demo>
+			</item>
+			<item id="strsim" name="字符相似性" 
+				  desc="1.'foo' strsim 'foo',相似性: 1.00 (or 100%) 2.'foobar' strsim 'foo',相似性: 0.50 (or 50%) 3.'bar0' strsim 'bar',相似性: 0.75 (or 75%) 4.'oobar' strsim 'bar' ,相似性: 0.60 (or 60%)">
+				<demo>
+				  	<![CDATA[
+'foo' strsim 'foo'
+				  	]]>
+				</demo>
+			</item>
+			<item id="soundslike" name="读音相似性" desc="读音相似性" >
+				<demo>
+				  	<![CDATA[
+'foobar' soundslike 'fubar'
+				  	]]>
+				</demo>
+			</item>
+		</item>
+		<item id="LogicalOperators" name="逻辑操作符">
+			<item id="&amp;&amp;" name="逻辑与" desc="逻辑与">
+				<demo>
+				  	<![CDATA[
+foo && bar
+				  	]]>
+				</demo>
+			</item>	
+			<item id="||" name="逻辑或" desc="逻辑或" >
+				<demo>
+				  	<![CDATA[
+foo || bar
+				  	]]>
+				</demo>
+			</item>	
+			<item id="or" name="链式或" desc="链式或,检查2个以上的值,返回第一个不为null的值">
+				<demo>
+				  	<![CDATA[
+foo or bar or barfoo or 'N/A'
+				  	]]>
+				</demo>
+			</item>	
+			<item id="~=" name="正则表达式测试" desc="正则表达式测试.测试值是否符合右边正则表达式.符合 返回true,否则返回false">
+				<demo>
+				  	<![CDATA[
+foo ~= '[a-z].+'
+				  	]]>
+				</demo>
+			</item>	
+		</item>
+		<item id="BitwiseOperators" name="位操作符">
+			<item id="&amp;" name="按位与" desc="按位与" >
+				<demo>
+				  	<![CDATA[
+foo & 5
+				  	]]>
+				</demo>
+			</item>	
+			<item id="|" name="按位或" desc="按位或">
+				<demo>
+				  	<![CDATA[
+foo | 5
+				  	]]>
+				</demo>
+			</item>	
+			<item id="^" name="按位异或" desc="按位XOR(异或)" >
+				<demo>
+				  	<![CDATA[
+foo ^ 5
+				  	]]>
+				</demo>
+			</item>	
+		</item>
+		<item id="ArithmeticOperators" name="运算符">
+			<item id="+" name="加法" desc="加法" >
+				<demo>
+				  	<![CDATA[
+1 + 2
+				  	]]>
+				</demo>
+			</item>	
+			<item id="-" name="减法" desc="减法" >
+				<demo>
+				  	<![CDATA[
+2 - 1
+				  	]]>
+				</demo>
+			</item>	
+			<item id="/" name="除法" desc="除法" >
+				<demo>
+				  	<![CDATA[
+2 / 1
+				  	]]>
+				</demo>
+			</item>	
+			<item id="*" name="乘法" desc="乘法" >
+				<demo>
+				  	<![CDATA[
+1 * 2
+				  	]]>
+				</demo>
+			</item>	
+			<item id="%" name="取模" desc="取模" >
+				<demo>
+				  	<![CDATA[
+2 % 1
+				  	]]>
+				</demo>
+			</item>	
+		</item>
+		<item id="OtherOperators" name="其他操作符">
+			<item id="+" name="拼接字符串" desc="拼接字符串">
+				<demo>
+				  	<![CDATA[
+'foo' + 'bar'
+				  	]]>
+				</demo>
+			</item>	
+			<item id="#" name="拼接数字" desc="拼接数字,返回字符串,而不是将数值相加.1 # 2 returns '12'">
+				<demo>
+				  	<![CDATA[
+1 # 2
+				  	]]>
+				</demo>
+			</item>	
+			<item id="in" name="存在于" desc="检查值是否存在于集合中,存在返回true,不存在返回false">
+				<demo>
+				  	<![CDATA[
+foo in list
+				  	]]>
+				</demo>
+			</item>	
+			<item id="=" name="赋值语句" desc="赋值语句">
+				<demo>
+				  	<![CDATA[
+var = 'foobar'
+				  	]]>
+				</demo>
+			</item>	
+		</item>
+	</category>
+	<category id="function" name="函数">
+		<item id="ArithmeticFunc" name="数学函数" desc="" demo="">
+			<item id="sin" name="正弦" desc="sin(double),返回数字正弦值" >
+				<demo>
+				  	<![CDATA[
+sin(1)
+				  	]]>
+				</demo>
+			</item>	
+			<item id="cos" name="余弦" desc="cos(double),返回数字余弦值" >
+				<demo>
+				  	<![CDATA[
+cos(1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="tan" name="正切" desc="tan(double),返回数字正切值" >
+				<demo>
+				  	<![CDATA[
+tan(1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="asin" name="反正弦" desc="asin(double),返回数字反正弦值" >
+				<demo>
+				  	<![CDATA[
+asin(1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="acos" name="反余弦" desc="acos(double),返回数字反余弦值" >
+				<demo>
+				  	<![CDATA[
+acos(1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="atan" name="反正切" desc="atan(double),返回数字反正切值" >
+				<demo>
+				  	<![CDATA[
+atan(1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="atan2" name="角度" desc="atan2(double,double),返回由x轴到点(x,y)的角度(以弧度为单位)" >
+				<demo>
+				  	<![CDATA[
+atan2(1，2)
+				  	]]>
+				</demo>
+			</item>
+			<item id="PI" name="圆周率" desc="返回圆的周长与其直径的比值(圆周率π)，约等于3.1415926" >
+				<demo>
+				  	<![CDATA[
+double var = PI
+				  	]]>
+				</demo>
+			</item>
+			<item id="exp" name="指数" desc="exp(double),返回E(自然对数的底数)的x次幂">
+				<demo>
+				  	<![CDATA[
+exp(2)
+				  	]]>
+				</demo>
+			</item>
+			<item id="log" name="对数" desc="log(double),返回数字的自然对数(以e为底)" >
+				<demo>
+				  	<![CDATA[
+log(2)
+				  	]]>
+				</demo>
+			</item>
+			<item id="E" name="自然对数的底数" desc="自然对数的底数，E约等于2.718">
+				<demo>
+				  	<![CDATA[
+double var = E;
+				  	]]>
+				</demo>
+			</item>
+			<item id="LN2" name="2的自然对数" desc="返回2的自然对数loge2，约等于0.693" >
+				<demo>
+				  	<![CDATA[
+double var = LN2;
+				  	]]>
+				</demo>
+			</item>
+			<item id="LN10" name="10的自然对数" desc="返回10的自然对数loge10，约等于2.302" >
+				<demo>
+				  	<![CDATA[
+double var = LN10;
+				  	]]>
+				</demo>
+			</item>
+			<item id="LOG2E" name="log2e" desc="返回以2为底的E的对数log2e，约等于1.442" >
+				<demo>
+				  	<![CDATA[
+double var = LOG2E;
+				  	]]>
+				</demo>
+			</item>
+			<item id="LOG10E" name="log10e" desc="返回以10为底的E的对数log10e，约等于0.434">
+				<demo>
+				  	<![CDATA[
+double var = LOG10E;
+				  	]]>
+				</demo>
+			</item>
+			<item id="abs" name="绝对值" desc="abs(double)返回数字的绝对值" >
+				<demo>
+				  	<![CDATA[
+abs(-1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="ceil" name="上舍入取整" desc="ceil(double)返回大于等于数字参数的最小整数(取整函数)，对数字进行上舍入" >
+				<demo>
+				  	<![CDATA[
+ceil(2.1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="floor" name="下舍入取整" desc="floor(double),返回小于等于数字参数的最大整数，对数字进行下舍入" >
+				<demo>
+				  	<![CDATA[
+floor(0.1)
+				  	]]>
+				</demo>
+			</item>
+			<item id="round" name="四舍五入" desc="round(double), 返回数字最接近的整数，四舍五入" >
+				<demo>
+				  	<![CDATA[
+round(0.4)
+				  	]]>
+				</demo>
+			</item>
+			<item id="max" name="最大值" desc="取几个数中的最大值">
+				<demo>
+				  	<![CDATA[
+max(a, b,c)
+				  	]]>
+				</demo>
+			</item>
+			<item id="min" name="最小值" desc="取几个数中的最小值" >
+				<demo>
+				  	<![CDATA[
+min(a,b,c)
+				  	]]>
+				</demo>
+			</item>
+			<item id="pow" name="幂" desc="pow(double a, double b),返回a(底数)的b(指数)次幂" >
+				<demo>
+				  	<![CDATA[
+pow(a,b)
+				  	]]>
+				</demo>
+			</item>
+			<item id="sqrt" name="平方根" desc="sqrt(double), 返回数字的平方根 " >
+				<demo>
+				  	<![CDATA[
+sqrt(9)
+				  	]]>
+				</demo>
+			</item>
+			<item id="random" name="随机数" desc="random(),返回0和1之间的伪随机数" >
+				<demo>
+				  	<![CDATA[
+double var = random();
+				  	]]>
+				</demo>
+			</item>	
+			<item id="abs" name="绝对值" desc="abs(double),返回数字的绝对值" >
+				<demo>
+				  	<![CDATA[
+abs(-1)
+				  	]]>
+				</demo>
+			</item>	
+		</item>
+		<item id="StringFunc" name="字符串函数">
+			<item id="substring" name="截取字符串" desc="它有两种形式，第一种是：String substring(int startIndex) 第二种是：String substring(int startIndex,int endIndex)">
+				<demo>
+				  	<![CDATA[
+str.substring(2);
+				  	]]>
+				</demo>
+			</item>	
+			<item id="concat" name="拼接字符串" desc="连接两个字符串">
+				<demo>
+				  	<![CDATA[
+String s = "Welcome to ";  
+String t=s.concat("AnHui");
+				  	]]>
+				</demo>
+			</item>	
+			<item id="replace" name="替换" 
+				  desc="它有两种形式，第一种形式用一个字符在调用字符串中所有出现某个字符的地方进行替换，形式如下：String replace(char original,char replacement)  例如：String s=”Hello”.replace(’l',’w');  第二种形式是用一个字符序列替换另一个字符序列，形式如下： String replace(CharSequence original,CharSequence replacement)">
+				<demo>
+				  	<![CDATA[
+String s="Hello".replace('e','w');
+				  	]]>
+				</demo>
+			</item>	
+			<item id="trim" name="去空格" desc="去掉起始和结尾的空格" >
+				<demo>
+				  	<![CDATA[
+str.trim();
+				  	]]>
+				</demo>
+			</item>	
+			<item id="valueOf" name="转为字符串" desc="将boolean int char long float double等基本类型，转为字符串" >
+				<demo>
+				  	<![CDATA[
+String.valueOf(99);
+				  	]]>
+				</demo>
+			</item>	
+			<item id="toLowerCase" name="转小写" desc="将字符串所有大写字母转小写" >
+				<demo>
+				  	<![CDATA[
+str.toLowerCase();
+				  	]]>
+				</demo>
+			</item>
+			<item id="toUpperCase" name="转大写" desc="将字符串所有小写字母转大写" >
+				<demo>
+				  	<![CDATA[
+str.toUpperCase()
+				  	]]>
+				</demo>
+			</item>
+			<item id="length" name="长度" desc="取得字符串的长度" >
+				<demo>
+				  	<![CDATA[
+char chars[]={'a','b','c'}; 
+String s=new String(chars); 
+int len=s.length();
+				  	]]>
+				</demo>
+			</item>
+			<item id="charAt" name="取字符" desc="chartAt(int),取得某个索引下的字符" >
+				<demo>
+				  	<![CDATA[
+char ch = "abc".charAt(1); 
+				  	]]>
+				</demo>
+			</item>
+			<item id="indexOf" name="字符索引" desc="indexOf(String),返回第一次出现的指定子字符串在此字符串中的索引。indexOf(String str, int startIndex)：从指定的索引处开始，返回第一次出现的指定子字符串在此字符串中的索引.">
+				<demo>
+				  	<![CDATA[
+String str = "aabc";
+int index = str.indexOf("aa");
+				  	]]>
+				</demo>
+			</item>
+			<item id="lastIndexOf" name="字符索引" desc="lastIndexOf(String str) ：返回在此字符串中最右边出现的指定子字符串的索引。lastIndexOf(String str, int startIndex) ：从指定的索引处开始向后搜索，返回在此字符串中最后一次出现的指定子字符串的索引。">
+				<demo>
+				  	<![CDATA[
+String str = "aabc";
+int index = str.lastIndexOf("aa");
+				  	]]>
+				</demo>
+			</item>
+		</item>
+		<item id="SetFunc" name="集合">
+			<item id="List" name="列表" desc="列表，列表用下面的格式来描述： [item1, item2, ...]" >
+				<demo>
+				  	<![CDATA[
+["Jim", "Bob", "Smith"]
+				  	]]>
+				</demo>
+			</item>
+			<item id="Map" name="映射" desc="Map用下面的格式来描述： [key1 : value1, key2: value2, ...]">
+				<demo>
+				  	<![CDATA[
+["Foo" : "Bar", "Bar" : "Foo"]
+				  	]]>
+				</demo>
+			</item>
+			<item id="Array" name="数组" desc="数组用下面的格式来描述: {item1, item2, ...}" >
+				<demo>
+				  	<![CDATA[
+{"Jim", "Bob", "Smith"}
+				  	]]>
+				</demo>
+			</item>
+		</item>
+		<item id="DateFunc" name="日期">
+		</item>
+		<item id="DBFunc" name="数据库函数">
+			
+		</item>
+	</category>
+	<category id="valiformula" name="校验公式">
+		<item id="Email地址" name="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" desc="匹配Email地址的正则表达式,表单验证时很实用">
+			<demo>
+				  	<![CDATA[
+\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*
+				  	]]>
+			</demo>
+		</item>
+		<item id="网址URL" name="[a-zA-z]+://[^\s]*" desc="匹配网址URL的正则表达式,网上流传的版本功能很有限，这个基本可以满足需求">
+			<demo>
+				  	<![CDATA[
+[a-zA-z]+://[^\s]*
+				  	]]>
+			</demo>
+		</item>
+		<item id="国内电话号码" name="\d{3}-\d{8}|\d{4}-\d{7}" desc="匹配形式如 0511-4405222 或 021-87888822" >
+			<demo>
+				  	<![CDATA[
+\d{3}-\d{8}|\d{4}-\d{7}
+				  	]]>
+			</demo>
+		</item>
+		<item id="国内移动号码" name="^((13[0-9])|(15[^4,\D])|(18[0-9]))\d{8}$" desc="匹配形式如 18043439483">
+			<demo>
+				  	<![CDATA[
+^((13[0-9])|(15[^4,\D])|(18[0-9]))\d{8}$
+				  	]]>
+			</demo>
+		</item>
+		<item id="身份证" name="(\d{14}[0-9a-zA-Z])|(\d{17}[0-9a-zA-Z])" desc="中国的身份证是15位或18位，最后一位可以为字母" demo="">
+			<demo>
+				  	<![CDATA[
+(\d{14}[0-9a-zA-Z])|(\d{17}[0-9a-zA-Z])
+				  	]]>
+			</demo>
+		</item>
+		<item id="中国邮政编码" name="[1-9]\d{5}(?!\d)" desc="中国邮政编码为6位数字,[1-9]\d{5}(?!\d)整个表达式的意思就是：以1至9的数字开头，后面接5位任意数字，并且第6位开始（也就是邮编的末尾）不能是任意数字。\d就是任意数字的意思。">
+			<demo>
+				  	<![CDATA[
+[1-9]\d{5}(?!\d)
+				  	]]>
+			</demo>
+		</item>
+		<item id="ip地址" name="((?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))))" desc="匹配ip地址，在提取ip地址时有用">
+			<demo>
+				  	<![CDATA[
+((?:(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d)))\.){3}(?:25[0-5]|2[0-4]\d|((1\d{2})|([1-9]?\d))))
+				  	]]>
+			</demo>
+		</item>
+		<item id="HTML标记" name="&lt;(\S*?)[^>]*>.*?&lt;/\1>|&lt;.*? />" desc="匹配是否存在html标记。这个也仅仅能匹配部分，对于复杂的嵌套标记依旧无能为力" >
+			<demo>
+				  	<![CDATA[
+<(\S*?)[^>]*>.*?</\1>|<.*? />
+				  	]]>
+			</demo>
+		</item>
+		<item id="中文字符" name="[\u4e00-\u9fa5]" desc="匹配中文字符的正则表达式">
+			<demo>
+				  	<![CDATA[
+[\u4e00-\u9fa5]
+				  	]]>
+			</demo>
+		</item>
+		<item id="双字节字符" name="[^\x00-\xff]" desc="匹配双字节字符(包括汉字在内),可以用来计算字符串的长度（一个双字节字符长度计2，ASCII字符计1）" >
+			<demo>
+				  	<![CDATA[
+[^\x00-\xff]
+				  	]]>
+			</demo>
+		</item>
+	</category>
+</formulaxml>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PagePart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="guided" controller="xap.lui.psn.GuidedCfgController">
+   <Events>
+      <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+   </Events>
+   <Connectors/>
+   <ViewParts>
+      <ViewPart id="main" refId="main" canFreeDesign="true"/>
+   </ViewParts>
+   <UIStates>
+      <UIState id="editstate" name="编辑态">
+         <ViewState viewId="main">
+            <CtrlState id="img_sigTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_sigTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_treeTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_Save" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_Cancle" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_Add" isVisible="true" enabled="true"/>
+            <CtrlState id="strTxt_PageId" isVisible="true" enabled="true"/>
+            <CtrlState id="form_treeTab" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="form_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab_menuitem_new" pid="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab_menuitem_edit" pid="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab_menuitem_delete" pid="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="tab_parChiTab_chi" isVisible="true" enabled="true"/>
+            <CtrlState id="form_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab_menuitem_new" pid="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab_menuitem_edit" pid="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab_menuitem_delete" pid="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="tab_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="form_sigTab" isVisible="true" enabled="true"/>
+         </ViewState>
+      </UIState>
+      <UIState id="viewstate" name="浏览态">
+         <ViewState viewId="main">
+            <CtrlState id="img_sigTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_sigTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_treeTab" isVisible="true" enabled="true"/>
+            <CtrlState id="img_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_Save" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_Cancle" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_Add" isVisible="true" enabled="true"/>
+            <CtrlState id="strTxt_PageId" isVisible="true" enabled="true"/>
+            <CtrlState id="form_treeTab" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="form_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab_menuitem_new" pid="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab_menuitem_edit" pid="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_parChiTab_menuitem_delete" pid="menu_parChiTab" isVisible="true" enabled="true"/>
+            <CtrlState id="tab_parChiTab_chi" isVisible="true" enabled="true"/>
+            <CtrlState id="form_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab_menuitem_new" pid="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab_menuitem_edit" pid="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="menu_treeTabTab_menuitem_delete" pid="menu_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="tab_treeTabTab" isVisible="true" enabled="true"/>
+            <CtrlState id="form_sigTab" isVisible="true" enabled="true"/>
+         </ViewState>
+      </UIState>
+   </UIStates>
+</PagePart>

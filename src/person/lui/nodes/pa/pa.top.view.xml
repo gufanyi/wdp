@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="nav" refId="" isDialog="false" srcFolder="" controller="xap.lui.psn.top.TopMainViewController" provider="xap.lui.psn.top.TopViewProvider">
+	<Events>
+		<Event eventName="beforeShow" method="onBeforeShow" onserver="true" async="true" nmc="true" eventType="DialogEvent" eventStatus="1">
+			<Action><![CDATA[]]></Action>
+			<SubmitRule cardSubmit="false">
+				<ViewPartRule id="editor"/>
+			</SubmitRule>
+		</Event>
+	</Events>
+	<DataModels>
+	</DataModels>
+	<Controls>
+		<ToolBar enabled="true" id="toptoolbar" text="目录设定" isVisible="true">
+			<Item id="workspace" tip="工作空间" refImg="workspace.png"  withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="setWSCtrl" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="top">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="wizard" tip="配置向导" refImg="config.png"  withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="configGuided" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="top">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="save_file" tip="保存文件" refImg="save.png" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="save_file" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="top">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="run_app" tip="运行程序" refImg="run.png"  isVisible="true" withSep = "true">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="run_app" eventName="onclick" onserver="true">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule cardSubmit="false" id="top">
+								<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+							</ViewPartRule>
+						</SubmitRule>
+						<Action>
+						</Action>
+					</Event>
+				</Events>
+			</Item>
+			
+			<Item id="layout_titlepanel" tip="标题面板" refImg="icon/UILayout_titlepanel.png" isVisible="true" withSep = "false">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'panellayout_unknownlayoutid';
+								event.type="start";
+								event.text = '标题面板';
+								event.compType = 'panellayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_split" isVisible="true" tip="分隔容器"  refImg="icon/UILayout_compart.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'spliterlayout_unknownlayoutid';
+								event.type="start";
+								event.text = '分隔容器';
+								event.compType = 'spliterlayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_outtoolbar" isVisible="true" tip="百叶窗容器"  refImg="icon/UILayout_shutter.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'outlookbar_unknownlayoutid';
+								event.type="start";
+								event.text = '百叶窗容器';
+								event.compType = 'outlookbar';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_card" isVisible="true" tip="卡片容器"  refImg="icon/UILayout_card.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'cardlayout_unknownlayoutid';
+								event.type="start";
+								event.text = '卡片容器';
+								event.compType = 'cardlayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_backgroup" isVisible="true" tip="背景容器"  refImg="icon/UILayout_background.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'canvaslayout_unknownlayoutid';
+								event.type="start";
+								event.text = '背景容器';
+								event.compType = 'canvaslayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_gridlayout" modifiers="2" isVisible="true" tip="网格容器"  refImg="icon/UILayout_grid.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'gridlayout_unknownlayoutid';
+								event.type="start";
+								event.text = '网格容器';
+								event.compType = 'gridlayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_abslayout" isVisible="true" tip="绝对布局容器"  refImg="icon/UILayout.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'absolutelayout_unknownlayoutid';
+								event.type="start";
+								event.text = '绝对布局容器';
+								event.compType = 'absolutelayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_hlayout" isVisible="true" tip="横向容器"  refImg="icon/UILayout_horizontal.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'flowhlayout_unknownlayoutid';
+								event.type="start";
+								event.text = '横向容器';
+								event.compType = 'flowhlayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_vlayout" isVisible="true" tip="纵向容器"  refImg="icon/UILayout_vertical.png">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'flowvlayout_unknownlayoutid';
+								event.type="start";
+								event.text = '纵向容器';
+								event.compType = 'flowvlayout';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			<Item id="layout_tab" isVisible="true" tip="页签容器"  refImg="icon/UILayout_tab.png" withSep = "true">
+				<Events>
+					<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+						<SubmitRule cardSubmit="false">
+						</SubmitRule>
+						<Action><![CDATA[
+							if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+								var event = {};
+								event.componentId = 'tag_unknownlayoutid';
+								event.type="start";
+								event.text = '页签容器';
+								event.compType = 'tag';
+								//通知IFrame
+								document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+							}
+						]]></Action>
+					</Event>
+				</Events>
+			</Item>
+			
+		</ToolBar>
+	</Controls>
+	<Containers />
+	<Menus>
+		<MenuBar id="menu_top">
+			<MenuItem id="menu_top_start" modifiers="2" isVisible="true" text="开始" tip="开始">
+				<MenuItem id="file_workspace" modifiers="2" isVisible="true" text="工作空间" tip="工作空间" imgIcon="platform/theme/${theme}/global/images/icon/12/workspace.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="setWSCtrl" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_configwizard" modifiers="2" isVisible="true" text="配置向导" tip="配置向导" imgIcon="platform/theme/${theme}/global/images/icon/12/config.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="configGuided" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_file" modifiers="2" isVisible="true" text="文件" tip="文件">
+				<MenuItem id="file_newapp" modifiers="2" isVisible="true" text="新建App" tip="新建App" imgIcon="platform/theme/${theme}/global/images/icon/12/app.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="newApp" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_newpage" modifiers="2" isVisible="true" text="新建page" tip="新建page" imgIcon="platform/theme/${theme}/global/images/icon/12/app.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="newPage" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_newview" modifiers="2" enabled="false" isVisible="true" text="新建view" tip="新建view" imgIcon="platform/theme/${theme}/global/images/icon/12/app.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="newView" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_savefile" modifiers="2" isVisible="true" text="保存文件" tip="保存文件" imgIcon="platform/theme/${theme}/global/images/icon/12/save.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="save_file" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_exportfile" modifiers="2" isVisible="true" text="导出文件" tip="导出文件" imgIcon="platform/theme/${theme}/global/images/icon/12/export.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="export_file" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_restorefile" modifiers="2" isVisible="true" text="还原文件" tip="还原文件" imgIcon="platform/theme/${theme}/global/images/icon/12/restore.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="recove_file" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="file_refreshfile" modifiers="2" isVisible="true" text="刷新文件" tip="刷新文件" imgIcon="platform/theme/${theme}/global/images/icon/12/refresh.png">
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_edit" modifiers="2" isVisible="true" text="编辑" tip="编辑">
+				<MenuItem id="edit_editwin" modifiers="2" isVisible="true" text="编辑窗口" tip="编辑窗口" imgIcon="platform/theme/${theme}/global/images/icon/12/edit.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="editwin" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="edit_editview" modifiers="2" isVisible="true" text="编辑视图" tip="编辑视图" imgIcon="platform/theme/${theme}/global/images/icon/12/edit.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="editView" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="edit_editapp" modifiers="2" isVisible="true" text="编辑应用" tip="编辑应用" imgIcon="platform/theme/${theme}/global/images/icon/12/edit.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="editApp" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="edit_switchview" modifiers="2" isVisible="true" text="视图切换" tip="视图切换" imgIcon="platform/theme/${theme}/global/images/icon/12/edit.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="switchView" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="sep1e04" modifiers="2" isVisible="true" sep="true" imgIcon="">
+				</MenuItem>
+				<MenuItem id="edit_revoke" modifiers="2" isVisible="true" text="撤销" tip="撤销" imgIcon="platform/theme/${theme}/global/images/icon/12/revoke.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="onclickBack" eventName="onclick" onserver="true" controller="xap.lui.psn.pamgr.PaPalletDsListener">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="edit_recover" modifiers="2" isVisible="true" text="恢复" tip="恢复" imgIcon="platform/theme/${theme}/global/images/icon/12/recover.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="onclickNext" eventName="onclick" onserver="true" controller="xap.lui.psn.pamgr.PaPalletDsListener">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="edit_cancel" modifiers="2" isVisible="true" text="取消选中" tip="取消选中" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							<![CDATA[
+								var ifram_tmp_div = document.getElementById("iframe_tmp");
+								if(ifram_tmp_div.contentWindow.dropEventHandler)
+									ifram_tmp_div.contentWindow.dropEventHandler({type:'release'});
+							]]>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_code" modifiers="2" isVisible="true" text="代码" tip="代码">
+				<MenuItem id="file_viewfile" modifiers="2" isVisible="true" text="查看文件" tip="查看文件" imgIcon="platform/theme/${theme}/global/images/icon/12/preview.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="view_file" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="edit_online" modifiers="2" isVisible="true" text="在线编辑" tip="在线编辑" imgIcon="platform/theme/${theme}/global/images/icon/12/edit.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="edit_online" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_layout" modifiers="2" isVisible="true" text="容器" tip="容器">
+				<MenuItem id="layout_titlepanel" modifiers="2" isVisible="true" text="标题面板" tip="标题面板"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_titlepanel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'panellayout_unknownlayoutid';
+									event.type="start";
+									event.text = '标题面板';
+									event.compType = 'panellayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_split" modifiers="2" isVisible="true" text="分隔容器" tip="分隔容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_compart.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'spliterlayout_unknownlayoutid';
+									event.type="start";
+									event.text = '分隔容器';
+									event.compType = 'spliterlayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_outtoolbar" modifiers="2" isVisible="true" text="百叶窗容器" tip="百叶窗容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_shutter.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'outlookbar_unknownlayoutid';
+									event.type="start";
+									event.text = '百叶窗容器';
+									event.compType = 'outlookbar';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_card" modifiers="2" isVisible="true" text="卡片容器" tip="卡片容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_card.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'cardlayout_unknownlayoutid';
+									event.type="start";
+									event.text = '卡片容器';
+									event.compType = 'cardlayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_backgroup" modifiers="2" isVisible="true" text="背景容器" tip="背景容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_background.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'canvaslayout_unknownlayoutid';
+									event.type="start";
+									event.text = '背景容器';
+									event.compType = 'canvaslayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_gridlayout" modifiers="2" isVisible="true" text="网格容器" tip="网格容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_grid.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'gridlayout_unknownlayoutid';
+									event.type="start";
+									event.text = '网格容器';
+									event.compType = 'gridlayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_abslayout" modifiers="2" isVisible="true" text="绝对布局容器" tip="绝对布局容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'absolutelayout_unknownlayoutid';
+									event.type="start";
+									event.text = '绝对布局容器';
+									event.compType = 'absolutelayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_hlayout" modifiers="2" isVisible="true" text="横向容器" tip="横向容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_horizontal.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'flowhlayout_unknownlayoutid';
+									event.type="start";
+									event.text = '横向容器';
+									event.compType = 'flowhlayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_vlayout" modifiers="2" isVisible="true" text="纵向容器" tip="纵向容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_vertical.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'flowvlayout_unknownlayoutid';
+									event.type="start";
+									event.text = '纵向容器';
+									event.compType = 'flowvlayout';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="layout_tab" modifiers="2" isVisible="true" text="页签容器" tip="页签容器"  imgIcon="platform/theme/${theme}/global/images/icon/12/icon/UILayout_tab.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addLayout" eventName="onclick" onserver="false">
+							<SubmitRule cardSubmit="false">
+							</SubmitRule>
+							<Action><![CDATA[
+								if(document.getElementById("iframe_tmp").contentWindow.dropEventHandler){
+									var event = {};
+									event.componentId = 'tag_unknownlayoutid';
+									event.type="start";
+									event.text = '页签容器';
+									event.compType = 'tag';
+									//通知IFrame
+									document.getElementById("iframe_tmp").contentWindow.dropEventHandler(event);
+								}
+							]]></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+			
+			<MenuItem id="menu_top_ctrl" modifiers="2" isVisible="true" text="控件" tip="控件">
+			</MenuItem>
+			<MenuItem id="menu_top_shitu" modifiers="2" isVisible="true" text="视图" tip="视图">
+				<MenuItem id="shitu_appparam" modifiers="2" isVisible="true" text="app参数" tip="app参数" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addParam" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="shitu_pageparam" modifiers="2" isVisible="true" text="窗口参数" tip="窗口参数" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addParam" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="shitu_statectrl" modifiers="2" isVisible="true" text="状态控制" tip="状态控制" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="statesCtrl" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="shitu_pipe" modifiers="2" isVisible="true" text="管道" tip="管道" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<MenuItem id="pipe_in" modifiers="2" isVisible="true" text="输入管道" tip="输入管道" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+						<Events>
+							<Event async="true" eventType="MouseEvent" method="addPipeIn" eventName="onclick" onserver="true">
+								<SubmitRule cardSubmit="false" id="top">
+								</SubmitRule>
+								<Action></Action>
+							</Event>
+						</Events>
+					</MenuItem>
+					<MenuItem id="pipe_out" modifiers="2" isVisible="true" text="输出管道" tip="输出管道" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+						<Events>
+							<Event async="true" eventType="MouseEvent" method="addPipeOut" eventName="onclick" onserver="true">
+								<SubmitRule cardSubmit="false" id="top">
+								</SubmitRule>
+								<Action></Action>
+							</Event>
+						</Events>
+					</MenuItem>
+					<MenuItem id="pipe_conn" modifiers="2" isVisible="true" text="连接器" tip="连接器" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+						<Events>
+							<Event async="true" eventType="MouseEvent" method="addConn" eventName="onclick" onserver="true">
+								<SubmitRule cardSubmit="false" id="top">
+								</SubmitRule>
+								<Action></Action>
+							</Event>
+						</Events>
+					</MenuItem>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_chart" modifiers="2" isVisible="true" text="图表" tip="图表">
+				<MenuItem id="chart_zxmj" modifiers="2" isVisible="true" text="折线(面积)图" tip="折线(面积)图" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+				</MenuItem>
+				<MenuItem id="chart_zztx" modifiers="2" isVisible="true" text="柱状(条形)图" tip="柱状(条形)图" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+				</MenuItem>
+				<MenuItem id="chart_byh" modifiers="2" isVisible="true" text="饼(圆环)图" tip="饼(圆环)图" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_model" modifiers="2" isVisible="true" text="模型" tip="模型">
+				<MenuItem id="model_ref" modifiers="2" isVisible="true" text="参照" tip="参照" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addRef" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="model_ctrlds" modifiers="2" isVisible="true" text="控件数据集" tip="控件数据集" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<MenuItem id="ctrlds_yuan" modifiers="2" isVisible="true" text="元数据集" tip="元数据集" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+						<Events>
+							<Event async="true" eventType="MouseEvent" method="addYuanDs" eventName="onclick" onserver="true">
+								<SubmitRule cardSubmit="false" id="top">
+								</SubmitRule>
+								<Action></Action>
+							</Event>
+						</Events>
+					</MenuItem>
+					<MenuItem id="ctrlds_pt" modifiers="2" isVisible="true" text="普通数据集" tip="普通数据集" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+						<Events>
+							<Event async="true" eventType="MouseEvent" method="addPtDs" eventName="onclick" onserver="true">
+								<SubmitRule cardSubmit="false" id="top">
+								</SubmitRule>
+								<Action></Action>
+							</Event>
+						</Events>
+					</MenuItem>
+				</MenuItem>
+				<MenuItem id="model_combo" modifiers="2" isVisible="true" text="枚举" tip="枚举" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addCombo" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+				<MenuItem id="model_grpds" modifiers="2" isVisible="true" text="图表数据集" tip="图表数据集" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="addChartDs" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_prj" modifiers="2" isVisible="true" text="工程" tip="工程">
+				<MenuItem id="prj_import" modifiers="2" isVisible="true" text="导入" tip="导入" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					
+				</MenuItem>
+				<MenuItem id="prj_export" modifiers="2" isVisible="true" text="导出" tip="导出" imgIcon="platform/theme/${theme}/global/images/icon/12/cancel.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="exportPrj" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false" id="top">
+							</SubmitRule>
+							<Action></Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem id="menu_top_debug" modifiers="2" isVisible="true" text="调试" tip="调试">
+				<MenuItem id="file_run_app" modifiers="2" isVisible="true" text="运行程序" tip="运行程序" imgIcon="platform/theme/${theme}/global/images/icon/12/run.png">
+					<Events>
+						<Event async="true" eventType="MouseEvent" method="run_app" eventName="onclick" onserver="true">
+							<SubmitRule cardSubmit="false">
+								<ViewPartRule cardSubmit="false" id="top">
+									<DatasetRule id="dsId">ds_current_line</DatasetRule> 
+								</ViewPartRule>
+							</SubmitRule>
+							<Action>
+							</Action>
+						</Event>
+					</Events>
+				</MenuItem>
+			</MenuItem>
+		</MenuBar>
+		
+	</Menus>
+</ViewPart>

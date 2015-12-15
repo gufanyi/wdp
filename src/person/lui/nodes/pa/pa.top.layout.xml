@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd"
+	id="nav_um" isFlow="false">
+	<FlowVLayout id="toolbarflowv111">
+		<FlowVPanel id="toolbarflowPanelv111" height="25" cssStyle="background-color:#01ABF1;color:#fff;">
+			<MenuBar id="menu_top"></MenuBar>
+		</FlowVPanel>
+		<FlowVPanel id="toolbarflowdfdslv111" height="30">
+			<ToolBar id="toptoolbar" height="30"></ToolBar>
+		</FlowVPanel>
+	</FlowVLayout>
+</UIPart>

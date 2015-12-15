@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="main" refId="main" isDialog="false" srcFolder="pa/src/public/" controller="xap.lui.psn.pamgr.ComboDataConfigController">
+	<PipeOuts />
+	<PipeIns>
+		<PipeIn id="refOkPlugin">
+			<PipeInItem id="type" type="" />
+			<PipeInItem id="id" type="" />
+			<PipeInItem id="writeFields" type="" />
+		</PipeIn>
+	</PipeIns>
+	<DataModels>
+		<Dataset id="combocfg" isEdit="true" isLazyLoad="false" pageSize="">
+			<Fields>
+				<Field id="value" text="真实值" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+				<Field id="text" text="显示值" isRequire="false" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+			</Fields>
+			<Events>
+				<Event async="true" eventType="DatasetEvent" dataType="DatasetEvent" method="onDataLoad" eventName="onDataLoad" nmc="true" id="onclick" onserver="true" eventStatus="2">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="dsId">ds_all_line</DatasetRule>
+						</ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Dataset>
+	</DataModels>
+	<Controls>
+		<Grid dataset="combocfg" isEdit="false" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="false" showColumns="value,text" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true" id="cfggrid">
+            <Column field="value" text="真实值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="value"/>
+            <Column field="text" text="显示值" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="text"/>
+        </Grid>
+		<StringText value="" readOnly="false" editorType="StringText" text="id" focus="false" align="left" textWidth="0" showMark="false" isRequired="true" isShowlabel="true" isVisible="true" enabled="true" id="str_id"/>
+		<StringText value="" readOnly="false" editorType="StringText" text="名称" focus="false" align="left" textWidth="0" showMark="false" isRequired="true" isShowlabel="true" isVisible="true" enabled="true" id="str_caption"/>
+		<Button width="0" refImgChanged="true" text="确定" isVisible="true" enabled="true" id="btn_confirm">
+			<Events>
+				<Event eventName="onclick" method="onOKClick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.pamgr.ComboDataConfigController" eventType="MouseEvent" eventStatus="1">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule id="main">
+							<DatasetRule id="combocfg">ds_all_line</DatasetRule>
+						</ViewPartRule>
+						<ParentSubmitRule cardSubmit="false">
+							<ViewPartRule id="pa">
+								<DatasetRule id="entityds">ds_current_page</DatasetRule>
+							</ViewPartRule>
+						</ParentSubmitRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+		</Button>
+        <Button width="0" refImgChanged="true" text="取消" isVisible="true" enabled="true" id="btn_cancel">
+            <Events>
+                <Event eventName="onclick" method="cancel_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.newcombocfg.ComboConfigController" eventType="MouseEvent" eventStatus="1"/>
+            </Events>
+        </Button>
+	</Controls>
+	<Menus>
+		<MenuBar isVisible="true" enabled="true" id="gridmenu">
+            <MenuItem id="addRow" modifiers="2"  imgIcon="platform/theme/${theme}/global/images/icon/16/new.png"  text="添加">
+				<Events>
+					<Event eventName="onclick" method="onAddClick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.pamgr.ComboDataConfigController" eventType="MouseEvent" eventStatus="2"/>
+				</Events>
+			</MenuItem>
+			<MenuItem id="deleteRow" modifiers="2" imgIcon="platform/theme/${theme}/global/images/icon/16/delete.png"  text="删除">
+				<Events>
+					<Event eventName="onclick" method="onDeleteClick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.pamgr.ComboDataConfigController" eventType="MouseEvent" eventStatus="2"/>
+				</Events>
+			</MenuItem>
+			<MenuItem id="saveRow" modifiers="2" imgIcon="platform/theme/${theme}/global/images/icon/16/save.png"  text="保存">
+				<Events>
+					<Event eventName="onclick" method="onSaveClick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.pamgr.ComboDataConfigController" eventType="MouseEvent" eventStatus="2">
+						<SubmitRule cardSubmit="false">
+							<ViewPartRule id="main">
+								<DatasetRule id="combocfg">ds_all_line</DatasetRule>
+							</ViewPartRule>
+							<ParentSubmitRule cardSubmit="false">
+								<ViewPartRule id="pa">
+									<DatasetRule id="entityds">ds_current_page</DatasetRule>
+								</ViewPartRule>
+							</ParentSubmitRule>
+						</SubmitRule>
+					</Event>
+				</Events>
+			</MenuItem>
+        </MenuBar>
+	</Menus>
+</ViewPart>

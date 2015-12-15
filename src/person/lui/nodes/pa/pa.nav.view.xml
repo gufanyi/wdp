@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" id="nav" refId="" isDialog="false" srcFolder="" controller="">
+  <PipeOuts />
+  <PipeIns />
+  <DataModels />
+  <Controls>
+    <HtmlContent contentFetcher="xap.lui.psn.pamgr.PaStructFetcherImpl" id="navcontent" />
+  </Controls>
+  <Containers />
+  <Menus />
+</ViewPart>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PagePart xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" xmlns="http://com.founer.xap/schema/lui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="treegridmodel" controller="xap.lui.psn.treegridmodel.TreeGridModelCtrl">
+   <Events>
+      <Event eventName="onClosed" method="onPageClosed" onserver="true" async="false" nmc="false" controller="xap.lui.core.control.DftAppCtrl" eventType="PageEvent" eventStatus="1"/>
+   </Events>
+   <Connectors/>
+   <ViewParts>
+      <ViewPart id="main" refId="main" canFreeDesign="true"/>
+   </ViewParts>
+   <UIStates>
+      <UIState id="editstate" name="编辑态">
+         <ViewState viewId="main">
+            <CtrlState id="btn_ok" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_cancel" isVisible="true" enabled="true"/>
+            <CtrlState id="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="id" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="enviranmentPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="pageSize" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="orderPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="groupPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="wherePart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="blurFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="hiddenFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFieldNames" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="tableName" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="id" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="tableName" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFieldNames" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="hiddenFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="blurFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="wherePart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="groupPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="orderPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="pageSize" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="enviranmentPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="refTitle" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="nameField" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="codeField" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="pkField" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="id" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classTableName" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classPKField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classNameField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classCodeField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="joinField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="childField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="fatherField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classWherePart" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classOrderPart" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="tableName" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="showFields" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="showFieldNames" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="hiddenFields" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="blurFields" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="wherePart" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="orderPart" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="groupPart" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="label1" isVisible="true" enabled="true"/>
+         </ViewState>
+         <ViewState viewId="edit"/>
+      </UIState>
+      <UIState id="viewstate" name="浏览态">
+         <ViewState viewId="main">
+            <CtrlState id="btn_ok" isVisible="true" enabled="true"/>
+            <CtrlState id="btn_cancel" isVisible="true" enabled="true"/>
+            <CtrlState id="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="id" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="enviranmentPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="pageSize" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="orderPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="groupPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="wherePart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="blurFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="hiddenFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFieldNames" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="tableName" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="id" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="tableName" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="showFieldNames" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="hiddenFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="blurFields" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="wherePart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="groupPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="orderPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="pageSize" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="enviranmentPart" pid="showmodel_form" isVisible="true" enabled="true"/>
+            <CtrlState id="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="refTitle" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="nameField" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="codeField" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="pkField" pid="writeback_form" isVisible="true" enabled="true"/>
+            <CtrlState id="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="id" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classTableName" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classPKField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classNameField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classCodeField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="joinField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="childField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="fatherField" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classWherePart" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="classOrderPart" pid="form_tree" isVisible="true" enabled="true"/>
+            <CtrlState id="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="tableName" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="showFields" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="showFieldNames" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="hiddenFields" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="blurFields" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="wherePart" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="orderPart" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="groupPart" pid="form_grid" isVisible="true" enabled="true"/>
+            <CtrlState id="label1" isVisible="true" enabled="true"/>
+         </ViewState>
+         <ViewState viewId="edit"/>
+      </UIState>
+   </UIStates>
+</PagePart>

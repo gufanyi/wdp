@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ViewPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://com.founer.xap/schema/lui" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/view.xsd" isDialog="false" isCustom="true" controller="xap.lui.psn.setting.PaPipeOutViewCtrl" isVisible="true" enabled="true" id="pipeout">
+    <DataModels>
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="pipeoutitemds" id="pipeoutitemds">
+            <Fields>
+                <Field id="Name" text="Name" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Clazztype" text="Clazztype" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Source" text="Source" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Desc" text="Desc" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Type" text="Type" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <FieldRelations/>
+            <Events>
+				<Event async="true" eventType="DatasetEvent" method="onDataLoad_ds_pipeout" eventName="onDataLoad" onserver="true">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="pipeout">
+                      	 	<DatasetRule id="pipeoutitemds">ds_all_line</DatasetRule> 
+                      	 	<DatasetRule id="triggerds">ds_all_line</DatasetRule> 
+                        </ViewPartRule>
+					</SubmitRule>
+					<Params>
+						<Param name="dataLoadEvent" value="">
+						</Param>
+					</Params>
+					<Action>
+					</Action>
+				</Event>
+			</Events>
+        </Dataset>
+        <Dataset isLazyLoad="false" pageSize="-1" isEdit="true" isCleared="false" focusIndex="-1" caption="triggerds" id="triggerds">
+            <Events/>
+            <Fields>
+                <Field id="Id" text="Id" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Source" text="Source" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Desc" text="Desc" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+                <Field id="Type" text="Type" isRequire="true" dataType="String" isPK="false" isLock="false" ctxChanged="false"/>
+            </Fields>
+            <FieldRelations/>
+        </Dataset>
+        <RefNodes/>
+        
+        <DataList id="clazzTypeList">
+			<DataItem text="java.lang.String" value="java.lang.String"/>
+		</DataList>
+		<DataList id="outItemTypeList">
+			<DataItem text="数据集当前选中行" value="Dataset.TYPE_DATASET_SEL_ROW"/>
+			<DataItem text="数据集所有选中行" value="Dataset.TYPE_DATASET_MUTL_SEL_ROW"/>
+			<DataItem text="数据集所有行" value="Dataset.TYPE_DATASET_ALL_ROW"/>
+			<DataItem text="控件值" value="TYPE_COMPONENT_VALUE"/>
+		</DataList>
+		<DataList id="triggerTypeList">
+			<DataItem text="Dataset.onBeforeRowSelect" value="Dataset.onBeforeRowSelect"/>
+			<DataItem text="Dataset.onAfterRowSelect" value="Dataset.onAfterRowSelect"/>
+			<DataItem text="Dataset.onAfterRowUnSelect" value="Dataset.onAfterRowUnSelect"/>
+			<DataItem text="Dataset.onBeforeRowInsert" value="Dataset.onBeforeRowInsert"/>
+			<DataItem text="Dataset.onAfterRowInsert" value="Dataset.onAfterRowInsert"/>
+			<DataItem text="Dataset.onBeforeDataChange" value="Dataset.onBeforeDataChange"/>
+			<DataItem text="Dataset.onAfterDataChange" value="Dataset.onAfterDataChange"/>
+			<DataItem text="Dataset.onBeforeRowDelete" value="Dataset.onBeforeRowDelete"/>
+			<DataItem text="Dataset.onAfterRowDelete" value="Dataset.onAfterRowDelete"/>
+			<DataItem text="Dataset.onBeforePageChange" value="Dataset.onBeforePageChange"/>
+			<DataItem text="Dataset.onAfterPageChange" value="Dataset.onAfterPageChange"/>
+			<DataItem text="Dataset.onDataLoad" value="Dataset.onDataLoad"/>
+			<DataItem text="Menu.onmouseout" value="Menu.onmouseout"/>
+			<DataItem text="Menu.onmouseover" value="Menu.onmouseover"/>
+			<DataItem text="Menu.ondbclick" value="Menu.ondbclick"/>
+			<DataItem text="Menu.onclick" value="Menu.onclick"/>
+			<DataItem text="Button.onmouseout" value="Button.onmouseout"/>
+			<DataItem text="Button.onmouseover" value="Button.onmouseover"/>
+			<DataItem text="Button.ondbclick" value="Button.ondbclick"/>
+			<DataItem text="Button.onclick" value="Button.onclick"/>
+			<DataItem text="Grid.onmouseout" value="Grid.onmouseout"/>
+			<DataItem text="Grid.onmouseover" value="Grid.onmouseover"/>
+			<DataItem text="Grid.ondbclick" value="Grid.ondbclick"/>
+			<DataItem text="Grid.onclick" value="Grid.onclick"/>
+		</DataList>
+		<DataList id="outitemsourceList">
+		</DataList>
+		<DataList id="triggersourceList">
+		</DataList>
+    </DataModels>
+    <Controls>
+    	<Grid dataset="pipeoutitemds" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" showColumns="Name,Clazztype,Source,Desc,Type" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true" id="grid_outitem">
+            <Column field="Name" text="输出键名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="Name"/>
+            <Column field="Clazztype" refComboData="clazzTypeList" text="输出对象类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="Clazztype"/>
+            <Column field="Source" refComboData="outitemsourceList" text="取数来源" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="Source"/>
+            <Column field="Desc" text="描述" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="Desc"/>
+            <Column field="Type" refComboData="outItemTypeList" text="取数类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="Type"/>
+        </Grid>
+        <Grid dataset="triggerds" isEdit="true" isAllowMouseoverChange="true" isMultiple="false" isShowNum="false" isShowTotalRow="false" sortable="true" isShowHeader="true" isShowToolbar="false" isExpandTree="false" isCopy="true" isShowTip="true" showColumns="Id,Source,Desc,Type" isFitRowHeight="false" isPageTop="false" isShowColMenu="false" isVisible="true" enabled="true" id="grid_trigger">
+            <Column field="Id" text="触发器名称" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false" id="Id"/>
+            <Column field="Source" refComboData="triggersourceList" text="触发来源" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false" id="Source"/>
+            <Column field="Desc" text="描述" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="StringText" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="false" showCheckBox="true" mergedShown="false" id="Desc"/>
+            <Column field="Type" refComboData="triggerTypeList" text="触发类型" width="120" dataType="String" isSort="true" isVisible="true" isEdit="true" isFixed="false" editorType="ComboBox" renderType="DefaultRender" isRequire="true" sumCol="false" isFitWidth="true" showCheckBox="true" mergedShown="false" id="Type"/>
+        </Grid>
+        <StringText value="" readOnly="false" editorType="StringText" focus="false" align="left" textWidth="0" showMark="false" isRequired="true" isShowlabel="true" isVisible="true" enabled="true" id="pipeout_strtext"/>
+        <Label text="输出描述id" isVisible="true" enabled="true" id="pipeout_label"/>
+        <Label text="输出描述项" isVisible="true" enabled="true" id="label_outitem"/>
+        <Label text="触发器" isVisible="true" enabled="true" id="label_trigger"/>
+        <Button refImgChanged="true" text="确定" isVisible="true" enabled="true" id="outbtn_confirm">
+        	<Events>
+				<Event eventName="onclick" method="onclickConfirm" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2">
+					<SubmitRule cardSubmit="false">
+						<ViewPartRule cardSubmit="false" id="pipeout">
+                      	 	<DatasetRule id="pipeoutitemds">ds_all_line</DatasetRule> 
+                      	 	<DatasetRule id="triggerds">ds_all_line</DatasetRule> 
+                        </ViewPartRule>
+					</SubmitRule>
+				</Event>
+			</Events>
+        </Button>
+        <Button refImgChanged="true" text="取消" isVisible="true" enabled="true" id="outbtn_cancel">
+        	<Events>
+        		<Event eventName="onclick" method="onclickCancel" onserver="true" async="true" nmc="true" id="onclick" eventType="MouseEvent" eventStatus="2"/>
+        	</Events>
+        </Button>
+    </Controls>
+    <Menus>
+        <MenuBar isVisible="true" enabled="true" id="menubar_outitem">
+            <MenuItem text="新增" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_outitem_menuitem_new">
+                <Events>
+                    <Event eventName="onclick" method="newOutItem_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.setting.PaPipeOutViewCtrl" eventType="MouseEvent" eventStatus="1">
+                    	<SubmitRule id="submitRule" cardSubmit="false">
+                            <ViewPartRule id="pipeout">
+                                <DatasetRule id="pipeoutitemds">ds_current_line</DatasetRule>
+                            </ViewPartRule>
+                            <Params/>
+                        </SubmitRule>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem text="删除" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_outitem_menuitem_delete">
+                <Events>
+                    <Event eventName="onclick" method="deleteOutItem_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.setting.PaPipeOutViewCtrl" eventType="MouseEvent" eventStatus="1">
+                    	<SubmitRule id="submitRule" cardSubmit="false">
+                            <ViewPartRule id="pipeout">
+                                <DatasetRule id="pipeoutitemds">ds_current_line</DatasetRule>
+                            </ViewPartRule>
+                            <Params/>
+                        </SubmitRule>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBar>
+        <MenuBar isVisible="true" enabled="true" id="menubar_trigger">
+            <MenuItem text="新增" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="new.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/new.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_trigger_menuitem_new">
+                <Events>
+                    <Event eventName="onclick" method="newTrigger_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.setting.PaPipeOutViewCtrl" eventType="MouseEvent" eventStatus="1">
+                        <SubmitRule id="submitRule" cardSubmit="false">
+                            <ViewPartRule id="pipeout">
+                                <DatasetRule id="triggerds">ds_current_line</DatasetRule>
+                            </ViewPartRule>
+                            <Params/>
+                        </SubmitRule>
+                    </Event>
+                </Events>
+            </MenuItem>
+            <MenuItem text="删除" selected="false" checkBoxGroup="false" modifiers="2" imgIcon="delete.png" imgIconChanged="true" realImgIcon="/portal/platform/theme/default/global/images/icon/16/delete.png" imgIconOnChanged="false" imgIconDisableChanged="false" sep="false" stateManager="" isVisible="true" enabled="true" id="menubar_trigger_menuitem_delete">
+                <Events>
+                    <Event eventName="onclick" method="deleteTrigger_onclick" onserver="true" async="true" nmc="true" id="onclick" controller="xap.lui.psn.setting.PaPipeOutViewCtrl" eventType="MouseEvent" eventStatus="1">
+                        <SubmitRule id="submitRule" cardSubmit="false">
+                            <ViewPartRule id="pipeout">
+                                <DatasetRule id="triggerds">ds_current_line</DatasetRule>
+                            </ViewPartRule>
+                            <Params/>
+                        </SubmitRule>
+                    </Event>
+                </Events>
+            </MenuItem>
+        </MenuBar>
+    </Menus>
+    <PipeIns>
+        <PipeIn id="refOkPlugin">
+            <PipeInItem id="type" clazztype="java.lang.String"/>
+            <PipeInItem id="id" clazztype="java.lang.String"/>
+            <PipeInItem id="writeFields" clazztype="java.lang.String"/>
+        </PipeIn>
+    </PipeIns>
+</ViewPart>

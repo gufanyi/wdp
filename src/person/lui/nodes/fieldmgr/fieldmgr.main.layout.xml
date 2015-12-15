@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="main_um" isFlow="false">
+  <FlowVLayout id="flowvlayout2321">
+    <FlowVPanel id="panelv02321" height="1" />
+    <FlowVPanel id="panelv12321">
+      <FlowHLayout id="flowhlayout0043">
+        <FlowHPanel id="panelh00043" width="240">
+    	  <Border id="bordfieldmgr1" isShowBottom="true" isShowLeft="false" isShowRight="true" isShowTop="false" widgetId="main" width="1" cssStyle="background:#fafafa;"> 
+			<BorderPanel id="borderpanelfieldmgr1"> 
+		     <FlowVLayout id="fvlayout000430">
+            	<FlowVPanel id="fvpane1000431" height="35">
+             			<TextField  id="search" imgsrc="" left="10" position="relative" top="5" type="StringText" width="120" />
+           		 </FlowVPanel>
+            	 <FlowVPanel id="fvpane1000432">
+             			 <Tree height="100%" id="tree_left" left="0" position="relative" top="0" widgetId="main" width="100%" />
+           		 </FlowVPanel>
+            </FlowVLayout>
+			</BorderPanel>
+	  	</Border>
+        </FlowHPanel>
+        <FlowHPanel id="panelh10043" width="80">
+        	<Border id="bordfieldmgr3" isShowBottom="true" isShowLeft="false" isShowRight="false" isShowTop="false" widgetId="main" width="1" cssStyle="background:#fafafa;"> 
+			 <BorderPanel id="borderpanelfieldmgr3"> 
+		          <FlowVLayout id="flowvlayout0496">
+		            <FlowVPanel id="panelv00496" height="140" />
+		            <FlowVPanel id="panelv10496" height="50">
+		              <Button  id="addallBtn" left="5" position="relative" top="0" width="64" />
+		            </FlowVPanel>
+		            <FlowVPanel id="flowvpanel10575" height="50">
+		              <Button  id="addoneBtn" left="5" position="relative" top="0" width="64" />
+		            </FlowVPanel>
+		            <FlowVPanel id="flowvpanel18079" height="50">
+		              <Button  id="deloneBtn" left="5" position="relative" top="0" width="64" />
+		            </FlowVPanel>
+		            <FlowVPanel id="flowvpanel14943" height="50">
+		              <Button  id="delallbtn" left="5" position="relative" top="0" width="64" />
+		            </FlowVPanel>
+		            <FlowVPanel id="panelv20496" height="100" />
+		          </FlowVLayout>
+		       </BorderPanel>
+          	</Border>
+        </FlowHPanel>
+        <FlowHPanel id="panelh20043" >
+          	<Border id="bordfieldmgr2" isShowBottom="true" isShowLeft="true" isShowRight="false" isShowTop="false" widgetId="main" width="1" cssStyle="background:#fafafa;"> 
+			 <BorderPanel id="borderpanelfieldmgr2"> 
+			   <FlowVLayout id="fvlayout200430">
+		            <FlowVPanel id="fvpane1200431" height="35">
+		              <MenuBar align="right" height="100%" id="gridmenu" left="0" position="relative" top="5" widgetId="main" width="100%" />
+		            </FlowVPanel>
+		            <FlowVPanel id="fvpane1200432">
+		              <Grid id="grid_proxy" left="0" top="0" width="100%" height="100%" position="" />
+		            </FlowVPanel>
+	            </FlowVLayout>
+			 </BorderPanel>
+          	</Border>
+        </FlowHPanel>
+      </FlowHLayout>
+    </FlowVPanel>
+    <FlowVPanel id="panelv22321" height="30">
+      <FlowHLayout id="flowhlayout9157">
+        <FlowHPanel id="panelh09157" width="500" />
+        <FlowHPanel id="panelh19157" width="84">
+          <Button  id="okBtn" top="0" left="0" position="relative" width="74" className="blue_button_div" />
+        </FlowHPanel>
+        <FlowHPanel id="panelh29157" width="94">
+          <Button  id="cancelBtn" top="0" left="0" position="relative" width="74" />
+        </FlowHPanel>
+      </FlowHLayout>
+    </FlowVPanel>
+  </FlowVLayout>
+</UIPart>

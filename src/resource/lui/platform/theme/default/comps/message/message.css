@@ -1,0 +1,60 @@
+.message_div {
+	background:url(images/save_bg.png) no-repeat;
+	position: absolute;
+	width:253px;
+	height:122px;
+}
+
+/********************定义JS所需静态常量   start *********************/
+.message_div_DEFAULT_HEIGHT
+{
+	height:122px;
+}
+.message_div_DEFAULT_WIDTH
+{
+	height:253px;
+}
+/********************定义JS所需静态常量   end ***********************/
+
+.message_div .message_text_div {
+	position:relative;
+	width:170px;
+	margin-left:65px;
+	margin-top:50px;
+	text-align: center;
+	font-family:宋体;
+	font-size:14px;
+	color:#202020;
+	font-weight: bold;
+}
+
+.message_div .message_close_img {
+	position:absolute;
+	right:14px;
+	top:10px;
+	background:url('images/close_normal.png') no-repeat;
+	height: 15px;
+	width: 15px;
+	cursor: pointer;
+}
+
+.message_div .message_close_img_over {
+	position:absolute;
+	right:14px;
+	top:10px;
+	background:url('images/close_highlight.png') no-repeat;
+	height: 15px;
+	width: 15px;
+	cursor: pointer;
+}
+
+.message_div .bottom_msg_div {
+	position:absolute;
+	width: 100px;
+	right: 14px;
+	bottom: 15px;
+	text-align: center;
+	font-family:宋体;
+	font-size:12px;
+	color:#7a7a7a;
+}

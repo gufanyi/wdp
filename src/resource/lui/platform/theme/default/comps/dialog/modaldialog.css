@@ -1,0 +1,659 @@
+.dialog_div
+{
+	position:absolute;
+	border: 2px solid #00b7ee;
+	border-top: 0;
+}
+
+.dialog_div .dialog_titlebar
+{
+	height:40px;
+	cursor:move;
+	overflow:hidden;
+}
+
+.dialog_div .leftheadborderdiv{
+	/*width:18px*/
+	width:2px;
+	height:40px;
+	background-color:#00b7ee;
+	/*background:url('images/dw_left_top.png') no-repeat;*/
+}
+
+.dialog_div .rightheadborderdiv{
+	width:2px;
+	height:40px;
+	background-color:#00b7ee;
+	/*background:url('images/dw_right_top.png') no-repeat;*/
+}
+
+.dialog_div .centerheaddiv{
+	cursor:move;
+	height:40px;
+	background-color:#00b7ee;
+	background:url('images/dw_top_center.png') repeat-x;
+}
+
+.dialog_div .leftbodyborderdiv{
+	background-color:#00b7ee;
+	/*background:url('images/dw_left_center.png') repeat-y;*/
+	/*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/dw_left_center.png', sizingMethod = 'scale');*/
+}
+
+.dialog_div .centerbodydiv{
+	/*background-color:#ffffff;*/
+	background:url('images/dw_center.png') repeat-x bottom white;
+}
+
+.dialog_div .centerbodynolinediv{
+	background-color:#ffffff;
+	/*background:url('images/dw_center_no_line.png') repeat-x bottom;;*/
+}
+
+.dialog_div .rightbodyborderdiv{
+	background-color:#00b7ee;
+	/*background:url('images/dw_right_center.png') repeat-y;*/
+}
+
+.dialog_div .bottomdiv{
+	height:2px;
+	width:100%;
+}
+
+.dialog_div .leftbottomborderdiv{
+	width:2px;
+	height:2px;
+	background-color:#00b7ee;
+	/*background:url('images/dw_left_bottom.png') no-repeat;*/
+}
+
+.dialog_div .rightbottomborderdiv{
+	width:2px;
+	height:2px;
+	background-color:#00b7ee;
+	/*background:url('images/dw_right_bottom.png') no-repeat;*/
+}
+
+.dialog_div .centerbottomdiv{
+	height:2px;
+	background-color:#00b7ee;
+	/*background:url('images/dw_bottom_center.png') repeat-x;*/
+}
+
+
+.dialog_div .closebt_off{
+	width:24px;
+	float:right;
+	height:32px;
+	background-image:url('images/off.png');
+	background-repeat:no-repeat;
+	margin-top:0px;
+	margin-right:10px;
+	cursor:pointer;
+}
+
+.dialog_div .closebt_click{
+	width:24px;
+	float:right;
+	height:32px;
+	background-image:url('images/off_over.png');
+	background-repeat:no-repeat;
+	margin-top:0px;
+	margin-right:10px;
+	cursor:pointer;
+}
+
+.dialog_div .closebt_on{
+	width:24px;
+	float:right;
+	height:32px;
+	background-image:url('images/off_over.png');
+	background-repeat:no-repeat;
+	margin-top:0px;
+	margin-right:10px;
+	cursor:pointer;
+}
+
+.dialog_div .dialog_title
+{
+	color: #ffffff;
+	/*font-weight: bold;*/
+	font-size: 15px;
+	padding-left: 16px;
+	height:40px;
+	line-height:40px;
+	/**height: 22px;*/
+	float:left;
+	font-family:微软雅黑;
+	text-overflow:ellipsis;
+	text-align: left;	
+	word-wrap: normal;
+	overflow: hidden;
+}
+
+.dialog_div .dialog_content
+{
+	position:relative;
+	height:100%;
+}
+
+.dialog_div .progress_contentdiv{
+	width:100%;
+	height:100%;
+	background:#FFFFFF;
+}
+
+.dialog_div .progress_leftdiv{
+	float:left;
+	width:80px;
+	height:100px;
+	padding-left:10px;
+	padding-top:40px;
+}
+
+.dialog_div .progress_rightdiv{
+	float:left;
+	height:100px;
+	line-height:100px;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+
+.dialog_div .confirm_contentdiv{
+	width:100%;
+	height:100px;
+}
+
+.dialog_div .confirm_leftdiv{
+	float:left;
+	width:64px;
+	height:64px;
+	margin-left:44px;
+	margin-right:10px;
+	margin-top:30px;
+}
+
+.dialog_div .confirm_rightdiv{
+	height:100%;
+	word-break:break-all;
+	word-wrap:break-word;
+	overflow-y:auto;
+	color:#2e2e2e;
+	font-size:12px;
+	font-weight:bold;
+	margin-right:20px;
+}
+
+.dialog_div .confirm_bottomdiv{
+	float:left;
+	height:40px;
+	width:100%;
+	margin-top:2px;
+}
+
+.dialog_div .confirm_okbtdiv{
+	float:right;
+	text-align:right;
+	margin-right:10px;
+}
+
+.dialog_div .confirm_cancelbtdiv{
+	float:right;
+	text-align:left;
+	margin-right:20px;
+}
+
+
+.dialog_div .message_contentdiv{
+	width:100%;
+	height:100px;
+}
+
+.dialog_div .message_leftdiv{
+	float:left;
+	width:64px;
+	height:64px;
+	margin-left:44px;
+	margin-right:10px;
+	margin-top:30px;
+}
+
+.dialog_div .message_rightdiv{
+	/*float:left;*/
+	height:100%;
+	word-break:break-all;
+	word-wrap:break-word;
+	overflow-y:auto;
+	color:#2e2e2e;
+	font-size:12px;
+	font-weight:bold;
+	margin-right:20px;
+}
+
+.dialog_div .message_bottomdiv{
+	float:left;
+	height:40px;
+	width:100%;
+}
+
+.dialog_div .message_okbtdiv{
+	float:right;
+	text-align:center;
+	margin-right:20px;
+}
+
+.dialog_div .message_msgdiv{
+	float:left;
+	text-align:center;
+	margin-left:20px;
+	margin-top:4px;
+	color:#4EB5E7;
+	font-size:12px;
+}
+
+
+.dialog_div .warning_contentdiv{
+	width:100%;
+	height:125px;
+}
+
+.dialog_div .warning_leftdiv{
+	float:left;
+	width:80px;
+	height:100px;
+	padding-left:20px;
+	padding-top:45px;
+}
+
+.dialog_div .warning_rightdiv{
+	float:left;
+	height:100%;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+.dialog_div .warning_bottomdiv{
+	float:left;
+	height:40px;
+	width:100%;
+	background-color:#dcdcdc;
+	margin-top:2px;
+}
+
+.dialog_div .warning_okbtdiv{
+	float:left;
+	width:100%;
+	text-align:center;
+	padding-top:10px;
+}
+
+
+.dialog_div .error_contentdiv{
+	width:100%;
+	height:125px;
+}
+
+
+.dialog_div .error_leftdiv{
+	float:left;
+	width:80px;
+	height:100px;
+	padding-left:20px;
+	padding-top:45px;
+}
+
+.dialog_div .error_rightdiv{
+	float:left;
+	height:100%;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+
+.dialog_div .error_bottomdiv{
+	float:left;
+	height:40px;
+	width:100%;
+	margin-top:2px;
+}
+
+.dialog_div .error_okbtdiv{
+	float:left;
+	width:100%;
+	text-align:center;
+	padding-top:10px;
+}
+
+
+
+.warningdialog_text_node
+{        
+    color: black;
+    overflow: hidden;
+    word-break:break-all;
+}
+
+
+
+
+.dialog_div .input_contentdiv{
+	width:100%;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.dialog_div .input_itemdiv{
+	width:100%;
+	min-height:32px;
+}
+
+.dialog_div .input_leftdiv{
+	float:left;
+	height:100%;
+	width:80px;
+}
+
+.dialog_div .input_rightdiv{
+	float:left;
+	height:100%;
+}
+.dialog_div .input_mustdiv{
+	float:left;
+	height:20px;
+	width:5px;
+	padding-top:8px;
+	margin-left:3px;
+}
+
+.dialog_div .input_bottomdiv{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	height:40px;
+	width:100%;
+}
+
+.dialog_div .input_okbtdiv{
+	float:right;
+	text-align:right;
+	margin-right:10px;
+	margin-top:10px;
+}
+
+.dialog_div .input_cancelbtdiv{
+	float:right;
+	text-align:left;
+	margin-right:20px;
+	margin-top:10px;
+}
+
+.dialog_div .input_1btdiv{
+	float:right;
+	text-align:center;
+	margin-right:10px;
+}
+
+.dialog_div .input_2btdiv{
+	float:right;
+	text-align:center;
+	margin-right:10px;
+}
+
+.dialog_div .input_3btdiv{
+	float:right;
+	text-align:center;
+	margin-right:10px;
+}
+
+.dialog_div .frameDiv{
+	position: absolute; 
+	left: 18px; 
+	right: 18px; 
+	bottom: 18px; 
+	top: 0px;
+}
+
+.dialog_div .rightInnerDiv{
+	margin-top:52px;
+	width:100%;
+	position:relative;
+	overflow-y:auto;
+	word-wrap: break-word;
+	word-break: normal;
+	text-align:left;
+}
+
+/****************错误提示******************/
+.inputdialog_error_whole_msg_div{
+	position:absolute;
+	z-index:10000;
+	top:5px;
+	left:15px;
+	margin-right:15px;
+}
+
+.inputdialog_error_whole_msg_div .whole_msg_div{
+	position:relative;
+	float:left;
+}
+/****************箭头向下******************/
+.inputdialog_error_whole_msg_div .down_bg_left_top{
+	position:absolute;
+	background:url(../form/images/left_top_1.png) no-repeat;
+	width:19px;
+	height:5px;
+	left:0px;
+	top:0px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_top_middle{
+	position:absolute;
+	background:url(../form/images/top_middle_1.png) repeat-x;
+	height:5px;
+	left:19px;
+	right:4px;
+	top:0px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_right_top{
+	position:absolute;
+	background:url(../form/images/right_top_1.png) no-repeat;
+	width:4px;
+	height:5px;
+	right:0px;
+	top:0px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_right_middle{
+	position:absolute;
+	background:url(../form/images/right_middle.png) repeat-y;
+	width:4px;
+	right:0px;
+	top:5px;
+	bottom:10px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_right_bottom{
+	position:absolute;
+	background:url(../form/images/right_bottom_1.png) no-repeat;
+	width:4px;
+	height:10px;
+	right:0px;
+	bottom:0px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_bottom_middle{
+	position:absolute;
+	background:url(../form/images/bottom_middle_1.png) repeat-x;
+	height:10px;
+	left:19px;
+	right:4px;
+	bottom:0px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_left_bottom{
+	position:absolute;
+	background:url(../form/images/left_bottom_1.png) no-repeat;
+	width:19px;
+	height:10px;
+	left:0px;
+	bottom:0px;
+}
+
+.inputdialog_error_whole_msg_div .down_bg_left_middle{
+	position:absolute;
+	background:url(../form/images/left_middle.png) repeat-y;
+	width:19px;
+	left:0px;
+	top:5px;
+	bottom:10px;
+}
+
+.inputdialog_error_whole_msg_div .down_error_center_div{
+	line-height:20px;
+	position:relative;
+	margin:5px 4px 10px 19px;
+	background-color:#f7e3db;
+}
+
+.inputdialog_error_whole_msg_div .down_warning{
+	width:17px;
+	height:17px;
+	position:absolute;
+	left:5px;
+	top:6px;
+	background:url(../form/images/warning.png);
+}
+
+.inputdialog_error_whole_msg_div .down_close_normal{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:6px;
+	background:url(../form/images/close_normal.png);
+}
+
+.inputdialog_error_whole_msg_div .down_close_press{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:6px;
+	background:url(../form/images/close_press.png);
+}
+
+/****************箭头向上******************/
+.inputdialog_error_whole_msg_div .up_bg_left_top{
+	position:absolute;
+	background:url(../form/images/left_top.png) no-repeat;
+	width:19px;
+	height:10px;
+	left:0px;
+	top:0px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_top_middle{
+	position:absolute;
+	background:url(../form/images/top_middle.png) repeat-x;
+	height:10px;
+	left:19px;
+	right:4px;
+	top:0px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_right_top{
+	position:absolute;
+	background:url(../form/images/right_top.png) no-repeat;
+	width:4px;
+	height:10px;
+	right:0px;
+	top:0px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_right_middle{
+	position:absolute;
+	background:url(../form/images/right_middle.png) repeat-y;
+	width:4px;
+	right:0px;
+	top:10px;
+	bottom:5px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_right_bottom{
+	position:absolute;
+	background:url(../form/images/right_bottom.png) no-repeat;
+	width:4px;
+	height:5px;
+	right:0px;
+	bottom:0px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_bottom_middle{
+	position:absolute;
+	background:url(../form/images/bottom_middle.png) repeat-x;
+	height:5px;
+	left:19px;
+	right:4px;
+	bottom:0px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_left_bottom{
+	position:absolute;
+	background:url(../form/images/left_bottom.png) no-repeat;
+	width:19px;
+	height:5px;
+	left:0px;
+	bottom:0px;
+}
+
+.inputdialog_error_whole_msg_div .up_bg_left_middle{
+	position:absolute;
+	background:url(../form/images/left_middle.png) repeat-y;
+	width:19px;
+	left:0px;
+	top:10px;
+	bottom:5px;
+}
+
+.inputdialog_error_whole_msg_div .up_error_center_div{
+	line-height:20px;
+	position:relative;
+	margin:10px 4px 5px 19px;
+	background-color:#f7e3db;
+}
+
+.inputdialog_error_whole_msg_div .up_warning{
+	width:17px;
+	height:17px;
+	position:absolute;
+	left:5px;
+	top:10px;
+	background:url(../form/images/warning.png);
+}
+
+.inputdialog_error_whole_msg_div .up_close_normal{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:10px;
+	background:url(../form/images/close_normal.png);
+}
+
+.inputdialog_error_whole_msg_div .up_close_press{
+	width:15px;
+	height:15px;
+	position:absolute;
+	right:5px;
+	top:10px;
+	background:url(../form/images/close_press.png);
+}
+
+.inputdialog_error_whole_msg_div .errorMsg{
+	font-size:12px;
+	color:#c45d30;
+	margin-left:10px;
+	margin-right:25px;
+}
+

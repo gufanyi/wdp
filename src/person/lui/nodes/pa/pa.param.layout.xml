@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<UIPart xmlns="http://com.founer.xap/schema/lui"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://com.founer.xap/schema/lui http://com.founer.xap/schema/lui/layout.xsd" id="param_um" isFlow="false">
+	<FlowVLayout id="flowvlayjjut4621" widgetId="param">
+		<FlowVPanel height="25" id="phlv04621" widgetId="param">
+			<MenuBar height="100%" id="menubar_param" left="0" position="relative" top="0" widgetId="param" width="100%">
+			</MenuBar>
+		</FlowVPanel>
+		<FlowVPanel id="panelvsssdd1" widgetId="param">
+			<Grid height="100%" id="grid_param" left="0" position="relative" top="0" width="100%" widgetId="param">
+			</Grid>
+		</FlowVPanel>
+	</FlowVLayout>
+</UIPart>
