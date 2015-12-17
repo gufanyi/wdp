@@ -63,9 +63,6 @@ public class LuiTreeGridDatasetLoadCmd extends LuiDatasetLoadCmd{
 		return queryVOs(pinfo, vo, wherePart, null);
 	}
 	
-	private AppSession getCurAppContext() {
-		return AppSession.current();
-	}
 	
 	protected BaseDO[] queryParentVOs(PaginationInfo pinfo, BaseDO vo, String wherePart,String orderPart)throws LuiBusinessException{
 		if(pk_Parent==null)
@@ -76,8 +73,7 @@ public class LuiTreeGridDatasetLoadCmd extends LuiDatasetLoadCmd{
 		if(wherePart == null || StringUtils.isBlank(wherePart))
 			wherePart = buffer.toString();
 		else wherePart = "("+wherePart+") AND "+buffer.toString();
-		BaseDO[] vos = (BaseDO[]) CRUDHelper.getCRUDService().queryVOs(vo, pinfo, wherePart, null, orderPart);
-		return vos;
+		return (BaseDO[])CRUDHelper.getCRUDService().getBeansByWherePart(BaseDO.class,  wherePart,pinfo,orderPart,null);
 	}
 	protected BaseDO[] queryChildren(BaseDO[] parents,String wherePart,String orderPart) throws LuiBusinessException{
 		if(parents==null || parents.length==0)

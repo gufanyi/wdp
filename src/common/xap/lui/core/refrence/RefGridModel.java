@@ -53,7 +53,7 @@ public class RefGridModel extends AbstractRefModel implements IRefGridModel {
 	public RefResultSet getRefData(PaginationInfo pInfo) {
 		String refSql = this.getRefSql();
 		@SuppressWarnings("unchecked")
-		List<List<Object>> data = (List<List<Object>>)CRUDHelper.getCRUDService().query(refSql,pInfo, new RefResultHandler(-1, -1));
+		List<List<Object>> data = (List<List<Object>>)CRUDHelper.getCRUDService().executeQuery(refSql,pInfo, new RefResultHandler(-1, -1));
 		RefResultSet result = new RefResultSet();
 		result.setData(data);
 		return result;
@@ -70,6 +70,11 @@ public class RefGridModel extends AbstractRefModel implements IRefGridModel {
 	}
 	@Override
 	public List<String> getRefTableName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getId() {
 		// TODO Auto-generated method stub
 		return null;
 	}

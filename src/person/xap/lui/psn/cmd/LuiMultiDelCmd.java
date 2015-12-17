@@ -1,15 +1,13 @@
 package xap.lui.psn.cmd;
 
 import xap.lui.core.command.LuiCommand;
-import xap.lui.core.dao.LuiCRUDService;
-import xap.lui.core.dao.LuiCRUDServiceImpl;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiRuntimeException;
 import xap.lui.core.model.ViewPartMeta;
 import xap.lui.core.serializer.Dataset2SuperVOSerializer;
 import xap.mw.core.data.BaseDO;
-import xap.mw.sf.core.util.ServiceFinder;
 
 public class LuiMultiDelCmd extends LuiCommand{
 	
@@ -47,8 +45,7 @@ public class LuiMultiDelCmd extends LuiCommand{
 	
 	protected void onDeleteVO(BaseDO[] vos){
 			if(vos != null && vos.length > 0){			
-				LuiCRUDService cpbService = ServiceFinder.find(LuiCRUDServiceImpl.class);
-				cpbService.deleteVo(vos[0]);
+				CRUDHelper.getCRUDService().deleteBean(vos);
 			}
 	}
 	

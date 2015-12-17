@@ -89,7 +89,7 @@ public abstract class AbstractRefModel  implements IRefModel {
 		String refSql = this.getRefSql();
 		try {
 			@SuppressWarnings("unchecked")
-			List<List<Object>> data = (List<List<Object>>)CRUDHelper.getCRUDService().query(refSql, new RefResultHandler(-1, -1));
+			List<List<Object>> data = (List<List<Object>>)CRUDHelper.getCRUDService().executeQuery(refSql, new RefResultHandler(-1, -1));
 			RefResultSet result = new RefResultSet();
 			result.setData(data);
 			if(data!=null)

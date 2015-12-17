@@ -136,7 +136,7 @@ public class RefTreeGridModel extends AbstractRefModel implements IRefTreeGridMo
 		String sql = this.getClassRefSql();
 		try {
 			@SuppressWarnings("unchecked")
-			List<List<Object>> data = (List<List<Object>>) CRUDHelper.getCRUDService().query(sql, new RefResultHandler(-1, -1));
+			List<List<Object>> data = (List<List<Object>>) CRUDHelper.getCRUDService().executeQuery(sql, new RefResultHandler(-1, -1));
 			RefResultSet result = new RefResultSet();
 			result.setData(data);
 			return result;
@@ -271,6 +271,12 @@ public class RefTreeGridModel extends AbstractRefModel implements IRefTreeGridMo
 
 	@Override
 	public List<String> getRefTableName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getId() {
 		// TODO Auto-generated method stub
 		return null;
 	}

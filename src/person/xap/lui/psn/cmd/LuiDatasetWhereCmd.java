@@ -11,7 +11,6 @@ import xap.lui.core.model.ViewPartMeta;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.mw.core.data.BaseDO;
-import xap.mw.log.logging.Logger;
 
 
 
@@ -59,7 +58,6 @@ public class LuiDatasetWhereCmd extends LuiCommand {
 			postProcessRowSelect(ds);
 		} 
 		catch (LuiBusinessException e) {
-			Logger.error(e.getMessage(), e);
 			throw new LuiRuntimeException("查询对象出错," + e.getMessage() + ",ds id:" + ds.getId(),"查询过程出现错误");
 		}
 		ds.setEdit(false);
@@ -67,12 +65,12 @@ public class LuiDatasetWhereCmd extends LuiCommand {
 	}
 
 	protected BaseDO[] queryVOs(PaginationInfo pinfo, BaseDO vo, String sql) throws LuiBusinessException{
-		return (BaseDO[])CRUDHelper.getCRUDService().queryVOs(vo, pinfo, sql, null, null);
+		return (BaseDO[])CRUDHelper.getCRUDService().getBeansByFullSql(vo.getClass(), sql,pinfo);
 	}
 
 	protected BaseDO[] queryVOs(PaginationInfo pinfo, BaseDO vo, String sql,
 			String orderPart) throws LuiBusinessException{
-		return (BaseDO[])CRUDHelper.getCRUDService().queryVOs(vo, pinfo, sql, null, orderPart);
+		return (BaseDO[])CRUDHelper.getCRUDService().getBeansByFullSql(vo.getClass(),sql, pinfo, orderPart, null );
 	}
 
 	protected String postWherePart(BaseDO vo, Dataset ds, FromWhereSQLCmd whereSql) {

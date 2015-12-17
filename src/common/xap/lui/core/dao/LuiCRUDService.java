@@ -11,29 +11,45 @@ public interface LuiCRUDService {
 
 	public Object[] saveBeans(Object[] objs);
 
-	public void deleteBeans(Object[] objs);
-
-	public void deleteBean(Object obj, boolean trueDel);
-
 	public void deleteBean(Object obj);
 
-	public <C> C[] queryBeans(Class<C> c, PaginationInfo pg, Map<String, Object> extMap);
+	public void deleteBeans(Object[] objs);
 
-	public <C> C[] queryBeanss(Class<C> clazz, String sql, PaginationInfo pg, Map<String, Object> extMap);
+	public void deleteBeansById(Class<?> clazz, String Id);
 
-	public <C> C[] queryBeans(Class<C> clazz, String sql, PaginationInfo pg, String orderBy, Map<String, Object> extMap);
+	public void deleteBeansById(Class<?> clazz, String[] Ids);
 
-	public <C> C[] queryBeans(Class<C> c, PaginationInfo pg, String wherePart, Map<String, Object> extMap);
+	public void deleteBeansByWherePart(Class<?> clazz, String wherePart);
 
-	public <C> C[] queryBeans(Class<C> c, PaginationInfo pg, String wherePart, Map<String, Object> extMap, String orderByPart);
+	public void deleteBeansByWherePart(Class<?> clazz, String wherePart, SqlParam param);
 
-	public <C> C[] queryBeans(Class<C> c, String sql);
+	public <C> C getBeanById(Class<C> clazz, String Id);
 
-	public <C> C queryBeanById(Class<C> clazz, String Id);
+	public <C> C[] getBeans(Class<C> c);
 
-	public Object query(String sql, RsHandler processor);
+	public <C> C[] getBeans(Class<C> c, Map<String, Object> extMap);
 
-	public Object query(String sql, PaginationInfo pg, RsHandler processor);
+	public <C> C[] getBeans(Class<C> c, PaginationInfo pg, Map<String, Object> extMap);
+
+	public <C> C[] getBeansByFullSql(Class<C> c, String sql);
+
+	public <C> C[] getBeansByFullSql(Class<C> c, String sql, PaginationInfo pageInfo);
+
+	public <C> C[] getBeansByFullSql(Class<C> c, String sql, PaginationInfo pageInfo, Map<String, Object> extMap);
+
+	public <C> C[] getBeansByFullSql(Class<C> c, String sql, PaginationInfo pageInfo, String orderBy, Map<String, Object> extMap);
+
+	public <C> C[] getBeansByWherePart(Class<C> c, String wherePart);
+
+	public <C> C[] getBeansByWherePart(Class<C> c, String wherePart, PaginationInfo pageInfo);
+
+	public <C> C[] getBeansByWherePart(Class<C> c, String wherePart, PaginationInfo pageInfo, Map<String, Object> extMap);
+
+	public <C> C[] getBeansByWherePart(Class<C> c, String wherePart, PaginationInfo pageInfo, String orderBy, Map<String, Object> extMap);
+
+	public Object executeQuery(String sql, RsHandler processor);
+
+	public Object executeQuery(String sql, PaginationInfo pg, RsHandler processor);
 
 	public int executeUpdate(String sql, SqlParam parameter);
 

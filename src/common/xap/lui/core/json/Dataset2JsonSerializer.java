@@ -83,7 +83,7 @@ public class Dataset2JsonSerializer implements IObject2JsonSerializer<Dataset> {
 				String sql = getQuerySql(ds, rel);
 				List<Object[]> result = null;
 				if (sql != null) {
-					result = (List<Object[]>) CRUDHelper.getCRUDService().query(sql, new ArrayListHandler());
+					result = (List<Object[]>) CRUDHelper.getCRUDService().executeQuery(sql, new ArrayListHandler());
 				} else {
 					result = new ArrayList<Object[]>();
 				}

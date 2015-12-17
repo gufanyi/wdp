@@ -2,7 +2,7 @@ package xap.lui.psn.cmd;
 import org.apache.commons.lang.StringUtils;
 
 import xap.lui.core.command.LuiCommand;
-import xap.lui.core.dao.PtBaseDAO;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiRuntimeException;
@@ -15,7 +15,6 @@ import xap.lui.core.serializer.Dataset2SuperVOSerializer;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.mw.core.data.BaseDO;
-import xap.sys.jdbc.facade.DAException;
 
 
 public class LuiCardSaveCmdForAgg extends LuiCommand {
@@ -75,16 +74,15 @@ public class LuiCardSaveCmdForAgg extends LuiCommand {
 	
 	protected void saveVo(BaseDO vo){
 		try {
-			PtBaseDAO.getIns().insertVO(vo);
-		} catch (DAException e) {
-			
+			CRUDHelper.getCRUDService().saveBean(vo);
+		} catch (Throwable e) {
 			throw new LuiRuntimeException(e.getMessage());
 		}
 	}
 	protected void updateVo(BaseDO vo){
 		try {
-			PtBaseDAO.getIns().updateVO(vo);
-		} catch (DAException e) {
+			CRUDHelper.getCRUDService().saveBean(vo);
+		} catch (Throwable e) {
 			throw new LuiRuntimeException(e.getMessage());
 		}
 	}

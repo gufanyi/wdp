@@ -19,7 +19,7 @@ public class GridRefModel extends BaseRefModel{
 	@Override
 	public RefResultSet getRefData(PaginationInfo pInfo) {
 		String refSql = this.getRefSql();
-		List<List<Object>> data = (List<List<Object>>)CRUDHelper.getCRUDService().query(refSql,pInfo, new RefResultHandler(-1, -1));
+		List<List<Object>> data = (List<List<Object>>)CRUDHelper.getCRUDService().executeQuery(refSql,pInfo, new RefResultHandler(-1, -1));
 		RefResultSet result = new RefResultSet();
 		result.setData(data);
 		return result;

@@ -4,8 +4,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.springframework.context.ApplicationContext;
-
 import xap.lui.core.command.LuiCommand;
 import xap.lui.core.common.LuiRuntimeContext;
 import xap.lui.core.model.AppSession;
@@ -31,7 +29,7 @@ public class LuiFileUploadCmd extends LuiCommand {
 			}
 		}
 		
-	    AppSession.current().getAppContext().showModalDialog(url, title, "450", "425", "pictureupload", ApplicationContext.FACTORY_BEAN_PREFIX);
+	    //AppSession.current().getAppContext().showModalDialog(url, title, "450", "425", "pictureupload", ApplicationContext.FACTORY_BEAN_PREFIX);
 	}
 
 }

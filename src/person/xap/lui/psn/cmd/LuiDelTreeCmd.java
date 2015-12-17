@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import xap.lui.core.command.LuiCommand;
 import xap.lui.core.common.InteractionUtil;
-import xap.lui.core.dao.PtBaseDAO;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.DatasetRelation;
 import xap.lui.core.dataset.Row;
@@ -17,12 +17,8 @@ import xap.lui.core.serializer.Dataset2SuperVOSerializer;
 import xap.lui.core.serializer.Datasets2AggVOSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.lui.core.xml.StringUtils;
-import xap.mw.core.Context;
-import xap.mw.core.VoidCallback;
 import xap.mw.core.data.BaseDO;
-import xap.sys.appfw.orm.handle.agg.BaseAggService;
 import xap.sys.appfw.orm.model.agg.BaseAggDO;
-import xap.sys.jdbc.facade.DAException;
 import xap.sys.jdbc.handler.RsHandler;
 
 public class LuiDelTreeCmd<T extends BaseAggDO> extends LuiCommand {
@@ -75,10 +71,9 @@ public class LuiDelTreeCmd<T extends BaseAggDO> extends LuiCommand {
 				treeMasterKeyValue=treeMasterKeyValue.substring(0, treeMasterKeyValue.length()-1);
 				String sql = "select count(*) from " + tableName + " where " + detailForKey + " in (" + treeMasterKeyValue + ")";
 
-				PtBaseDAO dao = PtBaseDAO.getIns();
 				Integer count = 0;
 				try {
-					count = (Integer) dao.executeQuery(sql, new RsHandler() {
+					count = (Integer) CRUDHelper.getCRUDService().executeQuery(sql, new RsHandler() {
 
 						@Override
 						public Object handleRs(ResultSet rs) throws SQLException {
@@ -89,7 +84,7 @@ public class LuiDelTreeCmd<T extends BaseAggDO> extends LuiCommand {
 							return value;
 						}
 					});
-				} catch (DAException e) {
+				} catch (Throwable e) {
 					LuiLogger.error(e.getMessage(), e);
 					throw new LuiRuntimeException(e.getMessage());
 				}
@@ -200,7 +195,7 @@ public class LuiDelTreeCmd<T extends BaseAggDO> extends LuiCommand {
 	protected void onDeleteVO(BaseDO[] vos){
 		try {
 			if(vos != null && vos.length > 0)	{
-				PtBaseDAO.getIns().deleteVOArray(vos);
+				CRUDHelper.getCRUDService().deleteBeans(vos);
 			}
 		} catch (Exception e) {
 			LuiLogger.error(e.getMessage(), e);
@@ -208,26 +203,26 @@ public class LuiDelTreeCmd<T extends BaseAggDO> extends LuiCommand {
 		}
 	}
 	protected void onDeleteVO(final ArrayList<BaseAggDO> vos,final boolean trueDel) {
-		try {
-			Context.run(new VoidCallback() {
-				@Override
-				public void invoke() throws Exception {
-					if(vos!=null&&vos.size()!=0) {
-						BaseAggService<T> cpbService = new BaseAggService<T>(vos.get(0).getParent().getDODesc(),(Class<T>) vos.get(0).getClass());
-						if(trueDel)
-							cpbService.realDelete((T[]) vos.toArray(new BaseAggDO[0]));
-						else
-							cpbService.delete((T[]) vos.toArray(new BaseAggDO[0]));
-					}
-					
-				}
-			});
-			
-			
-		} 
-		catch (Exception e) {
-			LuiLogger.error(e.getMessage(), e);
-			throw new LuiRuntimeException(e.getMessage());
-		}
+//		try {
+//			Context.run(new VoidCallback() {
+//				@Override
+//				public void invoke() throws Exception {
+//					if(vos!=null&&vos.size()!=0) {
+//						BaseAggService<T> cpbService = new BaseAggService<T>(vos.get(0).getParent().getDODesc(),(Class<T>) vos.get(0).getClass());
+//						if(trueDel)
+//							cpbService.realDelete((T[]) vos.toArray(new BaseAggDO[0]));
+//						else
+//							cpbService.delete((T[]) vos.toArray(new BaseAggDO[0]));
+//					}
+//					
+//				}
+//			});
+//			
+//			
+//		} 
+//		catch (Exception e) {
+//			LuiLogger.error(e.getMessage(), e);
+//			throw new LuiRuntimeException(e.getMessage());
+//		}
 	}
 }

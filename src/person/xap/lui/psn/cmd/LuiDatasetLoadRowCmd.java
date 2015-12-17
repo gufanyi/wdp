@@ -10,7 +10,6 @@ import xap.lui.core.model.ViewPartMeta;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.mw.core.data.BaseDO;
-import xap.mw.log.logging.Logger;
 
 
 public class LuiDatasetLoadRowCmd extends LuiCommand {
@@ -44,13 +43,12 @@ public class LuiDatasetLoadRowCmd extends LuiCommand {
 			postProcessRowSelect(ds);
 		} 
 		catch (LuiBusinessException e) {
-			Logger.error(e.getMessage(), e);
 			throw new LuiRuntimeException("查询对象出错," + e.getMessage() + ",ds id:" + ds.getId(),"查询过程出现错误");
 		}
 	}
 	
 	protected BaseDO queryVO(BaseDO vo) throws LuiBusinessException {
-		BaseDO[] vos =(BaseDO[]) CRUDHelper.getCRUDService().queryVOs(vo, null, null);
+		BaseDO[] vos =(BaseDO[]) CRUDHelper.getCRUDService().getBeans(vo.getClass());
 		return (vos != null && vos.length == 1) ? vos[0] : null;
 	}
 

@@ -1,9 +1,9 @@
 package xap.lui.psn.cmd;
 
 import xap.lui.core.dataset.Dataset;
+import xap.lui.core.dataset.PaginationInfo;
 import xap.lui.core.model.LuiAppUtil;
 import xap.mw.core.data.BaseDO;
-import xap.sys.appfw.orm.handle.dataobject.paging.PaginationInfo;
 
 
 public class QueryCmd extends LuiDatasetLoadCmd{

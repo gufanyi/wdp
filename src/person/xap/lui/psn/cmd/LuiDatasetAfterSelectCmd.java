@@ -13,7 +13,6 @@ import xap.lui.core.model.ViewPartMeta;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.mw.core.data.BaseDO;
-import xap.mw.log.logging.Logger;
 
 
 public class LuiDatasetAfterSelectCmd extends DatasetCmd {
@@ -83,7 +82,6 @@ public class LuiDatasetAfterSelectCmd extends DatasetCmd {
 					detailDs.setEdit(false);
 				} 
 				catch (LuiBusinessException exp) {
-					Logger.error(exp.getMessage(), exp);
 					throw new LuiRuntimeException("查询对象出错," + exp.getMessage() + ",ds id:" + detailDs.getId(),"查询过程出现错误");
 				}
 			}

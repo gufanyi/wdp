@@ -67,7 +67,7 @@ public class TreeGridRefModel extends TreeRefModel {
 		String sql = this.getClassRefSql();
 		try {
 			@SuppressWarnings("unchecked")
-			List<List<Object>> data = (List<List<Object>>) CRUDHelper.getCRUDService().query(sql, new RefResultHandler(-1, -1));
+			List<List<Object>> data = (List<List<Object>>) CRUDHelper.getCRUDService().executeQuery(sql, new RefResultHandler(-1, -1));
 			RefResultSet result = new RefResultSet();
 			result.setData(data);
 			return result;

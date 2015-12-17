@@ -1,5 +1,4 @@
 package xap.lui.psn.cmd;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,8 +15,6 @@ import xap.lui.core.command.LuiCommand;
 import xap.lui.core.comps.ToolBarComp;
 import xap.lui.core.constant.ExtAttrConstants;
 import xap.lui.core.dao.CRUDHelper;
-import xap.lui.core.dao.LuiCRUDService;
-import xap.lui.core.dao.PtBaseDAO;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.DatasetRelation;
 import xap.lui.core.dataset.Row;
@@ -33,14 +30,8 @@ import xap.lui.core.model.ViewPartMeta;
 import xap.lui.core.serializer.Dataset2SuperVOSerializer;
 import xap.lui.core.serializer.Datasets2AggVOSerializer;
 import xap.lui.core.vos.VOStatus;
-import xap.mw.core.Callback;
-import xap.mw.core.Context;
 import xap.mw.core.data.BaseDO;
-import xap.mw.core.data.DOStatus;
-import xap.mw.coreitf.i.IBaseDO;
-import xap.sys.appfw.orm.handle.agg.BaseAggService;
 import xap.sys.appfw.orm.model.agg.BaseAggDO;
-import xap.sys.jdbc.facade.DAException;
 import xap.sys.jdbc.handler.BeanListHandler;
 
 
@@ -252,14 +243,14 @@ public class LuiSaveAggCmd<T extends BaseAggDO> extends LuiCommand {
 		try {
 			String sql="select * from "+vo.getTableName()+" where "+whereSql.toString();
 			
-			Collection vos  =(Collection)PtBaseDAO.getIns().executeQuery(sql, new BeanListHandler(vo.getClass()));
+			Collection vos  =(Collection)CRUDHelper.getCRUDService().executeQuery(sql, new BeanListHandler(vo.getClass()));
 		//	Collection vos = dao.retrieveByClause(vo.getClass(), whereSql.toString());
 			if (vos == null || vos.size() == 0)
 				return;
 			String pk = ((BaseDO) vos.toArray(new BaseDO[] {})[0]).getPKFieldName();
 			if (!StringUtils.isBlank(pk) && !pk.equals(vo.getPKFieldName()))
 				throw new LuiRuntimeException(message.toString());
-		} catch (DAException e) {
+		} catch (Throwable e) {
 			LuiLogger.error(e.getMessage());
 			throw new LuiRuntimeException(e.getMessage());
 		}
@@ -362,13 +353,13 @@ public class LuiSaveAggCmd<T extends BaseAggDO> extends LuiCommand {
 				}
 				if (tableId == null)
 					tableId = dataset.getId();
-				BaseDO[] vos = ((BaseAggDO) aggVo).getTableDO(tableId);
+				BaseDO[] vos = ((BaseAggDO) aggVo).getChildrenDO(tableId);
 				List<BaseDO> vosList = new ArrayList<BaseDO>();
 				for (BaseDO vo : vos) {
 					vosList.add(vo);
 				}
 				vosList.addAll(Arrays.asList(BaseDOs));
-				((BaseAggDO) aggVo).setTableVO(tableId, (BaseDO[]) vosList.toArray(new BaseDO[0]));
+				((BaseAggDO) aggVo).setChildrenVO(tableId, (BaseDO[]) vosList.toArray(new BaseDO[0]));
 			} else {
 				BaseDO[] vos = aggVo.getChildrenDO();
 				List<BaseDO> vosList = new ArrayList<BaseDO>();
@@ -448,10 +439,7 @@ public class LuiSaveAggCmd<T extends BaseAggDO> extends LuiCommand {
 	protected IDataValidator getValidator() {
 		return new DefaultDataValidator();
 	}
-	protected LuiCRUDService<BaseDO, BaseAggDO> getCrudService() {
-		return CRUDHelper.getCRUDService();
-	}
-	
+
 	protected void onBeforeVOSave(BaseAggDO aggVo) {
 		checkDupliVO((BaseDO) aggVo.getParentDO());
 	}
@@ -460,41 +448,42 @@ public class LuiSaveAggCmd<T extends BaseAggDO> extends LuiCommand {
 		return true;
 	}
 	protected T onVoSave(final T aggVo) {
-		try {
-			return Context.run(new Callback<T>() {
-				@Override
-				public T invoke() throws Exception {
-					T[] baseAggDO = null;
-					BaseAggService<T> cpbService = new BaseAggService<T>(aggVo.getParent().getDODesc(),(Class<T>) aggVo.getClass());
-					if(aggVo.getParentDO().getPkVal() == null) {
-						aggVo.getParentDO().setStatus(DOStatus.NEW);
-						//baseAggDO = cpbService.insert(new BaseAggDO[]{aggVo});
-						T[] tt = (T[])Array.newInstance(aggVo.getClass(), 1);
-						tt[0]= aggVo;
-						baseAggDO = cpbService.insert(tt);
-					}
-					else{
-						aggVo.getParentDO().setStatus(DOStatus.UPDATED);
-						aggVo_ChiDoHandle(aggVo);
-						//baseAggDO = cpbService.update(new BaseAggDO[]{aggVo});
-						T[] tt = (T[])Array.newInstance(aggVo.getClass(), 1);
-						tt[0]= aggVo;
-						baseAggDO = cpbService.update(tt);
-					}
-					return baseAggDO[0];
-				}
-				
-			});
-		} catch (Exception e) {
-			throw new LuiRuntimeException(e.getMessage()+"数据交互错误");
-		}
+		return null;
+//		try {
+//			return Context.run(new Callback<T>() {
+//				@Override
+//				public T invoke() throws Exception {
+//					T[] baseAggDO = null;
+//					BaseAggService<T> cpbService = new BaseAggService<T>(aggVo.getParent().getDODesc(),(Class<T>) aggVo.getClass());
+//					if(aggVo.getParentDO().getPkVal() == null) {
+//						aggVo.getParentDO().setStatus(DOStatus.NEW);
+//						//baseAggDO = cpbService.insert(new BaseAggDO[]{aggVo});
+//						T[] tt = (T[])Array.newInstance(aggVo.getClass(), 1);
+//						tt[0]= aggVo;
+//						baseAggDO = cpbService.insert(tt);
+//					}
+//					else{
+//						aggVo.getParentDO().setStatus(DOStatus.UPDATED);
+//						aggVo_ChiDoHandle(aggVo);
+//						//baseAggDO = cpbService.update(new BaseAggDO[]{aggVo});
+//						T[] tt = (T[])Array.newInstance(aggVo.getClass(), 1);
+//						tt[0]= aggVo;
+//						baseAggDO = cpbService.update(tt);
+//					}
+//					return baseAggDO[0];
+//				}
+//				
+//			});
+//		} catch (Exception e) {
+//			throw new LuiRuntimeException(e.getMessage()+"数据交互错误");
+//		}
 	}
 	
 	private void aggVo_ChiDoHandle(BaseAggDO aggVo){
 		String newKeyValue = (String) aggVo.getParentDO().getAttrVal(this.dr.getMasterKeyField());
 		String detailForeignKey= this.dr.getDetailForeignKey();
-		List<IBaseDO> dos=Datasets2AggVOSerializer.getAllAggDoChildDos(aggVo);
-		for(IBaseDO baseDo:dos){
+		BaseDO[] dos=aggVo.getAllChildrenDO();
+		for(BaseDO baseDo:dos){
 			if(baseDo.getAttrVal(detailForeignKey)==null){
 				baseDo.setAttrVal(detailForeignKey, newKeyValue);
 			}

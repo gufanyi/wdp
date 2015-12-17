@@ -11,7 +11,6 @@ import org.apache.commons.lang.StringUtils;
 import xap.dp.dmengine.d.EnumValueDO;
 import xap.dp.dmengine.d.PropTypeEnum;
 import xap.dp.dmengine.d.PropertyDO;
-import xap.dp.dmengine.i.IDataModelRService;
 import xap.lui.core.cache.PaCache;
 import xap.lui.core.common.ExtAttribute;
 import xap.lui.core.common.LuiRuntimeContext;
@@ -20,7 +19,6 @@ import xap.lui.core.comps.FormComp;
 import xap.lui.core.comps.FormElement;
 import xap.lui.core.constant.StringDataTypeConst;
 import xap.lui.core.control.IWindowCtrl;
-import xap.lui.core.dao.PtBaseDAO;
 import xap.lui.core.dataset.ComboData;
 import xap.lui.core.dataset.DataItem;
 import xap.lui.core.dataset.DataList;
@@ -46,6 +44,7 @@ import xap.lui.core.layout.UIElementFinder;
 import xap.lui.core.layout.UITabComp;
 import xap.lui.core.layout.UITabItem;
 import xap.lui.core.logger.LuiLogger;
+import xap.lui.core.metadata.MetaDataPool;
 import xap.lui.core.model.AppContext;
 import xap.lui.core.model.AppSession;
 import xap.lui.core.model.LifeCyclePhase;
@@ -56,17 +55,14 @@ import xap.lui.core.refrence.AppRefDftCtrl;
 import xap.lui.core.refrence.GenericRefNode;
 import xap.lui.core.refrence.IRefModel;
 import xap.lui.core.refrence.IRefNode;
-import xap.lui.core.refrence.RefPubUtil;
+import xap.lui.core.refrence.PubRefModelPool;
 import xap.lui.core.refrence.SelfDefRefNode;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.lui.psn.pamgr.PaEntityDsListener;
 import xap.mw.core.data.BaseDO;
-import xap.mw.core.data.BizException;
 import xap.mw.coreitf.d.FBoolean;
-import xap.mw.sf.core.util.ServiceFinder;
-import xap.sys.bdrefinfo.d.BdRefInfoDO;
-import xap.sys.jdbc.handler.MapListHandler;
+
 /**
  * 表单个性化编辑器模型，数据集编辑控制类
  * 
@@ -112,60 +108,60 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 		DataList dscombodata = getDataList("dscombodata");
 		DataList masterfield = getDataList("masterfield");
 		DataList datatypefield = getDataList("datatypefield");
-		
+
 		LuiWebSession session = LuiRuntimeContext.getWebContext().getPageWebSession();
 		String viewId = session.getOriginalParameter("sourceView");
 		String dsId = session.getOriginalParameter("dsId");
 		ViewPartMeta sourceWidget = null;
-		Dataset sourceDateset = null;		
+		Dataset sourceDateset = null;
 		// 源widget
 		if (viewId != null) {
-			sourceWidget =PaCache.getEditorViewPartMeta();
-		}	
+			sourceWidget = PaCache.getEditorViewPartMeta();
+		}
 		// 源ds
 		if (dsId != null && sourceWidget != null) {
 			sourceDateset = sourceWidget.getViewModels().getDataset(dsId);
 		}
-		
-		if(StringUtils.isNotBlank(dsId)){
+
+		if (StringUtils.isNotBlank(dsId)) {
 			Dataset[] dss = sourceWidget.getViewModels().getDatasets();
 			for (Dataset dataset : dss) {
-				if(!(sourceDateset.getId().equals(dataset.getId())) && !(dataset instanceof RefMdDataset)){
+				if (!(sourceDateset.getId().equals(dataset.getId())) && !(dataset instanceof RefMdDataset)) {
 					DataItem item = new DataItem();
-					item.setText(dataset.getCaption()==null?dataset.getId():dataset.getCaption());
+					item.setText(dataset.getCaption() == null ? dataset.getId() : dataset.getCaption());
 					item.setValue(dataset.getId());
 					dscombodata.addDataItem(item);
 				}
-			}	
-		
+			}
+
 			List<Field> fields = sourceDateset.getFieldList();
 			for (Field field : fields) {
 				DataItem item = new DataItem();
 				String fid = field.getId();
 				String fname = field.getText();
-				if(!"ts".equals(fid) && !"status".equals(fid) && !"dr".equals(fid) && !(fid.startsWith("vdef"))){
+				if (!"ts".equals(fid) && !"status".equals(fid) && !"dr".equals(fid) && !(fid.startsWith("vdef"))) {
 					item.setText(fid);
 					item.setValue(fid);
 					masterfield.addDataItem(item);
 				}
-			}			
+			}
 		}
-		
+
 		java.lang.reflect.Field[] fields = StringDataTypeConst.class.getDeclaredFields();
-		for(java.lang.reflect.Field field : fields) {
+		for (java.lang.reflect.Field field : fields) {
 			field.setAccessible(true);
-			if((field.getModifiers() & 8) == 8){
+			if ((field.getModifiers() & 8) == 8) {
 				DataItem item = new DataItem();
 				try {
-					item.setText((String)field.get(null));
-					item.setValue((String)field.get(null));
+					item.setText((String) field.get(null));
+					item.setValue((String) field.get(null));
 					datatypefield.addDataItem(item);
 				} catch (IllegalArgumentException | IllegalAccessException e1) {
 					e1.printStackTrace();
 				}
 			}
 		}
-		
+
 	}
 
 	private DataList getDataList(String id) {
@@ -320,13 +316,12 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 				propDos = (PropertyDO[]) classrs.getExtendAttribute("propDos").getValue();
 				new SuperVO2DatasetSerializer().serialize(propDos, classDs);
 			}
-			IDataModelRService service = ServiceFinder.find(IDataModelRService.class);
 			try {
 				String className = null;
 				if ("xap.sys.xbd.udi.d.UdidocDO".equals(fullClassName)) {
 					className = caption;
 				}
-				PropertyDO[] propOos = service.findPropertyByFullClassName(fullClassName, className, "SEQNO", null);// 获取元数据的所有属性
+				PropertyDO[] propOos = MetaDataPool.getPropertyDos(fullClassName);
 				classDs.setEdit(false);
 				new SuperVO2DatasetSerializer().serialize(propOos, classDs);
 			} catch (Throwable exception) {
@@ -501,14 +496,12 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 			List<IRefNode> refNodeList = new ArrayList<IRefNode>();
 			List<ComboData> cdList = new ArrayList<ComboData>();
 			List<RefMdDataset> refMdDsList = new ArrayList<RefMdDataset>();
-			IDataModelRService dataModel = ServiceFinder.find(IDataModelRService.class);// 获取元数据服务
 			try {
-				PropertyDO[] propDos = dataModel.findPropertyByFullClassName(voMeta, displayname, "SEQNO", null);
+				PropertyDO[] propDos = MetaDataPool.getPropertyDos(voMeta);
 				setComponent(fieldRelationList, refNodeList, cdList, refMdDsList, propDos, fieldDs, mdds);
 				mdds.setExtendAttribute("propDos", propDos);
-			} catch (BizException | InstantiationException | IllegalAccessException e) {
-				e.printStackTrace();// TODO
-				throw new LuiRuntimeException("构建发错错误:"+e.getMessage());
+			} catch (Throwable e) {
+				throw new LuiRuntimeException("构建发错错误:" + e.getMessage());
 			}
 			for (FieldRelation f : fieldRelationList) {
 				mdds.getFieldRelations().addFieldRelation(f);
@@ -598,10 +591,8 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 
 	}
 
-	private void setComponent(List<FieldRelation> fieldRelationList, List<IRefNode> refNodeList, List<ComboData> cdList, List<RefMdDataset> refMdDsList, PropertyDO[] classDos, Dataset fieldDs,
-			MdDataset mdds) throws BizException, InstantiationException, IllegalAccessException {
+	private void setComponent(List<FieldRelation> fieldRelationList, List<IRefNode> refNodeList, List<ComboData> cdList, List<RefMdDataset> refMdDsList, PropertyDO[] classDos, Dataset fieldDs, MdDataset mdds) throws InstantiationException, IllegalAccessException {
 		// 数据的组装
-		PtBaseDAO dao = PtBaseDAO.getIns();
 		String sql = null;
 		for (int i = 0; i < classDos.length; i++) {
 			PropertyDO attr = classDos[i];
@@ -610,26 +601,29 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 			boolean flag0 = attr.getDatatypestyle() == 305;
 			boolean flag1 = PropTypeEnum.REF.toString().equals(attr.getProptype());
 			boolean flag2 = ("de".equalsIgnoreCase(attr.getDatafrom()));
-			
+
 			if (flag0 && flag1 && flag2) {
 				DataList dataList = new DataList();
 				dataList.setId(StringUtils.capitalize(attr.getName()) + "_combox");
 				dataList.setCaption(attr.getDisplayname());
-				IDataModelRService impl = ServiceFinder.find(IDataModelRService.class);
-				sql = "select * from bd_udidoc a  where  a.id_udidoclist ='" + attr.getDatatype() + "'";
-				List<Map<String, Object>> result = (List<Map<String, Object>>) dao.executeQuery(sql, new MapListHandler());
-				for (int j = 0; j < result.size(); j++) {
-					Map<String, Object> inner = result.get(j);
-					String value = (String) inner.get("code");
-					String text = (String) inner.get("name");
-					DataItem dataitem = new DataItem();
-					dataitem.setText(text);
-					dataitem.setValue(value);
-					dataList.addDataItem(dataitem);
-				}
-				if (!cdList.contains(dataList)) {
-					cdList.add(dataList);
-				}
+				// IDataModelRService impl =
+				// ServiceFinder.find(IDataModelRService.class);
+				// sql = "select * from bd_udidoc a where a.id_udidoclist ='" +
+				// attr.getDatatype() + "'";
+				// List<Map<String, Object>> result = (List<Map<String,
+				// Object>>) dao.executeQuery(sql, new MapListHandler());
+				// for (int j = 0; j < result.size(); j++) {
+				// Map<String, Object> inner = result.get(j);
+				// String value = (String) inner.get("code");
+				// String text = (String) inner.get("name");
+				// DataItem dataitem = new DataItem();
+				// dataitem.setText(text);
+				// dataitem.setValue(value);
+				// dataList.addDataItem(dataitem);
+				// }
+				// if (!cdList.contains(dataList)) {
+				// cdList.add(dataList);
+				// }
 				continue;
 			}
 
@@ -662,22 +656,27 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 				refNode.setHeight("400");
 				refNode.setWidth("300");
 				refNode.setTitle(attr.getDisplayname());
-				BdRefInfoDO refinfodo = RefPubUtil.getRefinfoVO(attr.getFullclassname(), attr.getDatatype());
-				if (refinfodo == null)
-					continue;
-				String refNodeId=refinfodo.getCode()+"_"+mdds.getId()+"_"+attr.getId().replace('-', '_');
+				IRefModel pubRefModel = PubRefModelPool.getRefModel("");
+				// BdRefInfoDO refinfodo =
+				// RefPubUtil.getRefinfoVO(attr.getFullclassname(),
+				// attr.getDatatype());
+				// if (refinfodo == null)
+				// continue;
+				String refNodeId = pubRefModel.getRefCodeField() + "_" + mdds.getId() + "_" + attr.getId().replace('-', '_');
 				refNode.setId(refNodeId);
-				refNode.setRefcode(refinfodo.getCode());
+				refNode.setRefcode(pubRefModel.getId());
 				refNode.setMultiple(false);
 				refNode.setFilterNames(false);
 				refNode.setPagemeta("reference");
 				try {
-					IRefModel refModelClass = RefPubUtil.getRefModel(attr.getFullclassname(), attr.getDatatype());
+					IRefModel refModelClass = PubRefModelPool.getRefModel(attr.getFullclassname(), attr.getDatatype());
 					if (refModelClass != null) {
 						String writeFieldString = toUpperCaseFirstOne(attr.getName()) + "," + toUpperCaseFirstOne(attr.getName() + "_name");
-						if ("bd_udidoc".equals(refinfodo.getPara2())) {
-							writeFieldString = writeFieldString + "," + toUpperCaseFirstOne(attr.getName()).replaceAll("Id", "Sd");
-						}
+						// if ("bd_udidoc".equals(refinfodo.getPara2())) {
+						// writeFieldString = writeFieldString + "," +
+						// toUpperCaseFirstOne(attr.getName()).replaceAll("Id",
+						// "Sd");
+						// }
 						refNode.setWriteDataset(sourceDateset.getId());
 						refNode.setWriteFields(writeFieldString);
 						refNode.setReadDataset("masterDs");
@@ -688,18 +687,16 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 					}
 				} catch (Throwable e) {
 					LuiLogger.error(e.getMessage(), e);
-					throw new LuiRuntimeException("构建发错错误:"+e.getMessage());
+					throw new LuiRuntimeException("构建发错错误:" + e.getMessage());
 				}
 				continue;
-			} 
-			
-			
+			}
+
 			if (attr.getDatatypestyle() == 305 && PropTypeEnum.ENUM.toString().equals(attr.getProptype())) {
 				DataList dataList = new DataList();
 				dataList.setId(StringUtils.capitalize(attr.getName()) + "_combox");
 				dataList.setCaption(attr.getDisplayname());
-				IDataModelRService impl = ServiceFinder.find(IDataModelRService.class);
-				EnumValueDO[] valueDos = impl.findEnumVlaueByCond(" id = '" + attr.getDatatype() + "'", "", Boolean.FALSE);
+				EnumValueDO[] valueDos = MetaDataPool.getEnumValueDos("attr.getDatatype()");
 				for (int j = 0; j < valueDos.length; j++) {
 					EnumValueDO valueDo = valueDos[j];
 					String value = valueDo.getValue();
@@ -712,7 +709,7 @@ public class DatasetConfigController implements IWindowCtrl, Serializable {
 				if (!cdList.contains(dataList)) {
 					cdList.add(dataList);
 				}
-			} 
+			}
 		}
 	}
 

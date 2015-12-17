@@ -5,7 +5,7 @@ import java.util.List;
 
 import xap.lui.core.cache.CacheMgr;
 import xap.lui.core.command.LuiCommand;
-import xap.lui.core.dao.LuiCRUDServiceImpl;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.DatasetRelation;
 import xap.lui.core.dataset.Row;
@@ -83,7 +83,7 @@ public class LuiLineDelCmd extends LuiCommand {
 	}
 
 	private void doDeleteVO(BaseDO vo) {
-			new LuiCRUDServiceImpl().deleteVo(vo);	
+		CRUDHelper.getCRUDService().deleteBean(vo);
 	}
 
 	

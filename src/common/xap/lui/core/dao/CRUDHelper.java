@@ -17,6 +17,6 @@ public class CRUDHelper {
 	}
 	
 	public static LuiCRUDService getCRUDService() {
-		return (LuiCRUDService) getCRUDService(LuiCRUDServiceImpl.class.getName());
+		return (LuiCRUDService) getCRUDService("");
 	}
 }

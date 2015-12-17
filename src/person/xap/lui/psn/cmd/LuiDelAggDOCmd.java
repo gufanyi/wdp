@@ -8,12 +8,8 @@ import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.DatasetRelation;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiRuntimeException;
-import xap.lui.core.logger.LuiLogger;
 import xap.lui.core.model.ViewPartMeta;
 import xap.lui.core.serializer.Datasets2AggVOSerializer;
-import xap.mw.core.Context;
-import xap.mw.core.VoidCallback;
-import xap.sys.appfw.orm.handle.agg.BaseAggService;
 import xap.sys.appfw.orm.model.agg.BaseAggDO;
 
 public class LuiDelAggDOCmd<T extends BaseAggDO> extends LuiCommand {
@@ -90,27 +86,27 @@ public class LuiDelAggDOCmd<T extends BaseAggDO> extends LuiCommand {
 		new ToolBarItemStatusCtrl(this.toolBarComp,"delete","");//控制工具栏项隐藏或显示
 	}
 	protected void onDeleteVO(final ArrayList<BaseAggDO> vos,final boolean trueDel) {
-		try {
-			Context.run(new VoidCallback() {
-				@Override
-				public void invoke() throws Exception {
-					if(vos!=null&&vos.size()!=0) {
-						BaseAggService<T> cpbService = new BaseAggService<T>(vos.get(0).getParent().getDODesc(),(Class<T>) vos.get(0).getClass());
-						if(trueDel)
-							cpbService.realDelete((T[]) vos.toArray(new BaseAggDO[0]));
-						else
-							cpbService.delete((T[]) vos.toArray(new BaseAggDO[0]));
-					}
-					
-				}
-			});
-			
-			
-		} 
-		catch (Exception e) {
-			LuiLogger.error(e.getMessage(), e);
-			throw new LuiRuntimeException(e.getMessage());
-		}
+//		try {
+//			Context.run(new VoidCallback() {
+//				@Override
+//				public void invoke() throws Exception {
+//					if(vos!=null&&vos.size()!=0) {
+//						BaseAggService<T> cpbService = new BaseAggService<T>(vos.get(0).getParent().getDODesc(),(Class<T>) vos.get(0).getClass());
+//						if(trueDel)
+//							cpbService.realDelete((T[]) vos.toArray(new BaseAggDO[0]));
+//						else
+//							cpbService.delete((T[]) vos.toArray(new BaseAggDO[0]));
+//					}
+//					
+//				}
+//			});
+//			
+//			
+//		} 
+//		catch (Exception e) {
+//			LuiLogger.error(e.getMessage(), e);
+//			throw new LuiRuntimeException(e.getMessage());
+//		}
 //		try {
 //			IUifCpbService cpbService = NCLocator.getInstance().lookup(IUifCpbService.class);
 //			cpbService.deleteAggVOs(vos.toArray(new AggregatedValueObject[0]));

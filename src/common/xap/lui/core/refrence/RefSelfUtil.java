@@ -15,7 +15,7 @@ public class RefSelfUtil {
 		return refModel;
 	}
 	public static IRefModel getRefModel(String refCode) {
-		IRefModel refModel = RefPubUtil.getRefModel(refCode);
+		IRefModel refModel = PubRefModelPool.getRefModel(refCode);
 		if (refModel == null) {}
 		return refModel;
 	}
@@ -24,7 +24,7 @@ public class RefSelfUtil {
 		return getRefType(getRefModel(refCode));
 	}
 	public static int getRefType(IRefModel model) {
-		return RefPubUtil.getRefType(model);
+		return PubRefModelPool.getRefType(model);
 	}
 	
 	public static int getRefType(BaseRefModel model) {

@@ -282,17 +282,6 @@ public class MockBaseRefDataRefController extends MockTreeGridController {
 		}
 	}
 
-	private BdRefInfoDO[] getRefNodeByModule(String moduleid) {
-		String sql = "select * from bd_refinfo where modulename = '" + moduleid + "'";
-		try {
-			BdRefInfoDO[] refinfos = (BdRefInfoDO[])CRUDHelper.getCRUDService().queryVOs(sql, BdRefInfoDO.class, null, null);
-			if (refinfos != null && refinfos.length > 0)
-				return refinfos;
-		} catch (Throwable e) {
-			LuiLogger.error(e.getMessage(), e);
-		}
-		return null;
-	}
 
 	@Override
 	public void textValueChanged(TextEvent e) {

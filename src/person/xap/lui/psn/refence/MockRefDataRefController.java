@@ -84,7 +84,7 @@ public class MockRefDataRefController extends MockTreeGridController {
 
 	private void createNcModuleRow(Dataset ds, String metadata2) {
 		try {
-			List<Map> modules = (List<Map>) CRUDHelper.getCRUDService().query("SELECT * FROM md_module  WHERE isactive = 'Y' ", new MapListHandler());
+			List<Map> modules = (List<Map>) CRUDHelper.getCRUDService().executeQuery("SELECT * FROM md_module  WHERE isactive = 'Y' ", new MapListHandler());
 			if (modules != null && !modules.isEmpty()) {
 				for (int i = 0; i < modules.size(); i++) {
 					Map module = modules.get(i);
@@ -389,7 +389,7 @@ public class MockRefDataRefController extends MockTreeGridController {
 			eleid = writeDs + "_" + subeleid;
 		List<Map> mds = null;
 		try {
-			mds = (List<Map>) CRUDHelper.getCRUDService().query(QRY_SQL_HEAD + sql, new MapListHandler());
+			mds = (List<Map>) CRUDHelper.getCRUDService().executeQuery(QRY_SQL_HEAD + sql, new MapListHandler());
 		} catch (Exception e) {
 			LuiLogger.error(e.getMessage(), e);
 		}
@@ -432,7 +432,7 @@ public class MockRefDataRefController extends MockTreeGridController {
 	private BdRefInfoDO[] getRefNodeByCondition(String condition) {
 		String sql = "select * from bd_refinfo where " + condition;
 		try {
-			BdRefInfoDO[] refinfos =(BdRefInfoDO[]) CRUDHelper.getCRUDService().queryVOs(sql, BdRefInfoDO.class, null, null);
+			BdRefInfoDO[] refinfos = (BdRefInfoDO[])CRUDHelper.getCRUDService().getBeansByWherePart(BdRefInfoDO.class, sql);
 			if (refinfos != null && refinfos.length > 0)
 				return refinfos;
 		} catch (Throwable e) {
@@ -440,6 +440,8 @@ public class MockRefDataRefController extends MockTreeGridController {
 		}
 		return null;
 	}
+	
+	
 	@Override
 	public void textValueChanged(TextEvent e) {
 		TextComp text = (TextComp)e.getSource();

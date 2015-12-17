@@ -9,7 +9,6 @@ import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiBusinessException;
 import xap.lui.core.exception.LuiRuntimeException;
 import xap.lui.core.model.ViewPartMeta;
-import xap.mw.log.logging.Logger;
 
 
 
@@ -58,7 +57,6 @@ public class LuiDatasetLoadCmdByTable extends DatasetCmd {
 			postProcessRowSelect(ds);
 		} 
 		catch (LuiBusinessException e) {
-			Logger.error(e.getMessage(), e);
 			throw new LuiRuntimeException("查询对象出错," + e.getMessage() + ",ds id:" + ds.getId(),"查询过程出现错误");
 		}
 		ds.setEdit(false);

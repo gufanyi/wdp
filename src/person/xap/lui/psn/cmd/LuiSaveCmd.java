@@ -1,11 +1,9 @@
 package xap.lui.psn.cmd;
 
-import java.util.ArrayList;
-
 import org.apache.commons.lang.StringUtils;
 
 import xap.lui.core.command.LuiCommand;
-import xap.lui.core.dao.PtBaseDAO;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiRuntimeException;
@@ -16,9 +14,7 @@ import xap.lui.core.model.WindowContext;
 import xap.lui.core.serializer.Dataset2SuperVOSerializer;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.mw.core.data.BaseDO;
-import xap.mw.core.data.BizException;
 import xap.mw.core.data.DOStatus;
-import xap.sys.appfw.orm.handle.dataobject.BaseDOService;
 import xap.sys.jdbc.pk.PKBaseAlgorithm;
 
 public class LuiSaveCmd extends LuiCommand{
@@ -73,11 +69,11 @@ public class LuiSaveCmd extends LuiCommand{
 			for(int i=0; i<vos.length; i++){
 				BaseDO vo = vos[i];
 				BaseDO newDo = getNewDO(vo);
-				PtBaseDAO.getIns().insertVO(newDo);
+				CRUDHelper.getCRUDService().saveBean(newDo);
 				newVos[i] = newDo;
 			}
 			return newVos;
-		} catch (BizException e) {
+		} catch (Throwable e) {
 			throw new LuiRuntimeException(e.getMessage());
 		}
 	}
@@ -88,11 +84,11 @@ public class LuiSaveCmd extends LuiCommand{
 			for(int i=0; i<vos.length; i++){
 				BaseDO vo = vos[i];
 				BaseDO newDo = getNewDO(vo);
-				PtBaseDAO.getIns().updateVO(newDo);
+				CRUDHelper.getCRUDService().saveBean(newDo);
 				newVos[i] = newDo;
 			}
 			return newVos;
-		} catch (BizException e) {
+		} catch (Throwable e) {
 			throw new LuiRuntimeException(e.getMessage());
 		}
 	}

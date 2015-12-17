@@ -7,10 +7,9 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang.StringUtils;
 
-import xap.lui.core.cache.PaCache;
 import xap.lui.core.command.LuiCommand;
 import xap.lui.core.comps.ButtonComp;
-import xap.lui.core.dao.PtBaseDAO;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiRuntimeException;
@@ -22,7 +21,6 @@ import xap.lui.core.serializer.SuperVO2DatasetSerializer;
 import xap.lui.core.util.LuiClassUtil;
 import xap.lui.psn.guided.SigTabPopUpOper;
 import xap.mw.core.data.BaseDO;
-import xap.sys.jdbc.facade.DAException;
 
 public class LuiAddOrEditBeforeShowCmd extends LuiCommand {
 	private Dataset ds;
@@ -65,8 +63,8 @@ public class LuiAddOrEditBeforeShowCmd extends LuiCommand {
 			String pkValue = (String) curWin.getAppAttribute(vo.getPKFieldName());
 			if(pkValue==null || pkValue.trim().length()==0)return;
 			try {
-				vo = (BaseDO) PtBaseDAO.getIns().retrieveByPK(vo.getClass(), pkValue);
-			} catch (DAException e) {
+				vo = (BaseDO) CRUDHelper.getCRUDService().getBeanById(vo.getClass(), pkValue);
+			} catch (Throwable e) {
 				throw new LuiRuntimeException(e);
 			}
 			new SuperVO2DatasetSerializer().serialize(new BaseDO[]{vo}, ds);

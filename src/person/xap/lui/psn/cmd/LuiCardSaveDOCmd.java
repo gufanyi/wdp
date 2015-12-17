@@ -1,8 +1,9 @@
 package xap.lui.psn.cmd;
 
 import xap.lui.core.command.LuiCommand;
+import xap.lui.core.common.LuiRuntimeContext;
 import xap.lui.core.comps.ToolBarComp;
-import xap.lui.core.dao.PtBaseDAO;
+import xap.lui.core.dao.CRUDHelper;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.exception.LuiRuntimeException;
@@ -12,9 +13,8 @@ import xap.lui.core.model.ViewPartContext;
 import xap.lui.core.model.WindowContext;
 import xap.lui.core.serializer.Dataset2SuperVOSerializer;
 import xap.lui.core.serializer.SuperVO2DatasetSerializer;
+import xap.lui.core.sso.SessionBean;
 import xap.mw.core.data.BaseDO;
-import xap.mw.core.data.BizException;
-import xap.mw.core.data.Context;
 import xap.mw.core.data.DOStatus;
 import xap.mw.coreitf.d.FDateTime;
 
@@ -61,28 +61,29 @@ public class LuiCardSaveDOCmd extends LuiCommand{
 	}
 
 	protected void setDefValue(BaseDO basedo){
+	  SessionBean session=	LuiRuntimeContext.getSessionBean();
+		
 		if(basedo.getPkVal() == null) {
-				basedo.setAttrVal("Createdby", Context.get().getUserId());
+				basedo.setAttrVal("Createdby", session.getPk_user());
 				basedo.setAttrVal("Createdtime", new FDateTime());
 		}else{
-				basedo.setAttrVal("Modifiedby", Context.get().getUserId());
+				basedo.setAttrVal("Modifiedby",session.getPk_user());
 				basedo.setAttrVal("Modifiedtime", new FDateTime());
 		}
 	};
 	
 	protected BaseDO  saveVo(BaseDO vo){
-		PtBaseDAO dao = PtBaseDAO.getIns();
 		BaseDO baseDO = null;
 		try {
 			if(vo.getPkVal() == null) {
 				vo.setStatus(DOStatus.NEW);
-				baseDO = dao.insertVODO(vo);
+				CRUDHelper.getCRUDService().saveBean(vo);
 			}else {
 				vo.setStatus(DOStatus.UPDATED);
-				baseDO = dao.updateVODO(vo);
+				CRUDHelper.getCRUDService().saveBean(vo);
 			}
 			return baseDO;
-		} catch (BizException e) {
+		} catch (Throwable e) {
 			throw new LuiRuntimeException(e.getMessage());
 		}
 	}

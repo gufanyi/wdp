@@ -6,6 +6,7 @@ public interface IRefModel extends IClassRefModel  {
 	/**
 	 * 基础配置
 	 */
+	public String getId();
 	public String[] getAllFields();
 	public int getAllFieldCount();
 	public int getFieldIndex(String filedName);

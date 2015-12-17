@@ -1,17 +1,15 @@
 package xap.lui.core.serializer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
+
 import xap.lui.core.constant.ExtAttrConstants;
 import xap.lui.core.dataset.Dataset;
 import xap.lui.core.dataset.Row;
 import xap.lui.core.util.LuiClassUtil;
 import xap.mw.core.data.BaseDO;
-import xap.mw.coreitf.i.IAggDesc;
-import xap.mw.coreitf.i.IBaseDO;
-import xap.mw.coreitf.i.IDODesc;
 import xap.sys.appfw.orm.model.agg.BaseAggDO;
 
 
@@ -164,16 +162,14 @@ public class Datasets2AggVOSerializer {
 			svds.update(new BaseDO[]{(BaseDO) aggVO.getParentDO()}, masterDs,new Row[]{mselectrow});
 		if(detailDss != null && detailDss.length > 0){
 			if(aggVO instanceof BaseAggDO){
-				List<IBaseDO> childDos= getAllAggDoChildDos(aggVO);
+				BaseDO[] childDos=aggVO.getAllChildrenDO();
 				for(int i=0;i<detailDss.length;i++){
 					Dataset detailDs=detailDss[i];
 					String tableName= detailDs.getTableName();
 					List<BaseDO> listBaseDo=new ArrayList<BaseDO>();
-					for(IBaseDO childDo:childDos){
+					for(BaseDO childDo:childDos){
 						if(StringUtils.equals(childDo.getTableName(), tableName)){
-//							Row[] dselectrows= detailDs.getChangedRows();
 							listBaseDo.add((BaseDO)childDo);
-							//svds.update(new BaseDO[]{(BaseDO)childDo}, detailDs,dselectrows);
 						}
 					}
 					detailDs.clear();
@@ -183,17 +179,6 @@ public class Datasets2AggVOSerializer {
 				
 			}
 		}
-	}
-	public static List<IBaseDO> getAllAggDoChildDos(BaseAggDO aggVo){
-		IAggDesc billMeta = aggVo.getAggDesc();
-		List<IBaseDO> dos=new ArrayList< IBaseDO>();
-		IDODesc[] doDesc=	billMeta.getChildren();
-		for(IDODesc inner:doDesc){
-			IBaseDO[] tmp=aggVo.getChildren(inner);
-			if(tmp!=null)
-				dos.addAll(Arrays.asList(tmp));
-		}
-		return dos;
 	}
 	
 	private Dataset getDataset(Dataset[] dss, String id){

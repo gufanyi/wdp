@@ -11,7 +11,6 @@ import xap.lui.core.listener.DatasetRule;
 import xap.lui.core.listener.EventSubmitRule;
 import xap.lui.core.listener.LuiEventConf;
 import xap.lui.core.listener.WidgetRule;
-import xap.mw.core.utils.StringUtil;
 
 /**
  * 定义 ProjViewTree 上的右键菜单项 <br/>
@@ -273,7 +272,7 @@ public class PaProjViewTreeDsCtxMenu {
 		
 		this.str_buf.setLength(0);
 		this.str_buf.append(opNameCn);
-		if(!StringUtil.isEmpty(opObjInfo)) {
+		if(!StringUtils.isEmpty(opObjInfo)) {
 			this.str_buf.append(' ');
 			this.str_buf.append(opObjInfo);		
 		}

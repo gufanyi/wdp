@@ -56,10 +56,10 @@ public class AppRefDftCtrl {
 		String filterValue = ds.getReqParameters().getParameterValue("filterValue");
 		
 		//自定义档案参照特殊处理  TODO
-		BdRefInfoDO bdRefInfoDo = RefPubUtil.getRefinfoVO(rfnode.getRefcode());
-		if(bdRefInfoDo!=null&&("bd_udidoc").equals(bdRefInfoDo.getPara2())){
-			refModel.addWherePart("bd_udidoc.id_udidoclist = '"+bdRefInfoDo.getPara1()+"'");
-		}
+//		BdRefInfoDO bdRefInfoDo = RefPubUtil.getRefinfoVO(rfnode.getRefcode());
+//		if(bdRefInfoDo!=null&&("bd_udidoc").equals(bdRefInfoDo.getPara2())){
+//			refModel.addWherePart("bd_udidoc.id_udidoclist = '"+bdRefInfoDo.getPara1()+"'");
+//		}
 		if (filterValue != null) {
 			filterValue = JsURLDecoder.decode(filterValue, "UTF-8");
 		}
